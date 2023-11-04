@@ -19,7 +19,6 @@ export interface AppliedChecklist {
   id: number;
   title: string;
   dateApplied: string; // You can use Date type if preferred
-  dateapplied: string; 
   // Add other properties relevant to applied checklists
 }
 
