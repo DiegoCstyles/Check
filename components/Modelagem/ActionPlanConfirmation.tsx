@@ -33,7 +33,7 @@ const ActionPlanConfirmation = () => {
 
   const approveRiskItem = async (riskId: number) => {
     try {
-      const response = await fetch(`http://checkriskmanage.vercel.app::5000/api/approveRiskItem/${riskId}`, {
+      const response = await fetch(`https://checkend.onrender.com/api/approveRiskItem/${riskId}`, {
         method: 'POST',
       });
 
