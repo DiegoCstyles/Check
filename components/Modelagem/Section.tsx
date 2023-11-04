@@ -5,6 +5,8 @@ import { NewsDisplay } from '@/components'
 import { memo } from 'react';
 import Chart from 'chart.js/auto';
 
+let existingChart: { destroy: () => void; }; // Declare the variable outside the component function
+
 const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
@@ -29,7 +31,7 @@ const Navbar = () => {
 
   const fetchRiskItems = async () => {
     try {
-      const response = await fetch(`http://checkriskmanage.vercel.app:5000/api/riskItems`);
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems`);
 
       if (response.ok) {
         const data = await response.json();
@@ -44,7 +46,7 @@ const Navbar = () => {
 
   const fetchLastRiskItems = async () => {
     try {
-      const response = await fetch(`http://checkriskmanage.vercel.app:5000/api/lastRiskItems`);
+      const response = await fetch(`https://checkend.onrender.com/api/lastRiskItems`);
 
       if (response.ok) {
         const data = await response.json();
@@ -61,11 +63,19 @@ const Navbar = () => {
 
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
+
+      // Check if there's an existing chart and destroy it
+    if (existingChart) {
+      existingChart.destroy();
+    }
     if (ctx) {
-      new Chart(ctx, {
+      // Create a new Chart.js chart
+      existingChart = new Chart(ctx, {
         type: 'line',
-        data: lineGraphData,    
-        options: {color: 'white',},
+        data: lineGraphData,
+        options: {
+          color: 'white',
+        },
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps

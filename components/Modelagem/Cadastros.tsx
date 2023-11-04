@@ -83,7 +83,7 @@ const RiskManagementForm: React.FC = () => {
     );
   
     try {
-      await fetch(`http://checkriskmanage.vercel.app:5000/api/riskItems/${id}`, {
+      await fetch(`https://checkend.onrender.com/api/riskItems/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const RiskManagementForm: React.FC = () => {
     formData.append('json_data', JSON.stringify(newRisk));
 
     try {
-      const response = await fetch('http://checkriskmanage.vercel.app:5000/api/riskItems', {
+      const response = await fetch('https://checkend.onrender.com/api/riskItems', {
         method: 'POST',
         body: formData, // Send the FormData object with the file to the server
         
@@ -129,7 +129,7 @@ const RiskManagementForm: React.FC = () => {
 
   const fetchRiskItems = async () => {
     try {
-      const response = await fetch(`http://checkriskmanage.vercel.app:5000/api/riskItems?page=${currentPage}`);
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}`);
 
       if (response.ok) {
         const data = await response.json();
@@ -418,8 +418,8 @@ const RiskManagementForm: React.FC = () => {
                     </select>
 
                     <a
-                      href={`http://checkriskmanage.vercel.app:5000/api/downloadPlanFile/${risk.id}`}
-                      className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                      href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
+                      className='w-1/2 text-center bg-white/10 border-b-4 m-2'  
                       target='_blank'
                       rel='noopener noreferrer'
                     >

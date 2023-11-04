@@ -7,7 +7,7 @@ const AppliedChecklistsPage: React.FC = () => {
 
   const fetchAppliedChecklists = async () => {
     try {
-      const response = await fetch('http://checkriskmanage.vercel.app:5000/api/appliedChecklists');
+      const response = await fetch('https://checkend.onrender.com/api/appliedChecklists');
 
       if (response.ok) {
         const data = await response.json();

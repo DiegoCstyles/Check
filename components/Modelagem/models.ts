@@ -4,7 +4,7 @@ export interface RiskItem {
   title: string;
   description: string;
   planDescription: string;
-  planFiles: Blob | string;
+  planFiles: Buffer | string;
   planFilesName: string;
   planApproval: string;
   likelihood: string;

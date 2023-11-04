@@ -15,7 +15,7 @@
 
     const fetchChartData = async () => {
       try {
-        const response = await fetch('http://checkriskmanage.vercel.app:5000/api/chartData'); // Adjust the URL accordingly
+        const response = await fetch('https://checkend.onrender.com/api/chartData'); // Adjust the URL accordingly
 
         if (response.ok) {
           const data = await response.json();
