@@ -7,7 +7,6 @@ const ClientComponent = () => {
   const [newsArticles, setNewsArticles] = useState([]);
 
   useEffect(() => {
-    // Replace 'YOUR_GOOGLE_NEWS_API_KEY' with your actual API key
     const apiKey = '54d23d7fa5de4370ac7fe6c049ca88c5';
     const apiUrl = `https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=${apiKey}`;
 
