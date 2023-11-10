@@ -98,7 +98,7 @@ const ActionPlanConfirmation = () => {
             <span className='bg-slate-500 p-1 w-full'>Data: {risk.date}</span>
             <div className='p-2'>
                 <span className=''>ID: {risk.id}</span> 
-                <span className=' m-1 w-full'>- Descrição: {risk.planDescription}</span>
+                <span className=' m-1 w-full'>- Descrição: {risk.plandescription}</span>
             </div>
             <div className='flex flex-row justify-end w-full'>
               <button
