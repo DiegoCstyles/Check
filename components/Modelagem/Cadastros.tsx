@@ -22,7 +22,7 @@ const RiskManagementForm: React.FC = () => {
     id: 0,
     title: '',
     description: '',
-    planDescription: '',
+    plandescription: '',
     planFiles: '', 
     planFilesName: '',
     planApproval: 'solução em análise',
@@ -39,7 +39,7 @@ const RiskManagementForm: React.FC = () => {
       id: 0,
       title: '',
       description: '',
-      planDescription: '',
+      plandescription: '',
       planFiles: '', 
       planFilesName: '',
       planApproval: 'solução em análise',
@@ -365,7 +365,7 @@ const RiskManagementForm: React.FC = () => {
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
-                      value={risk.planDescription}
+                      value={risk.plandescription}
                       onChange={(e) =>
                         handleRiskItemChange(
                           risk.id,
