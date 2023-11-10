@@ -3,7 +3,7 @@ export interface RiskItem {
   id: number;
   title: string;
   description: string;
-  planDescription: string;
+  plandescription: string;
   planFiles: Buffer | string;
   planFilesName: string;
   planApproval: string;
