@@ -273,8 +273,8 @@ const RiskManagementForm: React.FC = () => {
             <label> Descrição </label>
               <textarea 
                 className='bg-white/10 border-b-4 m-2 ml-2 p-10'
-                value={newRisk.planDescription}
-                onChange={(e) => handleNewRiskChange('planDescription', e.target.value)}
+                value={newRisk.plandescription}
+                onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
               /> 
             
             <div className='flex-col flex mt-2'>
