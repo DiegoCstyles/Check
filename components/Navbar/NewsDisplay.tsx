@@ -14,14 +14,11 @@ const NewsDisplay: React.FC = () => {
   const [newsArticles, setNewsArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    // Replace 'YOUR_GOOGLE_NEWS_API_KEY' with your actual API key
     const apiKey = '54d23d7fa5de4370ac7fe6c049ca88c5';
-    const query = 'ford cars'; // Query for "wheel industry" in Portuguese
-
-      
-      const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-        query
-      )}&apiKey=${apiKey}`;
+    const query = 'ford cars';
+    const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+      query
+    )}&apiKey=${apiKey}`;
 
     axios.get(apiUrl)
       .then(response => {
