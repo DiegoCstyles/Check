@@ -369,7 +369,7 @@ const RiskManagementForm: React.FC = () => {
                       onChange={(e) =>
                         handleRiskItemChange(
                           risk.id,
-                          'planDescription',
+                          'plandescription',
                           e.target.value
                         )
                       }
