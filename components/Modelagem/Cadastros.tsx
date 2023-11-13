@@ -351,9 +351,7 @@ const RiskManagementForm: React.FC = () => {
               .filter((risk) =>
                 risk.title.toLowerCase().includes(searchTerm.toLowerCase())
               )
-              .map((risk) => {
-                {console.log('plandescription:', risk.plandescription)}
-                return (
+              .map((risk) => (
                 <li key={risk.id}>
                   <div className='flex justify-between text-xs text-center p-4'>
                     
@@ -431,8 +429,7 @@ const RiskManagementForm: React.FC = () => {
                     </a>
                   </div>
                 </li>
-              );
-            })}
+            ))}
           </ul>
         </div>
      
