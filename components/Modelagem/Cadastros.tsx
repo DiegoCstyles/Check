@@ -365,7 +365,6 @@ const RiskManagementForm: React.FC = () => {
                         handleRiskItemChange(risk.id, 'title', e.target.value)
                       }
                     />
-                     {console.log('title:', risk.title)}
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
