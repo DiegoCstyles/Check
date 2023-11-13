@@ -354,6 +354,7 @@ const RiskManagementForm: React.FC = () => {
               .map((risk) => (
                 <li key={risk.id}>
                   <div className='flex justify-between text-xs text-center p-4'>
+                    
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
@@ -362,6 +363,7 @@ const RiskManagementForm: React.FC = () => {
                         handleRiskItemChange(risk.id, 'title', e.target.value)
                       }
                     />
+                     {console.log('title:', risk.title)}
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
@@ -374,6 +376,7 @@ const RiskManagementForm: React.FC = () => {
                         )
                       }
                     />
+                    {console.log('plandescription:', risk.plandescription)}
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
