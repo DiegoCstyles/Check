@@ -65,7 +65,7 @@ const AppliedChecklistsPage: React.FC = () => {
             <li key={checklist.id} className="applied-checklist-item">
               <p className='text-center mr-2 px-2 py-1 text-xs '>
                 <span className='p-2'>{checklist.title}</span>
-                <span className='p-2'>{checklist.dateApplied}</span>
+                <span className='p-2'>{checklist.dateapplied}</span>
               </p>
             </li>
           ))}
