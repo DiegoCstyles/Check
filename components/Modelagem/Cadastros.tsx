@@ -172,9 +172,9 @@ const RiskManagementForm: React.FC = () => {
   return (
     <div className=' w-full'>
     <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold w-full'>Checklist</h1>
-    <div className='m-1 w-full text-xs text-center '>
+    <div className=' w-full text-xs text-center '>
       
-      <div className='m-2 '>
+      <div className=''>
         <h2 className='p-1.5 text-xs text-white border mt-2'>Cadastro</h2>
         <div className='flex p-2 justify-around border'>
           <div>
