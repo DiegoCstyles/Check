@@ -36,12 +36,8 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     'solução em análise': 0,
   };
 
-  console.log('Filtered Data:', filteredData);
-
   filteredData.forEach(action => {
     const approval = (action.planApproval || '').toLowerCase();
-    console.log('Processing Action:', action, 'Approval:', approval);
-
     if (counts.hasOwnProperty(approval)) {
       counts[approval]++;
     }
@@ -62,8 +58,6 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
 
   setChartData(data);
 };
-
-
 
   // Call the counting function whenever actionData or selectedFilter changes
   useEffect(() => {
