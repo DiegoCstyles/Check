@@ -30,16 +30,13 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     ? actionData
      : actionData.filter(action => {
         const lowerCasePlanApproval = action.planApproval && action.planApproval.toLowerCase();
-        console.log('lowerCasePlanApproval:', lowerCasePlanApproval); // Log the lowercased planApproval
-        console.log('selectedFilter:', selectedFilter.toLowerCase()); // Log the lowercased selectedFilter
+        console.log('Action:', action); // Log the entire action object
         return lowerCasePlanApproval === selectedFilter.toLowerCase();
       });
 
    const aprovadoCount = filteredData.filter(action => action.planApproval === 'aprovado').length;
     const reprovadoCount = filteredData.filter(action => action.planApproval === 'reprovado').length;
     const analiseCount = filteredData.filter(action => action.planApproval === 'solução em análise').length;
-
-  console.log('action :', action );
 
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
