@@ -43,6 +43,8 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     }
   });
 
+  console.log('Counts:', counts);
+
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
     datasets: [
@@ -53,6 +55,8 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
       },
     ],
   };
+    
+  console.log('ChartData:', data);
 
   setChartData(data);
 };
