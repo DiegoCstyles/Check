@@ -30,7 +30,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     ? actionData
     : actionData.filter(action => action.planApproval === selectedFilter);
 
-  const counts = {
+  const counts: { [key: string]: number } = {
     'aprovado': 0,
     'reprovado': 0,
     'solução em análise': 0,
