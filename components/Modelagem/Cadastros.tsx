@@ -375,11 +375,11 @@ const RiskManagementForm: React.FC = () => {
                     <input
                       className='w-1/2 text-center bg-white/10 border-b-4 m-2'
                       type='text'
-                      value={risk.plandescription}
+                      value={risk.description}
                       onChange={(e) =>
                         handleRiskItemChange(
                           risk.id,
-                          'plandescription',
+                          'description',
                           e.target.value
                         )
                       }
