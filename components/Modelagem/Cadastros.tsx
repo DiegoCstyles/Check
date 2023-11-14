@@ -329,7 +329,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className='border m-1 mt-7 p-2 border-b-4 hover:bg-cyan-300' onClick={addRiskToBackend}>Adicionar Risco</button>
+            <button className='border m-1 mt-7 p-2 border-b-4 hover:bg-cyan-300/80 hover:border-black hover:text-black' onClick={addRiskToBackend}>Adicionar Risco</button>
           </div>
         </div>  
         
@@ -443,10 +443,10 @@ const RiskManagementForm: React.FC = () => {
      
         <div>
         {/* Pagination controls */}
-        <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-cyan-300' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+        <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-cyan-300/80 hover:border-black hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
           Anterior
         </button>
-        <button className='border border-b-4 mt-2 p-2 hover:bg-cyan-300' onClick={() => handlePageChange(currentPage + 1)}>
+        <button className='border border-b-4 mt-2 p-2 hover:bg-cyan-300/80 hover:border-black hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
           Proximo
         </button>
       </div>
