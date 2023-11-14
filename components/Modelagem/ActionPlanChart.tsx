@@ -26,28 +26,37 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   
   // Function to update chart data based on selected filter
   const updateChartData = () => {
-    const filteredData = selectedFilter === 'todos'
-      ? actionData
-      : actionData.filter(action => action.planApproval === selectedFilter);
+  const filteredData = selectedFilter === 'todos'
+    ? actionData
+    : actionData.filter(action => action.planApproval === selectedFilter);
 
-    const aprovadoCount = filteredData.filter(action => action.planApproval === 'aprovado').length;
-    const reprovadoCount = filteredData.filter(action => action.planApproval === 'reprovado').length;
-    const analiseCount = filteredData.filter(action => action.planApproval === 'solução em análise').length;
-
-    const data = {
-      labels: ['aprovado', 'reprovado', 'solução em análise'],
-      datasets: [
-        {
-          data: [aprovadoCount, reprovadoCount, analiseCount],
-          backgroundColor: ['#4CAF50', '#d33658', '#d8f001'], 
-          hoverBackgroundColor: ['#4CAF50', '#d33658', '#d8f001'],
-        },
-        
-      ],
-    };
-
-    setChartData(data);
+  const counts = {
+    'aprovado': 0,
+    'reprovado': 0,
+    'solução em análise': 0,
   };
+
+  filteredData.forEach(action => {
+    const approval = action.planApproval.toLowerCase();
+    if (counts.hasOwnProperty(approval)) {
+      counts[approval]++;
+    }
+  });
+
+  const data = {
+    labels: ['aprovado', 'reprovado', 'solução em análise'],
+    datasets: [
+      {
+        data: [counts.aprovado, counts.reprovado, counts['solução em análise']],
+        backgroundColor: ['#4CAF50', '#d33658', '#d8f001'],
+        hoverBackgroundColor: ['#4CAF50', '#d33658', '#d8f001'],
+      },
+    ],
+  };
+
+  setChartData(data);
+};
+
 
   // Call the counting function whenever actionData or selectedFilter changes
   useEffect(() => {
