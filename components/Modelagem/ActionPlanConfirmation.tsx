@@ -102,13 +102,13 @@ const ActionPlanConfirmation = () => {
             </div>
             <div className='flex flex-row justify-end w-full'>
               <button
-                className="answer-button positive hover:bg-slate-500 bg-black/75 mr-1 p-1"
+                className="answer-button positive hover:bg-white hover:border-black/80 hover:text-black bg-black/75 mr-1 p-1"
                 onClick={() => approveRiskItem(risk.id)}
               >
                 Aprovar
               </button>
               <button
-                className="answer-button negative hover:bg-slate-500 bg-black/75 p-1"
+                className="answer-button negative hover:bg-white hover:border-black/80 hover:text-black bg-black/75 p-1"
                 onClick={() => rejectRiskItem(risk.id)}
               >
                 Reprovar
