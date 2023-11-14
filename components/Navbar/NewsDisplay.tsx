@@ -14,7 +14,7 @@ const NewsDisplay: React.FC = () => {
   const [newsArticles, setNewsArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    const apiKey = '54d23d7fa5de4370ac7fe6c049ca88c5';
+    const apiKey = 'c694d8976a064ecd8fb7af6267fa0bd2';
     const query = 'ford cars';
     const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
       query
