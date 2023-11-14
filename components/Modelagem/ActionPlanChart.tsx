@@ -4,9 +4,7 @@ import { RiskItem } from './models';
 import 'chart.js'; // Import 'chart.js' to access Chart.defaults.global
 import 'chartjs-plugin-datalabels'; // Import the datalabels plugin
 
-interface ActionPlanChartProps {
-  actionData: RiskItem[];
-}
+interface ActionPlanChartProps { actionData: RiskItem[]; }
 
 const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
    // Filter options
@@ -15,14 +13,11 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   // Find the index of the default filter in the filterOptions array
   const defaultFilterIndex = filterOptions.indexOf(defaultFilter);
 
-  const [selectedFilter, setSelectedFilter] = useState<string>(
-    defaultFilterIndex !== -1 ? defaultFilter : 'todos'
-  );
+  const [selectedFilter, setSelectedFilter] = useState<string>( defaultFilterIndex !== -1 ? defaultFilter : 'todos');
   const [countplanApproval, setCountplanApproval] = useState<number>(0); // Initialize countplanApproval to 0
   const [chartData, setChartData] = useState<any>(null); // Initialize chartData to null
-
-  const chartHeight = 400;
-  const chartWidth = 400;
+  
+  const chartHeight = 400; const chartWidth = 400;
   
   // Function to update chart data based on selected filter
  const updateChartData = () => {
@@ -30,7 +25,6 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     ? actionData
      : actionData.filter(action => {
         const lowerCasePlanApproval = action.planapproval && action.planapproval.toLowerCase();
-        console.log('Action:', action); // Log the entire action object
         return lowerCasePlanApproval === selectedFilter.toLowerCase();
       });
 
@@ -48,14 +42,11 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
       },
     ],
   };
-
   setChartData(data);
 };
 
   // Call the counting function whenever actionData or selectedFilter changes
   useEffect(() => {
-  console.log('Action Data:', actionData); // Log the action data
-    
     const count = countSolucaoEmAnaliseInFilteredData();
     updateChartData();
     setCountplanApproval(count);
@@ -70,8 +61,9 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
 
   return (
     <div className='mt-2 w-full border'>
-      <h2 className=' border-b p-1.5 text-xs  text-white'>Status</h2>
-      <div className='mb-4 '>
+      <h2 className='border-b p-1.5 text-xs  text-white'>Status</h2>
+      
+      <div className='mb-4'>
         <label htmlFor='filter'>Tipo:</label>
         <select
           id='filter'
@@ -79,15 +71,11 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
           value={selectedFilter}
           onChange={(e) => setSelectedFilter(e.target.value)}
         >
-          {filterOptions.map(option => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
+          {filterOptions.map(option => ( <option key={option} value={option}> {option} </option> ))}
         </select>
       </div>
+      
       <div className='w-full flex justify-center items-center'>
-
         <div className='p-4' style={{ width: chartWidth, height: chartHeight }}>
           {chartData ? ( // Check if chartData is not null
             <>
@@ -112,7 +100,6 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
             <p>Loading chart data...</p> // You can display a loading message or handle it as you prefer
           )}
         </div>
-
       </div>
     </div>
   );
