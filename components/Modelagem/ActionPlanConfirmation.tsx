@@ -8,13 +8,8 @@ const ActionPlanConfirmation = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [approvalStatus, setApprovalStatus] = useState<string>(''); // State for approval status
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const openModal = () => { setModalOpen(true); };
+  const closeModal = () => { setModalOpen(false); };
 
   const fetchRiskItems = async () => {
     try {
@@ -47,7 +42,6 @@ const ActionPlanConfirmation = () => {
             risk.id === riskId ? { ...risk, planApproval: 'aprovado' } : risk
           ).filter((risk) => risk.id !== riskId)
         );
-        console.log('After filtering:', riskItems); // Log the state after filtering
       } else {
         console.error('Error approving risk item');
       }
@@ -84,13 +78,12 @@ const ActionPlanConfirmation = () => {
     fetchRiskItems(); // Fetch risk items when the component mounts
   }, [currentPage]);
 
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
+  const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
 
   return (
     <div className='text-xs'>
       <h2 className='border-y border-r mt-2 p-1.5 mr-2 text-xs text-black bg-cyan-300'>Confirmação</h2>
+      
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
           <li className='p-2  flex flex-col text-start border text-xs m-2' key={risk.id}>
@@ -116,7 +109,8 @@ const ActionPlanConfirmation = () => {
             </div>
           </li>
         ))}
-         <Modal isOpen={isModalOpen} onClose={closeModal}>
+        
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
           {/* Render different messages based on approval status */}
           {approvalStatus === 'aprovado' ? (
             <h2 className="text-sm text-blue bg-white/5">Plano Aprovado!</h2>
@@ -124,6 +118,7 @@ const ActionPlanConfirmation = () => {
             <h2 className="text-sm text-red bg-white/5">Plano Reprovado!</h2>
           ) : null}
         </Modal>
+        
         <div>
           {/* Pagination controls */}
           <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
@@ -132,7 +127,7 @@ const ActionPlanConfirmation = () => {
           <button className='border border-b-4 mt-2 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
             Proximo
           </button>
-       </div>
+         </div>
       </ul>
     </div>
   );
