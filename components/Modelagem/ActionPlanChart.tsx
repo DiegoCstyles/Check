@@ -29,14 +29,14 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   const filteredData = selectedFilter === 'todos'
     ? actionData
      : actionData.filter(action => {
-        const lowerCasePlanApproval = action.planApproval && action.planApproval.toLowerCase();
+        const lowerCasePlanApproval = action.planapproval && action.planapproval.toLowerCase();
         console.log('Action:', action); // Log the entire action object
         return lowerCasePlanApproval === selectedFilter.toLowerCase();
       });
 
-  const aprovadoCount = filteredData.filter(action => action.planApproval.toLowerCase() === 'aprovado').length;
-  const reprovadoCount = filteredData.filter(action => action.planApproval.toLowerCase() === 'reprovado').length;
-  const analiseCount = filteredData.filter(action => action.planApproval.toLowerCase() === 'solução em análise').length;
+  const aprovadoCount = filteredData.filter(action => action.planapproval.toLowerCase() === 'aprovado').length;
+  const reprovadoCount = filteredData.filter(action => action.planapproval.toLowerCase() === 'reprovado').length;
+  const analiseCount = filteredData.filter(action => action.planapproval.toLowerCase() === 'solução em análise').length;
 
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
@@ -64,7 +64,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   // Function to count occurrences of "Solução em análise" in the filtered data
   const countSolucaoEmAnaliseInFilteredData = () => {
     return actionData.filter(
-      action => action.planApproval === 'reprovado' || action.planApproval === 'aprovado' || action.planApproval === 'Solução em análise'
+      action => action.planapproval === 'reprovado' || action.planapproval === 'aprovado' || action.planapproval === 'Solução em análise'
     ).length;
   };
 
