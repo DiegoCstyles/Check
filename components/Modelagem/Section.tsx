@@ -103,10 +103,7 @@ const Navbar = () => {
                   >{risk.title}</p>
                     <p
                     className='text-center mr-2 w-32 px-2 py-1 text-xs 0'
-                  >{risk.impact}</p>                
-                  <p
-                    className='text-center w-32 px-2 py-1 text-xs '
-                  >{risk.likelihood}</p>  
+                  >{risk.description}</p>                
                 </div>
               </li>
             ))}
