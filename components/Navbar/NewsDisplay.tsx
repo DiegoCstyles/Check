@@ -16,17 +16,12 @@ const NewsDisplay: React.FC = () => {
   useEffect(() => {
     const apiKey = 'c694d8976a064ecd8fb7af6267fa0bd2';
     const query = 'ford cars';
-    const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      query
-    )}&apiKey=${apiKey}`;
+    const apiUrl = `https://newsapi.org/v2/everything?q=${encodeURIComponent( query )}&apiKey=${apiKey}`;
 
     axios.get(apiUrl)
-      .then(response => {
-        const limitedArticles = response.data.articles.slice(0, 2);
-        setNewsArticles(limitedArticles);
-      })
+      .then(response => { const limitedArticles = response.data.articles.slice(0, 2); setNewsArticles(limitedArticles); })
       .catch(error => {
-         console.error('Error fetching news articles:', error);
+          console.error('Error fetching news articles:', error);
           console.log('Full error response:', error.response); // Log the full response for more details
       });
   }, []);
