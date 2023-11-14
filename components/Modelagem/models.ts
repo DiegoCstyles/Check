@@ -6,7 +6,7 @@ export interface RiskItem {
   plandescription: string;
   planFiles: Buffer | string;
   planFilesName: string;
-  planApproval: string;
+  planapproval: string;
   likelihood: string;
   impact: string;
   date: string;
