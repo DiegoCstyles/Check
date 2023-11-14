@@ -90,12 +90,9 @@ const Navbar = () => {
       <>
       <div className=''>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
-        <div className='border mx-48 mt-2 flex'>
-          
-          <div className=' bg-black/10 m-2 border w-1/3'>
+          <div className=' bg-black/10 m-2 border'>
             
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
-            
             </section>
             <ul className='text-slate-400 mb-1 p-5'>
             {lastRiskItems.map((risk) => (
@@ -114,8 +111,10 @@ const Navbar = () => {
               </li>
             ))}
             </ul>
+            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de uso diario</section>
             <canvas  ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
+            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
             <ul className='text-slate-400 mb-1 p-5'>
             {riskItems.map((risk) => (
@@ -135,7 +134,6 @@ const Navbar = () => {
             ))}
             </ul>
           </div>
-        </div>
       </div>
     </>
   )
