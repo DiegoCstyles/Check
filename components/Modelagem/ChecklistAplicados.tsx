@@ -9,20 +9,12 @@ const AppliedChecklistsPage: React.FC = () => {
     try {
       const response = await fetch('https://checkend.onrender.com/api/appliedChecklists');
 
-      if (response.ok) {
-        const data = await response.json();
-        setAppliedChecklists(data);
-      } else {
-        console.error('Error fetching applied checklists');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+      if (response.ok) { const data = await response.json(); setAppliedChecklists(data);
+      } else { console.error('Error fetching applied checklists'); }
+    } catch (error) { console.error('Error:', error); }
   };
 
-  useEffect(() => {
-    fetchAppliedChecklists();
-  }, []);
+  useEffect(() => { fetchAppliedChecklists(); }, []);
 
   return (
     <div className='flex justify-between'>
