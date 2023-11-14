@@ -224,7 +224,7 @@ const RiskManagementForm: React.FC = () => {
             <label>
               data
               <input
-                className='bg-white text-black border-b-4 border-slate-400 m-2 rounded ml-2'
+                className='bg-white text-black border-b-4 border-slate-400 m-2 p-1 rounded ml-2'
                 type="date" // Use type="date" for date input
                 value={newRisk.date}
                 onChange={(e) => handleNewRiskChange('date', e.target.value)}
@@ -284,9 +284,8 @@ const RiskManagementForm: React.FC = () => {
           </div>
             <div className='flex-col flex'>
               <label> Plano de Mitigação (opcional) </label>
-              <label> Descrição </label>
               <textarea 
-                className='bg-white/10 border-b-4 m-2 ml-2 p-10'
+                className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
                 value={newRisk.plandescription}
                 onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
               /> 
@@ -298,7 +297,7 @@ const RiskManagementForm: React.FC = () => {
             <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
             <div className='flex flex-row text-start'>
               
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: 'flex ml-7', alignItems: 'center' }}>
                 <label style={{ flex: '1' }}>
                   Checklist
                 </label>
@@ -310,7 +309,7 @@ const RiskManagementForm: React.FC = () => {
                 />
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: 'flex ml-1', alignItems: 'center' }}>
                 <label style={{ flex: '1' }}>
                   Plano de Ação
                 </label>
@@ -325,7 +324,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <button className='border m-5 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
+            <button className='border m-1 mt-7 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
           </div>
         </div>  
         
