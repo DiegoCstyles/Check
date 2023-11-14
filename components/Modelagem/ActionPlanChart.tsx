@@ -36,6 +36,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
       );
 
     console.log('Filtered Data:', filteredData); // Log the filtered data
+   console.log('action planapproval:', action.planApproval); // Log the action data
 
    const aprovadoCount = filteredData.filter(action => action.planApproval === 'aprovado').length;
     const reprovadoCount = filteredData.filter(action => action.planApproval === 'reprovado').length;
