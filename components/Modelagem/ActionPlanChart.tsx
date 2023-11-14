@@ -25,7 +25,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   const chartWidth = 400;
   
   // Function to update chart data based on selected filter
-  const updateChartData = () => {
+ const updateChartData = () => {
   const filteredData = selectedFilter === 'todos'
     ? actionData
     : actionData.filter(action => action.planApproval === selectedFilter);
@@ -36,15 +36,18 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     'solução em análise': 0,
   };
 
+  console.log('Filtered Data:', filteredData);
+
   filteredData.forEach(action => {
     const approval = (action.planApproval || '').toLowerCase();
+    console.log('Processing Action:', action, 'Approval:', approval);
+
     if (counts.hasOwnProperty(approval)) {
       counts[approval]++;
     }
   });
-    console.log('counts:',counts);
-    console.log('actionData:',actionData);
-    
+
+  console.log('Counts:', counts);
 
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
@@ -57,9 +60,9 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     ],
   };
 
-    console.log('data:',data);
   setChartData(data);
 };
+
 
 
   // Call the counting function whenever actionData or selectedFilter changes
