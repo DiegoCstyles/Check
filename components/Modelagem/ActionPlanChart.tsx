@@ -30,26 +30,19 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     ? actionData
     : actionData.filter(action => action.planApproval === selectedFilter);
 
-  const counts: { [key: string]: number } = {
-    'aprovado': 0,
-    'reprovado': 0,
-    'solução em análise': 0,
-  };
+   const aprovadoCount = filteredData.filter(action => action.planApproval === 'aprovado').length;
+    const reprovadoCount = filteredData.filter(action => action.planApproval === 'reprovado').length;
+    const analiseCount = filteredData.filter(action => action.planApproval === 'solução em análise').length;
 
-  filteredData.forEach(action => {
-    const approval = (action.planApproval || '').toLowerCase();
-    if (counts.hasOwnProperty(approval)) {
-      counts[approval]++;
-    }
-  });
-
-  console.log('Counts:', counts);
+  console.log('aprovadoCount:', aprovadoCount);
+   console.log('aprovadoCount:', reprovadoCount);
+   console.log('aprovadoCount:', analiseCount);
 
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
     datasets: [
       {
-        data: [counts.aprovado, counts.reprovado, counts['solução em análise']],
+        data: [aprovadoCount, reprovadoCount, analiseCount],
         backgroundColor: ['#4CAF50', '#d33658', '#d8f001'],
         hoverBackgroundColor: ['#4CAF50', '#d33658', '#d8f001'],
       },
