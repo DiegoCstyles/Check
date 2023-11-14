@@ -25,7 +25,7 @@ const AppliedChecklistsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className='flex mx-48 m-2'>
+    <div className='flex m-2'>
     {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5">
         <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
