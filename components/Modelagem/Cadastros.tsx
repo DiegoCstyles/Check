@@ -224,7 +224,7 @@ const RiskManagementForm: React.FC = () => {
             <label>
               data
               <input
-                className='bg-white text-black border-b-4 border-slate-400 m-2 p-1 rounded ml-2'
+                className='bg-white text-black border-b-4 border-slate-400 m-2 p-0.5 rounded ml-2'
                 type="date" // Use type="date" for date input
                 value={newRisk.date}
                 onChange={(e) => handleNewRiskChange('date', e.target.value)}
@@ -292,7 +292,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
           </div>
         
-        <div className='flex flex-row p-2 border'>
+        <div className='flex flex-row justify-around p-2 border'>
           <div className='flex flex-col'>
             <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
             <div className='flex flex-row text-start'>
