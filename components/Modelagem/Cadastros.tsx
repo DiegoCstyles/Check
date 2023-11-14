@@ -323,11 +323,10 @@ const RiskManagementForm: React.FC = () => {
             
             </div>
           </div>
+          <div>
+            <button className='border m-2 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
+          </div>
         </div>  
-        
-        <div>
-          <button className='border m-2 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
-        </div>
         
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2>
