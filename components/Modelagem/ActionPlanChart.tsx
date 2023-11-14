@@ -69,7 +69,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   };
 
   return (
-    <div className='mt-2 w-full ml-2 border'>
+    <div className='mt-2 w-full border'>
       <h2 className=' border-b p-1.5 text-xs  text-white'>Status</h2>
       <div className='mb-4 '>
         <label htmlFor='filter'>Tipo:</label>
