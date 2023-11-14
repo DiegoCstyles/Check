@@ -135,14 +135,6 @@ const Navbar = () => {
             ))}
             </ul>
           </div>
-          <div className=' bg-black/10 m-2 w-1/3 border'>
-            <h2 className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</h2>
-            
-          </div>
-          <div className=' bg-black/10 m-2 w-1/3 border'>
-            <h2 className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</h2>
-            
-          </div>
         </div>
       </div>
     </>
