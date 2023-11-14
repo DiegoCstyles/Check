@@ -95,9 +95,9 @@ const Navbar = () => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
             </section>
             <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex justify-center text-center'>
-                <li>Titulo</li>
-                <li>Descrição</li>
+              <div className='flex justify-center'>
+                <li className='text-center mr-2 w-32 px-2 py-1 text-xs '>Titulo</li>
+                <li className='text-center mr-2 w-32 px-2 py-1 text-xs '>Descrição</li>
               </div>
             {lastRiskItems.map((risk) => (
               <li key={risk.id}>
@@ -118,9 +118,10 @@ const Navbar = () => {
             
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
             <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex justify-center text-center'>
-                <li>Titulo</li>
-                <li>Descrição</li>
+              <div className='flex justify-center'>
+                <li className='text-center mr-2 w-32 px-2 py-1 text-xs '>Titulo</li>
+                <li className='text-center mr-2 w-32 px-2 py-1 text-xs '>Impacto</li>
+                <li className='text-center mr-2 w-32 px-2 py-1 text-xs '>Chance</li>
               </div>
             {riskItems.map((risk) => (
               <li key={risk.id}>
