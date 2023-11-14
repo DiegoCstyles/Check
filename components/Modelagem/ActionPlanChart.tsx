@@ -29,7 +29,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
    console.log('Selected Filter:', selectedFilter); // Log the selected filter
   const filteredData = selectedFilter === 'todos'
     ? actionData
-    : actionData.filter(action => action.planApproval === selectedFilter);
+    : actionData.filter(action => action.planApproval.toLowerCase() === selectedFilter.toLowerCase());
 
     console.log('Filtered Data:', filteredData); // Log the filtered data
 
