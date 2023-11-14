@@ -23,7 +23,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
 
   const chartHeight = 400;
   const chartWidth = 400;
-  console.log('actionData: ', actionData);
+  
   // Function to update chart data based on selected filter
   const updateChartData = () => {
   const filteredData = selectedFilter === 'todos'
