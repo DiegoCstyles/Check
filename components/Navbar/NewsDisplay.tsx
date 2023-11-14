@@ -26,7 +26,8 @@ const NewsDisplay: React.FC = () => {
         setNewsArticles(limitedArticles);
       })
       .catch(error => {
-        console.error('Error fetching news articles:', error);
+         console.error('Error fetching news articles:', error);
+          console.log('Full error response:', error.response); // Log the full response for more details
       });
   }, []);
 
