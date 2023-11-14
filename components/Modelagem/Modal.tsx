@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         {children}
         <button
           onClick={onClose}
-          className="mt-2 p-2 text-white border-b-4"
+          className="mt-2 p-2 text-white border-b-4 hover:bg-white hover:border-black/80 hover:text-black"
         >
           Fechar
         </button>
