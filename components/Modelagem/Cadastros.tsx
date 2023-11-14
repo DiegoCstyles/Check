@@ -235,7 +235,8 @@ const RiskManagementForm: React.FC = () => {
         </div>
         
         <div className='flex p-2 justify-around border'>
-          <div className='flex-col flex '>
+          <div className='flex-row flex '>
+            
             <label>
                 Descrição do Risco
             </label>           
@@ -244,6 +245,14 @@ const RiskManagementForm: React.FC = () => {
               value={newRisk.description}
               onChange={(e) => handleNewRiskChange('description', e.target.value)}
             /> 
+            
+            <label> Plano de Mitigação (opcional) </label>
+            <textarea 
+              className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
+              value={newRisk.plandescription}
+              onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
+            /> 
+            
             <label className='mt-2'> Documento </label>
             <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <input
@@ -282,14 +291,7 @@ const RiskManagementForm: React.FC = () => {
           </div>
 
           </div>
-            <div className='flex-col flex'>
-              <label> Plano de Mitigação (opcional) </label>
-              <textarea 
-                className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
-                value={newRisk.plandescription}
-                onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
-              /> 
-            </div>
+            
           </div>
         
         <div className='flex flex-row justify-around p-2 border'>
