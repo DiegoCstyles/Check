@@ -18,7 +18,7 @@ export interface RiskItem {
 export interface AppliedChecklist {
   id: number;
   title: string;
-  dateApplied: string;
+  dateapplied: string;
   // Add other properties relevant to applied checklists
 }
 
