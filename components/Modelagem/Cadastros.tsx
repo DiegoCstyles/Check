@@ -177,6 +177,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=''>
         <h2 className='p-1.5 text-xs text-white border mt-2'>Cadastro</h2>
         <div className='flex p-2 justify-around border'>
+          
           <div>
             <label>
               Titulo
@@ -203,6 +204,7 @@ const RiskManagementForm: React.FC = () => {
               </select>
             </label>
           </div>
+          
           <div>
             <label>
               Impacto
@@ -217,7 +219,20 @@ const RiskManagementForm: React.FC = () => {
               </select>
             </label>
           </div>
+
+          <div className='flex-col flex mt-2'>
+              <label>
+                  data
+              </label>
+              <input
+                className='bg-white text-black border-b-4 border-slate-400 m-2 rounded ml-2 p-2'
+                type="date" // Use type="date" for date input
+                value={newRisk.date}
+                onChange={(e) => handleNewRiskChange('date', e.target.value)}
+              />
+            </div>
         </div>
+        
         <div className='flex p-2 justify-around border'>
           <div className='flex-col flex '>
             <label>
@@ -266,36 +281,21 @@ const RiskManagementForm: React.FC = () => {
           </div>
 
           </div>
-          
             <div className='flex-col flex'>
-            
-            <label> Plano de Mitigação (opcional) </label>
-            <label> Descrição </label>
+              <label> Plano de Mitigação (opcional) </label>
+              <label> Descrição </label>
               <textarea 
                 className='bg-white/10 border-b-4 m-2 ml-2 p-10'
                 value={newRisk.plandescription}
                 onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
               /> 
-            
-            <div className='flex-col flex mt-2'>
-              <label>
-                  data
-              </label>
-              <input
-                className='bg-white text-black border-b-4 border-slate-400 m-2 rounded ml-2 p-2'
-                type="date" // Use type="date" for date input
-                value={newRisk.date}
-                onChange={(e) => handleNewRiskChange('date', e.target.value)}
-              />
             </div>
-            
-        </div>
-        </div>
+          </div>
         
         <div className='flex flex-row p-2 border'>
           <div className='flex flex-col'>
             <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
-            <div className='flex flex-col text-start'>
+            <div className=' text-start'>
               
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <label style={{ flex: '1' }}>
