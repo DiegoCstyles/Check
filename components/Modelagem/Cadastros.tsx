@@ -236,57 +236,60 @@ const RiskManagementForm: React.FC = () => {
         
         <div className='flex p-2 justify-around border'>
           <div className='flex-row flex '>
-            
-            <label>
-                Descrição do Risco
-            </label>           
-            <textarea 
-              className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10'
-              value={newRisk.description}
-              onChange={(e) => handleNewRiskChange('description', e.target.value)}
-            /> 
-            
-            <label> Plano de Mitigação (opcional) </label>
-            <textarea 
-              className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
-              value={newRisk.plandescription}
-              onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
-            /> 
-            
-            <label className='mt-2'> Documento </label>
-            <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <input
-              className='bg-white/10 border-b-4 m-2 pb-10 p-2'
-              type="file"
-              accept=".pdf, .png, .jpg"
-              name="planFiles"
-              onChange={(e) => {
-                const selectedFile = e.target.files && e.target.files[0];
-                if (selectedFile) {
-                  handleNewRiskChange('planFiles', selectedFile);
-                  const filePreview = document.getElementById('filePreview');
-                  if (filePreview) {
-                    if (selectedFile.type === 'image/png' || selectedFile.type === 'image/jpeg') {
-                      filePreview.innerHTML = '';
-                      const imgPreview = document.createElement('img'); 
-                      imgPreview.src = URL.createObjectURL(selectedFile);
-                      imgPreview.style.maxWidth = '150px';
-                      imgPreview.style.maxHeight = '150px';
-                      filePreview.appendChild(imgPreview);
-                    }  else if (selectedFile.type === 'application/pdf') {
-                      filePreview.innerHTML = '';
-                      const pdfIcon = document.createElement('i');
-                      pdfIcon.className = 'fas fa-file-pdf';
-                      const pdfText = document.createTextNode(' PDF');
-                      filePreview.appendChild(pdfIcon);
-                      filePreview.appendChild(pdfText);
-                    } else {
-                      filePreview.textContent = selectedFile.name;
+            <div className='flex-col flex'>
+              <label>
+                  Descrição do Risco
+              </label>           
+              <textarea 
+                className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10'
+                value={newRisk.description}
+                onChange={(e) => handleNewRiskChange('description', e.target.value)}
+              /> 
+            </div>
+            <div className='flex-col flex'>
+              <label> Plano de Mitigação (opcional) </label>
+              <textarea 
+                className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
+                value={newRisk.plandescription}
+                onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
+              /> 
+            </div>
+            <div className='flex-col flex'>
+              <label className='mt-2'> Documento </label>
+              <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <input
+                className='bg-white/10 border-b-4 m-2 pb-10 p-2'
+                type="file"
+                accept=".pdf, .png, .jpg"
+                name="planFiles"
+                onChange={(e) => {
+                  const selectedFile = e.target.files && e.target.files[0];
+                  if (selectedFile) {
+                    handleNewRiskChange('planFiles', selectedFile);
+                    const filePreview = document.getElementById('filePreview');
+                    if (filePreview) {
+                      if (selectedFile.type === 'image/png' || selectedFile.type === 'image/jpeg') {
+                        filePreview.innerHTML = '';
+                        const imgPreview = document.createElement('img'); 
+                        imgPreview.src = URL.createObjectURL(selectedFile);
+                        imgPreview.style.maxWidth = '150px';
+                        imgPreview.style.maxHeight = '150px';
+                        filePreview.appendChild(imgPreview);
+                      }  else if (selectedFile.type === 'application/pdf') {
+                        filePreview.innerHTML = '';
+                        const pdfIcon = document.createElement('i');
+                        pdfIcon.className = 'fas fa-file-pdf';
+                        const pdfText = document.createTextNode(' PDF');
+                        filePreview.appendChild(pdfIcon);
+                        filePreview.appendChild(pdfText);
+                      } else {
+                        filePreview.textContent = selectedFile.name;
+                      }
                     }
                   }
-                }
-              }}
-            />
+                }}
+              />
+            </div>
             <div id="filePreview"></div>
           </div>
 
