@@ -25,9 +25,9 @@ const AppliedChecklistsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className='flex m-2'>
+    <div className='flex mx-48 m-2'>
     {/* Checklist Questions */}
-    <div className="checklist-questions border justify-center p-5">
+      <div className="checklist-questions border justify-center p-5">
         <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
         <ol className='text-xs'>
           <li className='p-1'>As rodas foram inspecionadas quanto a danos visíveis?</li>
@@ -57,22 +57,21 @@ const AppliedChecklistsPage: React.FC = () => {
           {/* Adicione mais perguntas relevantes aqui */}
         </ol>
       </div>
-    <div className="applied-checklists-page border ml-2 p-5">
       
-      <h1 className='border-b-4'>Checklist Aplicados</h1>
-      <ul className="applied-checklist-list">
-        {appliedChecklists.map((checklist) => (
-          <li key={checklist.id} className="applied-checklist-item">
-            <p className='text-center mr-2 px-2 py-1 text-xs '>
-              <span className='p-2'>{checklist.title}</span>
-              <span className='p-2'>{checklist.dateApplied}</span>
-            </p>
-          </li>
-        ))}
-      </ul>
-      
-    </div>
-    
+      <div className="applied-checklists-page border ml-2 p-5">
+        <h1 className='border-b-4'>Checklist Aplicados</h1>
+        <ul className="applied-checklist-list">
+          {appliedChecklists.map((checklist) => (
+            <li key={checklist.id} className="applied-checklist-item">
+              <p className='text-center mr-2 px-2 py-1 text-xs '>
+                <span className='p-2'>{checklist.title}</span>
+                <span className='p-2'>{checklist.dateApplied}</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+  
     </div>
   );
 };
