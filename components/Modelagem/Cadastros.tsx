@@ -295,17 +295,17 @@ const RiskManagementForm: React.FC = () => {
         <div className='flex flex-row p-2 justify-around border'>
           <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
           <div className='flex flex-col text-start'>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <label style={{ flex: '1' }}>
-              Checklist
-            </label>
-            <input
-              className='bg-white/10 border-b-4 m-2 ml-2'
-              type="text"
-              value={newRisk.responsibleChecklist}
-              onChange={(e) => handleNewRiskChange('responsibleChecklist', e.target.value)}
-            />
-          </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <label style={{ flex: '1' }}>
+                Checklist
+              </label>
+              <input
+                className='bg-white/10 border-b-4 m-2 ml-2'
+                type="text"
+                value={newRisk.responsibleChecklist}
+                onChange={(e) => handleNewRiskChange('responsibleChecklist', e.target.value)}
+              />
+            </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <label style={{ flex: '1' }}>
               Plano de Ação
@@ -317,16 +317,15 @@ const RiskManagementForm: React.FC = () => {
               onChange={(e) => handleNewRiskChange('responsiblePlan', e.target.value)}
             />
           </div>
+          <div>
+            <button className='border m-2 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
+          </div>
         </div>
 
         </div>    
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2>
         </Modal>
-        
-        <div>
-          <button className='border m-2 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
-        </div>
       </div>
 
       <div className='m-2'>
