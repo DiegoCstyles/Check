@@ -29,11 +29,12 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
    console.log('Selected Filter:', selectedFilter); // Log the selected filter
   const filteredData = selectedFilter === 'todos'
     ? actionData
-    : actionData.filter(
-        action =>
-          action.planApproval &&
-          action.planApproval.toLowerCase() === selectedFilter.toLowerCase()
-      );
+     : actionData.filter(action => {
+        const lowerCasePlanApproval = action.planApproval && action.planApproval.toLowerCase();
+        console.log('lowerCasePlanApproval:', lowerCasePlanApproval); // Log the lowercased planApproval
+        console.log('selectedFilter:', selectedFilter.toLowerCase()); // Log the lowercased selectedFilter
+        return lowerCasePlanApproval === selectedFilter.toLowerCase();
+      });
 
     console.log('Filtered Data:', filteredData); // Log the filtered data
    console.log('action planapproval:', action.planApproval); // Log the action data
