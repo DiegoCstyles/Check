@@ -443,10 +443,10 @@ const RiskManagementForm: React.FC = () => {
      
         <div>
         {/* Pagination controls */}
-        <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-cyan-300 hover:border-white/80 hover:text-white hover:text-lg' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+        <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-cyan-300 hover:border-white/80 hover:text-white hover:text-sm' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
           Anterior
         </button>
-        <button className='border border-b-4 mt-2 p-2 hover:bg-cyan-300 hover:border-white/80 hover:text-white hover:text-lg' onClick={() => handlePageChange(currentPage + 1)}>
+        <button className='border border-b-4 mt-2 p-2 hover:bg-cyan-300 hover:border-white/80 hover:text-white hover:text-sm' onClick={() => handlePageChange(currentPage + 1)}>
           Proximo
         </button>
       </div>
