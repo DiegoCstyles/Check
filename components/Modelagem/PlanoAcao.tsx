@@ -33,7 +33,7 @@
     };
 
     return (
-      <div className='text-center w-full  text-xs'>
+      <div className='text-center w-full mx-48 text-xs'>
         
         <h1 className='bg-cyan-300 text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Planos de Ação</h1>
         <div>
@@ -50,7 +50,7 @@
       }`}>
         {checklistOpen && <ChecklistAplicados />}
       </div>
-        <div className='mx-48 flex mb-2'> 
+        <div className='flex mb-2'> 
           <ActionPlanChart actionData={chartData} /> 
           <ActionPlanConfirmation /> 
         </div>
