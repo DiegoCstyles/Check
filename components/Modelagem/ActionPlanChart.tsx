@@ -37,7 +37,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   };
 
   filteredData.forEach(action => {
-    const approval = action.planApproval.toLowerCase();
+    const approval = (action.planApproval || '').toLowerCase();
     if (counts.hasOwnProperty(approval)) {
       counts[approval]++;
     }
