@@ -90,6 +90,7 @@ const Navbar = () => {
       <>
       <div className='w-full'>
         <h1 className='bg-cyan-300  border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
+        <div className='flex flex-row'>
           <div className='w-1/3 bg-black/10 border'>
             
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
@@ -240,6 +241,7 @@ const Navbar = () => {
             ))}
             </ul>
           </div>
+        </div>
       </div>
     </>
   )
