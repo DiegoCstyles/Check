@@ -142,104 +142,12 @@ const Navbar = () => {
             </ul>
           </div>
         <div className='w-1/3 bg-black/10 border'>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
-            </section>
-            <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex border-b-2 justify-center text-xs text-white'>
-                <li className='text-center mr-2 w-32 px-2 py-1 '>Titulo</li>
-                <li className='text-center mr-2 w-32 px-2 py-1 '>Descrição</li>
-              </div>
-            {lastRiskItems.map((risk) => (
-              <li key={risk.id}>
-                <div className='flex justify-center text-center'>
-                  <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs '
-                  >{risk.title}</p>
-                    <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs 0'
-                  >{risk.description}</p>                
-                </div>
-              </li>
-            ))}
-            </ul>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de uso diario</section>
-            <canvas  ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
-            <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex border-b-2 justify-center text-xs text-white'>
-                <li className='text-center mr-2 w-32 px-2 py-1'>Titulo</li>
-                <li className='text-center mr-2 w-32 px-2 py-1'>Impacto</li>
-                <li className='text-center w-32 px-2 py-1'>Chance</li>
-              </div>
-            {riskItems.map((risk) => (
-              <li key={risk.id}>
-                <div className='flex justify-center text-center'>
-                  <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs '
-                  >{risk.title}</p>
-                    <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs 0'
-                  >{risk.impact}</p>                
-                  <p
-                    className='text-center w-32 px-2 py-1 text-xs '
-                  >{risk.likelihood}</p>  
-                </div>
-              </li>
-            ))}
-            </ul>
-          </div>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+        </div>
         <div className='w-1/3 bg-black/10 border'>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
-            </section>
-            <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex border-b-2 justify-center text-xs text-white'>
-                <li className='text-center mr-2 w-32 px-2 py-1 '>Titulo</li>
-                <li className='text-center mr-2 w-32 px-2 py-1 '>Descrição</li>
-              </div>
-            {lastRiskItems.map((risk) => (
-              <li key={risk.id}>
-                <div className='flex justify-center text-center'>
-                  <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs '
-                  >{risk.title}</p>
-                    <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs 0'
-                  >{risk.description}</p>                
-                </div>
-              </li>
-            ))}
-            </ul>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de uso diario</section>
-            <canvas  ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
-            
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
-            <ul className='text-slate-400 mb-1 p-5'>
-              <div className='flex border-b-2 justify-center text-xs text-white'>
-                <li className='text-center mr-2 w-32 px-2 py-1'>Titulo</li>
-                <li className='text-center mr-2 w-32 px-2 py-1'>Impacto</li>
-                <li className='text-center w-32 px-2 py-1'>Chance</li>
-              </div>
-            {riskItems.map((risk) => (
-              <li key={risk.id}>
-                <div className='flex justify-center text-center'>
-                  <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs '
-                  >{risk.title}</p>
-                    <p
-                    className='text-center mr-2 w-32 px-2 py-1 text-xs 0'
-                  >{risk.impact}</p>                
-                  <p
-                    className='text-center w-32 px-2 py-1 text-xs '
-                  >{risk.likelihood}</p>  
-                </div>
-              </li>
-            ))}
-            </ul>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
           </div>
         </div>
       </div>
