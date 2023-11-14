@@ -34,7 +34,6 @@
 
     return (
       <div className='text-center w-full  text-xs'>
-        <div className='mx-48'>
           <h1 className='bg-cyan-300 text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Planos de Ação</h1>
           <div>
             <button
@@ -54,7 +53,6 @@
             <ActionPlanChart actionData={chartData} /> 
             <ActionPlanConfirmation /> 
           </div>
-        </div>
       </div>
     );
   };
