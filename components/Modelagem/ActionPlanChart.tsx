@@ -26,7 +26,6 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   
   // Function to update chart data based on selected filter
  const updateChartData = () => {
-   console.log('Selected Filter:', selectedFilter); // Log the selected filter
   const filteredData = selectedFilter === 'todos'
     ? actionData
      : actionData.filter(action => {
@@ -36,15 +35,11 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
         return lowerCasePlanApproval === selectedFilter.toLowerCase();
       });
 
-    console.log('Filtered Data:', filteredData); // Log the filtered data
-
    const aprovadoCount = filteredData.filter(action => action.planApproval === 'aprovado').length;
     const reprovadoCount = filteredData.filter(action => action.planApproval === 'reprovado').length;
     const analiseCount = filteredData.filter(action => action.planApproval === 'solução em análise').length;
 
-  console.log('aprovadoCount:', aprovadoCount);
-   console.log('reprovadoCount:', reprovadoCount);
-   console.log('analiseCount:', analiseCount);
+  console.log('action :', action );
 
   const data = {
     labels: ['aprovado', 'reprovado', 'solução em análise'],
