@@ -292,7 +292,7 @@ const RiskManagementForm: React.FC = () => {
         </div>
         </div>
         
-        <div className='flex flex-row p-2 justify-around border'>
+        <div className='flex flex-row p-2 border'>
           <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
           <div className='flex flex-col text-start'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
