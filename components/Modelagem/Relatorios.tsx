@@ -1,6 +1,5 @@
 "use client";
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React from 'react'; import { Bar } from 'react-chartjs-2';
 
 const AppliedChecklistsChart = () => {
   const chartData = {
@@ -43,66 +42,40 @@ const AppliedChecklistsChart = () => {
     }],
   };
 
-  const chartHeight = 400;
-  const chartWidth = 400;
+  const chartHeight = 400; const chartWidth = 400;
   return (
-    <div className='w-full'>
+    <div className='w-full border'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
-    <div className='m-2 text-xs text-center'>
-      
-      <div className="mx-48 chart-container">
-        <div className='flex ' style={{ width: chartWidth, height: chartHeight }}>
-          <Bar
-            className='m-5 '
-            data={chartData}
-            options={{
-              indexAxis: 'y', // Set the axis to horizontal
-              responsive: true,
-              color: 'white', 
-              scales: {
-                x: {
-                  beginAtZero: true,
-                  ticks: {
-                    color: 'white', // Change tick label color to white
+      <div className='m-2 text-xs text-center'>
+        
+        <div className="mx-48 chart-container">
+          <div className='flex ' style={{ width: chartWidth, height: chartHeight }}>
+            <Bar
+              className='m-5 '
+              data={chartData}
+              options={{
+                indexAxis: 'y', // Set the axis to horizontal
+                responsive: true,
+                color: 'white', 
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'white', // Change tick label color to white
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: 'white', // Change label color to white
+                    },
                   },
                 },
-                y: {
-                  ticks: {
-                    color: 'white', // Change label color to white
-                  },
-                },
-              },
-            }}
-            
-          />
-          <Bar
-            className='m-5'
-            data={chartDataUserRanking}
-            options={{
-              indexAxis: 'x', // Set the axis to horizontal
-              responsive: true,
-              color: 'white', 
-              scales: {
-                x: {
-                  beginAtZero: true,
-                  ticks: {
-                    color: 'white', // Change tick label color to white
-                  },
-                },
-                y: {
-                  ticks: {
-                    color: 'white', // Change label color to white
-                  },
-                },
-              },
-            }}
-            
-          />
-        </div>
-        <div className='flex' style={{ width: chartWidth, height: chartHeight }}>
+              }}
+              
+            />
             <Bar
               className='m-5'
-              data={chartDataBestScore}
+              data={chartDataUserRanking}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
@@ -123,33 +96,58 @@ const AppliedChecklistsChart = () => {
               }}
               
             />
-            
-          <Bar
-            className='m-5'
-            data={chartDataWorstScore}
-            options={{
-              indexAxis: 'x', // Set the axis to horizontal
-              responsive: true,
-              color: 'white', 
-              scales: {
-                x: {
-                  beginAtZero: true,
-                  ticks: {
-                    color: 'white', // Change tick label color to white
+          </div>
+          <div className='flex' style={{ width: chartWidth, height: chartHeight }}>
+              <Bar
+                className='m-5'
+                data={chartDataBestScore}
+                options={{
+                  indexAxis: 'x', // Set the axis to horizontal
+                  responsive: true,
+                  color: 'white', 
+                  scales: {
+                    x: {
+                      beginAtZero: true,
+                      ticks: {
+                        color: 'white', // Change tick label color to white
+                      },
+                    },
+                    y: {
+                      ticks: {
+                        color: 'white', // Change label color to white
+                      },
+                    },
+                  },
+                }}
+                
+              />
+              
+            <Bar
+              className='m-5'
+              data={chartDataWorstScore}
+              options={{
+                indexAxis: 'x', // Set the axis to horizontal
+                responsive: true,
+                color: 'white', 
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'white', // Change tick label color to white
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: 'white', // Change label color to white
+                    },
                   },
                 },
-                y: {
-                  ticks: {
-                    color: 'white', // Change label color to white
-                  },
-                },
-              },
-            }}
-            
-          />
+              }}
+              
+            />
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
