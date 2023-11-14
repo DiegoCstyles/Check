@@ -27,7 +27,7 @@ const AppliedChecklistsPage: React.FC = () => {
   return (
     <div className='flex justify-between m-2'>
     {/* Checklist Questions */}
-      <div className="checklist-questions border justify-center p-5">
+      <div className="checklist-questions border w-full justify-center p-5">
         <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
         <ol className='text-xs'>
           <li className='p-1'>As rodas foram inspecionadas quanto a danos visíveis?</li>
