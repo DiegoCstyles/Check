@@ -293,6 +293,7 @@ const RiskManagementForm: React.FC = () => {
         </div>
         
         <div className='flex flex-row p-2 border'>
+          <div className='flex flex-col'>
           <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
           <div className='flex flex-col text-start'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -321,7 +322,7 @@ const RiskManagementForm: React.FC = () => {
             <button className='border m-2 p-2 border-b-4 ' onClick={addRiskToBackend}>Adicionar Risco</button>
           </div>
         </div>
-
+        </div>
         </div>    
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2>
