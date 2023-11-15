@@ -1,4 +1,4 @@
-/* use client */
+"use client"
 import { NavbarPage } from '@/components'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
