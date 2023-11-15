@@ -89,6 +89,10 @@ export default function Home() {
                   Esqueceu sua senha?
                 </p>
                 </div>
+                <button type="submit" className="border mt-4 text-black dark:text-white hover:decoration-white dark:hover:decoration-white hover:dark:border-cyan-300 hover:visible pb-[2px] pt-0 uppercase leading-normal transition delay-100 duration-200 ease-in focus:ring-0 active:text-gray-400 border-white px-6 border-b-4 font-lg focus:outline-none">
+                  Entrar Nesse
+                </button>
+                
                 <button type="submit" className="border mt-4  text-black dark:text-white hover:decoration-white dark:hover:decoration-white hover:dark:border-cyan-300 hover:visible pb-[2px] pt-0 uppercase leading-normal transition delay-100 duration-200 ease-in focus:ring-0 active:text-gray-400 border-white px-6 border-b-4 font-lg focus:outline-none">
                   <NavbarPage page={"modelagem"} pageTitle={"Entrar"}/>
                 </button>
