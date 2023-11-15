@@ -1,13 +1,15 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
-import { RiskItem } from './models';
 import { memo } from 'react';
 import Chart from 'chart.js/auto';
+// Import the necessary component
+import { NewsDisplay } from '@/components';
 
 let existingChart: { destroy: () => void; }; // Declare the variable outside the component function
 
 const Navbar = () => {
-  const [riskItems, setRiskItems] = useState<RiskItem[]>([]); const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
+  const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
+  const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
 
   const calculateAverages = () => {
     const averages = {
@@ -45,23 +47,36 @@ const Navbar = () => {
     };
 
     return result;
+  };
 
   const fetchRiskItems = async () => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems`);
 
-      if (response.ok) { const data = await response.json(); setRiskItems(data); // Update the riskItems state with the fetched data
-      } else { console.error('Error fetching risk items from the database'); }
-    } catch (error) { console.error('Error:', error); }
+      if (response.ok) {
+        const data = await response.json();
+        setRiskItems(data);
+      } else {
+        console.error('Error fetching risk items from the database');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const fetchLastRiskItems = async () => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/lastRiskItems`);
 
-      if (response.ok) { const data = await response.json(); setLastRiskItems(data); // Update the riskItems state with the fetched data
-      } else { console.error('Error fetching risk items from the database'); }
-    } catch (error) { console.error('Error:', error); }
+      if (response.ok) {
+        const data = await response.json();
+        setLastRiskItems(data);
+      } else {
+        console.error('Error fetching risk items from the database');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Set type for ref
@@ -69,7 +84,9 @@ const Navbar = () => {
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
     // Check if there's an existing chart and destroy it
-    if (existingChart) { existingChart.destroy(); }
+    if (existingChart) {
+      existingChart.destroy();
+    }
     if (ctx) {
       const averages = calculateAverages();
       // Create a new Chart.js chart
@@ -96,25 +113,27 @@ const Navbar = () => {
           },
         ],
       };
-      
+
       existingChart = new Chart(ctx, {
         type: 'line',
         data: lineGraphData,
-        options: { color: 'white', },
+        options: { color: 'white' },
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [riskItems]);
 
-  useEffect(() => { fetchLastRiskItems(); fetchRiskItems(); },);
+  useEffect(() => {
+    fetchLastRiskItems();
+    fetchRiskItems();
+  }, []);
 
-    return (
-      <>
+  return (
+    <>
       <div className='w-full'>
-        <h1 className='bg-cyan-300  border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
+        <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         <div className='flex flex-row'>
           <div className='w-1/3 bg-black/10 border'>
-            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados</section>
             <ul className='text-slate-400 mb-1 p-5'>
               <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -125,15 +144,13 @@ const Navbar = () => {
                 <li key={risk.id}>
                   <div className='flex justify-center text-center'>
                     <p className='text-center mr-2 w-32 px-2 py-1 text-xs '> {risk.title} </p>
-                    <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.description} </p>                
+                    <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.description} </p>
                   </div>
                 </li>
               ))}
             </ul>
-            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de uso diario</section>
-            <canvas  ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
-            
+            <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
             <ul className='text-slate-400 mb-1 p-5'>
               <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -145,24 +162,25 @@ const Navbar = () => {
                 <li key={risk.id}>
                   <div className='flex justify-center text-center'>
                     <p className='text-center mr-2 w-32 px-2 py-1 text-xs'> {risk.title} </p>
-                    <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.impact} </p>                
-                    <p className='text-center w-32 px-2 py-1 text-xs'> {risk.likelihood} </p>  
+                    <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.impact} </p>
+                    <p className='text-center w-32 px-2 py-1 text-xs'> {risk.likelihood} </p>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-        <div className='w-1/3 bg-black/10 border'>
-          <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-          <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
-        </div>
-        <div className='w-1/3 bg-black/10 border'>
-          <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-          <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+          <div className='w-1/3 bg-black/10 border'>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+          </div>
+          <div className='w-1/3 bg-black/10 border'>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+          </div>
         </div>
       </div>
-    </div>
-  </>
-)}
+    </>
+  );
+};
 
-export default memo(Navbar)
+export default memo(Navbar);
