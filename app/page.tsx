@@ -1,12 +1,10 @@
+"use client";
 import { NavbarPage } from '@/components'
-import { useClient } from 'react-server-components';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Home() {
-  const client = useClient();
   const router = useRouter();
-  const [someState, setSomeState] = useState('initialState');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
