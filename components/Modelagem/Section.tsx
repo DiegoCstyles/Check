@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState }  from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { RiskItem } from './models';
 import { NewsDisplay } from '@/components'
 import { memo } from 'react';
@@ -10,23 +10,42 @@ let existingChart: { destroy: () => void; }; // Declare the variable outside the
 const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]); const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
 
-  const lineGraphData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Abr', 'Mai'],
-    datasets: [
-      {
-        label: 'Alto Risco',
-        data: [10, 20, 15, 30, 25], // Sample data for the line graph
-        borderColor: 'rgb(255, 255, 255)',
-        borderWidth: 2,
-      },
-      {
-        label: 'Baixo Risco',
-        data: [15, 10, 5, 20, 30], // Sample data for the line graph
-        borderColor: 'rgb(0, 174, 255)',
-        borderWidth: 2,
-      },
-    ],
-  };
+  const calculateAverages = () => {
+    const averages = {
+      'Alto Risco': { sum: 0, count: 0 },
+      'Medio Risco': { sum: 0, count: 0 },
+      'Baixo Risco': { sum: 0, count: 0 },
+    };
+
+    riskItems.forEach((risk) => {
+      const average = (risk.impact + risk.likelihood) / 2;
+
+      if (average <= 13) {
+        averages['Alto Risco'].sum += average;
+        averages['Alto Risco'].count += 1;
+      } else if (average <= 19) {
+        averages['Medio Risco'].sum += average;
+        averages['Medio Risco'].count += 1;
+      } else {
+        averages['Baixo Risco'].sum += average;
+        averages['Baixo Risco'].count += 1;
+      }
+    });
+
+    // Calculate the final averages
+    const result = {
+      'Alto Risco': averages['Alto Risco'].count
+        ? averages['Alto Risco'].sum / averages['Alto Risco'].count
+        : 0,
+      'Medio Risco': averages['Medio Risco'].count
+        ? averages['Medio Risco'].sum / averages['Medio Risco'].count
+        : 0,
+      'Baixo Risco': averages['Baixo Risco'].count
+        ? averages['Baixo Risco'].sum / averages['Baixo Risco'].count
+        : 0,
+    };
+
+    return result;
 
   const fetchRiskItems = async () => {
     try {
@@ -53,7 +72,32 @@ const Navbar = () => {
     // Check if there's an existing chart and destroy it
     if (existingChart) { existingChart.destroy(); }
     if (ctx) {
+      const averages = calculateAverages();
       // Create a new Chart.js chart
+      const lineGraphData = {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [
+          {
+            label: 'Alto Risco',
+            data: [averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco']],
+            borderColor: 'rgb(255, 255, 255)',
+            borderWidth: 2,
+          },
+          {
+            label: 'Medio Risco',
+            data: [averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco']],
+            borderColor: 'rgb(0, 100, 255)',
+            borderWidth: 2,
+          },
+          {
+            label: 'Baixo Risco',
+            data: [averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco']],
+            borderColor: 'rgb(0, 174, 255)',
+            borderWidth: 2,
+          },
+        ],
+      };
+      
       existingChart = new Chart(ctx, {
         type: 'line',
         data: lineGraphData,
@@ -61,7 +105,7 @@ const Navbar = () => {
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [riskItems]);
 
   useEffect(() => { fetchLastRiskItems(); fetchRiskItems(); },);
 
