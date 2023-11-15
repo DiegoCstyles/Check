@@ -55,7 +55,7 @@ export default function Home() {
               <div >
                 <div className="flex  justify-center mb-4 ">
                   <input
-                    type="email"
+                    type="text"
                     id="email"
                     name="email"
                     placeholder="email"
