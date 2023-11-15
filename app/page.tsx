@@ -60,6 +60,8 @@ export default function Home() {
                     name="email"
                     placeholder="email"
                     className=" text-xs text-center w-full px-7 py-2 h-8 border bg-transparent text-gray-700 dark:text-white border-b border-black border-b-white focus:outline-none focus:border-b-cyan-300 dark:focus:border-b-cyan-300"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} 
                     required
                   />
                 </div>
@@ -71,6 +73,8 @@ export default function Home() {
                     name="senha"
                     placeholder="senha"
                     className="text-xs text-center w-full px-7 py-2 h-8 border bg-transparent text-gray-700 dark:text-white border-b border-black border-b-white focus:outline-none focus:border-b-cyan-300 dark:focus:border-b-cyan-300"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)} 
                     required
                   />
                 </div>
