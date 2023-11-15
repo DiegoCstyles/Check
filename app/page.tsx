@@ -8,7 +8,7 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
 
         <div className="mt-5 p-4">
-          <form>
+          <form onSubmit={handleLogin}>
             <div className='flex justify-center'>
               <div >
                 <div className="flex  justify-center mb-4 ">
