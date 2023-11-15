@@ -13,7 +13,7 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('https://checkend.onrender.com/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
