@@ -25,7 +25,7 @@ export default function Home() {
         const { token } = await response.json();
         // Store the token in a secure way (e.g., using a state management library)
         // Redirect to a protected route
-        router.push('/dashboard');
+        router.push('/modelagem');
       } else {
         console.error('Login failed:', await response.json());
       }
