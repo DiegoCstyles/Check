@@ -1,6 +1,36 @@
 import { NavbarPage } from '@/components'
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const { token } = await response.json();
+        // Store the token in a secure way (e.g., using a state management library)
+        // Redirect to a protected route
+        router.push('/dashboard');
+      } else {
+        console.error('Login failed:', await response.json());
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
+  };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div  className="mx-auto max-w-[44rem] text-center mt-5">
