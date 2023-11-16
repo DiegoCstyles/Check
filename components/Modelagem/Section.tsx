@@ -15,7 +15,7 @@ const Navbar = () => {
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
   const calculateAverages = () => {
-    const averages = {
+    const averages: { [key: string]: { sum: number; count: number }[] } = {
       'Alto Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
       'Medio Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
       'Baixo Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
