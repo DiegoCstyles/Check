@@ -15,6 +15,14 @@ const Navbar = () => {
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
   const calculateAverages = () => {
+    // Check if riskItems is empty
+    if (riskItems.length === 0) {
+      return {
+        altoRiscoCounts: [],
+        medioRiscoCounts: [],
+        baixoRiscoCounts: [],
+      };
+    }
     const averages = {
       'Alto Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
       'Medio Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
