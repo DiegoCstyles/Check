@@ -50,18 +50,31 @@ const Navbar = () => {
     
       const average = (impactValue + likelihoodValue) / 2;
 
+          console.log('risk:', risk);
+    console.log('riskMonth:', riskMonth);
+    console.log('average:', average);
+
+
       if (average >= 19) {
+        console.log('Alto Risco: before', averages['Alto Risco'][riskMonth]);
         averages['Alto Risco'][riskMonth].sum += average;
         averages['Alto Risco'][riskMonth].count += 1;
+        console.log('Alto Risco: after', averages['Alto Risco'][riskMonth]);
       } else if (average >= 13) {
+        console.log('Medio Risco: before', averages['Medio Risco'][riskMonth]);
         averages['Medio Risco'][riskMonth].sum += average;
         averages['Medio Risco'][riskMonth].count += 1;
+        console.log('Medio Risco: after', averages['Medio Risco'][riskMonth]);
       } else {
+         console.log('Baixo Risco: before', averages['Baixo Risco'][riskMonth]);
         averages['Baixo Risco'][riskMonth].sum += average;
         averages['Baixo Risco'][riskMonth].count += 1;
+        console.log('Baixo Risco: after', averages['Baixo Risco'][riskMonth]);
       }
     });
 
+   console.log('Final averages:', averages);
+    
   const altoRiscoCounts = averages['Alto Risco'].map(data => data.count);
   const medioRiscoCounts = averages['Medio Risco'].map(data => data.count);
   const baixoRiscoCounts = averages['Baixo Risco'].map(data => data.count);
