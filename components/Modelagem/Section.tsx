@@ -46,7 +46,7 @@ const Navbar = () => {
       // Convert from string to number using the mapping
       const likelihoodValue = likelihoodMap[risk.likelihood] || 0;
       const impactValue = ImpactMap[risk.impact] || 0;
-      const riskMonth = new Date(risk.date).getMonth();
+      const riskMonth = new Date(risk.date.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$2-$1')).getMonth();
     
       const average = (impactValue + likelihoodValue) / 2;
 
