@@ -20,7 +20,23 @@ const Navbar = () => {
     };
 
     riskItems.forEach((risk) => {
-      const average = (risk.impact + risk.likelihood) / 2;
+      const likelihoodMap: { [key: string]: number } = {
+        "Pequena": 5,
+        "Media": 10,
+        "Alta": 15,
+      };
+      
+      const ImpactMap: { [key: string]: number } = {
+        "Pequeno": 10,
+        "Medio": 20,
+        "Alto": 30,
+      };
+      
+      // Convert from string to number using the mapping
+      const likelihoodValue = likelihoodMap[risk.likelihood] || 0;
+      const impactValue = ImpactMap[risk.impact] || 0;
+    
+      const average = (impactValue + likelihoodValue) / 2;
 
       if (average <= 13) {
         averages['Alto Risco'].sum += average;
