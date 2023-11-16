@@ -15,10 +15,10 @@ const Navbar = () => {
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
   const calculateAverages = () => {
-      const averages: { [key: string]: number[] } = {
-      'Alto Risco': Array.from({ length: 12 }, () => 0),
-      'Medio Risco': Array.from({ length: 12 }, () => 0),
-      'Baixo Risco': Array.from({ length: 12 }, () => 0),
+    const averages = {
+      'Alto Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
+      'Medio Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
+      'Baixo Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
     };
 
     riskItems.forEach((risk) => {
@@ -54,11 +54,12 @@ const Navbar = () => {
       }
     });
 
-    const result = {
-        'Alto Risco': averages['Alto Risco'].reduce((acc, value) => acc + value, 0) / averages['Alto Risco'].length,
-        'Medio Risco': averages['Medio Risco'].reduce((acc, value) => acc + value, 0) / averages['Medio Risco'].length,
-        'Baixo Risco': averages['Baixo Risco'].reduce((acc, value) => acc + value, 0) / averages['Baixo Risco'].length,
-    };
+      const result = {
+        'Alto Risco': averages['Alto Risco'].map(data => data.count ? data.sum / data.count : 0),
+        'Medio Risco': averages['Medio Risco'].map(data => data.count ? data.sum / data.count : 0),
+        'Baixo Risco': averages['Baixo Risco'].map(data => data.count ? data.sum / data.count : 0),
+      };
+
 
     return result;
   };
