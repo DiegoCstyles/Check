@@ -12,18 +12,17 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
 
+  const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
   const calculateAverages = () => {
     const averages = {
-      'Alto Risco': { sum: 0, count: 0 },
-      'Medio Risco': { sum: 0, count: 0 },
-      'Baixo Risco': { sum: 0, count: 0 },
+      'Alto Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
+      'Medio Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
+      'Baixo Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
     };
 
     riskItems.forEach((risk) => {
-      const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      const riskMonth = new Date(risk.date).getMonth(); // Assuming risk.date is a valid date
-
-      const monthName = monthLabels[riskMonth];
+      
       const likelihoodMap: { [key: string]: number } = {
         "Pequena": 5,
         "Media": 10,
@@ -39,18 +38,19 @@ const Navbar = () => {
       // Convert from string to number using the mapping
       const likelihoodValue = likelihoodMap[risk.likelihood] || 0;
       const impactValue = ImpactMap[risk.impact] || 0;
+      const riskMonth = new Date(risk.date).getMonth();
     
       const average = (impactValue + likelihoodValue) / 2;
 
       if (average >= 19) {
-        averages['Alto Risco'].sum += average;
-        averages['Alto Risco'].count += 1;
+        averages['Alto Risco'][riskMonth].sum += average;
+        averages['Alto Risco'][riskMonth].count += 1;
       } else if (average >= 13) {
-        averages['Medio Risco'].sum += average;
-        averages['Medio Risco'].count += 1;
+        averages['Medio Risco'][riskMonth].sum += average;
+        averages['Medio Risco'][riskMonth].count += 1;
       } else {
-        averages['Baixo Risco'].sum += average;
-        averages['Baixo Risco'].count += 1;
+        averages['Baixo Risco'][riskMonth].sum += average;
+        averages['Baixo Risco'][riskMonth].count += 1;
       }
     });
 
@@ -117,19 +117,19 @@ const Navbar = () => {
         datasets: [
           {
             label: 'Alto Risco',
-            data: [averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco'], averages['Alto Risco']],
+            data: averages['Alto Risco'].map((data) => data.count),
             borderColor: 'rgb(255, 255, 255)',
             borderWidth: 2,
           },
           {
             label: 'Medio Risco',
-            data: [averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco']],
+            data: averages['Medio Risco'].map((data) => data.count),
             borderColor: 'rgb(0, 50, 255)',
             borderWidth: 2,
           },
           {
             label: 'Baixo Risco',
-            data: [averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco'], averages['Baixo Risco']],
+            data: averages['Baixo Risco'].map((data) => data.count),
             borderColor: 'rgb(0, 174, 255)',
             borderWidth: 2,
           },
