@@ -54,14 +54,11 @@ const Navbar = () => {
       }
     });
 
-      const result = {
-        'Alto Risco': averages['Alto Risco'].map(data => data.count ? data.sum / data.count : 0),
-        'Medio Risco': averages['Medio Risco'].map(data => data.count ? data.sum / data.count : 0),
-        'Baixo Risco': averages['Baixo Risco'].map(data => data.count ? data.sum / data.count : 0),
-      };
+  const altoRiscoCounts = averages['Alto Risco'].map(data => data.count);
+  const medioRiscoCounts = averages['Medio Risco'].map(data => data.count);
+  const baixoRiscoCounts = averages['Baixo Risco'].map(data => data.count);
 
-
-    return result;
+  return { altoRiscoCounts, medioRiscoCounts, baixoRiscoCounts };
   };
 
   const fetchRiskItems = async () => {
@@ -111,19 +108,19 @@ const Navbar = () => {
         datasets: [
           {
             label: 'Alto Risco',
-            data: averages['Alto Risco'].map((data) => data.count),
+            data: averages.altoRiscoCounts,
             borderColor: 'rgb(255, 255, 255)',
             borderWidth: 2,
           },
           {
             label: 'Medio Risco',
-            data: averages['Medio Risco'].map((data) => data.count),
+            data: averages.medioRiscoCounts,
             borderColor: 'rgb(0, 50, 255)',
             borderWidth: 2,
           },
           {
             label: 'Baixo Risco',
-            data: averages['Baixo Risco'].map((data) => data.count),
+            data: averages.baixoRiscoCounts,
             borderColor: 'rgb(0, 174, 255)',
             borderWidth: 2,
           },
