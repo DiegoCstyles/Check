@@ -38,10 +38,10 @@ const Navbar = () => {
     
       const average = (impactValue + likelihoodValue) / 2;
 
-      if (average <= 13) {
+      if (average >= 19) {
         averages['Alto Risco'].sum += average;
         averages['Alto Risco'].count += 1;
-      } else if (average <= 19) {
+      } else if (average >= 13) {
         averages['Medio Risco'].sum += average;
         averages['Medio Risco'].count += 1;
       } else {
