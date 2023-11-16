@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { memo } from 'react';
+import { RiskItem } from './models';
 import Chart from 'chart.js/auto';
 // Import the necessary component
 import { NewsDisplay } from '@/components';
