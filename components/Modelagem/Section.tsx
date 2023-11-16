@@ -20,6 +20,10 @@ const Navbar = () => {
     };
 
     riskItems.forEach((risk) => {
+      const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const riskMonth = new Date(risk.date).getMonth(); // Assuming risk.date is a valid date
+
+      const monthName = monthLabels[riskMonth];
       const likelihoodMap: { [key: string]: number } = {
         "Pequena": 5,
         "Media": 10,
@@ -106,9 +110,10 @@ const Navbar = () => {
     }
     if (ctx) {
       const averages = calculateAverages();
+      
       // Create a new Chart.js chart
       const lineGraphData = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        labels: monthLabels,
         datasets: [
           {
             label: 'Alto Risco',
@@ -119,7 +124,7 @@ const Navbar = () => {
           {
             label: 'Medio Risco',
             data: [averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco'], averages['Medio Risco']],
-            borderColor: 'rgb(0, 100, 255)',
+            borderColor: 'rgb(0, 50, 255)',
             borderWidth: 2,
           },
           {
