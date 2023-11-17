@@ -169,8 +169,7 @@ const Navbar = () => {
   }, []);
 
   return (
-      <div>
-        <div className='w-full border'>
+      <div className='w-full border'>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
         <div className="flex flex-row">
@@ -178,7 +177,6 @@ const Navbar = () => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
           </div>
-          
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
@@ -186,7 +184,6 @@ const Navbar = () => {
         </div>
         
           <div className='flex flex-row bg-black/10 border justify-between'>
-            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -203,11 +200,9 @@ const Navbar = () => {
                 ))}
               </ul>
             </section>
-            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-full'>Resumo de riscos anuais
               <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             </section>
-            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -226,10 +221,9 @@ const Navbar = () => {
                 ))}
               </ul>
             </section>
-            
           </div>
+        
       </div>
-    </div>
   );
 };
 
