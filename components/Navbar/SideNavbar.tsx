@@ -7,8 +7,8 @@ const Navbar = () => {
   const handlePageChange = (page: string) => { setCurrentPage(page); };
 
   return (
-    <nav className='w-full flex flex-col'>
-      <div className="w-20 h-full bg-white/10 transition-opacity duration-300 hover:opacity-100 hover:w-40 group  opacity-60">
+    <nav className='w-full flex'>
+      <div className="flex flex-col w-20 h-full bg-white/10 transition-opacity duration-300 hover:opacity-100 hover:w-40 group  opacity-60">
         <p className="p-2 m-1 text-center dark:text-cyan-300 font-black text-base tracking-tight">CHECK.</p>
         <div className='group-hover:visible invisible '>
           <div
