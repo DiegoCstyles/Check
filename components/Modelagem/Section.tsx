@@ -160,10 +160,11 @@ const Navbar = () => {
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [riskItems]);
+  }, [riskItemsUsage]);
 
   useEffect(() => {
     fetchLastRiskItems();
+    fetchRiskItemsUsage();
     fetchRiskItems();
   }, []);
 
