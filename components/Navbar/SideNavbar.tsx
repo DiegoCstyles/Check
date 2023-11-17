@@ -49,9 +49,10 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 6H8a2 2 0 00-2 2v11a2 2 0 002 2h13a2 2 0 002-2V8a2 2 0 00-2-2z" />
             </svg> <div className='grow '></div>
           </div>
-          
+
+          <div className='grow '></div>
            <div
-            className={`flex mt-60 items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('sair')}
             style={{ order: 9999 }} 
           >
