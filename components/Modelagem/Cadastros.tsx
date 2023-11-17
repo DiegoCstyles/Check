@@ -142,7 +142,7 @@ const RiskManagementForm: React.FC = () => {
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
   
   return (
-    <div className=' w-full'>
+    <div className='border w-full'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold w-full'>Checklist</h1>
       
       <div className=' w-full text-xs text-center '>
