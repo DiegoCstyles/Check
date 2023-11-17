@@ -189,7 +189,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de uso diario</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de riscos anuais</section>
             <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
             <ul className='text-slate-400 mb-1 p-5'>
