@@ -10,13 +10,14 @@ let existingChart: { destroy: () => void; }; // Declare the variable outside the
 
 const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
+  const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
 
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
   const calculateAverages = () => {
     // Check if riskItems is empty
-    if (riskItems.length === 0) {
+    if (riskItemsUsage.length === 0) {
       return {
         altoRiscoCounts: [],
         medioRiscoCounts: [],
@@ -29,7 +30,7 @@ const Navbar = () => {
       'Baixo Risco': Array.from({ length: 12 }, () => ({ sum: 0, count: 0 })),
     };
 
-    riskItems.forEach((risk) => {
+    riskItemsUsage.forEach((risk) => {
       
       const likelihoodMap: { [key: string]: number } = {
         "Pequena": 5,
@@ -91,6 +92,21 @@ const Navbar = () => {
         setRiskItems(data);
       } else {
         console.error('Error fetching risk items from the database');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  const fetchRiskItemsUsage = async () => {
+    try {
+      const response = await fetch(`https://checkend.onrender.com/api/riskItemsUsage`);
+
+      if (response.ok) {
+        const data = await response.json();
+        setRiskItemsUsage(data);
+      } else {
+        console.error('Error fetching risk items usage from the database');
       }
     } catch (error) {
       console.error('Error:', error);
