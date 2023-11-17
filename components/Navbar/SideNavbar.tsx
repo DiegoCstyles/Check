@@ -51,7 +51,7 @@ const Navbar = () => {
           </div>
           
            <div
-            className={`flex mt-24 items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
+            className={`flex mt-60 items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('sair')}
             style={{ order: 9999 }} 
           >
