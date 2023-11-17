@@ -169,7 +169,8 @@ const Navbar = () => {
   }, []);
 
   return (
-      <div className='w-full h-full border'>
+      <div>
+        <div className='w-full h-full border'>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
         <div className="flex flex-row">
@@ -228,6 +229,7 @@ const Navbar = () => {
             
           </div>
       </div>
+    </div>
   );
 };
 
