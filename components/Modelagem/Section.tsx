@@ -172,8 +172,22 @@ const Navbar = () => {
     <>
       <div className='w-full'>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
+        
+        <div className="flex flex-col">
+          <div className='w-1/2 bg-black/10 border'>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+          </div>
+          
+          <div className='w-1/2 bg-black/10 border'>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+          </div>
+        </div>
+        
         <div className='flex flex-row'>
-          <div className='w-1/3 bg-black/10 border'>
+          <div className='w-full bg-black/10 border'>
+            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados</section>
             <ul className='text-slate-400 mb-1 p-5'>
               <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -189,8 +203,10 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de riscos anuais</section>
             <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
+            
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists</section>
             <ul className='text-slate-400 mb-1 p-5'>
               <div className='flex border-b-2 justify-center text-xs text-white'>
@@ -208,14 +224,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className='w-1/3 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
-          </div>
-          <div className='w-1/3 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+            
           </div>
         </div>
       </div>
