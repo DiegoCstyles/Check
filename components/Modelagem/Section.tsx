@@ -169,7 +169,7 @@ const Navbar = () => {
   }, []);
 
   return (
-      <div className='w-full h-screen border'>
+      <div className='w-screen h-screen border'>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
         <div className="flex flex-row">
@@ -183,7 +183,7 @@ const Navbar = () => {
           </div>
         </div>
         
-          <div className='flex flex-row bg-black/10 border justify-between'>
+          <div className='flex flex-row bg-black/10 border justify-between h-full'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
