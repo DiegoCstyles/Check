@@ -172,7 +172,7 @@ const Navbar = () => {
       <div className='w-full border'>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
-        <div className="flex flex-row">
+        <div className="flex flex-row h-5/12">
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
@@ -183,7 +183,7 @@ const Navbar = () => {
           </div>
         </div>
         
-          <div className='flex flex-row bg-black/10 border h-max justify-between'>
+          <div className='flex flex-row bg-black/10 border h-5/12 justify-between'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
