@@ -176,12 +176,12 @@ const Navbar = () => {
         <div className="flex flex-row">
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-32'>APIs</section>
           </div>
           
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-32'>APIs</section>
           </div>
         </div>
         
@@ -204,7 +204,7 @@ const Navbar = () => {
               </ul>
             </section>
             
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Resumo de riscos anuais
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-full'>Resumo de riscos anuais
               <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             </section>
             
