@@ -53,6 +53,7 @@ const Navbar = () => {
            <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('sair')}
+            style={{ order: 9999 }} 
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Sair</span>
             <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
