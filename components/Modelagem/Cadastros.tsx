@@ -206,7 +206,7 @@ const RiskManagementForm: React.FC = () => {
             
           </div>
           
-          <div className='flex p-2 justify-around border'>
+          <div className='flex p-2 justify-around border-b'>
             <div className='flex-row justify-between flex '>
               
               <div className='flex-col flex'>
