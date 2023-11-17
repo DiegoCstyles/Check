@@ -185,7 +185,7 @@ const Navbar = () => {
           </div>
         </div>
         
-          <div className='flex flex-row bg-black/10 border w-full h-full justify-between'>
+          <div className='flex flex-row bg-black/10 border w-full h-max justify-between'>
             
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
               <ul className='text-slate-400 mb-1 p-5'>
