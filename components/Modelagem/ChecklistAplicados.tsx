@@ -50,7 +50,7 @@ const AppliedChecklistsPage: React.FC = () => {
         </ol>
       </div>
       
-      <div className="applied-checklists-page border ml-2 p-5">
+      <div className="applied-checklists-page border p-5">
         <h1 className='border-b-4'>Checklist Aplicados</h1>
         <ul className="applied-checklist-list">
           {appliedChecklists.map((checklist) => (
