@@ -176,13 +176,13 @@ const Navbar = () => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
           </div>
-          <div className='w-1/2 bg-black/10 border h-full'>
+          <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
           </div>
         </div>
         
-          <div className='flex flex-row bg-black/10 border justify-between h-full'>
+          <div className='flex flex-row bg-black/10 border justify-between'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
