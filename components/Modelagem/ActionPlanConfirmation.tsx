@@ -82,7 +82,7 @@ const ActionPlanConfirmation = () => {
 
   return (
     <div className='text-xs'>
-      <h2 className='border-y border-r mt-2 p-1.5 mr-2 text-xs text-black bg-cyan-300'>Confirmação</h2>
+      <h2 className='border-y border-r p-1.5 text-xs text-black bg-cyan-300'>Confirmação</h2>
       
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
