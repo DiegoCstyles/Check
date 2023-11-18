@@ -171,14 +171,14 @@ const Navbar = () => {
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
-        <div className="flex flex-row h-full">
+        <div className="flex flex-row">
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>APIs</section>
           </div>
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 h-64'>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>APIs</section>
           </div>
         </div>
         
