@@ -27,7 +27,6 @@ const AppliedChecklistsPage: React.FC = () => {
                 <input
                   className='bg-white/10 border-b-4 m-2 ml-2'
                   type="text"
-                  value={newRisk.local}
                 />
           </label>
           <label>
@@ -35,7 +34,6 @@ const AppliedChecklistsPage: React.FC = () => {
                 <input
                   className='bg-white/10 border-b-4 m-2 ml-2'
                   type="text"
-                  value={newRisk.participantes}
                 />
           </label>
           <li className='p-1'>As rodas foram inspecionadas quanto a danos visíveis?</li>
