@@ -148,7 +148,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4'>Cadastro</h2>
-          <div className='flex p-2 justify-around border-y'>
+          <div className='flex p-2 justify-around border-y bg-slate-500/30'>
             
             <div>
               <label>
@@ -267,7 +267,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
           </div>
           
-          <div className='flex flex-row justify-around p-2 border-b-4'>
+          <div className='flex flex-row justify-around p-2 border-b-4 bg-slate-500/30'>
             <div className='flex flex-col'>
               <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
               
@@ -302,7 +302,7 @@ const RiskManagementForm: React.FC = () => {
           <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2></Modal>
         </div>
   
-        <div className='m-2'>
+        <div className='m-2 bg-slate-500/30'>
             <h2 className='mt-8 p-1.5 text-xs text-black bg-cyan-300'>Lista de Agendamentos</h2>
             <input
             className='text-black p-2 w-full'
