@@ -38,7 +38,7 @@
             <div className='flex flex-col h-screen'>
               <button
                 className={`cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  checklistOpen ? 'bg-white border-black/80 text-black' : ''
+                  checklistOpen ? 'bg-white border-black/80 text-black' : 'text-black'
                 }`}
                 onClick={toggleChecklist}
               >
@@ -46,7 +46,7 @@
               </button>
               <button
                 className={`cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  chartOpen ? 'bg-white border-black/80 text-black' : ''
+                  chartOpen ? 'bg-white border-black/80 text-black' : 'text-black'
                 }`}
                 onClick={toggleChart}
               >
