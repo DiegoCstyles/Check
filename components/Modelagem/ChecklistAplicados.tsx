@@ -37,7 +37,7 @@ const AppliedChecklistsPage: React.FC = () => {
                 />
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
-          <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI's</h3>
+          <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI&apos;s</h3>
           <div>
             <li className='p-1'>Possui ficha de controle?</li>
             <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
