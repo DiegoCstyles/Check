@@ -37,16 +37,20 @@
             <h2 className='p-1.5 text-xs text-center text-white border-r-4 h-screen'>Checklist</h2>
             <div className='flex flex-col h-screen'>
               <button
-                className='cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                className={'cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
+                  setChecklistOpen ? 'bg-white border-black/80 text-black' : ''
+                }'}
                 onClick={toggleChecklist}
               >
-                {checklistOpen ? 'Aplicados ⬆' : 'Aplicados ⬇'}
+                {checklistOpen ? 'Aplicados' : 'Aplicados'}
               </button>
               <button
-                className='cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                className={'cursor-pointer h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
+                  chartOpen ? 'bg-white border-black/80 text-black' : ''
+                }'}
                 onClick={toggleChart}
               >
-                {chartOpen ? 'Avaliação⬆' : 'Avaliação ⬇'}
+                {chartOpen ? 'Avaliação' : 'Avaliação'}
               </button>
             </div>
 
