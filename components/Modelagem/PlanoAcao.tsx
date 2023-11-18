@@ -58,7 +58,7 @@
                 chartOpen ? 'max-h-screen' : 'max-h-0'
               }`}>
                 {chartOpen && (
-                  <div>
+                  <div className='flex flex-row'>
                     <ActionPlanChart actionData={chartData} />
                     <ActionPlanConfirmation />
                   </div>
