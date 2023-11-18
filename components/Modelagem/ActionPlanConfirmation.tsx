@@ -11,7 +11,7 @@ const ActionPlanConfirmation = () => {
   const openModal = () => { setModalOpen(true); };
   const closeModal = () => { setModalOpen(false); };
 
-  const fetchRiskItems = async (itemsPerPage = 4) => {
+  const fetchRiskItems = async (itemsPerPage) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}`);
 
