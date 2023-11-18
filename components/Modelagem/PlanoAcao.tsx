@@ -42,18 +42,7 @@
               }`}>
                 {checklistOpen && <ChecklistAplicados />}
               </div>
-            </div>
-            
-
-            <div>
-              <button
-                className='cursor-pointer mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
-                onClick={toggleChart}
-              >
-                {chartOpen ? 'Fechar Avaliação de checklists ⬆' : 'Abrir Avaliação de checklists ⬇'}
-              </button>
-           
-
+              
               <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
                 chartOpen ? 'max-h-screen' : 'max-h-0'
               }`}>
@@ -64,6 +53,17 @@
                   </div>
                 )}
               </div>
+              
+            </div>
+            
+
+            <div>
+              <button
+                className='cursor-pointer mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                onClick={toggleChart}
+              >
+                {chartOpen ? 'Fechar Avaliação de checklists ⬆' : 'Abrir Avaliação de checklists ⬇'}
+              </button>
             </div>
           </div>
       </div>
