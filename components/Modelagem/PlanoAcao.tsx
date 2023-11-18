@@ -55,7 +55,7 @@
             </div>
 
         
-          <div className='flex flex-row bg-slate-500/30'>
+          <div className='flex flex-row bg-slate-500/30 w-full'>
             <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
               checklistOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
