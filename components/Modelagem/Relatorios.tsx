@@ -44,7 +44,7 @@ const AppliedChecklistsChart = () => {
 
   const chartHeight = 400; const chartWidth = 400;
   return (
-    <div className='w-full border'>
+    <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center'>
         
