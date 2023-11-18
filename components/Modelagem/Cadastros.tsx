@@ -142,7 +142,7 @@ const RiskManagementForm: React.FC = () => {
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
   
   return (
-    <div className='border w-full'>
+    <div className='border w-full bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold w-full'>Checklist</h1>
       
       <div className=' w-full text-xs text-center '>
@@ -206,7 +206,7 @@ const RiskManagementForm: React.FC = () => {
             
           </div>
           
-          <div className='flex p-2 justify-around border-b'>
+          <div className='flex p-2 justify-around border-b bg-slate-500/30'>
             <div className='flex-row justify-between flex '>
               
               <div className='flex-col flex'>
@@ -302,7 +302,7 @@ const RiskManagementForm: React.FC = () => {
           <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2></Modal>
         </div>
   
-        <div className='m-2 bg-slate-500/30'>
+        <div className='m-2'>
             <h2 className='mt-8 p-1.5 text-xs text-black bg-cyan-300'>Lista de Agendamentos</h2>
             <input
             className='text-black p-2 w-full'
