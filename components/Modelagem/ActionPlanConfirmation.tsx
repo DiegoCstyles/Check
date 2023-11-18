@@ -13,7 +13,7 @@ const ActionPlanConfirmation = () => {
 
   const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
-      const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}`);
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}&itemsPerPage=${itemsPerPage}`);
 
       if (response.ok) {
         const data = await response.json();
