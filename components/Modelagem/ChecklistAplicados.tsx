@@ -20,7 +20,7 @@ const AppliedChecklistsPage: React.FC = () => {
     <div className='flex justify-between ml-2 w-fit'>
     {/* Checklist Questions */}
       <div className="checklist-questions border w-full justify-center p-5">
-        <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
+        <h2 className='text-sm border-b-4'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs'>
           <label>
                 Local de Inspeção
@@ -36,10 +36,20 @@ const AppliedChecklistsPage: React.FC = () => {
                   type="text"
                 />
           </label>
-          <li className='p-1'>As rodas foram inspecionadas quanto a danos visíveis?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-          <button className="answer-button negative border bg-red-500 p-1">Não</button>
-         
+          <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
+          <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI's</h3>
+          <div>
+            <li className='p-1'>Possui ficha de controle?</li>
+            <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
+            <button className="answer-button negative border bg-red-500 p-1">Não</button>
+            <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+          </div>
+          <div>
+            <li className='p-1'>Encontra-se em dia?</li>
+            <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
+            <button className="answer-button negative border bg-red-500 p-1">Não</button>
+            <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+          </div>
 
         </ol>
       </div>
