@@ -36,24 +36,24 @@
                 {checklistOpen ? 'Fechar Checklists Aplicados ⬆' : 'Abrir Checklists Aplicados ⬇'}
               </button>
            
-
-              <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
-                checklistOpen ? 'max-h-screen' : 'max-h-0'
-              }`}>
-                {checklistOpen && <ChecklistAplicados />}
+              <div className='flex flex-row'>
+                <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
+                  checklistOpen ? 'max-h-screen' : 'max-h-0'
+                }`}>
+                  {checklistOpen && <ChecklistAplicados />}
+                </div>
+                
+                <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
+                  chartOpen ? 'max-h-screen' : 'max-h-0'
+                }`}>
+                  {chartOpen && (
+                    <div className='flex flex-row'>
+                      <ActionPlanChart actionData={chartData} />
+                      <ActionPlanConfirmation />
+                    </div>
+                  )}
+                </div>
               </div>
-              
-              <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
-                chartOpen ? 'max-h-screen' : 'max-h-0'
-              }`}>
-                {chartOpen && (
-                  <div className='flex flex-row'>
-                    <ActionPlanChart actionData={chartData} />
-                    <ActionPlanConfirmation />
-                  </div>
-                )}
-              </div>
-              
             </div>
             
 
