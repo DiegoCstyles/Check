@@ -60,7 +60,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   };
 
   return (
-    <div className='ml-2 w-fit border'>
+    <div className='ml-2 w-1/2 border'>
       <h2 className='border-b p-1.5 text-xs  text-white'>Status</h2>
       
       <div className='mb-4'>
