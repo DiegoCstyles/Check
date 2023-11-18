@@ -81,7 +81,7 @@ const AppliedChecklistsPage: React.FC = () => {
             </div>
           </div>
           
-          <h3 className='border-y p-1 text-xs text-white'>P.P.R.A(Programa Prevensão Riscos Ambientais)</h3>
+          <h3 className='border-y p-1 text-xs text-white'>P.P.R.A (Programa Prevensão Riscos Ambientais)</h3>
           <div className="flex flex-row justify-between">
             <li className='p-1'>Possui PPRA implantado?</li>
             <div>
@@ -115,6 +115,48 @@ const AppliedChecklistsPage: React.FC = () => {
             </div>
           </div>
 
+          <h3 className='border-y p-1 text-xs text-white'>P.C.M.S.O (Programa Controle Médico Saúde Ocupacional)</h3>
+          <div className="flex flex-row justify-between">
+            <li className='p-1'>Possui PCMSO implantado, e em dia?</li>
+            <div>
+              <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+              <button className="answer-button negative border bg-red-500 p-1">Não</button>
+              <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+            </div>
+          </div>
+          <div className="flex flex-row justify-between"> 
+            <li className='p-1'>Os ASO&apos;s estão em dia?</li>
+            <div>
+              <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+              <button className="answer-button negative border bg-red-500 p-1">Não</button>
+              <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+            </div>
+          </div>
+          <div className="flex flex-row justify-between"> 
+            <li className='p-1'>Os ASO&apos;s contemplam os riscos cadastrados no PCMSO?</li>
+            <div>
+              <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+              <button className="answer-button negative border bg-red-500 p-1">Não</button>
+              <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+            </div>
+          </div>
+           <div className="flex flex-row justify-between"> 
+            <li className='p-1'>O cronograma de ações está sendo cumprido no prazo estipulado?</li>
+            <div>
+              <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+              <button className="answer-button negative border bg-red-500 p-1">Não</button>
+              <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+            </div>
+          </div>
+           <div className="flex flex-row justify-between"> 
+              <li className='p-1'>O PCMSO atende a realidade da empresa atualmente?</li>
+            <div>
+              <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+              <button className="answer-button negative border bg-red-500 p-1">Não</button>
+              <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+            </div>
+          </div>
+          
         </ol>
       </div>
       
