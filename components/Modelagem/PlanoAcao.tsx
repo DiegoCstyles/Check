@@ -56,17 +56,18 @@
 
         
           <div className='flex flex-row bg-slate-500/30 w-full'>
-            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden  w-full ${
-              checklistOpen ? 'max-h-screen' : 'max-h-0'
+            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
+              checklistOpen ? 'max-h-screen ' : 'max-h-0'
             }`}>
-              {checklistOpen && <ChecklistAplicados />}
+              {checklistOpen && ( <div className='flex flex-row w-full'> <ChecklistAplicados /> </div>
+              )}
             </div>
             
-            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden  w-full ${
+            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
               chartOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
               {chartOpen && (
-                <div className='flex flex-row'>
+                <div className='flex flex-row w-full'>
                   <ActionPlanChart actionData={chartData} />
                   <ActionPlanConfirmation />
                 </div>
