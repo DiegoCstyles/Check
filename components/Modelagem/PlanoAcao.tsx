@@ -30,7 +30,7 @@
           <div className='flex flex-row'>
             <div>
               <button
-                className='cursor-pointer mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                className='cursor-pointer w-1/2 mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
                 onClick={toggleChecklist}
               >
                 {checklistOpen ? 'Fechar Checklists Aplicados ⬆' : 'Abrir Checklists Aplicados ⬇'}
@@ -59,7 +59,7 @@
 
             <div>
               <button
-                className='cursor-pointer mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                className='cursor-pointer w-1/2 mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
                 onClick={toggleChart}
               >
                 {chartOpen ? 'Fechar Avaliação de checklists ⬆' : 'Abrir Avaliação de checklists ⬇'}
