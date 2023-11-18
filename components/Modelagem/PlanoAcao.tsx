@@ -20,8 +20,15 @@
       } catch (error) { console.error('Error:', error); }
     };
 
-    const toggleChecklist = () => { setChecklistOpen(!checklistOpen); };
-    const toggleChart = () => { setChartOpen(!chartOpen); };
+    const toggleChecklist = () => {
+      setChecklistOpen(!checklistOpen);
+      setChartOpen(false); // Close the chart if checklist is opened
+    };
+  
+    const toggleChart = () => {
+      setChartOpen(!chartOpen);
+      setChecklistOpen(false); // Close the checklist if chart is opened
+    };
 
     return (
       <div className='text-center w-full text-xs'>
