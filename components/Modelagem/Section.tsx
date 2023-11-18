@@ -72,7 +72,7 @@ const Navbar = () => {
 
   const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
-      const response = await fetch(`https://checkend.onrender.com/api/riskItems`);
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems?itemsPerPage=${itemsPerPage}`);
 
       if (response.ok) {
         const data = await response.json();
