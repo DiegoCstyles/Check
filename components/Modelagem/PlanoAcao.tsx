@@ -27,7 +27,7 @@
   
     const toggleChart = () => {
       setChartOpen(!chartOpen);
-      setChecklistOpen(false); // Close the checklist if chart is opened
+      setChecklistOpen(true); // Close the checklist if chart is opened
     };
 
     return (
@@ -38,7 +38,7 @@
             <div className='flex flex-col h-screen'>
               <button
                 className={`cursor-pointer bg-slate-500/30 h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  checklistOpen ? 'bg-black text-black' : ''
+                  checklistOpen ? 'bg-black text-white' : 'bg-black text-white'
                 }`}
                 onClick={toggleChecklist}
               >
@@ -46,7 +46,7 @@
               </button>
               <button
                 className={`cursor-pointer bg-slate-500/30 h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  chartOpen ? 'bg-black text-black' : ''
+                  chartOpen ? 'bg-black text-white' : 'bg-black text-white'
                 }`}
                 onClick={toggleChart}
               >
