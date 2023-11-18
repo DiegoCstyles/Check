@@ -302,7 +302,7 @@ const RiskManagementForm: React.FC = () => {
           <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2></Modal>
         </div>
   
-        <div className='m-2'>
+        <div className='m-2 bg-black'>
             <h2 className='mt-8 p-1.5 text-xs text-black bg-cyan-300'>Lista de Agendamentos</h2>
             <input
             className='text-black p-2 w-full'
