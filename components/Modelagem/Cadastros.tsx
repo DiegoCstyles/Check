@@ -110,7 +110,7 @@ const RiskManagementForm: React.FC = () => {
     } catch (error) { console.error('Error:', error); }
   };
 
-  const fetchRiskItems = async () => {
+  const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}`);
 
@@ -136,7 +136,7 @@ const RiskManagementForm: React.FC = () => {
   }
   
   useEffect(() => {
-    fetchRiskItems(); // Fetch risk items when the component mounts
+    fetchRiskItems(4); // Fetch risk items when the component mounts
   }, [currentPage]);
 
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
