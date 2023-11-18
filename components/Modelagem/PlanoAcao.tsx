@@ -56,13 +56,13 @@
 
         
           <div className='flex flex-row bg-slate-500/30 w-full'>
-            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
+            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden  w-full ${
               checklistOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
               {checklistOpen && <ChecklistAplicados />}
             </div>
             
-            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
+            <div className={`transition-max-h duration-500 ease-in-out overflow-hidden  w-full ${
               chartOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
               {chartOpen && (
