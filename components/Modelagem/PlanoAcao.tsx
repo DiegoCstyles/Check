@@ -27,7 +27,7 @@
   
     const toggleChart = () => {
       setChartOpen(!chartOpen);
-      setChecklistOpen(true); // Close the checklist if chart is opened
+      setChecklistOpen(false); // Close the checklist if chart is opened
     };
 
     return (
