@@ -51,7 +51,7 @@
             </div>
 
         
-          <div className='flex flex-row ml-2 w-full'>
+          <div className='flex flex-row'>
             <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
               checklistOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
