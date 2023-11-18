@@ -55,14 +55,14 @@
             </div>
 
             <div className={`transition-max-h duration-500 ease-in-out bg-slate-500/30 flex flex-row w-full overflow-hidden ${
-              checklistOpen ? 'max-h-screen' : 'w-0 h-0'
+              checklistOpen ? 'max-h-screen block' : 'hidden'
             }`}>
               {checklistOpen && ( <div className='flex flex-row w-full'> <ChecklistAplicados /> </div>
               )}
             </div>
             
             <div className={`transition-max-h duration-500 ease-in-out bg-slate-500/30 flex flex-row w-full overflow-hidden ${
-              chartOpen ? 'max-h-screen' : 'w-0 h-0'
+              chartOpen ? 'max-h-screen block' : 'hidden'
             }`}>
               {chartOpen && (
                 <div className='flex flex-row w-full'>
