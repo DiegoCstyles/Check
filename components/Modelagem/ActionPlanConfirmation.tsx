@@ -75,7 +75,7 @@ const ActionPlanConfirmation = () => {
   };
 
   useEffect(() => {
-    fetchRiskItems(); // Fetch risk items when the component mounts
+    fetchRiskItems(4); // Fetch risk items when the component mounts
   }, [currentPage]);
 
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
