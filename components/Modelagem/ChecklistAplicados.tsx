@@ -22,31 +22,27 @@ const AppliedChecklistsPage: React.FC = () => {
       <div className="checklist-questions border w-full justify-center p-5">
         <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
         <ol className='text-xs'>
+          <label>
+                Local de Inspeção
+                <input
+                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  type="text"
+                  value={newRisk.local}
+                />
+          </label>
+          <label>
+                Participantes
+                <input
+                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  type="text"
+                  value={newRisk.participantes}
+                />
+          </label>
           <li className='p-1'>As rodas foram inspecionadas quanto a danos visíveis?</li>
           <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>Todos os parafusos das rodas estão devidamente apertados?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>O alinhamento das rodas foi verificado?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>Os pneus estão na pressão correta?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>As válvulas dos pneus estão em boas condições?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>O balanço das rodas foi verificado?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>Os freios foram inspecionados quanto ao desgaste?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
-            <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          <li className='p-1'>Os rolamentos das rodas foram lubrificados?</li>
-          <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
           <button className="answer-button negative border bg-red-500 p-1">Não</button>
-          {/* Adicione mais perguntas relevantes aqui */}
+         
+
         </ol>
       </div>
       
