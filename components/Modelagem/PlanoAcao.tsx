@@ -28,7 +28,7 @@
           <div className='flex flex-row'>
             <div>
               <button
-                className='cursor-pointer border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+                className='cursor-pointer mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
                 onClick={toggleChecklist}
               >
                 {checklistOpen ? 'Fechar Checklists Aplicados ⬆' : 'Abrir Checklists Aplicados ⬇'}
