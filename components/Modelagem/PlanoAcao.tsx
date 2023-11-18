@@ -6,7 +6,8 @@
   import ChecklistAplicados from './ChecklistAplicados';
 
   const ActionPlanPage: React.FC = () => {
-    const [chartData, setChartData] = useState<RiskItem[]>([]); const [checklistOpen, setChecklistOpen] = useState<boolean>(false);
+    const [chartData, setChartData] = useState<RiskItem[]>([]); 
+    const [checklistOpen, setChecklistOpen] = useState<boolean>(false); const [chartOpen, setchartOpen] = useState<boolean>(false);
     
     useEffect(() => { fetchChartData(); }, []);
 
