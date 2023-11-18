@@ -57,7 +57,12 @@
               <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
                 chartOpen ? 'max-h-screen' : 'max-h-0'
               }`}>
-                {chartOpen && <ActionPlanChart actionData={chartData} />  <ActionPlanConfirmation />}
+                {chartOpen && (
+                  <div>
+                    <ActionPlanChart actionData={chartData} />
+                    <ActionPlanConfirmation />
+                  </div>
+                )}
               </div>
             </div>
           </div>
