@@ -24,25 +24,26 @@
     const toggleChart = () => { setChartOpen(!chartOpen); };
 
     return (
-      <div className='text-center w-full flex flex-col text-xs'>
-          <h1 className='bg-cyan-300 text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Planos de Ação</h1>
+      <div className='text-center w-full text-xs'>
+        <h1 className='bg-cyan-300 text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Planos de Ação</h1>
+        <div className='flex flex-row'>
           <h2 className='p-1.5 text-xs text-white border-b-4'>Checklist</h2>
-          <div className='flex flex-row'>
+          <div className='flex flex-col'>
             <button
-              className='cursor-pointer w-1/2 mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+              className='cursor-pointer h-1/2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
               onClick={toggleChecklist}
             >
               {checklistOpen ? 'Aplicados ⬆' : 'Aplicados ⬇'}
             </button>
             <button
-                  className='cursor-pointer w-1/2 mt-2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
-                  onClick={toggleChart}
-                >
-                  {chartOpen ? 'Avaliação⬆' : 'Avaliação ⬇'}
+              className='cursor-pointer h-1/2 border-b-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black'
+              onClick={toggleChart}
+            >
+              {chartOpen ? 'Avaliação⬆' : 'Avaliação ⬇'}
             </button>
           </div>
         
-          <div className='flex flex-row'>
+          <div className='flex flex-col'>
             <div className={`transition-max-h duration-500 ease-in-out overflow-hidden ${
               checklistOpen ? 'max-h-screen' : 'max-h-0'
             }`}>
@@ -60,6 +61,7 @@
               )}
             </div>
           </div>
+        </div>
           
       </div>
     );
