@@ -38,15 +38,34 @@ const AppliedChecklistsPage: React.FC = () => {
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
           <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI&apos;s</h3>
-          <div>
+          <div className="flex flex-row">
             <li className='p-1'>Possui ficha de controle?</li>
-            <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
+            <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
             <button className="answer-button negative border bg-red-500 p-1">Não</button>
             <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
           </div>
-          <div>
+          <div className="flex flex-row"> 
             <li className='p-1'>Encontra-se em dia?</li>
-            <button className="answer-button positive border bg-green-400 p-1 mr-1 ml-1">Sim</button>
+            <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+            <button className="answer-button negative border bg-red-500 p-1">Não</button>
+            <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+          </div>
+          <h3 className='border-b p-1 text-xs text-white'>Equipamento de proteção individual - EPI&apos;s</h3>
+          <div className="flex flex-row">
+            <li className='p-1'>Possui estoque de EPI&apos;s en quantidade suficiente para atender os empregados?</li>
+            <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+            <button className="answer-button negative border bg-red-500 p-1">Não</button>
+            <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+          </div>
+          <div className="flex flex-row"> 
+            <li className='p-1'>Os EPI&apos;s estão adequadamente higienizados?</li>
+            <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
+            <button className="answer-button negative border bg-red-500 p-1">Não</button>
+            <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
+          </div>
+           <div className="flex flex-row"> 
+            <li className='p-1'>Os funcionários foram orientados para cuidar devidamente dos EPIs?</li>
+            <button className="answer-button positive border bg-green-400 p-1 ml-1">Sim</button>
             <button className="answer-button negative border bg-red-500 p-1">Não</button>
             <button className="answer-button negative border bg-yellow-500 p-1">NA</button>
           </div>
