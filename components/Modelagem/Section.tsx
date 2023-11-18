@@ -70,14 +70,13 @@ const Navbar = () => {
   return { altoRiscoCounts, medioRiscoCounts, baixoRiscoCounts };
   };
 
-  const fetchRiskItems = async () => {
+  const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems`);
 
       if (response.ok) {
         const data = await response.json();
         setRiskItems(data);
-        console.log('se tiver vazio errooo');
       } else {
         console.error('Error fetching risk items from the database');
       }
@@ -165,7 +164,7 @@ const Navbar = () => {
   useEffect(() => {
     fetchLastRiskItems();
     fetchRiskItemsUsage();
-    fetchRiskItems();
+    fetchRiskItems(4);
   }, []);
 
   return (
