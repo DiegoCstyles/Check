@@ -17,7 +17,7 @@ const AppliedChecklistsPage: React.FC = () => {
   useEffect(() => { fetchAppliedChecklists(); }, []);
 
   return (
-    <div className='flex justify-between ml-2 w-screen'>
+    <div className='flex justify-between ml-2 w-fit'>
     {/* Checklist Questions */}
       <div className="checklist-questions border w-full justify-center p-5">
         <h2 className='text-sm border-b-4'>Questionário de Checklist</h2>
