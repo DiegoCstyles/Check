@@ -169,6 +169,7 @@ const AppliedChecklistsPage: React.FC = () => {
               <p className='text-center mr-2 px-2 py-1 text-xs '>
                 <span className='p-2 text-start'>{risk.title}</span>
                 <span className='p-2 text-start'>{risk.date}</span>
+                <button className='border m-1 mt-7 p-2 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' >Selecionar</button>
               </p>
             </li>
           ))}
