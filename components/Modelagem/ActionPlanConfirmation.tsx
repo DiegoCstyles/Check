@@ -92,6 +92,14 @@ const ActionPlanConfirmation = () => {
             <div className='p-2'>
                 <span className=''>ID: {risk.id}</span> 
                 <span className=' m-1 w-full'>- Descrição: {risk.plandescription}</span>
+                <a
+                  href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
+                  className='w-1/2 text-center bg-white/10 border-b-4 m-2'  
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Plano
+                </a>
             </div>
             <div className='flex flex-row justify-end w-full'>
               <button
