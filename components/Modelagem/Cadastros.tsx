@@ -24,8 +24,8 @@ const RiskManagementForm: React.FC = () => {
     likelihood: 'Pequena',
     impact: 'Pequeno',
     date: 'DD/MM/AAAA',
-    responsibleChecklist: '',
-    responsiblePlan: '',
+    responsiblechecklist: '',
+    responsibleplan: '',
     completed: false,
   });
 
@@ -41,8 +41,8 @@ const RiskManagementForm: React.FC = () => {
       likelihood: 'Pequena',
       impact: 'Pequeno',
       date: 'DD/MM/AAAA',
-      responsibleChecklist: '',
-      responsiblePlan: '',
+      responsiblechecklist: '',
+      responsibleplan: '',
       completed: false,
     });
   };  
@@ -277,8 +277,8 @@ const RiskManagementForm: React.FC = () => {
                   <input
                     className='bg-white/10 border-b-4 m-2 ml-2'
                     type="text"
-                    value={newRisk.responsibleChecklist}
-                    onChange={(e) => handleNewRiskChange('responsibleChecklist', e.target.value)}
+                    value={newRisk.responsiblechecklist}
+                    onChange={(e) => handleNewRiskChange('responsiblechecklist', e.target.value)}
                   />
                 </div>
                 
@@ -287,8 +287,8 @@ const RiskManagementForm: React.FC = () => {
                   <input 
                     className='bg-white/10 border-b-4 m-2 ml-2'
                     type="text"
-                    value={newRisk.responsiblePlan}
-                    onChange={(e) => handleNewRiskChange('responsiblePlan', e.target.value)}
+                    value={newRisk.responsibleplan}
+                    onChange={(e) => handleNewRiskChange('responsibleplan', e.target.value)}
                   />
                 </div>
               
