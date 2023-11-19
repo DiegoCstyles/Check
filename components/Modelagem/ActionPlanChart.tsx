@@ -44,7 +44,6 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
   };
   setChartData(data);
 };
-
   // Call the counting function whenever actionData or selectedFilter changes
   useEffect(() => {
     const count = countSolucaoEmAnaliseInFilteredData();
