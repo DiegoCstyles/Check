@@ -3,17 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { AppliedChecklist } from './models';
 
 const AppliedChecklistsPage: React.FC = () => {
-  const [appliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
   const [RiskItems, setRiskItems] = useState<AppliedChecklist[]>([]);
-
-  const fetchAppliedChecklists = async () => {
-    try {
-      const response = await fetch('https://checkend.onrender.com/api/appliedChecklists');
-
-      if (response.ok) { const data = await response.json(); setAppliedChecklists(data);
-      } else { console.error('Error fetching applied checklists'); }
-    } catch (error) { console.error('Error:', error); }
-  };
 
   const fetchRiskItems = async (itemsPerPage = 10) => {
     try {
