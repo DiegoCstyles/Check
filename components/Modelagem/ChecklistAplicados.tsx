@@ -4,6 +4,7 @@ import { AppliedChecklist } from './models';
 
 const AppliedChecklistsPage: React.FC = () => {
   const [appliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
+  const [RiskItems, setRiskItems] = useState<AppliedChecklist[]>([]);
 
   const fetchAppliedChecklists = async () => {
     try {
@@ -14,7 +15,17 @@ const AppliedChecklistsPage: React.FC = () => {
     } catch (error) { console.error('Error:', error); }
   };
 
-  useEffect(() => { fetchAppliedChecklists(); }, []);
+  const fetchRiskItems = async (itemsPerPage = 10) => {
+    try {
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}&itemsPerPage=${itemsPerPage}`);
+
+      if (response.ok) {
+        const data = await response.json(); setRiskItems(data); // Update the riskItems state with the fetched data
+      } else { console.error('Error fetching risk items from the database'); }
+    } catch (error) { console.error('Error:', error); }
+  };
+
+  useEffect(() => { fetchRiskItems(); }, []);
 
   return (
     <div className='flex justify-between ml-2 w-fit'>
@@ -163,11 +174,11 @@ const AppliedChecklistsPage: React.FC = () => {
       <div className="applied-checklists-page border p-5">
         <h1 className='border-b-4'>Checklist Aplicados</h1>
         <ul className="applied-checklist-list">
-          {appliedChecklists.map((checklist) => (
-            <li key={checklist.id} className="applied-checklist-item">
+          {RiskItems.map((risk) => (
+            <li key={risk.id} className="applied-checklist-item">
               <p className='text-center mr-2 px-2 py-1 text-xs '>
-                <span className='p-2'>{checklist.title}</span>
-                <span className='p-2'>{checklist.dateapplied}</span>
+                <span className='p-2'>{risk.title}</span>
+                <span className='p-2'>{risk.date}</span>
               </p>
             </li>
           ))}
