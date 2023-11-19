@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { AppliedChecklist } from './models';
+import { RiskItem  } from './models';
 
 const AppliedChecklistsPage: React.FC = () => {
-  const [RiskItems, setRiskItems] = useState<AppliedChecklist[]>([]);
+  const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
 
   const fetchRiskItems = async (itemsPerPage = 10) => {
     try {
