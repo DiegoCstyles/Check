@@ -17,7 +17,7 @@ const AppliedChecklistsPage: React.FC = () => {
 
   const fetchRiskItems = async (itemsPerPage = 10) => {
     try {
-      const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}&itemsPerPage=${itemsPerPage}`);
+      const response = await fetch(`https://checkend.onrender.com/api/riskItems?itemsPerPage=${itemsPerPage}`);
 
       if (response.ok) {
         const data = await response.json(); setRiskItems(data); // Update the riskItems state with the fetched data
