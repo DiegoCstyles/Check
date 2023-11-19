@@ -97,11 +97,11 @@ const ActionPlanConfirmation = () => {
 
             <a
               href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-              className='w-full text-center bg-white/10 border-b-4 m-1'  
+              className='w-3/4 text-center justify-center flex bg-white/10 border-b-4 m-1'  
               target='_blank'
               rel='noopener noreferrer'
             >
-              Plano
+              Baixar 🔽
             </a>
 
             
