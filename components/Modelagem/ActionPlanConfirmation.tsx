@@ -94,14 +94,21 @@ const ActionPlanConfirmation = () => {
                 <span className=' m-1 w-full'>- Descrição: {risk.plandescription}</span>
                 
             </div>
-            <a
-              href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-              className='w-1/2 text-center bg-white/10 border-b-4 m-2'  
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Plano
-            </a>
+
+            <div className='p-2'>
+                <a
+                  href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
+                  className='w-1/4 text-center bg-white/10 border-b-4 m-1'  
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Plano
+                </a>
+                <span className=' m-1 w-1/4'>Responsaveis</span>
+                <span className=' m-1 w-1/4'>Checklist: {risk.responsiblechecklist}</span>
+                <span className=' m-1 w-1/4'>Plano: {risk.responsiblechecklist}</span>
+            </div>
+            
             <div className='flex flex-row justify-end w-full'>
               <button
                 className="answer-button positive hover:bg-white hover:border-black/80 hover:text-black bg-black/75 mr-1 p-1"
