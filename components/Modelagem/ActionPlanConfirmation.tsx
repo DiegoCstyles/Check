@@ -106,7 +106,7 @@ const ActionPlanConfirmation = () => {
                 </a>
                 <span className=' m-1 w-1/4'>Responsaveis</span>
                 <span className=' m-1 w-1/4'>Checklist: {risk.responsiblechecklist}</span>
-                <span className=' m-1 w-1/4'>Plano: {risk.responsiblechecklist}</span>
+                <span className=' m-1 w-1/4'>Plano: {risk.responsibleplan}</span>
             </div>
             
             <div className='flex flex-row justify-end w-full'>
