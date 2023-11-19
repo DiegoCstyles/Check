@@ -7,7 +7,7 @@
 
   const ActionPlanPage: React.FC = () => {
     const [chartData, setChartData] = useState<RiskItem[]>([]); 
-    const [checklistOpen, setChecklistOpen] = useState<boolean>(false); const [chartOpen, setChartOpen] = useState<boolean>(false);
+    const [checklistOpen, setChecklistOpen] = useState<boolean>(false); const [chartOpen, setChartOpen] = useState<boolean>(true);
     
     useEffect(() => { fetchChartData(); }, []);
 
