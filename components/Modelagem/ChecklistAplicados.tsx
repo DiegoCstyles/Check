@@ -18,9 +18,9 @@ const AppliedChecklistsPage: React.FC = () => {
   useEffect(() => { fetchRiskItems(); }, []);
 
   return (
-    <div className='flex justify-between ml-2 w-fit'>
+    <div className='flex justify-between ml-2 w-full'>
     {/* Checklist Questions */}
-      <div className="checklist-questions border w-full justify-center p-5">
+      <div className="checklist-questions border justify-center p-5 w-1/3">
         <h2 className='text-sm border-b-4'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs'>
           <label>
@@ -161,7 +161,7 @@ const AppliedChecklistsPage: React.FC = () => {
         </ol>
       </div>
       
-      <div className="applied-checklists-page border p-5 w-full">
+      <div className="applied-checklists-page border p-5 w-1/3">
         <h1 className='border-b-4'>Checklist Aplicados</h1>
         <ul className="applied-checklist-list">
           {RiskItems.map((risk) => (
