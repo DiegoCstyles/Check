@@ -167,8 +167,8 @@ const AppliedChecklistsPage: React.FC = () => {
           {RiskItems.map((risk) => (
             <li key={risk.id} className="applied-checklist-item">
               <p className='text-center mr-2 px-2 py-1 text-xs '>
-                <span className='p-2'>{risk.title}</span>
-                <span className='p-2'>{risk.date}</span>
+                <span className='p-2 text-start'>{risk.title}</span>
+                <span className='p-2 text-start'>{risk.date}</span>
               </p>
             </li>
           ))}
