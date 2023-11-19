@@ -87,7 +87,7 @@ const ActionPlanConfirmation = () => {
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
           <li className='p-2  flex flex-col text-start border text-xs m-2' key={risk.id}>
-            <span className='bg-black p-1 w-full'>{risk.responsiblePlan}</span>
+            <span className='bg-black p-1 w-full'>{risk.responsibleplan}</span>
             <span className='bg-slate-500 p-1 w-full'>Data: {risk.date}</span>
             <div className='p-2'>
                 <span className=''>ID: {risk.id}</span> 
