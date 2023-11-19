@@ -10,8 +10,8 @@ export interface RiskItem {
   likelihood: string;
   impact: string;
   date: string;
-  responsiblechecklist: string;
-  responsibleplan: string;
+  responsibleChecklist: string;
+  responsiblePlan: string;
   completed: boolean;
 }
 
