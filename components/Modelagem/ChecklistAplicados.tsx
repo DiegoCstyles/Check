@@ -26,14 +26,14 @@ const AppliedChecklistsPage: React.FC = () => {
           <label>
                 Local de Inspeção
                 <input
-                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                   type="text"
                 />
           </label>
           <label>
                 Participantes
                 <input
-                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                   type="text"
                 />
           </label>
