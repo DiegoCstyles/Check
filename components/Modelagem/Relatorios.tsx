@@ -60,7 +60,7 @@ const AppliedChecklistsChart = () => {
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
-      <div className='m-2 text-xs text-center border flex flex-col'>
+      <div className='m-2 text-xs text-center border h-1/2 flex flex-col'>
         <PolarArea
           className='bg-black/10 w-10 h-10'
           data={chartDataBestScore}
