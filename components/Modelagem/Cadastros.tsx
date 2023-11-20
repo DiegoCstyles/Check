@@ -147,7 +147,7 @@ const RiskManagementForm: React.FC = () => {
       
       <div className=' w-full text-xs text-center '>
         <div className=''>
-          <h2 className='p-1.5 text-xs text-white border-b-4'>Cadastro</h2>
+          <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
           <div className='flex p-2 justify-evenly border-y bg-slate-500/30'>
             
             <div>
