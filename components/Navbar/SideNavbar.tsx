@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className='w-full flex'>
       <div className="flex flex-col w-20 h-full bg-white/10 transition-opacity duration-300 hover:opacity-100 hover:w-40 group  opacity-60">
         <p className="p-2 m-1 text-center dark:text-cyan-300 font-black text-base tracking-tight">CHECK.</p>
-        <div className='group-hover:visible invisible flex flex-col flex-grow h-screen'>
+        <div className='group-hover:visible invisible flex flex-col flex-grow h-full'>
           <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'home' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('home')}
@@ -50,7 +50,7 @@ const Navbar = () => {
             </svg> <div className='grow '></div>
           </div>
 
-          <div className='flex-grow grow border h-full'></div>
+          <div className='flex-grow grow h-full'></div>
 
            <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
