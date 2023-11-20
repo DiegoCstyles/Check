@@ -48,7 +48,7 @@ const AppliedChecklistsChart = () => {
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border'>
         
-        <div className="mx-48 chart-container border">
+        <div className="mx-48 chart-container bg-slate-400/20">
           <div className='flex ' style={{ width: chartWidth, height: chartHeight }}>
             <Bar
               className='m-5 '
