@@ -50,7 +50,7 @@ const Navbar = () => {
             </svg> <div className='grow '></div>
           </div>
 
-          <div className='flex-grow grow border'></div>
+          <div className='flex-grow grow border h-full'></div>
 
            <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
