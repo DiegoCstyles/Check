@@ -67,13 +67,11 @@ const AppliedChecklistsChart = () => {
               <PolarArea
                 className='bg-black/10'
                 data={chartDataBestScore}
+                style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
                 options={{
                   indexAxis: 'x', // Set the axis to horizontal
                   responsive: true,
                   color: 'white',
-                  height: chartHeight,
-                  width: chartWidth,
-                  maintainAspectRatio: false,
                   scales: {
                     x: {
                       beginAtZero: true,
@@ -94,13 +92,11 @@ const AppliedChecklistsChart = () => {
             <Bubble
               className='bg-black/10'
               data={chartDataWorstScore}
+              style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
                 color: 'white', 
-                height: chartHeight,
-                width: chartWidth,
-                maintainAspectRatio: false,
                 scales: {
                   x: {
                     beginAtZero: true,
