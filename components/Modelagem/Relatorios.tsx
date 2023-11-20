@@ -66,7 +66,6 @@ const AppliedChecklistsChart = () => {
           <div className='flex justify-around' >
               <PolarArea
                 className='bg-black/10'
-                style={{ width: 300, height: 300 }}
                 data={chartDataBestScore}
                 options={{
                   indexAxis: 'x', // Set the axis to horizontal
@@ -92,7 +91,6 @@ const AppliedChecklistsChart = () => {
             <Bubble
               className='bg-black/10'
               data={chartDataWorstScore}
-              style={{ width: 300, height: 300 }}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
