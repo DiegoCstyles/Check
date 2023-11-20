@@ -82,11 +82,11 @@ const ActionPlanConfirmation = () => {
 
   return (
     <div className='text-xs w-1/2'>
-      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-300'>Confirmação</h2>
+      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-blue-300'>Confirmação</h2>
       
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
-          <li className='p-2  flex flex-col text-start border text-xs m-2' key={risk.id}>
+          <li className='p-2  flex flex-col text-start border text-xs m-2 bg-blue-300' key={risk.id}>
             <span className='bg-black p-1 w-full'>{risk.responsibleplan}</span>
             <span className='bg-slate-500 p-1 w-full'>Data: {risk.date}</span>
             <div className='p-2'>
@@ -133,10 +133,10 @@ const ActionPlanConfirmation = () => {
         
         <div className='w-full'>
           {/* Pagination controls */}
-          <button className='w-1/2 mr-2 mt-2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+          <button className='w-1/2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
             Anterior
           </button>
-          <button className='w-1/2 border border-b-4 mt-2 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
+          <button className='w-1/2 border border-b-4  p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
             Proximo
           </button>
          </div>
