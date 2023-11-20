@@ -24,8 +24,8 @@ const RiskManagementForm: React.FC = () => {
     likelihood: 'Pequena',
     impact: 'Pequeno',
     date: 'DD/MM/AAAA',
-    responsibleChecklist: '',
-    responsiblePlan: '',
+    responsiblechecklist: '',
+    responsibleplan: '',
     completed: false,
   });
 
@@ -41,8 +41,8 @@ const RiskManagementForm: React.FC = () => {
       likelihood: 'Pequena',
       impact: 'Pequeno',
       date: 'DD/MM/AAAA',
-      responsibleChecklist: '',
-      responsiblePlan: '',
+      responsiblechecklist: '',
+      responsibleplan: '',
       completed: false,
     });
   };  
