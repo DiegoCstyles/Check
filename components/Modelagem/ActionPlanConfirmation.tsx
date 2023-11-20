@@ -11,7 +11,7 @@ const ActionPlanConfirmation = () => {
   const openModal = () => { setModalOpen(true); };
   const closeModal = () => { setModalOpen(false); };
 
-  const fetchRiskItems = async (itemsPerPage = 4) => {
+  const fetchRiskItems = async (itemsPerPage = 3) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?page=${currentPage}&itemsPerPage=${itemsPerPage}`);
 
@@ -75,14 +75,14 @@ const ActionPlanConfirmation = () => {
   };
 
   useEffect(() => {
-    fetchRiskItems(4); // Fetch risk items when the component mounts
+    fetchRiskItems(3); // Fetch risk items when the component mounts
   }, [currentPage]);
 
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
 
   return (
     <div className='text-xs w-1/2'>
-      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black bg-cyan-300'>Confirmação</h2>
+      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-300'>Confirmação</h2>
       
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
@@ -101,7 +101,7 @@ const ActionPlanConfirmation = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Baixar 🔽
+              Baixar
             </a>
 
             
@@ -131,12 +131,12 @@ const ActionPlanConfirmation = () => {
           ) : null}
         </Modal>
         
-        <div>
+        <div className='w-full'>
           {/* Pagination controls */}
-          <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+          <button className='w-1/2 mr-2 mt-2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
             Anterior
           </button>
-          <button className='border border-b-4 mt-2 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
+          <button className='w-1/2 border border-b-4 mt-2 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
             Proximo
           </button>
          </div>
