@@ -91,7 +91,7 @@ const ActionPlanConfirmation = () => {
             <span className='bg-slate-500/60 p-2 w-full'>Data: {risk.date}</span>
             <div className='w-full bg-black/30 p-2'>
                 <span className='w-1/3'>ID: {risk.id}</span> 
-                <span className='w-2/3'>- Descrição: {risk.plandescription}</span>
+                <span className='w-2/3'>Descrição: {risk.plandescription}</span>
             </div>
 
             <a
