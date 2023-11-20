@@ -60,10 +60,10 @@ const AppliedChecklistsChart = () => {
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
-      <div className='m-2 text-xs text-center border'>
+      <div className='m-2 text-xs text-center border w-full'>
         
         <div className="mx-48 chart-container bg-slate-400/20">
-          <div className='flex' style={{ width: chartWidth, height: chartHeight }}>
+          <div className='flex justify-evenly' style={{ width: chartWidth, height: chartHeight }}>
               <PolarArea
                 className='bg-black/10'
                 data={chartDataBestScore}
