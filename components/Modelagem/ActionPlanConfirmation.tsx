@@ -87,16 +87,16 @@ const ActionPlanConfirmation = () => {
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
           <li className='p-2  flex flex-col text-start border text-xs m-2 bg-green-500' key={risk.id}>
-            <span className='bg-black p-2 w-full'>Reponsável: {risk.responsibleplan}</span>
+            <span className='bg-black p-2 w-full'>Responsável: {risk.responsibleplan}</span>
             <span className='bg-slate-500/60 p-2 w-full'>Data: {risk.date}</span>
-            <div className='p-2'>
-                <span className='bg-black/30 p-2 w-full'>ID: {risk.id}</span> 
-                <span className='bg-black/30 p-2 w-full'>- Descrição: {risk.plandescription}</span>
+            <div className='w-full bg-black/30 p-2'>
+                <span className='w-1/3'>ID: {risk.id}</span> 
+                <span className='w-2/3'>- Descrição: {risk.plandescription}</span>
             </div>
 
             <a
               href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-              className='w-auto p-2 text-center bg-white/20 border-b-4 m-1'  
+              className='w-auto p-1 text-center bg-white/20 border-b-4 m-1'  
               target='_blank'
               rel='noopener noreferrer'
             >
