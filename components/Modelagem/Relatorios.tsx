@@ -56,21 +56,24 @@ const AppliedChecklistsChart = () => {
     ],
   };
 
-  const chartHeight = 500; const chartWidth = 500;
+  const chartHeight = 100; const chartWidth = 100;
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border w-full'>
         
         <div className="chart-container bg-slate-400/20">
-          <div className='flex justify-around' >
+          <div className='flex' >
               <PolarArea
                 className='bg-black/10'
                 data={chartDataBestScore}
                 options={{
                   indexAxis: 'x', // Set the axis to horizontal
                   responsive: true,
-                  color: 'white', 
+                  color: 'white',
+                  height: chartHeight,
+                  width: chartWidth,
+                  maintainAspectRatio: false,
                   scales: {
                     x: {
                       beginAtZero: true,
@@ -95,6 +98,9 @@ const AppliedChecklistsChart = () => {
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
                 color: 'white', 
+                height: chartHeight,
+                width: chartWidth,
+                maintainAspectRatio: false,
                 scales: {
                   x: {
                     beginAtZero: true,
