@@ -84,9 +84,9 @@ const AppliedChecklistsChart = () => {
             },
           }}      
         />
-        <div className='flex flex-row'>
+        <div className='flex flex-row w-screen'>
         <PolarArea
-          className='bg-black/10 w-10 h-10'
+          className='bg-black/10 w-1/2 h-10'
           data={chartDataBestScore}
           options={{
             indexAxis: 'x', // Set the axis to horizontal
@@ -110,7 +110,7 @@ const AppliedChecklistsChart = () => {
           
         />
         <PolarArea
-          className='bg-black/10 w-10 h-10'
+          className='bg-black/10 w-1/2 h-10'
           data={chartDataBestScore}
           options={{
             indexAxis: 'x', // Set the axis to horizontal
