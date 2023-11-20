@@ -56,64 +56,16 @@ const AppliedChecklistsChart = () => {
     ],
   };
 
-  const chartHeight = 500; const chartWidth = 400;
+  const chartHeight = 500; const chartWidth = 500;
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border'>
         
         <div className="mx-48 chart-container bg-slate-400/20">
-          <div className='flex ' style={{ width: chartWidth, height: chartHeight }}>
-            <Bar
-              className='m-5 '
-              data={chartData}
-              options={{
-                indexAxis: 'y', // Set the axis to horizontal
-                responsive: true,
-                color: 'white', 
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                    ticks: {
-                      color: 'white', // Change tick label color to white
-                    },
-                  },
-                  y: {
-                    ticks: {
-                      color: 'white', // Change label color to white
-                    },
-                  },
-                },
-              }}
-              
-            />
-            <Bar
-              className='m-5'
-              data={chartDataUserRanking}
-              options={{
-                indexAxis: 'x', // Set the axis to horizontal
-                responsive: true,
-                color: 'white', 
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                    ticks: {
-                      color: 'white', // Change tick label color to white
-                    },
-                  },
-                  y: {
-                    ticks: {
-                      color: 'white', // Change label color to white
-                    },
-                  },
-                },
-              }}
-              
-            />
-          </div>
           <div className='flex' style={{ width: chartWidth, height: chartHeight }}>
               <PolarArea
-                className='m-5'
+                className='bg-black/10'
                 data={chartDataBestScore}
                 options={{
                   indexAxis: 'x', // Set the axis to horizontal
