@@ -90,14 +90,14 @@ const ActionPlanConfirmation = () => {
             <span className='bg-black p-1 w-full'>{risk.responsibleplan}</span>
             <span className='bg-slate-500 p-1 w-full'>Data: {risk.date}</span>
             <div className='p-2'>
-                <span className=''>ID: {risk.id}</span> 
-                <span className=' m-1 w-full'>- Descrição: {risk.plandescription}</span>
+                <span className='text-black'>ID: {risk.id}</span> 
+                <span className='text-black m-1 w-full'>- Descrição: {risk.plandescription}</span>
                 
             </div>
 
             <a
               href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-              className='w-full text-center bg-white/10 border-b-4 m-1'  
+              className='w-full text-black text-center bg-white/10 border-b-4 m-1'  
               target='_blank'
               rel='noopener noreferrer'
             >
