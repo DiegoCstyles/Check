@@ -137,7 +137,7 @@ const AppliedChecklistsChart = () => {
               />
               
             <Bubble
-              className='m-5'
+              className='m-5 p-10'
               data={chartDataWorstScore}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
