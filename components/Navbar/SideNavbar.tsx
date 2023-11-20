@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className='w-full flex'>
       <div className="flex flex-col w-20 h-full bg-white/10 transition-opacity duration-300 hover:opacity-100 hover:w-40 group  opacity-60">
         <p className="p-2 m-1 text-center dark:text-cyan-300 font-black text-base tracking-tight">CHECK.</p>
-        <div className='group-hover:visible invisible  flex-grow'>
+        <div className='group-hover:visible invisible flex flex-grow'>
           <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'home' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('home')}
@@ -49,6 +49,8 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 6H8a2 2 0 00-2 2v11a2 2 0 002 2h13a2 2 0 002-2V8a2 2 0 00-2-2z" />
             </svg> <div className='grow '></div>
           </div>
+
+          <div className='grow border'></div>
 
            <div
             className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
