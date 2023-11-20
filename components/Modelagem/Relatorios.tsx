@@ -61,6 +61,30 @@ const AppliedChecklistsChart = () => {
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border h-1/2 flex flex-col'>
+        <Bubble
+          className='bg-black/10 w-10 h-10'
+          data={chartDataWorstScore}
+          options={{
+            indexAxis: 'x', // Set the axis to horizontal
+            responsive: true,
+            color: 'white', 
+            maintainAspectRatio: true,
+            scales: {
+              x: {
+                beginAtZero: true,
+                ticks: {
+                  color: 'white', // Change tick label color to white
+                },
+              },
+              y: {
+                ticks: {
+                  color: 'white', // Change label color to white
+                },
+              },
+            },
+          }}      
+        />
+        <div className='flex flex-row'>
         <PolarArea
           className='bg-black/10 w-10 h-10'
           data={chartDataBestScore}
@@ -85,13 +109,13 @@ const AppliedChecklistsChart = () => {
           }}
           
         />
-        <Bubble
+        <PolarArea
           className='bg-black/10 w-10 h-10'
-          data={chartDataWorstScore}
+          data={chartDataBestScore}
           options={{
             indexAxis: 'x', // Set the axis to horizontal
             responsive: true,
-            color: 'white', 
+            color: 'white',
             maintainAspectRatio: true,
             scales: {
               x: {
@@ -106,8 +130,10 @@ const AppliedChecklistsChart = () => {
                 },
               },
             },
-          }}      
+          }}
+          
         />
+        </div>
       </div>
     </div>
   );
