@@ -34,11 +34,11 @@
       <div className='text-center w-full text-xs'>
         <h1 className='bg-cyan-300 text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Planos de Ação</h1>
         <div className='flex flex-row'>
-            <h2 className='bg-slate-500/30 p-1.5 text-xs flex text-center justify-center text-white border-r-4 h-screen uppercase '>Checklist</h2>
+            <h2 className='bg-slate-500/30 p-1.5 text-xs flex text-center justify-center text-white border-r-4 h-screen uppercase items-center'>Checklist</h2>
             <div className='flex flex-col h-screen'>
               <button
                 className={`uppercase cursor-pointer bg-black h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  checklistOpen ? 'bg-slate-500/30 text-white' : ''
+                  checklistOpen ? 'bg-slate-500/10 text-white' : ''
                 }`}
                 onClick={toggleChecklist}
               >
@@ -46,7 +46,7 @@
               </button>
               <button
                 className={`uppercase cursor-pointer bg-black h-1/2 border-r-2 border text-white p-2 w-full hover:bg-white hover:border-black/80 hover:text-black ${
-                  chartOpen ? 'bg-slate-500/30 text-white' : ''
+                  chartOpen ? 'bg-slate-500/10 text-white' : ''
                 }`}
                 onClick={toggleChart}
               >
@@ -61,7 +61,7 @@
               )}
             </div>
             
-            <div className={`transition-max-h duration-500 ease-in-out bg-slate-500/30 flex flex-row w-full overflow-hidden ${
+            <div className={`transition-max-h duration-500 ease-in-out bg-slate-500/10 flex flex-row w-full overflow-hidden ${
               chartOpen ? 'max-h-screen block' : 'hidden'
             }`}>
               {chartOpen && (
