@@ -303,7 +303,7 @@ const RiskManagementForm: React.FC = () => {
         </div>
   
         <div className='m-2 bg-black'>
-            <h2 className='mt-8 p-1.5 text-xs text-black bg-cyan-300'>Lista de Agendamentos</h2>
+            <h2 className='mt-8 p-1.5 text-xs text-black uppercase font-semibold bg-cyan-300'>Lista de Agendamentos</h2>
             <input
             className='text-black p-2 w-full'
               type='text'
