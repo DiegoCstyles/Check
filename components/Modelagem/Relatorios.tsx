@@ -56,64 +56,60 @@ const AppliedChecklistsChart = () => {
     ],
   };
 
-  const chartHeight = 400; const chartWidth = 50;
+  const chartHeight = 200; const chartWidth = 200;
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
-      <div className='m-2 text-xs text-center border w-full'>
-        
-        <div className="chart-container bg-slate-400/20">
-          <PolarArea
-                className='bg-black/10'
-                data={chartDataBestScore}
-                style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
-                options={{
-                  indexAxis: 'x', // Set the axis to horizontal
-                  responsive: true,
-                  color: 'white',
-                  maintainAspectRatio: false,
-                  scales: {
-                    x: {
-                      beginAtZero: true,
-                      ticks: {
-                        color: 'white', // Change tick label color to white
-                      },
-                    },
-                    y: {
-                      ticks: {
-                        color: 'white', // Change label color to white
-                      },
-                    },
-                  },
-                }}
-                
-              />
-          <Bubble
-              className='bg-black/10'
-              data={chartDataWorstScore}
-              style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
-              options={{
-                indexAxis: 'x', // Set the axis to horizontal
-                responsive: true,
-                color: 'white', 
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                    ticks: {
-                      color: 'white', // Change tick label color to white
-                    },
-                  },
-                  y: {
-                    ticks: {
-                      color: 'white', // Change label color to white
-                    },
-                  },
+      <div className='m-2 text-xs text-center border w-full flex flex-col'>
+        <PolarArea
+          className='bg-black/10 w-full h-1/2'
+          data={chartDataBestScore}
+          style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
+          options={{
+            indexAxis: 'x', // Set the axis to horizontal
+            responsive: true,
+            color: 'white',
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                beginAtZero: true,
+                ticks: {
+                  color: 'white', // Change tick label color to white
                 },
-              }}
-              
-            />
-        </div>
+              },
+              y: {
+                ticks: {
+                  color: 'white', // Change label color to white
+                },
+              },
+            },
+          }}
+          
+        />
+        <Bubble
+          className='bg-black/10 w-full h-1/2'
+          data={chartDataWorstScore}
+          style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
+          options={{
+            indexAxis: 'x', // Set the axis to horizontal
+            responsive: true,
+            color: 'white', 
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                beginAtZero: true,
+                ticks: {
+                  color: 'white', // Change tick label color to white
+                },
+              },
+              y: {
+                ticks: {
+                  color: 'white', // Change label color to white
+                },
+              },
+            },
+          }}      
+        />
       </div>
     </div>
   );
