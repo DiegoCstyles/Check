@@ -232,7 +232,7 @@ const RiskManagementForm: React.FC = () => {
               <div className='flex-col flex'>
                 <label className='mt-2'> Documento </label>
                 <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <div id="filePreview" className="absolute inset-0"></div>
+                  <div id="filePreview"></div>
                   <input
                     className='bg-white/10 border-b-4 m-2 pb-10 p-2 relative z-10'
                     type="file"
@@ -379,7 +379,7 @@ const RiskManagementForm: React.FC = () => {
   
                       <a
                         href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2 uppercase'  
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
                         target='_blank'
                         rel='noopener noreferrer'
                       >
