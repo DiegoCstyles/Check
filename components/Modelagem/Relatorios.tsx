@@ -62,7 +62,7 @@ const AppliedChecklistsChart = () => {
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border w-full flex flex-col'>
         <PolarArea
-          className='bg-black/10 w-full h-1/2'
+          className='bg-black/10 w-1/2 h-10'
           data={chartDataBestScore}
           style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
           options={{
@@ -87,7 +87,7 @@ const AppliedChecklistsChart = () => {
           
         />
         <Bubble
-          className='bg-black/10 w-full h-1/2'
+          className='bg-black/10 w-1/2 h-10'
           data={chartDataWorstScore}
           style={{ width: chartWidth + 'px', height: chartHeight + 'px' }}
           options={{
