@@ -72,6 +72,7 @@ const AppliedChecklistsChart = () => {
                   indexAxis: 'x', // Set the axis to horizontal
                   responsive: true,
                   color: 'white',
+                  maintainAspectRatio: false,
                   scales: {
                     x: {
                       beginAtZero: true,
@@ -97,6 +98,7 @@ const AppliedChecklistsChart = () => {
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
                 color: 'white', 
+                maintainAspectRatio: false,
                 scales: {
                   x: {
                     beginAtZero: true,
