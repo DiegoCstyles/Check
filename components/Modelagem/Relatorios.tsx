@@ -1,5 +1,6 @@
 "use client";
 import React from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
+import faker from 'faker';
 
 const AppliedChecklistsChart = () => {
   const chartData = {
@@ -33,13 +34,26 @@ const AppliedChecklistsChart = () => {
   };
 
   const chartDataWorstScore = {
-    labels: ['Unidade 1', 'Unidade 2', 'Unidade 3', 'Unidade 4', 'Unidade 5'],
-    datasets: [{
-      label: 'Ranking de unidade com pior nota',
-      data: [25, 10, 2, 4, 5],
-      borderWidth: 1,
-      backgroundColor: 'rgb(203 32 49)', // Adjust the color
-    }],
+    datasets: [
+      {
+        label: 'Alto Risco',
+        data: Array.from({ length: 50 }, () => ({
+          x: faker.datatype.number({ min: -100, max: 100 }),
+          y: faker.datatype.number({ min: -100, max: 100 }),
+          r: faker.datatype.number({ min: 5, max: 20 }),
+        })),
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Baixo Risco',
+        data: Array.from({ length: 50 }, () => ({
+          x: faker.datatype.number({ min: -100, max: 100 }),
+          y: faker.datatype.number({ min: -100, max: 100 }),
+          r: faker.datatype.number({ min: 5, max: 20 }),
+        })),
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
   };
 
   const chartHeight = 400; const chartWidth = 400;
