@@ -148,7 +148,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4'>Cadastro</h2>
-          <div className='flex p-2 justify-center border-y bg-slate-500/30'>
+          <div className='flex p-2 justify-evenly border-y bg-slate-500/30'>
             
             <div>
               <label>
@@ -232,9 +232,9 @@ const RiskManagementForm: React.FC = () => {
               <div className='flex-col flex'>
                 <label className='mt-2'> Documento </label>
                 <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  
+                  <div id="filePreview" className="absolute inset-0"></div>
                   <input
-                    className='bg-white/10 border-b-4 m-2 pb-10 p-2'
+                    className='bg-white/10 border-b-4 m-2 pb-10 p-2 relative z-10'
                     type="file"
                     accept=".pdf, .png, .jpg"
                     name="planFiles"
@@ -262,7 +262,7 @@ const RiskManagementForm: React.FC = () => {
                     }}
                   />
                 </div>
-                <div id="filePreview"></div>
+                
               </div>
             </div>
           </div>
