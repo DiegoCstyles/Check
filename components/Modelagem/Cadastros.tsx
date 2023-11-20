@@ -303,9 +303,9 @@ const RiskManagementForm: React.FC = () => {
         </div>
   
         <div className='m-2 bg-black'>
-            <h2 className='mt-8 p-1.5 text-xs text-black uppercase font-semibold bg-cyan-300'>Lista de Agendamentos</h2>
+            <h2 className='mt-8 p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Lista de Agendamentos</h2>
             <input
-            className='text-black p-2 w-full'
+            className='text-black p-2 w-full bg-white/80'
               type='text'
               placeholder='Procurar...'
               value={searchTerm}
@@ -329,7 +329,7 @@ const RiskManagementForm: React.FC = () => {
                     <div className='flex justify-between text-xs text-center p-4'>
                       
                       <input
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
                         type='text'
                         value={risk.title}
                         onChange={(e) =>
@@ -337,7 +337,7 @@ const RiskManagementForm: React.FC = () => {
                         }
                       />
                       <input
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
                         type='text'
                         value={risk.description}
                         onChange={(e) =>
@@ -349,7 +349,7 @@ const RiskManagementForm: React.FC = () => {
                         }
                       />
                       <input
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
                         type='text'
                         value={formatDate(risk.date)}
                         onChange={(e) =>
@@ -357,7 +357,7 @@ const RiskManagementForm: React.FC = () => {
                         }
                       />
                       <select
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
                         value={risk.impact}
                         onChange={(e) =>
                           handleRiskItemChange(risk.id, 'impact', e.target.value)
@@ -368,7 +368,7 @@ const RiskManagementForm: React.FC = () => {
                         <option className='bg-black border-b-4 m-2' value='Alto'>Alto</option>
                       </select>
                       <select
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
                         value={risk.likelihood}
                         onChange={(e) => handleRiskItemChange(risk.id, 'likelihood', e.target.value) }
                       >
@@ -379,7 +379,7 @@ const RiskManagementForm: React.FC = () => {
   
                       <a
                         href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                        className='w-1/2 text-center bg-white/10 border-b-4 m-2'  
+                        className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2 uppercase'  
                         target='_blank'
                         rel='noopener noreferrer'
                       >
@@ -391,12 +391,12 @@ const RiskManagementForm: React.FC = () => {
             </ul>
           </div>
        
-          <div>
+          <div className='w-full'>
           {/* Pagination controls */}
-          <button className='mr-2 mt-2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+          <button className='w-1/2 border-b-4 border p-2 hover:bg-white hover:border-black/80 hover:text-black' disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
             Anterior
           </button>
-          <button className='border border-b-4 mt-2 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
+          <button className='w-1/2 border border-b-4 p-2 hover:bg-white hover:border-black/80 hover:text-black' onClick={() => handlePageChange(currentPage + 1)}>
             Proximo
           </button>
         </div>
