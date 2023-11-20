@@ -154,7 +154,7 @@ const RiskManagementForm: React.FC = () => {
               <label>
                 Titulo
                 <input
-                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                   type="text"
                   value={newRisk.title}
                   onChange={(e) => handleNewRiskChange('title', e.target.value)}
@@ -166,7 +166,7 @@ const RiskManagementForm: React.FC = () => {
               <label>
                 Chance
                 <select
-                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                   value={newRisk.likelihood}
                   onChange={(e) => handleNewRiskChange('likelihood', e.target.value)}
                 >
@@ -181,7 +181,7 @@ const RiskManagementForm: React.FC = () => {
               <label>
                 Impacto
                 <select
-                  className='bg-white/10 border-b-4 m-2 ml-2'
+                  className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                   value={newRisk.impact}
                   onChange={(e) => handleNewRiskChange('impact', e.target.value)}
                 >
@@ -196,7 +196,7 @@ const RiskManagementForm: React.FC = () => {
               <label>
                 data
                 <input
-                  className='bg-white text-black border-b-4 border-slate-400 m-2 p-0.5 rounded ml-2'
+                  className='bg-white text-black border-b-4 border-slate-400 m-2 p-0.5 rounded ml-2 p-2'
                   type="date" // Use type="date" for date input
                   value={newRisk.date}
                   onChange={(e) => handleNewRiskChange('date', e.target.value)}
@@ -206,7 +206,7 @@ const RiskManagementForm: React.FC = () => {
             
           </div>
           
-          <div className='flex p-2 justify-around border-b bg-slate-500/30'>
+          <div className='flex p-2 justify-around border-b bg-black'>
             <div className='flex-row justify-between flex '>
               
               <div className='flex-col flex'>
@@ -214,7 +214,7 @@ const RiskManagementForm: React.FC = () => {
                     Descrição do Risco
                 </label>           
                 <textarea 
-                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10'
+                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-15'
                   value={newRisk.description}
                   onChange={(e) => handleNewRiskChange('description', e.target.value)}
                 /> 
@@ -223,7 +223,7 @@ const RiskManagementForm: React.FC = () => {
               <div className='flex-col flex'>
                 <label> Plano de Mitigação (opcional) </label>
                 <textarea 
-                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-10 '
+                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-15'
                   value={newRisk.plandescription}
                   onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
                 /> 
@@ -275,7 +275,7 @@ const RiskManagementForm: React.FC = () => {
                 <div style={{ display: 'flex ml-7', alignItems: 'center' }}>
                   <label style={{ flex: '1' }}> Checklist </label>
                   <input
-                    className='bg-white/10 border-b-4 m-2 ml-2'
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                     type="text"
                     value={newRisk.responsiblechecklist}
                     onChange={(e) => handleNewRiskChange('responsiblechecklist', e.target.value)}
@@ -285,7 +285,7 @@ const RiskManagementForm: React.FC = () => {
                 <div style={{ display: 'flex ml-1', alignItems: 'center' }}>
                   <label style={{ flex: '1' }}> Plano de Ação </label>
                   <input 
-                    className='bg-white/10 border-b-4 m-2 ml-2'
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-2'
                     type="text"
                     value={newRisk.responsibleplan}
                     onChange={(e) => handleNewRiskChange('responsibleplan', e.target.value)}
