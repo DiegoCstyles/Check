@@ -169,7 +169,7 @@ const Navbar = () => {
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
-        <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
+        <h1 className='bg-cyan-500 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
         <div className="flex flex-row h-1/2">
           <div className='w-1/2 bg-black/10 border'>
