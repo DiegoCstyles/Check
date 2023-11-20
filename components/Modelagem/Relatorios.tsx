@@ -60,7 +60,7 @@ const AppliedChecklistsChart = () => {
   return (
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
-      <div className='m-2 text-xs text-center border h-1/2 flex flex-col'>
+      <div className='m-2 text-xs text-center border flex flex-col'>
         <Bubble
           className='bg-black/10 w-10 h-10'
           data={chartDataWorstScore}
@@ -68,7 +68,7 @@ const AppliedChecklistsChart = () => {
             indexAxis: 'x', // Set the axis to horizontal
             responsive: true,
             color: 'white', 
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
               x: {
                 beginAtZero: true,
@@ -84,15 +84,14 @@ const AppliedChecklistsChart = () => {
             },
           }}      
         />
-        <div className='flex flex-row w-screen'>
         <PolarArea
-          className='bg-black/10 w-1/2 h-10'
+          className='bg-black/10 w-10 h-10'
           data={chartDataBestScore}
           options={{
             indexAxis: 'x', // Set the axis to horizontal
             responsive: true,
             color: 'white',
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
               x: {
                 beginAtZero: true,
@@ -109,31 +108,6 @@ const AppliedChecklistsChart = () => {
           }}
           
         />
-        <PolarArea
-          className='bg-black/10 w-1/2 h-10'
-          data={chartDataBestScore}
-          options={{
-            indexAxis: 'x', // Set the axis to horizontal
-            responsive: true,
-            color: 'white',
-            maintainAspectRatio: true,
-            scales: {
-              x: {
-                beginAtZero: true,
-                ticks: {
-                  color: 'white', // Change tick label color to white
-                },
-              },
-              y: {
-                ticks: {
-                  color: 'white', // Change label color to white
-                },
-              },
-            },
-          }}
-          
-        />
-        </div>
       </div>
     </div>
   );
