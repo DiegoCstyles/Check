@@ -265,7 +265,7 @@ const Navbar = () => {
        const drawAlertsDashboard = useDrawAlertsDashboard();
        drawAlertsDashboard(); // Call the function here
     }
-  }, [weatherData, riskItems);
+  }, [weatherData, riskItems]);
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
