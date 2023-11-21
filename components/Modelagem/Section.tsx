@@ -12,7 +12,6 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
-  const canvasRef = useRef(null);
 
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
