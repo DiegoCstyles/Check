@@ -60,7 +60,7 @@ const AppliedChecklistsChart = () => {
     <div className='w-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border flex flex-col'>
-        <div className="chart-container bg-black/10" style={{ width: '500px', height: '500px' }}>
+        <div className="chart-container bg-black/10" style={{ width: '1000px', height: '500px' }}>
           <Bubble
             data={chartDataWorstScore}
             options={{
@@ -83,7 +83,8 @@ const AppliedChecklistsChart = () => {
             }}      
           />
         </div>
-        <div className="chart-container bg-black/10" style={{ width: '750px', height: '750px' }}>
+        <div className="flex flex-row">
+        <div className="chart-container bg-black/10" style={{ width: '500px', height: '600px' }}>
           <PolarArea
             data={chartDataBestScore}
             options={{
@@ -106,6 +107,31 @@ const AppliedChecklistsChart = () => {
             }}
             
           />
+        </div>
+         <div className="chart-container bg-black/10" style={{ width: '500px', height: '600px' }}>
+         <Bar
+              data={chartDataUserRanking}
+              options={{
+                indexAxis: 'x', // Set the axis to horizontal
+                responsive: true,
+                color: 'white', 
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'white', // Change tick label color to white
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: 'white', // Change label color to white
+                    },
+                  },
+                },
+              }}
+              
+            />
+           </div>
         </div>
       </div>
     </div>
