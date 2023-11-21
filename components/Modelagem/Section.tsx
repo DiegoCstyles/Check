@@ -183,7 +183,8 @@ const Navbar = () => {
         </div>
         
           <div className='flex flex-row bg-black/10 border justify-between h-1/2'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Ultimos checklists Criados
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>
+              <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Ultimos checklists Criados</h1>
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
                   <li className='text-center mr-2 w-32 px-2 py-1 '>Titulo</li>
@@ -192,17 +193,19 @@ const Navbar = () => {
                 {lastRiskItems.map((risk) => (
                   <li key={risk.id}>
                     <div className='flex justify-center text-center'>
-                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs '> {risk.title} </p>
-                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.description} </p>
+                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs bg-black/10'> {risk.title} </p>
+                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0 bg-black/10'> {risk.description} </p>
                     </div>
                   </li>
                 ))}
               </ul>
             </section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-full'>Resumo de riscos anuais
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-full'>
+              <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Resumo de riscos anuais</h1>
               <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             </section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 '>Historico de checklists
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>
+              <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Historico de checklists</h1>
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
                   <li className='text-center mr-2 w-32 px-2 py-1'>Titulo</li>
@@ -212,9 +215,9 @@ const Navbar = () => {
                 {riskItems.map((risk) => (
                   <li key={risk.id}>
                     <div className='flex justify-center text-center'>
-                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs'> {risk.title} </p>
-                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0'> {risk.impact} </p>
-                      <p className='text-center w-32 px-2 py-1 text-xs'> {risk.likelihood} </p>
+                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs bg-black/10'> {risk.title} </p>
+                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0 bg-black/10'> {risk.impact} </p>
+                      <p className='text-center w-32 px-2 py-1 text-xs bg-black/10'> {risk.likelihood} </p>
                     </div>
                   </li>
                 ))}
