@@ -113,13 +113,12 @@ const Navbar = () => {
   };
 
   const drawAlertsDashboard = () => {
-    const ctx = canvasRef.current?.getContext('2d');
     
     // Implement your logic to determine alerts based on weather and risk data
     const alerts = determineAlerts(weatherData, riskItems);
-
+    const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
     // Display alerts using Chart.js or any other visualization library
-    if (ctx) {
+    if (canvasRef2.current) {
       // Example: Display alerts as a simple bar chart
       const alertsChartData = {
         labels: alerts.map(alert => alert.label),
@@ -130,7 +129,8 @@ const Navbar = () => {
         }],
       };
 
-      new Chart(ctx, {
+      const ctx2 = canvasRef2.current.getContext('2d');
+      new Chart(ctx2, {
         type: 'bar',
         data: alertsChartData,
         options: {
@@ -147,7 +147,7 @@ const Navbar = () => {
     // For example, you can check for high-risk assessments or specific weather conditions
     // Return an array of objects with labels and values for the alerts
     return [
-      { label: 'High Risk', value: countHighRiskAssessments(riskItems) },
+      { label: 'Alto risco', value: countHighRiskAssessments(riskItems) },
       // Add more alerts as needed
     ];
   };
@@ -203,15 +203,16 @@ const Navbar = () => {
     }
   };
 
-  const canvasRef = useRef<HTMLCanvasElement | null>(null); // Set type for ref
+  const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
+
 
   useEffect(() => {
-    const ctx = canvasRef.current?.getContext('2d');
+    
     // Check if there's an existing chart and destroy it
     if (existingChart) {
       existingChart.destroy();
     }
-    if (ctx) {
+    if (canvasRef1.current) {
       const averages = calculateAverages();
       
       // Create a new Chart.js chart
@@ -239,7 +240,9 @@ const Navbar = () => {
         ],
       };
 
-      existingChart = new Chart(ctx, {
+      const ctx1 = canvasRef1.current.getContext('2d');
+
+      existingChart = new Chart(ctx1, {
         type: 'line',
         data: lineGraphData,
         options: { color: 'white' },
