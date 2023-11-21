@@ -154,7 +154,7 @@ const Navbar = () => {
 
   const countHighRiskAssessments = (riskItems: RiskItem[]) => {
     // Implement your logic to count high-risk assessments
-    return riskItems.filter(risk => risk.level === 'High').length;
+    return riskItems.filter(risk => risk.impact === 'alto').length;
   };
 
   const fetchRiskItems = async (itemsPerPage = 4) => {
