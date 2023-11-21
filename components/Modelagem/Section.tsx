@@ -173,12 +173,10 @@ const Navbar = () => {
         
         <div className="flex flex-row h-1/2">
           <div className='w-1/2 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
           </div>
           <div className='w-1/2 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>Insights</section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>APIs</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Insights</section>
           </div>
         </div>
         
