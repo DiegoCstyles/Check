@@ -115,11 +115,15 @@ const Navbar = () => {
   };
 
   const drawAlertsDashboard = () => {
-    
-    // Implement your logic to determine alerts based on weather and risk data
-    const alerts = determineAlerts(weatherData, riskItems);
-    // Display alerts using Chart.js or any other visualization library
-    if (canvasRef2.current) {
+  // Implement your logic to determine alerts based on weather and risk data
+  const alerts = determineAlerts(weatherData, riskItems);
+  const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
+
+  // Display alerts using Chart.js or any other visualization library
+  if (canvasRef2.current) {
+    const ctx2 = canvasRef2.current.getContext('2d');
+
+    if (ctx2) {
       // Example: Display alerts as a simple bar chart
       const alertsChartData = {
         labels: alerts.map(alert => alert.label),
@@ -130,7 +134,6 @@ const Navbar = () => {
         }],
       };
 
-      const ctx2 = canvasRef2.current.getContext('2d');
       new Chart(ctx2, {
         type: 'bar',
         data: alertsChartData,
@@ -141,7 +144,9 @@ const Navbar = () => {
         },
       });
     }
-  };
+  }
+};
+
 
   const determineAlerts = (weather: WeatherData | null, riskItems: any[]) => {
     // Implement your logic to determine alerts based on weather and risk data
