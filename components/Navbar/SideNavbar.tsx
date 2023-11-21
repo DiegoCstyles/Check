@@ -12,7 +12,7 @@ const Navbar = () => {
         <p className="p-2 m-1 text-center dark:text-cyan-300 font-black text-base tracking-tight">CHECK.</p>
         <div className='group-hover:visible invisible flex flex-col flex-grow h-full'>
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'home' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'home' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('home')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Home</span>
@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'cadastros' ? 'bg-white/50 ' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'cadastros' ? 'bg-white/50 ' : ''}`}
             onClick={() => handlePageChange('cadastros')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 ">Cadastros</span>
@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
           
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'planos de ação' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'planos de ação' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('planos de ação')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Planos de Ação</span>
@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
           
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'relatorios' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'relatorios' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('relatorios')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Relatórios</span>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className='flex-grow grow h-full'></div>
 
            <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-y-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('sair')}
             style={{ order: 9999 }} 
           >
