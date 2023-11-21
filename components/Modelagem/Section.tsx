@@ -30,6 +30,7 @@ const Navbar = () => {
     }[];
     main?: {
       temp?: number;
+      humidity?: number;
     };
     // Add more properties as needed
   }
@@ -219,7 +220,8 @@ const Navbar = () => {
             {weatherData && (
               <div className="p-5">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
-                <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description}</p>
+                <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description} {weatherData.weather?.icon}</p>
+                <p className="text-white p-1">Humidade: {weatherData.main?.humidity}</p>
                 <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(weatherData.main?.temp)} °C</p>
                 {/* Add more weather details as needed */}
               </div>
