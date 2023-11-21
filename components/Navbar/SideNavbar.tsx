@@ -12,19 +12,19 @@ const Navbar = () => {
         <p className="p-2 m-1 text-center dark:text-cyan-300 font-black text-base tracking-tight">CHECK.</p>
         <div className='group-hover:visible invisible flex flex-col flex-grow h-full'>
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'home' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'home' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('home')}
           >
-            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Home</span>
+            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Home</span>
             {/* Checklist icon */}
             <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 9h12l3-9M9 19V9m6 10V9" /></svg><div className='grow '></div>
           </div>
 
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'cadastros' ? 'bg-white/50 ' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'cadastros' ? 'bg-white/50 ' : ''}`}
             onClick={() => handlePageChange('cadastros')}
           >
-            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 ">Cadastros</span>
+            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Cadastros</span>
             <div className='grow '></div> <svg className="w-5 h-6 mr-1 visible flex items-center justify-center " fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 10h-4a1 1 0 00-1 1v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5a1 1 0 00-1-1H3" />
@@ -32,18 +32,18 @@ const Navbar = () => {
           </div>
           
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'planos de ação' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'planos de ação' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('planos de ação')}
           >
-            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Planos de Ação</span>
+            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Planos de Ação</span>
             <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
           </div>
           
           <div
-            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'relatorios' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-b-4 text-white text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'relatorios' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('relatorios')}
           >
-            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Relatórios</span>
+            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Relatórios</span>
             <div className='grow '></div> <svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 6H8a2 2 0 00-2 2v11a2 2 0 002 2h13a2 2 0 002-2V8a2 2 0 00-2-2z" />
@@ -53,11 +53,11 @@ const Navbar = () => {
           <div className='flex-grow grow h-full'></div>
 
            <div
-            className={`flex items-center p-2 border-y-4 text-white text-sm bg-black/10 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
+            className={`flex items-center p-2 border-y-4 text-white text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'sair' ? 'bg-white/50' : ''}`}
             onClick={() => handlePageChange('sair')}
             style={{ order: 9999 }} 
           >
-            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2">Sair</span>
+            <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Sair</span>
             <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
           </div>
           
