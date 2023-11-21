@@ -262,7 +262,6 @@ const Navbar = () => {
     fetchRiskItems(4);
     fetchWeatherData();
     if (weatherData && riskItems.length > 0) {
-       const drawAlertsDashboard = useDrawAlertsDashboard();
        drawAlertsDashboard(); // Call the function here
     }
   }, [weatherData, riskItems]);
