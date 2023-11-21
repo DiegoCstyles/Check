@@ -83,7 +83,7 @@ const Navbar = () => {
   const fetchWeatherData = async () => {
     const apiKey = '8a94c31dec76eddbdd1b3618ea56e043';
     const city = 'Lorena'; // Replace with the desired city
-    const apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&lang=pt_br`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br`;
     console.log('url: ',apiUrl);
     try {
       const response = await fetch(apiUrl);
