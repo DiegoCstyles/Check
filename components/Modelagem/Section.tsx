@@ -12,6 +12,8 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
+  const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
+  const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
 
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -116,7 +118,6 @@ const Navbar = () => {
     
     // Implement your logic to determine alerts based on weather and risk data
     const alerts = determineAlerts(weatherData, riskItems);
-    const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
     // Display alerts using Chart.js or any other visualization library
     if (canvasRef2.current) {
       // Example: Display alerts as a simple bar chart
@@ -203,9 +204,6 @@ const Navbar = () => {
     }
   };
 
-  const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
-
-
   useEffect(() => {
     
     // Check if there's an existing chart and destroy it
@@ -259,7 +257,7 @@ const Navbar = () => {
     if (weatherData && riskItems.length > 0) {
       drawAlertsDashboard();
     }
-  }, [weatherData, riskItems]);
+  }, [weatherData, riskItems, drawAlertsDashboard]);
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
