@@ -134,13 +134,13 @@ const Navbar = () => {
           {
             label: 'Alto Risco',
             data: averages.altoRiscoCounts,
-            borderColor: 'rgb(255, 255, 255)',
+            borderColor: 'rgb(255, 0, 0)',
             borderWidth: 2,
           },
           {
             label: 'Medio Risco',
             data: averages.medioRiscoCounts,
-            borderColor: 'rgb(0, 50, 255)',
+            borderColor: 'rgb(255, 165, 0)',
             borderWidth: 2,
           },
           {
