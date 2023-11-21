@@ -142,7 +142,7 @@ const Navbar = () => {
     }
   };
 
-  const determineAlerts = (weather, riskItems) => {
+  const determineAlerts = (weather: WeatherData | null, riskItems: any[]) => {
     // Implement your logic to determine alerts based on weather and risk data
     // For example, you can check for high-risk assessments or specific weather conditions
     // Return an array of objects with labels and values for the alerts
