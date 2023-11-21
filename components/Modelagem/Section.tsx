@@ -12,8 +12,6 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
-  const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
-  const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
 
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -114,57 +112,6 @@ const Navbar = () => {
     }
   };
 
-    const useDrawAlertsDashboard = () => {
-    const drawAlertsDashboard = () => {
-      // ... (your existing code)
-
-      // Use the existing canvasRef2 declared at the component level
-      if (canvasRef2.current) {
-        const ctx2 = canvasRef2.current.getContext('2d');
-
-        if (ctx2) {
-          // Example: Display alerts as a simple bar chart
-          const alertsChartData = {
-            labels: alerts.map(alert => alert.label),
-            datasets: [{
-              label: 'Alerts',
-              data: alerts.map(alert => alert.value),
-              backgroundColor: 'rgba(255, 0, 0, 0.5)',
-            }],
-          };
-
-          new Chart(ctx2, {
-            type: 'bar',
-            data: alertsChartData,
-            options: {
-              scales: {
-                y: { beginAtZero: true },
-              },
-            },
-          });
-        }
-      }
-    };
-
-    return drawAlertsDashboard;
-  };
-
-
-  const determineAlerts = (weather: WeatherData | null, riskItems: any[]) => {
-    // Implement your logic to determine alerts based on weather and risk data
-    // For example, you can check for high-risk assessments or specific weather conditions
-    // Return an array of objects with labels and values for the alerts
-    return [
-      { label: 'Alto risco', value: countHighRiskAssessments(riskItems) },
-      // Add more alerts as needed
-    ];
-  };
-
-  const countHighRiskAssessments = (riskItems: RiskItem[]) => {
-    // Implement your logic to count high-risk assessments
-    return riskItems.filter(risk => risk.impact === 'alto').length;
-  };
-
   const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?itemsPerPage=${itemsPerPage}`);
@@ -211,13 +158,15 @@ const Navbar = () => {
     }
   };
 
+  const canvasRef = useRef<HTMLCanvasElement | null>(null); // Set type for ref
+
   useEffect(() => {
-    
+    const ctx = canvasRef.current?.getContext('2d');
     // Check if there's an existing chart and destroy it
     if (existingChart) {
       existingChart.destroy();
     }
-    if (canvasRef1.current) {
+    if (ctx) {
       const averages = calculateAverages();
       
       // Create a new Chart.js chart
@@ -245,9 +194,7 @@ const Navbar = () => {
         ],
       };
 
-      const ctx1 = canvasRef1.current.getContext('2d');
-
-      existingChart = new Chart(ctx1, {
+      existingChart = new Chart(ctx, {
         type: 'line',
         data: lineGraphData,
         options: { color: 'white' },
@@ -261,10 +208,7 @@ const Navbar = () => {
     fetchRiskItemsUsage();
     fetchRiskItems(4);
     fetchWeatherData();
-    if (weatherData && riskItems.length > 0) {
-       drawAlertsDashboard(); // Call the function here
-    }
-  }, [weatherData, riskItems]);
+  }, []);
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
@@ -279,7 +223,6 @@ const Navbar = () => {
                 <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description} {weatherData.weather?.[0]?.icon}</p>
                 <p className="text-white p-1">Humidade: {weatherData.main?.humidity}</p>
                 <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(weatherData.main?.temp)} °C</p>
-                <canvas ref={canvasRef} width="200" height="200"></canvas>
                 {/* Add more weather details as needed */}
               </div>
             )}
