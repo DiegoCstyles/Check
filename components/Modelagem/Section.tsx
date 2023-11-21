@@ -114,38 +114,40 @@ const Navbar = () => {
     }
   };
 
-  const drawAlertsDashboard = () => {
-  // Implement your logic to determine alerts based on weather and risk data
-  const alerts = determineAlerts(weatherData, riskItems);
-  const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
+    const useDrawAlertsDashboard = () => {
+    const drawAlertsDashboard = () => {
+      // ... (your existing code)
 
-  // Display alerts using Chart.js or any other visualization library
-  if (canvasRef2.current) {
-    const ctx2 = canvasRef2.current.getContext('2d');
+      // Use the existing canvasRef2 declared at the component level
+      if (canvasRef2.current) {
+        const ctx2 = canvasRef2.current.getContext('2d');
 
-    if (ctx2) {
-      // Example: Display alerts as a simple bar chart
-      const alertsChartData = {
-        labels: alerts.map(alert => alert.label),
-        datasets: [{
-          label: 'Alerts',
-          data: alerts.map(alert => alert.value),
-          backgroundColor: 'rgba(255, 0, 0, 0.5)',
-        }],
-      };
+        if (ctx2) {
+          // Example: Display alerts as a simple bar chart
+          const alertsChartData = {
+            labels: alerts.map(alert => alert.label),
+            datasets: [{
+              label: 'Alerts',
+              data: alerts.map(alert => alert.value),
+              backgroundColor: 'rgba(255, 0, 0, 0.5)',
+            }],
+          };
 
-      new Chart(ctx2, {
-        type: 'bar',
-        data: alertsChartData,
-        options: {
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-    }
-  }
-};
+          new Chart(ctx2, {
+            type: 'bar',
+            data: alertsChartData,
+            options: {
+              scales: {
+                y: { beginAtZero: true },
+              },
+            },
+          });
+        }
+      }
+    };
+
+    return drawAlertsDashboard;
+  };
 
 
   const determineAlerts = (weather: WeatherData | null, riskItems: any[]) => {
@@ -260,9 +262,10 @@ const Navbar = () => {
     fetchRiskItems(4);
     fetchWeatherData();
     if (weatherData && riskItems.length > 0) {
-      drawAlertsDashboard();
+       const drawAlertsDashboard = useDrawAlertsDashboard();
+       drawAlertsDashboard(); // Call the function here
     }
-  }, [weatherData, riskItems, drawAlertsDashboard]);
+  }, [weatherData, riskItems);
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
