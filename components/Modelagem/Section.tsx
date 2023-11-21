@@ -152,7 +152,7 @@ const Navbar = () => {
     ];
   };
 
-  const countHighRiskAssessments = (riskItems) => {
+  const countHighRiskAssessments = (riskItems: RiskItem[]) => {
     // Implement your logic to count high-risk assessments
     return riskItems.filter(risk => risk.level === 'High').length;
   };
