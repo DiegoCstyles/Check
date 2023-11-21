@@ -14,8 +14,11 @@ const Navbar = () => {
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
 
   // Define the function to convert Kelvin to Celsius
-  const convertKelvinToCelsius = (kelvin) => {
-    return (kelvin - 273.15).toFixed(2);
+  const convertKelvinToCelsius = (kelvin: number | undefined) => {
+  if (kelvin === undefined) {
+    return 'N/A'; // or handle the case when kelvin is undefined
+  }
+  return (kelvin - 273.15).toFixed(2);
   };
 
   interface WeatherData {
