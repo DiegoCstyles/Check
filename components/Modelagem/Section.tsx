@@ -12,6 +12,7 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
+  const [weatherData, setWeatherData] = useState(null);
 
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       
@@ -68,6 +69,25 @@ const Navbar = () => {
   const baixoRiscoCounts = averages['Baixo Risco'].map(data => data.count);
 
   return { altoRiscoCounts, medioRiscoCounts, baixoRiscoCounts };
+  };
+
+  // Fetch weather data
+  const fetchWeatherData = async () => {
+    const apiKey = '8a94c31dec76eddbdd1b3618ea56e043';
+    const city = 'Lorena'; // Replace with the desired city
+    const apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&lang=pt_br`;
+    console.log('url: ',apiUrl);
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const data = await response.json();
+        setWeatherData(data);
+      } else {
+        console.error('Error fetching weather data:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const fetchRiskItems = async (itemsPerPage = 4) => {
@@ -165,6 +185,7 @@ const Navbar = () => {
     fetchLastRiskItems();
     fetchRiskItemsUsage();
     fetchRiskItems(4);
+    fetchWeatherData();
   }, []);
 
   return (
@@ -174,6 +195,13 @@ const Navbar = () => {
         <div className="flex flex-row h-1/2">
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
+            {weatherData && (
+              <div className="p-5">
+                <p className="text-white">City: {weatherData.name}</p>
+                <p className="text-white">Temperature: {weatherData.main.temp} °C</p>
+                {/* Add more weather details as needed */}
+              </div>
+            )}
           </div>
           <div className='w-1/2 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Insights</section>
