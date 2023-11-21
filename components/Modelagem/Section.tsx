@@ -205,8 +205,9 @@ const Navbar = () => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
             {weatherData && (
               <div className="p-5">
-                <p className="text-white">City: {weatherData.name}</p>
-                <p className="text-white">Temperature: {weatherData.main?.temp} °C</p>
+                <p className="text-white">Cidade: {weatherData.name}</p>
+                <p className="text-white">Estado do tempo: {weatherData.weather?.[0]?.main}</p>
+                <p className="text-white">Temperatura: {convertKelvinToCelsius(weatherData.main?.temp)} °C</p>
                 {/* Add more weather details as needed */}
               </div>
             )}
