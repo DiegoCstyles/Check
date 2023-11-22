@@ -135,9 +135,11 @@ const Navbar = () => {
         return data;
       } else {
         console.error('Error fetching risk items from the database');
+        return []; 
       }
     } catch (error) {
       console.error('Error:', error);
+      return []; 
     }
   };
   
