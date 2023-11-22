@@ -113,7 +113,7 @@ const Navbar = () => {
     }
   };
 
-  const generateScenario = async (riskData) => {
+  const generateScenario = async (riskData: any) => {
     try {
       const response = await axios.post('https://checkend.onrender.com/api/generateScenario', { riskData });
       console.log('Generated Scenario:', response.data);
