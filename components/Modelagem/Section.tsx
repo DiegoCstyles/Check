@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { RiskItem } from './models';
 import Chart from 'chart.js/auto';
 // Import the necessary component
+import axios from 'axios';
 import { NewsDisplay } from '@/components';
 
 let existingChart: { destroy: () => void; }; // Declare the variable outside the component function
@@ -112,6 +113,19 @@ const Navbar = () => {
     }
   };
 
+  const generateScenario = async (riskData) => {
+    try {
+      const response = await axios.post('https://checkend.onrender.com/api/generateScenario', { riskData });
+      console.log('Generated Scenario:', response.data);
+      // Handle the generated scenario as needed
+      return response.data;
+    } catch (error) {
+      console.error('Error generating scenario:', error);
+      return 'Error generating scenario.';
+    }
+  };
+
+
   const fetchRiskItems = async (itemsPerPage = 4) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?itemsPerPage=${itemsPerPage}`);
@@ -204,11 +218,28 @@ const Navbar = () => {
   }, [riskItemsUsage]);
 
   useEffect(() => {
-    fetchLastRiskItems();
-    fetchRiskItemsUsage();
-    fetchRiskItems(4);
-    fetchWeatherData();
+    const fetchData = async () => {
+      try {
+        await fetchLastRiskItems();
+        await fetchRiskItemsUsage();
+        const riskItemsData = await fetchRiskItems(4);
+        setRiskItems(riskItemsData);
+  
+        // Generate scenarios based on risk data
+        riskItemsData.forEach(async (risk) => {
+          const scenario = await generateScenario(risk);
+          console.log('Generated Scenario:', scenario);
+          // You can handle the generated scenarios as needed, e.g., store them in state or display them.
+        });
+  
+        await fetchWeatherData();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
   }, []);
+
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
