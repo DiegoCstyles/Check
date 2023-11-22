@@ -126,13 +126,13 @@ const Navbar = () => {
   };
 
 
-  const fetchRiskItems = async (itemsPerPage = 4) => {
+  const fetchRiskItems = async (itemsPerPage = 4): Promise<RiskItem[]> => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/riskItems?itemsPerPage=${itemsPerPage}`);
 
       if (response.ok) {
         const data = await response.json();
-        setRiskItems(data);
+        return data;
       } else {
         console.error('Error fetching risk items from the database');
       }
@@ -140,7 +140,7 @@ const Navbar = () => {
       console.error('Error:', error);
     }
   };
-
+  
   const fetchRiskItemsUsage = async () => {
     try {
       console.log('here on the before fetch');
@@ -173,6 +173,30 @@ const Navbar = () => {
   };
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Set type for ref
+
+  const fetchData = async () => {
+    try {
+      // Fetch the last risk items
+      await fetchLastRiskItems();
+      await fetchRiskItemsUsage();
+  
+      // Fetch risk items data
+      const riskItemsData = await fetchRiskItems(4);
+      setRiskItems(riskItemsData); // Now it's safe to set the state with the data
+  
+      // Generate scenarios based on risk data
+      riskItemsData.forEach(async (risk) => {
+        const scenario = await generateScenario(risk);
+        console.log('Generated Scenario:', scenario);
+        // You can handle the generated scenarios as needed, e.g., store them in state or display them.
+      });
+  
+      // Fetch weather data
+      await fetchWeatherData();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
@@ -218,25 +242,6 @@ const Navbar = () => {
   }, [riskItemsUsage]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await fetchLastRiskItems();
-        await fetchRiskItemsUsage();
-        const riskItemsData = await fetchRiskItems(4);
-        setRiskItems(riskItemsData);
-  
-        // Generate scenarios based on risk data
-        riskItemsData.forEach(async (risk) => {
-          const scenario = await generateScenario(risk);
-          console.log('Generated Scenario:', scenario);
-          // You can handle the generated scenarios as needed, e.g., store them in state or display them.
-        });
-  
-        await fetchWeatherData();
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
     fetchData();
   }, []);
 
