@@ -2,15 +2,25 @@
 import React, { useState, useEffect } from 'react';
 import { RiskItem  } from './models';
 
+interface Question {
+  id: number;
+  subject: string;
+  question: string;
+  value: number;
+}
+
 const AppliedChecklistsPage: React.FC = () => {
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState<Question[]>([]);
 
   const fetchQuestions = async () => {
-    // Perform API call to fetch questions
-    const response = await fetch('https://checkend.onrender.com/api/questions');
-    const data = await response.json();
-    setQuestions(data);
+    try {
+      const response = await fetch(`https://checkend.onrender.com/api/questions`);
+
+      if (response.ok) {
+        const data = await response.json(); setQuestions(data); // Update the riskItems state with the fetched data
+      } else { console.error('Error fetching question from the database'); }
+    } catch (error) { console.error('Error:', error); }
   };
 
   const fetchRiskItems = async (itemsPerPage = 10) => {
