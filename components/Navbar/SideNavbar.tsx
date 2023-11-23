@@ -18,7 +18,7 @@ const Navbar = () => {
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Home</span>
             {/* Checklist icon */}
             <div className='grow '></div><svg
-              className="w-5 h-6 mr-1 visible bg-black/30 border"
+              className="w-5 h-6 mr-1 visible border-b-4 border-cyan-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -38,7 +38,7 @@ const Navbar = () => {
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Cadastros</span>
             <div className='grow '></div> <svg
-              className="w-5 h-6 mr-1 visible"
+              className="w-5 h-6 mr-1 visible border-b-4 border-cyan-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Planos de Ação</span>
             <div className='grow '></div><svg
-              className="w-5 h-6 mr-1 visible"
+              className="w-5 h-6 mr-1 visible border-b-4 border-cyan-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -77,7 +77,7 @@ const Navbar = () => {
             onClick={() => handlePageChange('relatorios')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Relatórios</span>
-            <div className='grow '></div> <svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className='grow '></div> <svg className="w-5 h-6 mr-1 visible border-b-4 border-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 6H8a2 2 0 00-2 2v11a2 2 0 002 2h13a2 2 0 002-2V8a2 2 0 00-2-2z" />
             </svg> <div className='grow '></div>
@@ -91,7 +91,7 @@ const Navbar = () => {
             style={{ order: 9999 }} 
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Sair</span>
-            <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
+            <div className='grow '></div><svg className="w-5 h-6 mr-1 visible border-b-4 border-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
           </div>
           
         </div>
