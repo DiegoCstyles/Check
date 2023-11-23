@@ -17,7 +17,19 @@ const Navbar = () => {
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Home</span>
             {/* Checklist icon */}
-            <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 9h12l3-9M9 19V9m6 10V9" /></svg><div className='grow '></div>
+            <div className='grow '></div><svg
+              className="w-5 h-6 mr-1 visible"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 3v10.5a2.5 2.5 0 002.5 2.5h8.8a2.5 2.5 0 002.5-2.5V3M12 18v3m0 0V3"
+              />
+            </svg><div className='grow '></div>
           </div>
 
           <div
@@ -45,7 +57,19 @@ const Navbar = () => {
             onClick={() => handlePageChange('planos de ação')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Planos de Ação</span>
-            <div className='grow '></div><svg className="w-5 h-6 mr-1 visible" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg><div className='grow '></div>
+            <div className='grow '></div><svg
+              className="w-5 h-6 mr-1 visible"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg><div className='grow '></div>
           </div>
           
           <div
