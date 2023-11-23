@@ -181,7 +181,7 @@ const Navbar = () => {
       await fetchRiskItemsUsage();
   
       // Fetch risk items data
-      const riskItemsData = await fetchRiskItems(4);
+      const riskItemsData = await fetchRiskItems(1);
       console.log('riskItemsData: ', riskItemsData);
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
   
