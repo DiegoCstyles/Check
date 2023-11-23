@@ -43,7 +43,7 @@ const AppliedChecklistsPage: React.FC = () => {
     }
     acc[question.subject].push(question);
     return acc;
-  }, {});
+  }, {} as Record<string, Question[]>); 
 
   return (
     <div className='flex justify-between ml-2 w-full'>
