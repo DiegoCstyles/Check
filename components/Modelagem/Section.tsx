@@ -145,9 +145,7 @@ const Navbar = () => {
   
   const fetchRiskItemsUsage = async () => {
     try {
-      console.log('here on the before fetch');
       const response = await fetch(`https://checkend.onrender.com/api/riskItemsUsage`);
-      console.log('here on the after fetch');
       if (response.ok) {
         const data = await response.json();
         setRiskItemsUsage(data);
