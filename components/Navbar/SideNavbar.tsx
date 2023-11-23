@@ -27,7 +27,7 @@ const Navbar = () => {
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="2"
-    d="M5 10l7-7m0 0l7 7m-7-7v18"
+    d="M12 2L2 12 12 22 22 12 12 2z"
   />
 </svg><div className='grow '></div>
           </div>
