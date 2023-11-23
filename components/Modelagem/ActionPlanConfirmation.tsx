@@ -82,7 +82,7 @@ const ActionPlanConfirmation = () => {
 
   return (
     <div className='text-xs w-1/2'>
-      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-500'>Confirmação</h2>
+      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-500/80'>Confirmação</h2>
       
       <ul className='border-b border-r p-1 mr-2'>
         {riskItems.map((risk) => (
@@ -96,7 +96,7 @@ const ActionPlanConfirmation = () => {
 
             <a
               href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-              className='w-auto p-1 text-center bg-white/20 border-b-4 m-1'  
+              className='w-auto p-1 text-center bg-white/20 border-b-4 m-1 hover:bg-white hover:border-black/80 hover:text-black'  
               target='_blank'
               rel='noopener noreferrer'
             >
