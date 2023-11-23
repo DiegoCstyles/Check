@@ -68,11 +68,16 @@ const AppliedChecklistsPage: React.FC = () => {
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
            {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
             <div key={subject}>
-              <h3 className='border-b p-1 text-xs text-white'>{subject}</h3>
+              <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
               {subjectQuestions.map((question) => (
                 <div key={question.id}>
                   <div className="flex flex-row justify-between">
                     <li className='p-1'>{question.question}</li>
+                    <div>
+                      <button className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1">Sim</button>
+                      <button className="answer-button hover:bg-black negative border bg-red-500 p-1">Não</button>
+                      <button className="answer-button hover:bg-black negative border bg-yellow-500 p-1">NA</button>
+                    </div>
                   </div>
                 </div>
               ))}
