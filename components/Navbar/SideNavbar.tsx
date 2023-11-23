@@ -25,9 +25,18 @@ const Navbar = () => {
             onClick={() => handlePageChange('cadastros')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Cadastros</span>
-            <div className='grow '></div> <svg className="w-5 h-6 mr-1 visible flex items-center justify-center " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 10h-4a1 1 0 00-1 1v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5a1 1 0 00-1-1H3" />
+            <div className='grow '></div> <svg
+              className="w-5 h-6 mr-1 visible"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 13l4 4L19 7"
+              />
             </svg> <div className='grow '></div>
           </div>
           
