@@ -4,6 +4,14 @@ import { RiskItem  } from './models';
 
 const AppliedChecklistsPage: React.FC = () => {
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
+  const [questions, setQuestions] = useState([]);
+
+  const fetchQuestions = async () => {
+    // Perform API call to fetch questions
+    const response = await fetch('https://checkend.onrender.com/api/questions');
+    const data = await response.json();
+    setQuestions(data);
+  };
 
   const fetchRiskItems = async (itemsPerPage = 10) => {
     try {
@@ -15,7 +23,7 @@ const AppliedChecklistsPage: React.FC = () => {
     } catch (error) { console.error('Error:', error); }
   };
 
-  useEffect(() => { fetchRiskItems(); }, []);
+  useEffect(() => { fetchRiskItems(); fetchQuestions();}, []);
 
   return (
     <div className='flex justify-between ml-2 w-full'>
@@ -38,6 +46,19 @@ const AppliedChecklistsPage: React.FC = () => {
                 />
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
+          {questions.map((question) => (
+            <div key={question.id}>
+              <h3 className='border-b p-1 text-xs text-white'>{question.subject}</h3>
+              <div className="flex flex-row justify-between">
+                <li className='p-1'>{question.question}</li>
+                <div>
+                  <button className="answer-button hover:bg-black positive border bg-green-400 p-1">Sim</button>
+                  <button className="answer-button hover:bg-black negative border bg-red-500 p-1">Não</button>
+                  <button className="answer-button hover:bg-black negative border bg-yellow-500 p-1">NA</button>
+                </div>
+              </div>
+            </div>
+          ))}
           <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI&apos;s</h3>
           <div className="flex flex-row justify-between">
             <li className='p-1'>Possui ficha de controle?</li>
