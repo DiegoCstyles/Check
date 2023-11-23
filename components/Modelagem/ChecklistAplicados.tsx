@@ -35,6 +35,16 @@ const AppliedChecklistsPage: React.FC = () => {
 
   useEffect(() => { fetchRiskItems(); fetchQuestions();}, []);
 
+  
+  // Group questions by subject
+  const groupedQuestions: Record<string, Question[]> = questions.reduce((acc, question) => {
+    if (!acc[question.subject]) {
+      acc[question.subject] = [];
+    }
+    acc[question.subject].push(question);
+    return acc;
+  }, {});
+
   return (
     <div className='flex justify-between ml-2 w-full'>
     {/* Checklist Questions */}
@@ -56,17 +66,16 @@ const AppliedChecklistsPage: React.FC = () => {
                 />
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
-          {questions.map((question) => (
-            <div key={question.id}>
-              <h3 className='border-b p-1 text-xs text-white'>{question.subject}</h3>
-              <div className="flex flex-row justify-between">
-                <li className='p-1'>{question.question}</li>
-                <div>
-                  <button className="answer-button hover:bg-black positive border bg-green-400 p-1">Sim</button>
-                  <button className="answer-button hover:bg-black negative border bg-red-500 p-1">Não</button>
-                  <button className="answer-button hover:bg-black negative border bg-yellow-500 p-1">NA</button>
+           {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
+            <div key={subject}>
+              <h3 className='border-b p-1 text-xs text-white'>{subject}</h3>
+              {subjectQuestions.map((question) => (
+                <div key={question.id}>
+                  <div className="flex flex-row justify-between">
+                    <li className='p-1'>{question.question}</li>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           ))}
           <h3 className='border-b p-1 text-xs text-white'>Ficha de controle de EPI&apos;s</h3>
