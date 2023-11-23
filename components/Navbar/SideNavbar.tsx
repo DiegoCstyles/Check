@@ -18,18 +18,24 @@ const Navbar = () => {
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Home</span>
             {/* Checklist icon */}
             <div className='grow '></div><svg
-              className="w-5 h-6 mr-1 visible"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 3.00002C5 3.00002 12 10 12 10C12 10 19 3 19 3.00002C19 3.00002 21 5 21 8.00002C21 11 19 13 19 13L12 20L5 13C5 13 3 11 3 8.00002C3 5 5 3.00002 5 3.00002Z"
-              />
-            </svg><div className='grow '></div>
+  className="w-5 h-6 mr-1 visible"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    d="M12 2L2 12 12 22 22 12 12 2z"
+  />
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    d="M12 8v8"
+  />
+</svg><div className='grow '></div>
           </div>
 
           <div
