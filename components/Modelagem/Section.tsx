@@ -188,7 +188,7 @@ const Navbar = () => {
       // Generate scenarios based on risk data
       riskItemsData.forEach(async (risk) => {
         //const scenario = await generateScenario(risk);
-        console.log('Generated Scenario:', scenario);
+        //console.log('Generated Scenario:', scenario);
         // You can handle the generated scenarios as needed, e.g., store them in state or display them.
       });
   
