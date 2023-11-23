@@ -18,7 +18,7 @@ const Navbar = () => {
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Home</span>
             {/* Checklist icon */}
             <div className='grow '></div><svg
-              className="w-5 h-6 mr-1 visible"
+              className="w-5 h-6 mr-1 visible bg-black/30 border"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
           
           <div
-            className={`flex items-center p-2 border-b-4 text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'relatorios' ? 'bg-cyan-300 text-black' : 'bg-black/30'}`}
+            className={`flex items-center p-2 border-b-4 text-sm bg-black/30 hover:bg-white hover:border-black/80 hover:text-black ${currentPage === 'relatorios' ? 'bg-cyan-300 text-black' : ''}`}
             onClick={() => handlePageChange('relatorios')}
           >
             <span className="group-hover:visible group-hover:w-24 w-0 invisible text-xs ml-2 uppercase">Relatórios</span>
