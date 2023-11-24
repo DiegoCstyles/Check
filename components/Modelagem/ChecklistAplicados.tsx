@@ -129,9 +129,38 @@ const AppliedChecklistsPage: React.FC = () => {
 
   return (
     <div className='flex justify-between ml-2 w-full'>
-    {/* Checklist Questions */}
+      <div className="applied-checklists-page border p-5 w-1/3">
+        <h1 className='border-b-4 uppercase'>Checklist Aplicados</h1>
+        <ul className="applied-checklist-list">
+          {RiskItems.map((risk) => (
+            <li key={risk.id} className="applied-checklist-item bg-black/10">
+              <p className='mr-2 px-2 py-1 text-xs flex justify-between'>
+                <span className='p-2 text-start text-center'>{risk.title}</span>
+                <span className='p-2 text-start text-center'>{risk.date}</span>
+                <button 
+                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+                  onClick={() => handleSelectRisk(risk.id)}>
+                   Selecionar
+                </button>
+              </p>
+            </li>
+          ))}
+        </ul>
+        {selectedRiskValue !== null && (
+          <div>
+            <p className='p-2 bg-black/30 text-white'>Risco selecionado: {selectedRiskValue} | codigo: {selectedRiskId}</p>
+            <button 
+                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+                  onClick={() => handleSelectRisk(null)}>
+                   Cancelar
+            </button>
+          </div>
+        )}
+      </div>
+      
+     {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5 w-2/3">
-        <h2 className='text-sm border-b-4'>Inspeção de segurança do trabalho</h2>
+        <h2 className='text-sm border-b-4 uppercase'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs' style={{ display: selectedRiskId ? 'block' : 'none' }}>
           <label>
                 Local de Inspeção
@@ -176,35 +205,6 @@ const AppliedChecklistsPage: React.FC = () => {
             Aplicar checklist
           </button>
         </ol>
-      </div>
-      
-      <div className="applied-checklists-page border p-5 w-1/3">
-        <h1 className='border-b-4'>Checklist Aplicados</h1>
-        <ul className="applied-checklist-list">
-          {RiskItems.map((risk) => (
-            <li key={risk.id} className="applied-checklist-item">
-              <p className='mr-2 px-2 py-1 text-xs flex justify-between'>
-                <span className='p-2 text-start text-center bg-black/10'>{risk.title}</span>
-                <span className='p-2 text-start text-center bg-black/10'>{risk.date}</span>
-                <button 
-                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
-                  onClick={() => handleSelectRisk(risk.id)}>
-                   Selecionar
-                </button>
-              </p>
-            </li>
-          ))}
-        </ul>
-        {selectedRiskValue !== null && (
-          <div>
-            <p className='p-2 bg-black/30 text-white'>Risco selecionado: {selectedRiskValue} {selectedRiskId}</p>
-            <button 
-                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
-                  onClick={() => handleSelectRisk(null)}>
-                   Cancelar
-            </button>
-          </div>
-        )}
       </div>
   
     </div>
