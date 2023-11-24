@@ -99,7 +99,7 @@ const ActionPlanConfirmation = () => {
         />
         {riskItems
           .filter((risk) =>
-            risk.plandescription.toLowerCase().includes(searchInput.toLowerCase())
+            risk.responsibleplan.toLowerCase().includes(searchInput.toLowerCase())
           )
           .map((risk) => (
           <li className='p-2  flex flex-col text-start border text-xs m-2 bg-green-500' key={risk.id}>
