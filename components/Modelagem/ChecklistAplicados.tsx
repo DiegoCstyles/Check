@@ -147,7 +147,7 @@ const AppliedChecklistsPage: React.FC = () => {
           ))}
           {selectedRiskValue !== null && (
             <div>
-              <p className='p-2 bg-white/30 text-white'>Risco selecionado: {selectedRiskValue} | codigo: {selectedRiskId}</p>
+              <p className='p-2 bg-white/30 text-white italic'>Risco selecionado: {selectedRiskValue} | codigo: {selectedRiskId}</p>
               <button 
                     className='border w-full p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
                     onClick={() => handleSelectRisk(null)}>
