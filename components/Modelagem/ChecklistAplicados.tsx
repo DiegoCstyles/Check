@@ -131,7 +131,7 @@ const AppliedChecklistsPage: React.FC = () => {
     <div className='flex justify-between ml-2 w-full'>
       <div className="applied-checklists-page border p-5 w-1/3">
         <h1 className='border-b-4 p-1 uppercase bg-yellow-500 text-black text-xs font-semibold border-t border-x'>Checklists</h1>
-        <ul className="applied-checklist-list border">
+        <ul className="applied-checklist-list border bg-black">
           {RiskItems.map((risk) => (
             <li key={risk.id} className="applied-checklist-item bg-black/10">
               <p className='mr-2 px-2 py-1 text-xs flex justify-between text-center'>
@@ -149,7 +149,7 @@ const AppliedChecklistsPage: React.FC = () => {
             <div>
               <p className='p-2 bg-black/30 text-white'>Risco selecionado: {selectedRiskValue} | codigo: {selectedRiskId}</p>
               <button 
-                    className='border p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+                    className='border w-full p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
                     onClick={() => handleSelectRisk(null)}>
                      Cancelar
               </button>
@@ -161,7 +161,7 @@ const AppliedChecklistsPage: React.FC = () => {
      {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
-        <ol className='text-xs border'>
+        <ol className='text-xs border bg-black'>
           <label>
                 Local de Inspeção
                 <input
@@ -200,7 +200,7 @@ const AppliedChecklistsPage: React.FC = () => {
           ))}
 
           <button 
-            className='border m-1 mt-7 p-2 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+            className='border w-full p-2 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
             onClick={applyRiskToBackend}>
             Aplicar checklist
           </button>
