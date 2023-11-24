@@ -93,7 +93,7 @@ const ActionPlanConfirmation = () => {
           placeholder='Procurar...'
           value={searchInput}
           onChange={handleSearchInputChange}
-          className='w-full border text-black p-2 bg-white/80'
+          className='w-full border text-black p-2 bg-white'
       />
       <ul className='border-b border-r p-1 '> 
         {riskItems
@@ -101,17 +101,17 @@ const ActionPlanConfirmation = () => {
             risk.responsibleplan.toLowerCase().includes(searchInput.toLowerCase())
           )
           .map((risk) => (
-          <li className='p-2  flex flex-col text-start border text-xs m-2 bg-green-500' key={risk.id}>
+          <li className='p-2 flex flex-col text-start border text-xs m-0.5 bg-green-500' key={risk.id}>
             <span className='bg-black p-2 w-full'>Responsável: {risk.responsibleplan}</span>
             <span className='bg-slate-500/60 p-2 w-full'>Data: {risk.date}</span>
             <div className='w-full bg-black/30 p-2'>
                 <span className='w-1/3 mr-1'>ID: {risk.id}</span> 
-                <span className='w-2/3'>Descrição: {risk.plandescription}</span>
+                <span className='w-2/3'>| Descrição: {risk.plandescription}</span>
             </div>
             <div className='flex flex-row w-full'>
               <a
                 href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                className='w-3/5 p-1 text-center bg-white/20 border-b-4 m-1 hover:bg-white hover:border-black/80 hover:text-black'  
+                className='w-3/5 p-1.5 text-center bg-white/20 border-b-4 hover:bg-white hover:border-black/80 hover:text-black'  
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -120,13 +120,13 @@ const ActionPlanConfirmation = () => {
 
             
               <button
-                className="w-1/5 answer-button positive hover:bg-white hover:border-black/80 hover:text-black bg-black/75 p-2"
+                className="w-1/5 answer-button positive hover:bg-white hover:border-black/80 hover:text-black bg-black/75 p-1.5"
                 onClick={() => approveRiskItem(risk.id)}
               >
                 Aprovar
               </button>
               <button
-                className="w-1/5 answer-button negative hover:bg-white hover:border-black/80 hover:text-black bg-black/75 p-2"
+                className="w-1/5 answer-button negative hover:bg-white hover:border-black/80 hover:text-black bg-black/75 p-1.5"
                 onClick={() => rejectRiskItem(risk.id)}
               >
                 Reprovar
