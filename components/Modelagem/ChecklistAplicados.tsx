@@ -75,6 +75,7 @@ const AppliedChecklistsPage: React.FC = () => {
   useEffect(() => { fetchRiskItems(); fetchQuestions();}, []);
   
   const handleSelectRisk = (riskId: number | null) => {
+    console.log('Selected Risk ID:', riskId);
     setSelectedRiskId(riskId);
     const selectedRisk = RiskItems.find((risk) => risk.id === riskId);
     const valueToDisplay = selectedRisk?.title || null; // Use 'title' or another property
