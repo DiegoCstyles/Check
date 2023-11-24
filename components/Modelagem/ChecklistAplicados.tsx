@@ -19,7 +19,7 @@ const AppliedChecklistsPage: React.FC = () => {
     id: 0,
     dateapplied: '',
     score: 10,
-    risk_id: selectedRiskId !== null ? selectedRiskId : 0,
+    risk_id: riskId !== null ? riskId : 0,
   });
 
   const resetApplyRisk = () => {
@@ -79,6 +79,12 @@ const AppliedChecklistsPage: React.FC = () => {
     const selectedRisk = RiskItems.find((risk) => risk.id === riskId);
     const valueToDisplay = selectedRisk?.title || null; // Use 'title' or another property
     setSelectedRiskValue(valueToDisplay);
+    setApplyRisk({
+      id: 0,
+      dateapplied: '',
+      score: 10,
+      risk_id: riskId !== null ? riskId : 0,
+    });
   };
 
   
