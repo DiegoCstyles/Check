@@ -162,20 +162,22 @@ const AppliedChecklistsPage: React.FC = () => {
       <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs border bg-black'>
-          <label>
-                Local de Inspeção
-                <input
-                  className='bg-white/10 border-b-4 m-2 ml-2 p-1'
-                  type="text"
-                />
-          </label>
-          <label>
-                Participantes
-                <input
-                  className='bg-white/10 border-b-4 m-2 ml-2 p-1'
-                  type="text"
-                />
-          </label>
+          <div className='flex flex-row justify-between'>
+            <label>
+                  Local de Inspeção
+                  <input
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-1'
+                    type="text"
+                  />
+            </label>
+            <label>
+                  Participantes
+                  <input
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-1'
+                    type="text"
+                  />
+            </label>
+          </div>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
            {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
             <div key={subject}>
