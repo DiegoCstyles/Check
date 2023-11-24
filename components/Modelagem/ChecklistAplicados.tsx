@@ -26,7 +26,7 @@ const AppliedChecklistsPage: React.FC = () => {
     setApplyRisk({
       id: 0,
       dateapplied: '',
-      score: '',
+      score: 10,
       risk_id: '',
     });
   };  
@@ -129,10 +129,6 @@ const AppliedChecklistsPage: React.FC = () => {
               ))}
             </div>
           ))}
-        
-          <button className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' >
-             Salvar
-          </button>
 
           <button 
             className='border m-1 mt-7 p-2 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
