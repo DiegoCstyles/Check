@@ -18,7 +18,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
     id: 0,
     dateapplied: '',
-    score: 10,
+    score: 0,
     risk_id: selectedRiskId !== null ? selectedRiskId : 0,
   });
 
@@ -26,19 +26,43 @@ const AppliedChecklistsPage: React.FC = () => {
     setApplyRisk({
       id: 0,
       dateapplied: '',
-      score: 10,
+      score: 0,
       risk_id: 0,
     });
   };  
 
+   // Function to calculate the total score based on selected questions
+  const calculateTotalScore = (): number => {
+    let totalScore = 0;
+
+    // Iterate through questions and sum their values
+    for (const [, subjectQuestions] of Object.entries(groupedQuestions)) {
+      subjectQuestions.forEach((question) => {
+        // Check if the question is selected (you need to determine this based on user interaction)
+        // For example, you might have a state to track selected questions
+        // For now, let's assume the question is selected based on a hypothetical isSelected function
+        if (isSelected(question)) {
+          totalScore += question.value;
+        }
+      });
+    }
+
+    return totalScore;
+  };
+
   const applyRiskToBackend = async () => {
     try {
+      const totalScore = calculateTotalScore();
+      
       const response = await fetch('https://checkend.onrender.com/api/applyrisk', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(ApplyRisk),
+        body: JSON.stringify({
+          ...ApplyRisk,
+          score: totalScore,
+        }),
       });
   
       if (response.ok) {
