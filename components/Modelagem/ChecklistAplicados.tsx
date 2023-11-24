@@ -132,7 +132,7 @@ const AppliedChecklistsPage: React.FC = () => {
     {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5 w-2/3">
         <h2 className='text-sm border-b-4'>Inspeção de segurança do trabalho</h2>
-        <ol className='text-xs'>
+        <ol className='text-xs' style={{ display: selectedRiskId ? 'block' : 'none' }}>
           <label>
                 Local de Inspeção
                 <input
@@ -149,12 +149,12 @@ const AppliedChecklistsPage: React.FC = () => {
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
            {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
-            <div key={subject} style={{ display: selectedRiskId ? 'block' : 'none' }}>
+            <div key={subject}>
               <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
               {subjectQuestions.map((question) => (
                 <div key={question.id}>
                   <div className="flex flex-row justify-between">
-                    <li className='p-1'>{question.question}</li>
+                    <li className='p-1 bg-black/30'>{question.question}</li>
                     <div>
                       <button 
                         className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1"
