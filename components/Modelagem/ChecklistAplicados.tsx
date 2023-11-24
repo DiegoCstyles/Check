@@ -38,12 +38,7 @@ const AppliedChecklistsPage: React.FC = () => {
     // Iterate through questions and sum their values
     for (const [, subjectQuestions] of Object.entries(groupedQuestions)) {
       subjectQuestions.forEach((question) => {
-        // Check if the question is selected (you need to determine this based on user interaction)
-        // For example, you might have a state to track selected questions
-        // For now, let's assume the question is selected based on a hypothetical isSelected function
-        if (isSelected(question)) {
-          totalScore += question.value;
-        }
+        totalScore += question.value;
       });
     }
 
