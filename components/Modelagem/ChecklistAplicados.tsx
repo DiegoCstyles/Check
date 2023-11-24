@@ -15,6 +15,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: boolean }>({});
+  const [searchInput, setSearchInput] = useState<string>('');
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
     id: 0,
@@ -118,6 +119,10 @@ const AppliedChecklistsPage: React.FC = () => {
     }));
   };
 
+   const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
+  };
+
   // Group questions by subject
   const groupedQuestions: Record<string, Question[]> = questions.reduce((acc, question) => {
     if (!acc[question.subject]) {
@@ -131,8 +136,19 @@ const AppliedChecklistsPage: React.FC = () => {
     <div className='flex justify-between ml-2 w-full'>
       <div className="applied-checklists-page border p-5 w-1/3">
         <h1 className='border-b-4 p-1 uppercase bg-yellow-500 text-black text-xs font-semibold border-t border-x'>Checklists</h1>
+        <input
+          type='text'
+          placeholder='Procurar...'
+          value={searchInput}
+          onChange={handleSearchInputChange}
+          className='w-full border text-black p-1.5 bg-white'
+        />
         <ul className="applied-checklist-list border bg-black">
-          {RiskItems.map((risk) => (
+          {RiskItems
+            .filter((risk) =>
+              risk.title.toLowerCase().includes(searchInput.toLowerCase())
+            )
+            .map((risk) => (
             <li key={risk.id} className="applied-checklist-item">
               <p className='mr-2 px-2 py-1 text-xs flex justify-between text-center'>
                 <span className='p-2 w-1/3 text-center'>{risk.title}</span>
