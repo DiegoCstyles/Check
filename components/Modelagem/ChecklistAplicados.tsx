@@ -12,6 +12,7 @@ interface Question {
 const AppliedChecklistsPage: React.FC = () => {
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
 
   const fetchQuestions = async () => {
     try {
@@ -34,7 +35,10 @@ const AppliedChecklistsPage: React.FC = () => {
   };
 
   useEffect(() => { fetchRiskItems(); fetchQuestions();}, []);
-
+  
+  const handleSelectRisk = (riskId: number) => {
+    setSelectedRiskId(riskId);
+  };
   
   // Group questions by subject
   const groupedQuestions: Record<string, Question[]> = questions.reduce((acc, question) => {
@@ -67,7 +71,7 @@ const AppliedChecklistsPage: React.FC = () => {
           </label>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
            {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
-            <div key={subject}>
+            <div key={subject} style={{ display: selectedRiskId ? 'block' : 'none' }}>
               <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
               {subjectQuestions.map((question) => (
                 <div key={question.id}>
@@ -96,7 +100,11 @@ const AppliedChecklistsPage: React.FC = () => {
               <p className='mr-2 px-2 py-1 text-xs flex justify-between'>
                 <span className='p-2 text-start text-center bg-black/10'>{risk.title}</span>
                 <span className='p-2 text-start text-center bg-black/10'>{risk.date}</span>
-                <button className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' >Selecionar</button>
+                <button 
+                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+                  onClick={() => handleSelectRisk(risk.id)}>
+                   Selecionar
+                </button>
               </p>
             </li>
           ))}
