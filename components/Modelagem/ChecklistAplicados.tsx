@@ -27,7 +27,7 @@ const AppliedChecklistsPage: React.FC = () => {
       id: 0,
       dateapplied: '',
       score: 10,
-      risk_id: '',
+      risk_id: 0,
     });
   };  
 
