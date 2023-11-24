@@ -130,7 +130,7 @@ const AppliedChecklistsPage: React.FC = () => {
   return (
     <div className='flex justify-between ml-2 w-full'>
       <div className="applied-checklists-page border p-5 w-1/3">
-        <h1 className='border-b-4 p-1 uppercase bg-yellow-500'>Checklists</h1>
+        <h1 className='border-b-4 p-1 uppercase bg-yellow-500 text-black text-xs font-semibold'>Checklists</h1>
         <ul className="applied-checklist-list">
           {RiskItems.map((risk) => (
             <li key={risk.id} className="applied-checklist-item bg-black/10">
@@ -160,7 +160,7 @@ const AppliedChecklistsPage: React.FC = () => {
       
      {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
-        <h2 className='text-sm p-1 border-b-4 uppercase bg-yellow-500'>Inspeção de segurança do trabalho</h2>
+        <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs'>
           <label>
                 Local de Inspeção
