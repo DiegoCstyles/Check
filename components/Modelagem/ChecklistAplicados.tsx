@@ -32,24 +32,24 @@ const AppliedChecklistsPage: React.FC = () => {
   };  
 
   const applyRiskToBackend = async () => {
-    const formData = new FormData();
-    // Append the JSON data (newRisk) as a field named 'json_data'
-    formData.append('json_data', JSON.stringify(ApplyRisk));
-
     try {
       const response = await fetch('https://checkend.onrender.com/api/applyrisk', {
         method: 'POST',
-        body: formData, // Send the FormData object with the file to the server
-        
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(ApplyRisk),
       });
-
+  
       if (response.ok) {
          resetApplyRisk(); // Reset input fields after successful addition
       } else {
         // Handle errors
         console.error('Error applying risk to the database');
       }
-    } catch (error) { console.error('Error:', error); }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const fetchQuestions = async () => {
