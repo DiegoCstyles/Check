@@ -7,6 +7,7 @@ const ActionPlanConfirmation = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isModalOpen, setModalOpen] = useState(false);
   const [approvalStatus, setApprovalStatus] = useState<string>(''); // State for approval status
+  const [searchInput, setSearchInput] = useState<string>('');
 
   const openModal = () => { setModalOpen(true); };
   const closeModal = () => { setModalOpen(false); };
@@ -80,12 +81,27 @@ const ActionPlanConfirmation = () => {
 
   const handlePageChange = (newPage: number) => { setCurrentPage(newPage); };
 
+  const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
+  };
+
   return (
     <div className='text-xs w-1/2'>
       <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-500/80'>Confirmação</h2>
       
       <ul className='border-b border-r p-1 mr-2'>
-        {riskItems.map((risk) => (
+        <input
+          type='text'
+          placeholder='Search...'
+          value={searchInput}
+          onChange={handleSearchInputChange}
+          className='w-full p-1 border mt-2 mb-2'
+        />
+        {riskItems
+          .filter((risk) =>
+            risk.plandescription.toLowerCase().includes(searchInput.toLowerCase())
+          )
+          .map((risk) => (
           <li className='p-2  flex flex-col text-start border text-xs m-2 bg-green-500' key={risk.id}>
             <span className='bg-black p-2 w-full'>Responsável: {risk.responsibleplan}</span>
             <span className='bg-slate-500/60 p-2 w-full'>Data: {risk.date}</span>
