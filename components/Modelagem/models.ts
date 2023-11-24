@@ -19,7 +19,7 @@ export interface AppliedChecklist {
   id: number;
   dateapplied: string;
   score: number;
-  riskId: number;
+  risk_id: number;
 }
 
 export interface ActionPlan {
