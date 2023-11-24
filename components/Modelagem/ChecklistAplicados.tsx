@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { RiskItem  } from './models';
+import { RiskItem, AppliedChecklist } from './models';
 
 interface Question {
   id: number;
@@ -14,6 +14,43 @@ const AppliedChecklistsPage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
+
+  const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
+    id: 0,
+    dateapplied: '',
+    score: 10,
+    risk_id: selectedRiskId,
+  });
+
+  const resetApplyRisk = () => {
+    setApplyRisk({
+      id: 0,
+      dateapplied: '',
+      score: '',
+      risk_id: '',
+    });
+  };  
+
+  const applyRiskToBackend = async () => {
+    const formData = new FormData();
+    // Append the JSON data (newRisk) as a field named 'json_data'
+    formData.append('json_data', JSON.stringify(ApplyRisk));
+
+    try {
+      const response = await fetch('https://checkend.onrender.com/api/applyrisk', {
+        method: 'POST',
+        body: formData, // Send the FormData object with the file to the server
+        
+      });
+
+      if (response.ok) {
+         resetApplyRisk(); // Reset input fields after successful addition
+      } else {
+        // Handle errors
+        console.error('Error applying risk to the database');
+      }
+    } catch (error) { console.error('Error:', error); }
+  };
 
   const fetchQuestions = async () => {
     try {
@@ -93,7 +130,15 @@ const AppliedChecklistsPage: React.FC = () => {
             </div>
           ))}
         
-          
+          <button className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' >
+             Salvar
+          </button>
+
+          <button 
+            className='border m-1 mt-7 p-2 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+            onClick={applyRiskToBackend}>
+            Aplicar checklist
+          </button>
         </ol>
       </div>
       
