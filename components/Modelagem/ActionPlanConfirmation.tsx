@@ -93,7 +93,7 @@ const ActionPlanConfirmation = () => {
           placeholder='Procurar...'
           value={searchInput}
           onChange={handleSearchInputChange}
-          className='w-full border text-black p-2 bg-white'
+          className='w-full border text-black p-1.5 bg-white'
       />
       <ul className='border-b border-r p-1 '> 
         {riskItems
