@@ -153,8 +153,8 @@ const AppliedChecklistsPage: React.FC = () => {
               <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
               {subjectQuestions.map((question) => (
                 <div key={question.id}>
-                  <div className="flex flex-row justify-between">
-                    <li className='p-1 bg-black/30'>{question.question}</li>
+                  <div className="flex flex-row justify-between bg-black/30">
+                    <li className='p-1'>{question.question}</li>
                     <div>
                       <button 
                         className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1"
