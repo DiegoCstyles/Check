@@ -19,7 +19,7 @@ const AppliedChecklistsPage: React.FC = () => {
     id: 0,
     dateapplied: '',
     score: 10,
-    risk_id: selectedRiskId,
+    risk_id: selectedRiskId || 0,
   });
 
   const resetApplyRisk = () => {
