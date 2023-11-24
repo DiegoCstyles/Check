@@ -87,15 +87,15 @@ const ActionPlanConfirmation = () => {
 
   return (
     <div className='text-xs w-1/2'>
-      <h2 className='border-y border-r p-1.5 text-xs mr-2 text-black uppercase font-semibold bg-green-500/80'>Confirmação</h2>
+      <h2 className='border-y border-r p-1.5 text-xs text-black uppercase font-semibold bg-green-500/80'>Confirmação</h2>
       
-      <ul className='border-b border-r p-1 mr-2'>
+      <ul className='border-b border-r p-1 '>
         <input
           type='text'
-          placeholder='Search...'
+          placeholder='Procurar...'
           value={searchInput}
           onChange={handleSearchInputChange}
-          className='w-full p-1 border mt-2 mb-2'
+          className='w-full border text-black p-2 bg-white/80'
         />
         {riskItems
           .filter((risk) =>
