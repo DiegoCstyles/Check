@@ -38,7 +38,10 @@ const AppliedChecklistsPage: React.FC = () => {
   
   const handleSelectRisk = (riskId: number) => {
     setSelectedRiskId(riskId);
+    const selectedRisk = RiskItems.find((risk) => risk.id === riskId);
+    setSelectedRiskValue(selectedRisk?.value || null);
   };
+
   
   // Group questions by subject
   const groupedQuestions: Record<string, Question[]> = questions.reduce((acc, question) => {
@@ -109,6 +112,12 @@ const AppliedChecklistsPage: React.FC = () => {
             </li>
           ))}
         </ul>
+        {selectedRiskValue !== null && (
+          <div>
+            <h3> Selected Risk Value:</h3>
+            <p>{selectedRiskValue}</p>
+          </div>
+        )}
       </div>
   
     </div>
