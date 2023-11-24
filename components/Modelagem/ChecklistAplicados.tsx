@@ -13,6 +13,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
+  const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
 
   const fetchQuestions = async () => {
     try {
@@ -39,7 +40,8 @@ const AppliedChecklistsPage: React.FC = () => {
   const handleSelectRisk = (riskId: number) => {
     setSelectedRiskId(riskId);
     const selectedRisk = RiskItems.find((risk) => risk.id === riskId);
-    const selectedRiskValue = selectedRisk?.title || null;
+    const valueToDisplay = selectedRisk?.title || null; // Use 'title' or another property
+    setSelectedRiskValue(valueToDisplay);
   };
 
   
