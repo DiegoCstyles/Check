@@ -130,15 +130,15 @@ const AppliedChecklistsPage: React.FC = () => {
   return (
     <div className='flex justify-between ml-2 w-full'>
       <div className="applied-checklists-page border p-5 w-1/3">
-        <h1 className='border-b-4 p-1 uppercase'>Checklists</h1>
+        <h1 className='border-b-4 p-1 uppercase bg-yellow-500'>Checklists</h1>
         <ul className="applied-checklist-list">
           {RiskItems.map((risk) => (
             <li key={risk.id} className="applied-checklist-item bg-black/10">
               <p className='mr-2 px-2 py-1 text-xs flex justify-between text-center'>
-                <span className='p-2 w-16 text-center'>{risk.title}</span>
-                <span className='p-2 w-16 text-center'>{risk.date}</span>
+                <span className='p-2 w-1/3 text-center'>{risk.title}</span>
+                <span className='p-2 w-1/3 text-center'>{risk.date}</span>
                 <button 
-                  className='border m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
+                  className='border w-1/3 m-1 p-1 border-b-4 hover:bg-white hover:border-black/80 hover:text-black' 
                   onClick={() => handleSelectRisk(risk.id)}>
                    Selecionar
                 </button>
@@ -159,9 +159,9 @@ const AppliedChecklistsPage: React.FC = () => {
       </div>
       
      {/* Checklist Questions */}
-      <div className="checklist-questions border justify-center p-5 w-2/3">
-        <h2 className='text-sm p-1 border-b-4 uppercase'>Inspeção de segurança do trabalho</h2>
-        <ol className='text-xs' style={{ display: selectedRiskId ? 'block' : 'none' }}>
+      <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
+        <h2 className='text-sm p-1 border-b-4 uppercase bg-yellow-500'>Inspeção de segurança do trabalho</h2>
+        <ol className='text-xs'>
           <label>
                 Local de Inspeção
                 <input
