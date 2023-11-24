@@ -17,9 +17,9 @@ export interface RiskItem {
 
 export interface AppliedChecklist {
   id: number;
-  title: string;
   dateapplied: string;
-  // Add other properties relevant to applied checklists
+  score: number;
+  riskId: number;
 }
 
 export interface ActionPlan {
