@@ -39,7 +39,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const handleSelectRisk = (riskId: number) => {
     setSelectedRiskId(riskId);
     const selectedRisk = RiskItems.find((risk) => risk.id === riskId);
-    const selectedRiskValue = selectedRisk?.value || null;
+    const selectedRiskValue = selectedRisk?.title || null;
   };
 
   
