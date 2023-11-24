@@ -162,7 +162,7 @@ const AppliedChecklistsPage: React.FC = () => {
       <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs border bg-black'>
-          <div className='flex flex-row justify-between'>
+          <div className='flex flex-row justify-around'>
             <label>
                   Local de Inspeção
                   <input
