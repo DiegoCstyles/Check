@@ -14,6 +14,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: boolean }>({});
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
     id: 0,
@@ -38,7 +39,9 @@ const AppliedChecklistsPage: React.FC = () => {
     // Iterate through questions and sum their values
     for (const [, subjectQuestions] of Object.entries(groupedQuestions)) {
       subjectQuestions.forEach((question) => {
-        totalScore += question.value;
+        if (selectedAnswers[question.id]) {
+          totalScore += question.value;
+        }
       });
     }
 
@@ -107,7 +110,14 @@ const AppliedChecklistsPage: React.FC = () => {
     });
   };
 
-  
+  // Handler for the 'Sim' button click
+  const handleSimButtonClick = (questionId: number) => {
+    setSelectedAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [questionId]: true,
+    }));
+  };
+
   // Group questions by subject
   const groupedQuestions: Record<string, Question[]> = questions.reduce((acc, question) => {
     if (!acc[question.subject]) {
@@ -146,7 +156,11 @@ const AppliedChecklistsPage: React.FC = () => {
                   <div className="flex flex-row justify-between">
                     <li className='p-1'>{question.question}</li>
                     <div>
-                      <button className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1">Sim</button>
+                      <button 
+                        className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1"
+                        onClick={() => handleSimButtonClick(question.id)}>
+                        Sim
+                      </button>
                       <button className="answer-button hover:bg-black negative border bg-red-500 p-1">Não</button>
                       <button className="answer-button hover:bg-black negative border bg-yellow-500 p-1">NA</button>
                     </div>
