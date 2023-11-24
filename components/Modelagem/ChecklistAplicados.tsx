@@ -133,7 +133,7 @@ const AppliedChecklistsPage: React.FC = () => {
         <h1 className='border-b-4 p-1 uppercase bg-yellow-500 text-black text-xs font-semibold border-t border-x'>Checklists</h1>
         <ul className="applied-checklist-list border bg-black">
           {RiskItems.map((risk) => (
-            <li key={risk.id} className="applied-checklist-item bg-white/10">
+            <li key={risk.id} className="applied-checklist-item">
               <p className='mr-2 px-2 py-1 text-xs flex justify-between text-center'>
                 <span className='p-2 w-1/3 text-center'>{risk.title}</span>
                 <span className='p-2 w-1/3 text-center'>{risk.date}</span>
@@ -182,7 +182,7 @@ const AppliedChecklistsPage: React.FC = () => {
               <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
               {subjectQuestions.map((question) => (
                 <div key={question.id}>
-                  <div className="flex flex-row justify-between bg-white/30">
+                  <div className="flex flex-row justify-between bg-white/10">
                     <li className='p-1'>{question.question}</li>
                     <div>
                       <button 
