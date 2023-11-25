@@ -264,7 +264,7 @@ const Navbar = () => {
           <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
             {weatherData && (
-              <div className="p-5">
+              <div className="p-5 text-center bg-white/10">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
                 <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description}</p>
                 <p className="text-white p-1">Humidade: {weatherData.main?.humidity}</p>
