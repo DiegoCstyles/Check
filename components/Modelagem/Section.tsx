@@ -187,11 +187,17 @@ const Navbar = () => {
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
   
       // Generate scenarios based on risk data
-      riskItemsData.forEach(async (risk) => {
-        scenario = await generateScenario(risk);
-        console.log('Generated Scenario:', scenario);
-        // You can handle the generated scenarios as needed, e.g., store them in state or display them.
+      const scenarioPromises = riskItemsData.map(async (risk) => {
+        const scenarioResult = await generateScenario(risk);
+        console.log('Generated Scenario:', scenarioResult);
+        return scenarioResult;
       });
+
+      // Wait for all scenarios to resolve
+      const scenarios = await Promise.all(scenarioPromises);
+
+      // Use the first scenario (you might want to handle multiple scenarios differently)
+      scenario = scenarios[0];
   
       // Fetch weather data
       await fetchWeatherData();
