@@ -13,8 +13,8 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
-  let scenario: string | null = null;
-
+  const [scenario, setScenario] = useState<string | null>(null);
+  
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
   if (kelvin === undefined) {
@@ -117,7 +117,6 @@ const Navbar = () => {
   const generateScenario = async (riskData: any) => {
     try {
       const response = await axios.post('https://checkend.onrender.com/api/generateScenario', { riskData });
-      console.log('Generated Scenario:', response.data);
       // Handle the generated scenario as needed
       return response.data;
     } catch (error) {
@@ -197,7 +196,10 @@ const Navbar = () => {
       const scenarios = await Promise.all(scenarioPromises);
 
       // Use the first scenario (you might want to handle multiple scenarios differently)
-      scenario = scenarios[0];
+      const selectedScenario = scenarios[0];
+
+      // Set the scenario state
+      setScenario(selectedScenario);
   
       // Fetch weather data
       await fetchWeatherData();
