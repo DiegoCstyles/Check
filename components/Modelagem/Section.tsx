@@ -13,6 +13,7 @@ const Navbar = () => {
   const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
+  let scenario: string | null = null;
 
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -187,7 +188,7 @@ const Navbar = () => {
   
       // Generate scenarios based on risk data
       riskItemsData.forEach(async (risk) => {
-        const scenario = await generateScenario(risk);
+        scenario = await generateScenario(risk);
         console.log('Generated Scenario:', scenario);
         // You can handle the generated scenarios as needed, e.g., store them in state or display them.
       });
