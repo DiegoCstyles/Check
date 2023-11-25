@@ -199,9 +199,10 @@ const Navbar = () => {
 
       // Use the first scenario (you might want to handle multiple scenarios differently)
       const selectedScenario = scenarios[0];
+      const formattedScenario = selectedScenario.replace(/\./g, '.\n');
 
       // Set the scenario state
-      setScenario(selectedScenario);
+      setScenario(formattedScenario);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
