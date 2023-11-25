@@ -261,7 +261,7 @@ const Navbar = () => {
         <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Home</h1>
         
         <div className="flex flex-row h-1/2">
-          <div className='w-1/2 bg-black/10 border'>
+          <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
             {weatherData && (
               <div className="p-5">
@@ -273,9 +273,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <div className='w-1/2 bg-black/10 border'>
+          <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
-              <p className="text-white text-xs bg-white/10 text-start p-1">{scenario}</p>
+              <p className="text-white text-sm bg-white/10 text-start p-1">{scenario}</p>
           </div>
         </div>
         
