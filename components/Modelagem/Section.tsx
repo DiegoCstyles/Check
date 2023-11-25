@@ -179,6 +179,8 @@ const Navbar = () => {
       // Fetch the last risk items
       await fetchLastRiskItems();
       await fetchRiskItemsUsage();
+      // Fetch weather data
+      await fetchWeatherData();
   
       // Fetch risk items data
       const riskItemsData = await fetchRiskItems(1);
@@ -200,9 +202,6 @@ const Navbar = () => {
 
       // Set the scenario state
       setScenario(selectedScenario);
-  
-      // Fetch weather data
-      await fetchWeatherData();
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -275,7 +274,14 @@ const Navbar = () => {
           </div>
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
-              <p className="text-white text-sm bg-white/10 text-justify p-2">{scenario}</p>
+              <p className="text-white text-sm bg-white/10 text-justify p-2">
+                {scenario && (
+                <ul className="text-white">
+                  {scenario.split('•').map((item, index) => (
+                    <li key={index}>{item.trim()}</li>
+                  ))}
+                </ul>
+              )}</p>
           </div>
         </div>
         
