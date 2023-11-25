@@ -274,9 +274,8 @@ const Navbar = () => {
             )}
           </div>
           <div className='w-1/2 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente
-              <p className="text-white">{scenario}</p>
-            </section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
+              <p className="text-white text-xs bg-black/10 text-center py-2">{scenario}</p>
           </div>
         </div>
         
