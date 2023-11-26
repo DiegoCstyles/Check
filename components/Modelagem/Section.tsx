@@ -264,7 +264,7 @@ const Navbar = () => {
           <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
             {weatherData && (
-              <div className="p-5 text-center bg-white/10">
+              <div className="p-5 text-start bg-white/10 h-full">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
                 <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description}</p>
                 <p className="text-white p-1">Humidade: {weatherData.main?.humidity}</p>
@@ -275,7 +275,7 @@ const Navbar = () => {
           </div>
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
-              <p className="text-white text-xs bg-white/10 text-justify p-3 border">
+              <p className="h-full text-white text-xs bg-white/10 text-justify p-3">
                 {scenario  && (
                   <ul className="text-white">
                     {scenario.split(/•|-/).map((item, index) => (
@@ -284,7 +284,7 @@ const Navbar = () => {
                   </ul>
                 )}
                 <input
-                  className='text-black p-2 w-full bg-white/80'
+                  className='mt-1 text-black p-2 w-full bg-white/80'
                   type='text'
                   placeholder='Pergunte sobre os riscos...'
                 />
