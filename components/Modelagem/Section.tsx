@@ -276,9 +276,9 @@ const Navbar = () => {
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
               <p className="text-white text-xs bg-white/10 text-justify p-3 border">
-                {formattedScenario  && (
+                {scenario  && (
                   <ul className="text-white">
-                    {formattedScenario.split(/•|-/).map((item, index) => (
+                    {scenario.split(/•|-/).map((item, index) => (
                       <li key={index}>{item.trim()}</li>
                     ))}
                   </ul>
