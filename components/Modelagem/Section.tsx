@@ -275,10 +275,10 @@ const Navbar = () => {
           </div>
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
-              <p className="text-white text-sm bg-white/10 text-justify p-2">
-                {scenario && (
+              <p className="text-white text-xs bg-white/10 text-justify p-3 border">
+                {formattedScenario  && (
                   <ul className="text-white">
-                    {scenario.split(/•|-/).map((item, index) => (
+                    {formattedScenario.split(/•|-/).map((item, index) => (
                       <li key={index}>{item.trim()}</li>
                     ))}
                   </ul>
