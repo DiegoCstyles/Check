@@ -190,7 +190,6 @@ const Navbar = () => {
       // Generate scenarios based on risk data
       const scenarioPromises = riskItemsData.map(async (risk) => {
         const scenarioResult = await generateScenario(risk);
-        console.log('Generated Scenario:', scenarioResult);
         return scenarioResult;
       });
 
@@ -200,6 +199,7 @@ const Navbar = () => {
       // Use the first scenario (you might want to handle multiple scenarios differently)
       const selectedScenario = scenarios[0];
       const formattedScenario = selectedScenario.replace(/\./g, '.\n');
+      console.log('formattedScenario:', formattedScenario);
 
       // Set the scenario state
       setScenario(formattedScenario);
@@ -284,7 +284,7 @@ const Navbar = () => {
                   </ul>
                 )}
                 <input
-                  className='mt-1 text-black p-2 w-full bg-white/80'
+                  className='mt-3 text-black p-2 w-full bg-white/80'
                   type='text'
                   placeholder='Pergunte sobre os riscos...'
                 />
