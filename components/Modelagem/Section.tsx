@@ -287,7 +287,6 @@ const Navbar = () => {
                   className='text-black p-2 w-full bg-white/80'
                   type='text'
                   placeholder='Pergunte sobre os riscos...'
-                  value={searchTerm}
                 />
               </p>
           </div>
