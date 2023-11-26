@@ -277,12 +277,19 @@ const Navbar = () => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
               <p className="text-white text-sm bg-white/10 text-justify p-2">
                 {scenario && (
-                <ul className="text-white">
-                  {scenario.split('•').map((item, index) => (
-                    <li key={index}>{item.trim()}</li>
-                  ))}
-                </ul>
-              )}</p>
+                  <ul className="text-white">
+                    {scenario.split(/•|-/).map((item, index) => (
+                      <li key={index}>{item.trim()}</li>
+                    ))}
+                  </ul>
+                )}
+                <input
+                  className='text-black p-2 w-full bg-white/80'
+                  type='text'
+                  placeholder='Pergunte sobre os riscos...'
+                  value={searchTerm}
+                />
+              </p>
           </div>
         </div>
         
