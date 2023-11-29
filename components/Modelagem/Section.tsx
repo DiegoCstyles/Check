@@ -14,6 +14,7 @@ const Navbar = () => {
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
   const [scenario, setScenario] = useState<string | null>(null);
+  const hardcodedValue = 'teste'; // Set your hardcoded value here
   
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -284,7 +285,16 @@ const Navbar = () => {
                   </ul>
                 )}
                 <div className='flex flex-row w-full'>
-                  
+                  <select
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-1 w-1/3'
+                    value={hardcodedValue}
+                  >
+                    {riskItems.map((risk) => (
+                      <option className='bg-black border-b-4 m-2' key={risk.id} value={risk.id}>
+                        {risk.title}
+                      </option>
+                    ))}
+                  </select>
 
                   <input
                     className='mt-3 text-black p-2 w-full bg-white/80 w-2/3'
