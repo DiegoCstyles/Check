@@ -189,7 +189,7 @@ const Navbar = () => {
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
 
       // Filter riskItemsData based on the selectedRisk value
-      const selectedRiskData = riskItemsData.filter((risk) => risk.id === selectedRisk);
+      const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
   
       // Generate scenarios based on risk data
       const scenarioPromises = selectedRiskData.map(async (risk) => {
