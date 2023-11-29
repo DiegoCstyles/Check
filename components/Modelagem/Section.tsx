@@ -215,8 +215,11 @@ const Navbar = () => {
 
   // Update the selected risk when the <select> value changes
   const handleRiskSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedRisk(event.target.value);
+    const selectedValue = event.target.value;
+    console.log('Selected Risk:', selectedValue);
+    setSelectedRisk(selectedValue);
   };
+
   
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
