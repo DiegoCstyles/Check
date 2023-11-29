@@ -175,44 +175,6 @@ const Navbar = () => {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Set type for ref
 
-  const fetchData = async () => {
-    try {
-      // Fetch the last risk items
-      await fetchLastRiskItems();
-      await fetchRiskItemsUsage();
-      // Fetch weather data
-      await fetchWeatherData();
-  
-      // Fetch risk items data
-      const riskItemsData = await fetchRiskItems(3);
-      setRiskItems(riskItemsData); // Now it's safe to set the state with the data
-
-      // Filter riskItemsData based on the selectedRisk value
-      const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
-      console.log('risk.id.toString: ', riskItemsData.map((risk) => risk.id.toString())); // Log all risk IDs
-      console.log('selectedRisk: ', selectedRisk);
-      console.log('selectedRiskData: ', selectedRiskData);
-  
-      // Generate scenarios based on risk data
-      const scenarioPromises = selectedRiskData.map(async (risk) => {
-        const scenarioResult = await generateScenario(risk);
-        return scenarioResult;
-      });
-
-      // Wait for all scenarios to resolve
-      const scenarios = await Promise.all(scenarioPromises);
-
-      // Use the first scenario (you might want to handle multiple scenarios differently)
-      const selectedScenario = scenarios[0];
-      const formattedScenario = selectedScenario.replace(/\./g, '.\n');
-
-      // Set the scenario state
-      setScenario(formattedScenario);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-
   // Update the selected risk when the <select> value changes
   const handleRiskSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
@@ -263,10 +225,49 @@ const Navbar = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [riskItemsUsage]);
+  
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      // Fetch the last risk items
+      await fetchLastRiskItems();
+      await fetchRiskItemsUsage();
+      // Fetch weather data
+      await fetchWeatherData();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+      // Fetch risk items data
+      const riskItemsData = await fetchRiskItems(3);
+      setRiskItems(riskItemsData); // Now it's safe to set the state with the data
+
+      // Filter riskItemsData based on the selectedRisk value
+      const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
+      console.log('risk.id.toString: ', riskItemsData.map((risk) => risk.id.toString())); // Log all risk IDs
+      console.log('selectedRisk: ', selectedRisk);
+      console.log('selectedRiskData: ', selectedRiskData);
+
+      // Generate scenarios based on risk data
+      const scenarioPromises = selectedRiskData.map(async (risk) => {
+        const scenarioResult = await generateScenario(risk);
+        return scenarioResult;
+      });
+
+      // Wait for all scenarios to resolve
+      const scenarios = await Promise.all(scenarioPromises);
+
+      // Use the first scenario (you might want to handle multiple scenarios differently)
+      const selectedScenario = scenarios[0];
+      const formattedScenario = selectedScenario.replace(/\./g, '.\n');
+
+      // Set the scenario state
+      setScenario(formattedScenario);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  fetchData(); // Trigger fetchData when selectedRisk changes
+}, [selectedRisk]);
+
 
 
   return (
