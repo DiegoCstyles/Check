@@ -189,7 +189,7 @@ const Navbar = () => {
 
       // Filter riskItemsData based on the selectedRisk value
       const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
-      console.log('risk.id.toString: ', risk.id.toString());
+      console.log('risk.id.toString: ', riskItemsData.map((risk) => risk.id.toString())); // Log all risk IDs
       console.log('selectedRisk: ', selectedRisk);
       console.log('selectedRiskData: ', selectedRiskData);
   
