@@ -236,7 +236,7 @@ useEffect(() => {
       await fetchWeatherData();
 
       // Fetch risk items data
-      const riskItemsData = await fetchRiskItems(3);
+      const riskItemsData = await fetchRiskItems(8);
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
 
       // Filter riskItemsData based on the selectedRisk value
