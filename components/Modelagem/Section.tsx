@@ -283,11 +283,22 @@ const Navbar = () => {
                     ))}
                   </ul>
                 )}
-                <input
-                  className='mt-3 text-black p-2 w-full bg-white/80'
-                  type='text'
-                  placeholder='Pergunte sobre os riscos...'
-                />
+                <div className='flex flex-row w-full'>
+                  <select
+                    className='bg-white/10 border-b-4 m-2 ml-2 p-1 w-1/3'
+                    value='teste'
+                  >
+                    {riskItems.map((risk) => (
+                      <option className='bg-black border-b-4 m-2' value={risk.id}>{risk.title}</option>
+                    ))}
+                  </select>
+
+                  <input
+                    className='mt-3 text-black p-2 w-full bg-white/80 w-2/3'
+                    type='text'
+                    placeholder='Pergunte sobre os riscos...'
+                  />
+                </div>
               </p>
           </div>
         </div>
