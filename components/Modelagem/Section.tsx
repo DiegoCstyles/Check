@@ -15,6 +15,7 @@ const Navbar = () => {
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
   const [scenario, setScenario] = useState<string | null>(null);
   const [selectedRisk, setSelectedRisk] = useState<string | null>(null); // New state for the selected risk
+  const [inputValue, setInputValue] = useState<string>('');
   
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -115,9 +116,12 @@ const Navbar = () => {
     }
   };
 
-  const generateScenario = async (riskData: any) => {
+  const generateScenario = async (riskData: any, inputValue: string) => {
     try {
-      const response = await axios.post('https://checkend.onrender.com/api/generateScenario', { riskData });
+      const response = await axios.post('https://checkend.onrender.com/api/generateScenario', {
+        riskData,
+        inputValue, // Pass the inputValue in the request
+      });
       // Handle the generated scenario as needed
       return response.data;
     } catch (error) {
@@ -241,13 +245,10 @@ useEffect(() => {
 
       // Filter riskItemsData based on the selectedRisk value
       const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
-      console.log('risk.id.toString: ', riskItemsData.map((risk) => risk.id.toString())); // Log all risk IDs
-      console.log('selectedRisk: ', selectedRisk);
-      console.log('selectedRiskData: ', selectedRiskData);
 
       // Generate scenarios based on risk data
       const scenarioPromises = selectedRiskData.map(async (risk) => {
-        const scenarioResult = await generateScenario(risk);
+        const scenarioResult = await generateScenario(risk, inputValue);
         return scenarioResult;
       });
 
@@ -267,8 +268,6 @@ useEffect(() => {
 
   fetchData(); // Trigger fetchData when selectedRisk changes
 }, [selectedRisk]);
-
-
 
   return (
       <div className='w-full h-screen border' style={{ overflowX: 'hidden' }}>
@@ -313,6 +312,8 @@ useEffect(() => {
                     className='mt-3 text-black p-2 w-full bg-white/80 w-2/3'
                     type='text'
                     placeholder='Pergunte sobre os riscos...'
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)} 
                   />
                 </div>
               </p>
