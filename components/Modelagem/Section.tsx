@@ -298,7 +298,7 @@ useEffect(() => {
                 )}
                 <div className='flex flex-row w-full'>
                   <select
-                    className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
+                    className='bg-white/10 border-b-4 mt-3 p-1 w-1/3'
                     value={selectedRisk || ''}
                     onChange={handleRiskSelectChange} // Update the selected risk on change
                   >
