@@ -293,19 +293,17 @@ const Navbar = () => {
                   </ul>
                 )}
                 <div className='flex flex-row w-full'>
-                  {riskItems.map((risk) => (
-                    <select
-                      className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
-                      value={selectedRisk || ''}
-                      onChange={handleRiskSelectChange} // Update the selected risk on change 
-                    >
-                      
-                        <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
-                          {risk.title}
-                        </option>
-                      
-                    </select>
-                  ))}
+                  <select
+                    className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
+                    value={selectedRisk || ''}
+                    onChange={handleRiskSelectChange} // Update the selected risk on change
+                  >
+                    {riskItems.map((risk) => (
+                      <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
+                        {risk.title}
+                      </option>
+                    ))}
+                  </select>
                   <input
                     className='mt-3 text-black p-2 w-full bg-white/80 w-2/3'
                     type='text'
