@@ -111,7 +111,7 @@ const ActionPlanConfirmation = () => {
             <div className='flex flex-row w-full'>
               <a
                 href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                className='w-3/5 p-1.5 text-center bg-black/20 border-b-4 hover:bg-white hover:border-black/80 hover:text-black'  
+                className='w-3/5 p-1.5 text-center bg-black/60 border-b-4 hover:bg-white hover:border-black/80 hover:text-black'  
                 target='_blank'
                 rel='noopener noreferrer'
               >
