@@ -290,7 +290,7 @@ useEffect(() => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
               <p className="h-full text-white text-xs bg-black text-justify p-3">
                 {scenario  && (
-                  <ul className="text-black h-56 bg-white/40 border-t-4 p-2">
+                  <ul className="text-black h-60 bg-white/40 border-t-4 p-2">
                     {scenario.split(/•|-/).map((item, index) => (
                       <li key={index}>{item.trim()}</li>
                     ))}
