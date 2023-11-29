@@ -14,7 +14,7 @@ const Navbar = () => {
   const [riskItemsUsage, setRiskItemsUsage] = useState<RiskItem[]>([]);
   const [lastRiskItems, setLastRiskItems] = useState<RiskItem[]>([]);
   const [scenario, setScenario] = useState<string | null>(null);
-  const hardcodedValue = 'teste'; // Set your hardcoded value here
+  const [selectedRisk, setSelectedRisk] = useState<string | null>(null); // New state for the selected risk
   
   // Define the function to convert Kelvin to Celsius
   const convertKelvinToCelsius = (kelvin: number | undefined) => {
@@ -184,12 +184,15 @@ const Navbar = () => {
       await fetchWeatherData();
   
       // Fetch risk items data
-      const riskItemsData = await fetchRiskItems(1);
+      const riskItemsData = await fetchRiskItems(3);
       console.log('riskItemsData: ', riskItemsData);
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
+
+      // Filter riskItemsData based on the selectedRisk value
+      const selectedRiskData = riskItemsData.filter((risk) => risk.id === selectedRisk);
   
       // Generate scenarios based on risk data
-      const scenarioPromises = riskItemsData.map(async (risk) => {
+      const scenarioPromises = selectedRiskData.map(async (risk) => {
         const scenarioResult = await generateScenario(risk);
         return scenarioResult;
       });
@@ -209,6 +212,11 @@ const Navbar = () => {
     }
   };
 
+  // Update the selected risk when the <select> value changes
+  const handleRiskSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedRisk(event.target.value);
+  };
+  
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
     // Check if there's an existing chart and destroy it
@@ -263,7 +271,7 @@ const Navbar = () => {
         
         <div className="flex flex-row h-1/2">
           <div className='w-1/3 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
             {weatherData && (
               <div className="p-5 text-start bg-white/10 h-full">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
@@ -275,7 +283,7 @@ const Navbar = () => {
             )}
           </div>
           <div className='w-2/3 bg-black/10 border'>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
+            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente 🤖</section>
               <p className="h-full text-white text-xs bg-white/10 text-justify p-3">
                 {scenario  && (
                   <ul className="text-white">
@@ -285,17 +293,19 @@ const Navbar = () => {
                   </ul>
                 )}
                 <div className='flex flex-row w-full'>
-                  <select
-                    className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
-                    value={hardcodedValue}
-                  >
-                    {riskItems.map((risk) => (
-                      <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
-                        {risk.title}
-                      </option>
-                    ))}
-                  </select>
-
+                  {riskItems.map((risk) => (
+                    <select
+                      className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
+                      value={selectedRisk || ''}
+                      onChange={handleRiskSelectChange} // Update the selected risk on change 
+                    >
+                      
+                        <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
+                          {risk.title}
+                        </option>
+                      
+                    </select>
+                  ))}
                   <input
                     className='mt-3 text-black p-2 w-full bg-white/80 w-2/3'
                     type='text'
