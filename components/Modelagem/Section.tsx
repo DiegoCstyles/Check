@@ -300,7 +300,7 @@ const Navbar = () => {
                     onChange={handleRiskSelectChange} // Update the selected risk on change
                   >
                     {riskItems.map((risk) => (
-                      <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
+                      <option className='bg-black border-b-4' key={risk.id} value={risk.id.toString()}>
                         {risk.title}
                       </option>
                     ))}
