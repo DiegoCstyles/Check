@@ -286,11 +286,11 @@ const Navbar = () => {
                 )}
                 <div className='flex flex-row w-full'>
                   <select
-                    className='bg-white/10 border-b-4 m-2 ml-2 p-1 w-1/3'
+                    className='bg-white/10 border-b-4 mt-3 ml-2 p-1 w-1/3'
                     value={hardcodedValue}
                   >
                     {riskItems.map((risk) => (
-                      <option className='bg-black border-b-4 m-2' key={risk.id} value={risk.id}>
+                      <option className='bg-black border-b-4' key={risk.id} value={risk.id}>
                         {risk.title}
                       </option>
                     ))}
