@@ -185,11 +185,13 @@ const Navbar = () => {
   
       // Fetch risk items data
       const riskItemsData = await fetchRiskItems(3);
-      console.log('riskItemsData: ', riskItemsData);
       setRiskItems(riskItemsData); // Now it's safe to set the state with the data
 
       // Filter riskItemsData based on the selectedRisk value
       const selectedRiskData = riskItemsData.filter((risk) => risk.id.toString() === selectedRisk);
+      console.log('risk.id.toString: ', risk.id.toString());
+      console.log('selectedRisk: ', selectedRisk);
+      console.log('selectedRiskData: ', selectedRiskData);
   
       // Generate scenarios based on risk data
       const scenarioPromises = selectedRiskData.map(async (risk) => {
@@ -203,7 +205,6 @@ const Navbar = () => {
       // Use the first scenario (you might want to handle multiple scenarios differently)
       const selectedScenario = scenarios[0];
       const formattedScenario = selectedScenario.replace(/\./g, '.\n');
-      console.log('formattedScenario:', formattedScenario);
 
       // Set the scenario state
       setScenario(formattedScenario);
