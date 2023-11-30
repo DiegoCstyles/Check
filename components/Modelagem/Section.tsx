@@ -326,7 +326,7 @@ useEffect(() => {
             )}
             {weatherData && (
               <div className="p-5 text-start bg-white/10 h-full">
-                <p className="text-white p-1">Cidade: {weatherData.name}</p>
+                <p className="text-white p-1">Cidade: Lorena</p>
                 {weatherData.list.map((forecast, index) => (
                   <div key={index}>
                     <p className="text-white p-1">Data: {new Date(forecast.dt * 1000).toLocaleDateString()}</p>
