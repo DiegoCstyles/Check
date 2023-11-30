@@ -318,8 +318,8 @@ useEffect(() => {
                     index === array.findIndex((item) => formatDate(item.dt_txt) === formatDate(forecast.dt_txt))
                 )
                 .slice(0, 4).map((forecast, index) => (
-                <div key={index}>
-                  <p className="text-black p-0.5 bg-cyan-300 text-center">{formatDate(forecast.dt_txt)}</p>
+                <div className="border" key={index}>
+                  <p className="text-black p-0.5 bg-cyan-300 text-center mt-0.5">{formatDate(forecast.dt_txt)}</p>
                   <p className="text-white">Estado do tempo: {forecast.weather[0]?.description}</p>
                   <p className="text-white">Umidade: {forecast.main?.humidity} g/m³</p>
                   <p className="text-white">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
