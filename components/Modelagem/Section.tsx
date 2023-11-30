@@ -216,7 +216,7 @@ interface WeatherData {
   };
 
   // Function to format date
-  const formatDate = (dt_txt) => {
+  const formatDate = (dt_txt: string) => {
     const date = new Date(dt_txt);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('pt-BR', options);
