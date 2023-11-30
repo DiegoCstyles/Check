@@ -278,7 +278,7 @@ useEffect(() => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
             {weatherData && (
               <div className="p-5 text-start bg-white/10 h-full">
-                <p className="text-white p-1">Cidade: {weatherData.city.name}</p>
+                <p className="text-white p-1">Cidade: {weatherData.name}</p>
                 {weatherData.list.map((forecast, index) => (
                   <div key={index}>
                     <p className="text-white p-1">Data: {new Date(forecast.dt * 1000).toLocaleDateString()}</p>
