@@ -311,11 +311,15 @@ useEffect(() => {
         <div className="flex flex-row h-1/2">
           <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
-            <div className="p-5 text-start text-xs bg-white/10 h-full">
-              <p className="text-white p-1">Cidade: Lorena</p>
-              {weatherData && weatherData.list && weatherData.list.slice(0, 6).map((forecast, index) => (
+            <div className="p-2 text-start text-xs bg-white/10 h-full">
+              {weatherData && weatherData.list && weatherData.list
+                .filter(
+                  (forecast, index, array) =>
+                    index === array.findIndex((item) => formatDate(item.dt_txt) === formatDate(forecast.dt_txt))
+                )
+                .slice(0, 4).map((forecast, index) => (
                 <div key={index}>
-                  <p className="text-black p-0.5 bg-cyan-300">{formatDate(forecast.dt_txt)}</p>
+                  <p className="text-black p-0.5 bg-cyan-300 text-center">{formatDate(forecast.dt_txt)}</p>
                   <p className="text-white">Estado do tempo: {forecast.weather[0]?.description}</p>
                   <p className="text-white">Umidade: {forecast.main?.humidity} g/m³</p>
                   <p className="text-white">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
