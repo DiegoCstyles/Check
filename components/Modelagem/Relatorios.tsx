@@ -14,11 +14,11 @@ const AppliedChecklistsChart = () => {
   };
 
   return (
-    <div className='w-full h-screen border bg-slate-500/30'>
+    <div className='w-full h-full border bg-slate-500/30'>
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='h-full m-2 text-xs text-center border flex flex-col'>
         <div className="flex flex-row justify-around">
-         <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
+         <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -42,7 +42,7 @@ const AppliedChecklistsChart = () => {
               
             />
            </div>
-          <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
+          <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -66,7 +66,7 @@ const AppliedChecklistsChart = () => {
               
             />
            </div>
-          <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
+          <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -91,7 +91,7 @@ const AppliedChecklistsChart = () => {
             />
            </div>
         </div>
-        <div className='w-full h-full border-t-4 bg-red'>Ultimo Checklist Reprovado</div>
+        <div className='w-full h-full border-t-4 bg-red-300'>Ultimo Checklist Reprovado</div>
       </div>
     </div>
   );
