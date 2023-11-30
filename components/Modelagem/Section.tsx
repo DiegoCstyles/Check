@@ -280,7 +280,7 @@ useEffect(() => {
               <div className="p-5 text-start bg-white/10 h-full">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
                 <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description}</p>
-                <p className="text-white p-1">Umidade: {weatherData.main?.humidity}</p>
+                <p className="text-white p-1">Umidade: {weatherData.main?.humidity} g/m³</p>
                 <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(weatherData.main?.temp)} °C</p>
                 {/* Add more weather details as needed */}
               </div>
