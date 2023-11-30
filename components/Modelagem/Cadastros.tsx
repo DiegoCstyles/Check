@@ -150,7 +150,7 @@ const RiskManagementForm: React.FC = () => {
           <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
           <div className=' flex p-2 border-y bg-slate-500/30'>
             
-            <div className='w-2/5'>
+            <div>
               <label className='bg-black border-b-4 p-1'>Titulo</label>
               <input
                 className='bg-white/10 border-b-4 p-1'
@@ -160,7 +160,7 @@ const RiskManagementForm: React.FC = () => {
               />
             </div>
             
-            <div className='w-1/5'>
+            <div>
               <label className='bg-black border-b-4 p-1'>Chance</label>
                 <select
                   className='bg-white/10 border-b-4 p-1'
@@ -174,7 +174,7 @@ const RiskManagementForm: React.FC = () => {
               
             </div>
             
-            <div className='w-1/5'>
+            <div>
               <label className='bg-black border-b-4 p-1'>Impacto</label>
                 <select
                   className='bg-white/10 border-b-4 p-1'
@@ -187,7 +187,7 @@ const RiskManagementForm: React.FC = () => {
                 </select>
             </div>
   
-            <div className='w-1/5'>
+            <div>
               <label className='bg-black border-b-4 p-1'>data</label>
                 <input
                   className='bg-white text-black border-b-4 border-slate-400 p-1'
@@ -266,9 +266,9 @@ const RiskManagementForm: React.FC = () => {
               
               <div className='flex flex-row text-start'>
                 <div style={{ display: 'flex ml-7', alignItems: 'center' }}>
-                  <label className='bg-black border-b-4 p-1' style={{ flex: '1' }}> Checklist </label>
+                  <label className='bg-black p-2' style={{ flex: '1' }}> Checklist </label>
                   <input
-                    className='bg-white/10 border-b-4 p-1'
+                    className='bg-white/10 p-2'
                     type="text"
                     placeholder='...'
                     value={newRisk.responsiblechecklist}
@@ -277,9 +277,9 @@ const RiskManagementForm: React.FC = () => {
                 </div>
                 
                 <div style={{ display: 'flex ml-1', alignItems: 'center' }}>
-                  <label className='bg-black border-b-4 p-1' style={{ flex: '1' }}> Plano de Ação </label>
+                  <label className='bg-black p-2' style={{ flex: '1' }}> Plano de Ação </label>
                   <input 
-                    className='bg-white/10 border-b-4 p-1'
+                    className='bg-white/10 p-2'
                     type="text"
                     placeholder='...'
                     value={newRisk.responsibleplan}
