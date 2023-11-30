@@ -148,7 +148,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
-          <div className=' flex p-2 justify-stretch border-y bg-slate-500/30'>
+          <div className=' flex p-2 border-y bg-slate-500/30'>
             
             <div className='w-2/5'>
               <label className='bg-black border-b-4 p-1'>Titulo</label>
@@ -203,27 +203,27 @@ const RiskManagementForm: React.FC = () => {
             <div className='flex-row justify-between flex'>
               
               <div className='flex-col flex'>
-                <label className='bg-black border-b-4 p-2 border-r-2'>
+                <label className='bg-black border-b-4 p-2 border-r-2 uppercase font-semibold'>
                     Descrição do Risco
                 </label>           
                 <textarea 
-                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 pb-36'
+                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 px-4 pb-36'
                   value={newRisk.description}
                   onChange={(e) => handleNewRiskChange('description', e.target.value)}
                 /> 
               </div>
               
               <div className='flex-col flex'>
-                <label className='bg-black border-b-4 p-2'> Plano de Mitigação (opcional) </label>
+                <label className='bg-black border-b-4 p-2 uppercase font-semibold'> Plano de Mitigação (opcional) </label>
                 <textarea 
-                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 pb-36'
+                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 px-4 pb-36'
                   value={newRisk.plandescription}
                   onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
                 /> 
               </div>
               
               <div className='flex-col flex'>
-                <label className='bg-yellow-500 border-b-4 p-2'> Documento </label>
+                <label className='bg-yellow-500 border-b-4 p-2 uppercase font-semibold'> Documento </label>
                 <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <div id="filePreview"></div>
                   <input
