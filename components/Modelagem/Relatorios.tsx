@@ -18,7 +18,7 @@ const AppliedChecklistsChart = () => {
       <h1 className='bg-cyan-300 border text-black flex justify-center border-b p-2 text-sm uppercase font-semibold'>Relatorios</h1>
       <div className='m-2 text-xs text-center border flex flex-col'>
         <div className="flex flex-row justify-around">
-         <div className="chart-container bg-black/10" style={{ width: '400px', height: '600px' }}>
+         <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -42,7 +42,7 @@ const AppliedChecklistsChart = () => {
               
             />
            </div>
-          <div className="chart-container bg-black/10" style={{ width: '400px', height: '600px' }}>
+          <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -66,7 +66,7 @@ const AppliedChecklistsChart = () => {
               
             />
            </div>
-          <div className="chart-container bg-black/10" style={{ width: '400px', height: '600px' }}>
+          <div className="chart-container bg-black/10" style={{ width: '400px', height: '250px' }}>
          <Bar
               data={chartDataUserRanking}
               options={{
@@ -91,7 +91,7 @@ const AppliedChecklistsChart = () => {
             />
            </div>
         </div>
-        <div className='w-full h-full border-t-4 bg-red/20'>Ultimo Checklist Reprovado</div>
+        <div className='w-full h-full border-t-4 bg-red/80'>Ultimo Checklist Reprovado</div>
       </div>
     </div>
   );
