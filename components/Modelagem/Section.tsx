@@ -25,19 +25,22 @@ const Navbar = () => {
   return (kelvin - 273.15).toFixed(2);
   };
 
-  interface WeatherData {
-    name?: string;
+interface WeatherData {
+  name?: string;
+  list?: {
+    dt: number;
+    main: {
+      temp?: number;
+      humidity?: number;
+    };
     weather?: {
       main?: string;
       description?: string;
       icon?: string;
     }[];
-    main?: {
-      temp?: number;
-      humidity?: number;
-    };
-    // Add more properties as needed
-  }
+  }[];
+}
+
 
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
