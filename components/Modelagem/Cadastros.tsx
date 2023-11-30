@@ -151,7 +151,7 @@ const RiskManagementForm: React.FC = () => {
           <div className='flex p-2 justify-evenly border-y bg-slate-500/30'>
             
             <div>
-              <label>
+              <label className='bg-black border-b-4'>
                 Titulo
                 <input
                   className='bg-white/10 border-b-4 m-2 ml-2 p-1'
@@ -163,7 +163,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
             
             <div>
-              <label>
+              <label className='bg-black border-b-4'>
                 Chance
                 <select
                   className='bg-white/10 border-b-4 m-2 ml-2 p-1'
@@ -178,7 +178,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
             
             <div>
-              <label>
+              <label className='bg-black border-b-4'>
                 Impacto
                 <select
                   className='bg-white/10 border-b-4 m-2 ml-2 p-1'
@@ -193,7 +193,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
   
             <div>
-              <label>
+              <label className='bg-black border-b-4'>
                 data
                 <input
                   className='bg-white text-black border-b-4 border-slate-400 m-2 p-0.5 rounded ml-2 p-1'
@@ -210,27 +210,27 @@ const RiskManagementForm: React.FC = () => {
             <div className='flex-row justify-between flex '>
               
               <div className='flex-col flex'>
-                <label>
+                <label className='bg-black border-b-4'>
                     Descrição do Risco
                 </label>           
                 <textarea 
-                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-12'
+                  className='bg-black border-b-4 m-2 mt-6 ml-2 p-2'
                   value={newRisk.description}
                   onChange={(e) => handleNewRiskChange('description', e.target.value)}
                 /> 
               </div>
               
               <div className='flex-col flex'>
-                <label> Plano de Mitigação (opcional) </label>
+                <label className='bg-black border-b-4'> Plano de Mitigação (opcional) </label>
                 <textarea 
-                  className='bg-white/10 border-b-4 m-2 mt-6 ml-2 p-12'
+                  className='bg-black border-b-4 m-2 mt-6 ml-2 p-2 '
                   value={newRisk.plandescription}
                   onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
                 /> 
               </div>
               
               <div className='flex-col flex'>
-                <label className='mt-2'> Documento </label>
+                <label className='mt-2 bg-black border-b-4'> Documento </label>
                 <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <div id="filePreview"></div>
                   <input
@@ -269,11 +269,11 @@ const RiskManagementForm: React.FC = () => {
           
           <div className='flex flex-row justify-around p-2 border-b-4 bg-slate-500/30'>
             <div className='flex flex-col'>
-              <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row  align-center'> Responsaveis pelo preenchimento</h3>
+              <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 justify-center flex flex-row align-center bg-cyan-300 uppercase font-semibold text-black border-b-4'> Responsaveis pelo preenchimento</h3>
               
               <div className='flex flex-row text-start'>
                 <div style={{ display: 'flex ml-7', alignItems: 'center' }}>
-                  <label style={{ flex: '1' }}> Checklist </label>
+                  <label className='bg-black border-b-4' style={{ flex: '1' }}> Checklist </label>
                   <input
                     className='bg-white/10 border-b-4 m-2 ml-2 p-1'
                     type="text"
@@ -283,7 +283,7 @@ const RiskManagementForm: React.FC = () => {
                 </div>
                 
                 <div style={{ display: 'flex ml-1', alignItems: 'center' }}>
-                  <label style={{ flex: '1' }}> Plano de Ação </label>
+                  <label className='bg-black border-b-4' style={{ flex: '1' }}> Plano de Ação </label>
                   <input 
                     className='bg-white/10 border-b-4 m-2 ml-2 p-1'
                     type="text"
