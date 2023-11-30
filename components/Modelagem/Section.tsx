@@ -26,21 +26,47 @@ const Navbar = () => {
   };
 
 interface WeatherData {
-  name?: string;
-  list?: {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: {
     dt: number;
     main: {
-      temp?: number;
-      humidity?: number;
+      temp: number;
+      feels_like: number;
+      temp_min: number;
+      temp_max: number;
+      pressure: number;
+      sea_level: number;
+      grnd_level: number;
+      humidity: number;
+      temp_kf: number;
     };
-    weather?: {
-      main?: string;
-      description?: string;
-      icon?: string;
+    weather: {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
     }[];
+    clouds: {
+      all: number;
+    };
+    wind: {
+      speed: number;
+      deg: number;
+      gust: number;
+    };
+    visibility: number;
+    pop: number;
+    rain?: {
+      '3h': number;
+    };
+    sys: {
+      pod: string;
+    };
+    dt_txt: string;
   }[];
 }
-
 
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -189,7 +215,13 @@ interface WeatherData {
     setSelectedRisk(selectedValue);
   };
 
-  
+  // Function to format date
+  const formatDate = (dt_txt) => {
+    const date = new Date(dt_txt);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('pt-BR', options);
+  };
+
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
     // Check if there's an existing chart and destroy it
@@ -279,6 +311,19 @@ useEffect(() => {
         <div className="flex flex-row h-1/2">
           <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
+            {weatherData && weatherData.list && (
+              <div className="p-5 text-start bg-white/10 h-full">
+                <p className="text-white p-1">Cidade: Lorena</p>
+                {weatherData.list.map((forecast, index) => (
+                  <div key={index}>
+                    <p className="text-white p-1">Data: {formatDate(forecast.dt_txt)}</p>
+                    <p className="text-white p-1">Estado do tempo: {forecast.weather[0]?.description}</p>
+                    <p className="text-white p-1">Umidade: {forecast.main?.humidity} g/m³</p>
+                    <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
+                  </div>
+                ))}
+              </div>
+            )}
             {weatherData && (
               <div className="p-5 text-start bg-white/10 h-full">
                 <p className="text-white p-1">Cidade: {weatherData.name}</p>
