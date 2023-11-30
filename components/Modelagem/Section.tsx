@@ -311,33 +311,19 @@ useEffect(() => {
         <div className="flex flex-row h-1/2">
           <div className='w-1/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
-            {weatherData && weatherData.list && (
-              <div className="p-5 text-start bg-white/10 h-full">
-                <p className="text-white p-1">Cidade: Lorena</p>
-                {weatherData.list.map((forecast, index) => (
+            <div className="p-5 text-start text-xs bg-white/10 h-full">
+              <p className="text-white p-1">Cidade: Lorena</p>
+              {weatherData && weatherData.list && (
+                {weatherData.list.slice(0, 6).map((forecast, index) => (
                   <div key={index}>
-                    <p className="text-white p-1">Data: {formatDate(forecast.dt_txt)}</p>
-                    <p className="text-white p-1">Estado do tempo: {forecast.weather[0]?.description}</p>
-                    <p className="text-white p-1">Umidade: {forecast.main?.humidity} g/m³</p>
-                    <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
+                    <p className="text-black p-0.5 bg-cyan-300">{formatDate(forecast.dt_txt)}</p>
+                    <p className="text-white">Estado do tempo: {forecast.weather[0]?.description}</p>
+                    <p className="text-white">Umidade: {forecast.main?.humidity} g/m³</p>
+                    <p className="text-white">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
                   </div>
                 ))}
-              </div>
-            )}
-            {weatherData && (
-              <div className="p-5 text-start bg-white/10 h-full">
-                <p className="text-white p-1">Cidade: Lorena</p>
-                {weatherData.list.map((forecast, index) => (
-                  <div key={index}>
-                    <p className="text-white p-1">Data: {new Date(forecast.dt * 1000).toLocaleDateString()}</p>
-                    <p className="text-white p-1">Estado do tempo: {forecast.weather[0]?.description}</p>
-                    <p className="text-white p-1">Umidade: {forecast.main?.humidity} g/m³</p>
-                    <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
-                    {/* Add more weather details as needed */}
-                  </div>
-                ))}
-              </div>
-            )}
+              )}
+            </div>
           </div>
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
