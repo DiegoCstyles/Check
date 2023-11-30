@@ -91,9 +91,9 @@ const AppliedChecklistsChart = () => {
             />
            </div>
         </div>
-        <div className='flex flex-row border-t-4 w-full h-80'>
-          <div className='w-1/2 bg-red-500'>Reprovado</div>
-          <div className='w-1/2 bg-green-500'>Aprovado</div>
+        <div className='flex flex-row border-t-4 w-full h-96'>
+          <div className='w-1/2 bg-red-500/50 uppercase font-semibold text-black'>Reprovado</div>
+          <div className='w-1/2 bg-green-500/50 uppercase font-semibold text-black'>Aprovado</div>
         </div>
       </div>
     </div>
