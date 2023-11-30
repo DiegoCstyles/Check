@@ -148,7 +148,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
-          <div className='w-full flex p-2 justify-evenly border-y bg-slate-500/30'>
+          <div className=' flex p-2 justify-stretch border-y bg-slate-500/30'>
             
             <div className='w-2/5'>
               <label className='bg-black border-b-4 p-1'>Titulo</label>
@@ -223,7 +223,7 @@ const RiskManagementForm: React.FC = () => {
               </div>
               
               <div className='flex-col flex'>
-                <label className='bg-black border-b-4 p-2'> Documento </label>
+                <label className='bg-yellow-500 border-b-4 p-2'> Documento </label>
                 <div className='bg-white/90 h-56 m-2 ml-2 p-10 rounded  border-b-4 border-slate-400 text-black flex flex-col' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <div id="filePreview"></div>
                   <input
@@ -260,7 +260,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
           </div>
           
-          <div className='flex flex-row justify-around p-2 border-b-4 bg-slate-500/30'>
+          <div className='flex flex-row justify-evenly p-2 border-b-4 bg-slate-500/30'>
             <div className='flex flex-col'>
               <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 mb-2 justify-center flex flex-row align-center bg-cyan-300 uppercase font-semibold text-black border-b-4'> Responsaveis pelo preenchimento</h3>
               
