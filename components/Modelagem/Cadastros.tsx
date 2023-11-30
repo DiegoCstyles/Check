@@ -148,7 +148,7 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
-          <div className=' flex p-2 border-y bg-slate-500/30'>
+          <div className='justify-stretch flex p-2 border-y bg-slate-500/30'>
             
             <div>
               <label className='bg-black border-b-4 p-1'>Titulo</label>
@@ -207,7 +207,7 @@ const RiskManagementForm: React.FC = () => {
                     Descrição do Risco
                 </label>           
                 <textarea 
-                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 px-4 pb-36'
+                  className='bg-black border-b-4 m-0.5 mt-2 ml-2 p-2 px-4 pb-36'
                   value={newRisk.description}
                   onChange={(e) => handleNewRiskChange('description', e.target.value)}
                 /> 
@@ -216,7 +216,7 @@ const RiskManagementForm: React.FC = () => {
               <div className='flex-col flex'>
                 <label className='bg-black border-b-4 p-2 uppercase font-semibold'> Plano de Mitigação (opcional) </label>
                 <textarea 
-                  className='bg-black border-b-4 m-2 mt-2 ml-2 p-2 px-4 pb-36'
+                  className='bg-black border-b-4 m-0.5 mt-2 ml-2 p-2 px-4 pb-36'
                   value={newRisk.plandescription}
                   onChange={(e) => handleNewRiskChange('plandescription', e.target.value)}
                 /> 
@@ -262,7 +262,7 @@ const RiskManagementForm: React.FC = () => {
           
           <div className='flex flex-row justify-evenly p-2 border-b-4 bg-slate-500/30'>
             <div className='flex flex-col'>
-              <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2 mb-2 justify-center flex flex-row align-center bg-cyan-300 uppercase font-semibold text-black border-b-4'> Responsaveis pelo preenchimento</h3>
+              <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='p-2  justify-center flex flex-row align-center bg-cyan-300 uppercase font-semibold text-black border-b-4'> Responsaveis pelo preenchimento</h3>
               
               <div className='flex flex-row text-start'>
                 <div style={{ display: 'flex ml-7', alignItems: 'center' }}>
