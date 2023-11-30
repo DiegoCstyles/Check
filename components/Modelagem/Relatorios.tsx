@@ -42,6 +42,54 @@ const AppliedChecklistsChart = () => {
               
             />
            </div>
+          <div className="chart-container bg-black/10" style={{ width: '500px', height: '600px' }}>
+         <Bar
+              data={chartDataUserRanking}
+              options={{
+                indexAxis: 'x', // Set the axis to horizontal
+                responsive: true,
+                color: 'white', 
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'white', // Change tick label color to white
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: 'white', // Change label color to white
+                    },
+                  },
+                },
+              }}
+              
+            />
+           </div>
+          <div className="chart-container bg-black/10" style={{ width: '500px', height: '600px' }}>
+         <Bar
+              data={chartDataUserRanking}
+              options={{
+                indexAxis: 'x', // Set the axis to horizontal
+                responsive: true,
+                color: 'white', 
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'white', // Change tick label color to white
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: 'white', // Change label color to white
+                    },
+                  },
+                },
+              }}
+              
+            />
+           </div>
         </div>
       </div>
     </div>
