@@ -101,7 +101,7 @@ const Navbar = () => {
   const fetchWeatherData = async () => {
     const apiKey = '8a94c31dec76eddbdd1b3618ea56e043';
     const city = 'Lorena'; // Replace with the desired city
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=pt_br`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&lang=pt_br`;
     console.log('url: ',apiUrl);
     try {
       const response = await fetch(apiUrl);
@@ -278,11 +278,16 @@ useEffect(() => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 p-1.5 uppercase'>Insights 🌦</section>
             {weatherData && (
               <div className="p-5 text-start bg-white/10 h-full">
-                <p className="text-white p-1">Cidade: {weatherData.name}</p>
-                <p className="text-white p-1">Estado do tempo: {weatherData.weather?.[0]?.description}</p>
-                <p className="text-white p-1">Umidade: {weatherData.main?.humidity} g/m³</p>
-                <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(weatherData.main?.temp)} °C</p>
-                {/* Add more weather details as needed */}
+                <p className="text-white p-1">Cidade: {weatherData.city.name}</p>
+                {weatherData.list.map((forecast, index) => (
+                  <div key={index}>
+                    <p className="text-white p-1">Data: {new Date(forecast.dt * 1000).toLocaleDateString()}</p>
+                    <p className="text-white p-1">Estado do tempo: {forecast.weather[0]?.description}</p>
+                    <p className="text-white p-1">Umidade: {forecast.main?.humidity} g/m³</p>
+                    <p className="text-white p-1">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
+                    {/* Add more weather details as needed */}
+                  </div>
+                ))}
               </div>
             )}
           </div>
