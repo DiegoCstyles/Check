@@ -319,10 +319,13 @@ useEffect(() => {
                 )
                 .slice(0, 4).map((forecast, index) => (
                 <div className="border-x border-b" key={index}>
-                  <p className="text-black p-0.5 bg-cyan-300 text-center mt-0.5 border-t-4">{formatDate(forecast.dt_txt)}</p>
-                  <p className="text-white">Estado do tempo: {forecast.weather[0]?.description}</p>
-                  <p className="text-white">Umidade: {forecast.main?.humidity} g/m³</p>
-                  <p className="text-white">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
+                  <p className="text-black p-0.5 bg-cyan-300 text-center mt-0.5">{formatDate(forecast.dt_txt)}</p>
+                  <p className="ml-0.5 text-white">Estado do tempo: {forecast.weather[0]?.description}</p>
+                  <p className="ml-0.5 text-white">Umidade: {forecast.main?.humidity} g/m³</p>
+                  <div className="w-full flex flex-row">
+                    <p className="ml-0.5 text-white w-1/2">Temperatura: {convertKelvinToCelsius(forecast.main?.temp)} °C</p>
+                    <p className="mr-0.5 text-white w-1/2">Sensação térmica: {convertKelvinToCelsius(forecast.main?.feels_like)} °C</p>
+                  </div>
                 </div>
               ))}
             </div>
