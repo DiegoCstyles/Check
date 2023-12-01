@@ -52,7 +52,7 @@ const AppliedChecklistsChart = () => {
             labels: usersInfo.name,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
-              data: [12],
+              data: [12, 2, 5],
               borderWidth: 1,
               backgroundColor: 'rgb(103 232 149)',
             }],
