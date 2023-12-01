@@ -15,6 +15,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: string }>({});
+  const [clickedButtons, setClickedButtons] = useState({});
   const [searchInput, setSearchInput] = useState<string>('');
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
@@ -119,6 +120,11 @@ const AppliedChecklistsPage: React.FC = () => {
     setSelectedAnswers((prevAnswers) => ({
       ...prevAnswers,
       [questionId]: answer,
+    }));
+
+    setClickedButtons((prevAnswers) => ({
+      ...prevAnswers,
+      [questionId]: !prevAnswers[questionId],
     }));
   };
 
