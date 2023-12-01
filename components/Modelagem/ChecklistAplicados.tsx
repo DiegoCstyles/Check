@@ -130,6 +130,8 @@ const AppliedChecklistsPage: React.FC = () => {
       id: 0,
       dateapplied: '',
       score: 10,
+      location: '',
+      participants: '',
       risk_id: riskId !== null ? riskId : 0,
     });
   };
