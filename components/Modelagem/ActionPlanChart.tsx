@@ -62,9 +62,9 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
     <div className='ml-2 w-1/2 border'>
       <h2 className='border-b p-1.5 text-xs text-black uppercase font-semibold bg-yellow-500'>Status</h2>
       
-      <div className='mb-4'>
+      <div className='mb-4 flex flex-row justify-evenly p-2 bg-white/10'>
         <div>
-           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Tipo</label>
+           <label className='bg-white text-black uppercase font-semibold p-2 border-b-4' htmlFor='filter'>Tipo</label>
            <select
              id='filter'
              className=' bg-black p-2 my-2 border-b-4'
@@ -75,7 +75,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
            </select>
         </div>
         <div>
-           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Data</label>
+           <label className='bg-white text-black uppercase font-semibold p-2 border-b-4' htmlFor='filter'>Data</label>
            <input
             className='bg-white text-black border-b-4 border-slate-400 p-2'
             type="date" 
