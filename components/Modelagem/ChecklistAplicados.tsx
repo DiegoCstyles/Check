@@ -217,16 +217,15 @@ const AppliedChecklistsPage: React.FC = () => {
                     value={ApplyRisk.location}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApplyRisk({ ...ApplyRisk, location: e.target.value })}
                   />
-              
             </label>
             <label>
                   Participantes
                   <input
                     className='bg-white/10 border-b-4 m-2 ml-2 p-1'
                     type="text"
+                    value={ApplyRisk.participants}
+                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApplyRisk({ ...ApplyRisk, participants: e.target.value })}
                   />
-                  value={ApplyRisk.participants}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApplyRisk({ ...ApplyRisk, participants: e.target.value })}
             </label>
           </div>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
