@@ -3,11 +3,33 @@ import React from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs
 
 const AppliedChecklistsChart = () => {
 
+  const getUsers = async () => {
+    try {
+      const response = await fetch('https://checkend.onrender.com/api/getUsers', {
+        method: 'GET',
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        return data; // Assuming the response contains user information, adjust accordingly
+      } else {
+        console.error('Error fetching user information');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      return null;
+    }
+  };
+
+  // Fetch user information
+  const usersInfo = await getUsers();
+
   const chartDataUserRanking = {
-    labels: ['João', 'Ana', 'Marcos', 'Bianca'],
+    labels: usersInfo.name,
     datasets: [{
       label: 'Ranking de usuarios aplicadores',
-      data: [12, 19, 3, 5],
+      data: [12],
       borderWidth: 1,
       backgroundColor: 'rgb(103 232 149)', // Adjust the color
     }],
