@@ -202,25 +202,27 @@ const AppliedChecklistsPage: React.FC = () => {
                   <div className="flex flex-row justify-between bg-white/10">
                     <li className='p-1'>{question.question}</li>
                     <div>
-                      <button 
-                        className={`answer-button bg-green-400 hover:bg-black ${
-                          selectedAnswers[question.id] === 'Sim' ? 'positive bg-black' : ''
+                      <button
+                        className={`answer-button ${selectedAnswers[question.id] === 'Sim' ? 'positive' : ''} ${
+                          selectedAnswers[question.id] === 'Sim' && clickedButtons[question.id] ? 'bg-black' : 'bg-green-400 hover:bg-black'
                         } p-1 ml-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'Sim')}
                       >
                         Sim
                       </button>
+                      
                       <button
-                        className={`answer-button  bg-red-500 hover:bg-black ${
-                          selectedAnswers[question.id] === 'Não' ? 'negative bg-black' : ''
+                        className={`answer-button ${selectedAnswers[question.id] === 'Não' ? 'negative' : ''} ${
+                          selectedAnswers[question.id] === 'Não' && clickedButtons[question.id] ? 'bg-black' : 'bg-red-500 hover:bg-black'
                         } p-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'Não')}
                       >
                         Não
                       </button>
+                      
                       <button
-                        className={`answer-button bg-yellow-500 hover:bg-black ${
-                          selectedAnswers[question.id] === 'NA' ? 'negative bg-black' : ''
+                        className={`answer-button ${selectedAnswers[question.id] === 'NA' ? 'negative' : ''} ${
+                          selectedAnswers[question.id] === 'NA' && clickedButtons[question.id] ? 'bg-black' : 'bg-yellow-500 hover:bg-black'
                         } p-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'NA')}
                       >
