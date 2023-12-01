@@ -90,7 +90,7 @@ const ActionPlanConfirmation = () => {
       <h2 className='border-y border-r p-1.5 text-xs text-black uppercase font-semibold bg-green-500/80'>Pendências</h2>
       <input
           type='text'
-          placeholder='Procurar...'
+          placeholder='Procurar... 🔎'
           value={searchInput}
           onChange={handleSearchInputChange}
           className='w-full border text-black p-1.5 bg-white'
