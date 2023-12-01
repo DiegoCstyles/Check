@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { RiskItem, AppliedChecklist } from './models';
 import Modal from './Modal'; // Import the modal component
 
+
 interface Question {
   id: number;
   subject: string;
@@ -15,6 +16,7 @@ interface ClickedButtonsState {
 }
 
 const AppliedChecklistsPage: React.FC = () => {
+  const token = localStorage.getItem('authToken');
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
@@ -26,6 +28,28 @@ const AppliedChecklistsPage: React.FC = () => {
 
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
+
+  const getUserInfo = async () => {
+    try {
+      const response = await fetch('https://checkend.onrender.com/api/getuserinfo', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`, // Add your authentication token here
+        },
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        return data; // Assuming the response contains user information, adjust accordingly
+      } else {
+        console.error('Error fetching user information');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      return null;
+    }
+  };
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
     id: 0,
@@ -71,6 +95,14 @@ const AppliedChecklistsPage: React.FC = () => {
   const applyRiskToBackend = async () => {
     try {
       const totalScore = calculateTotalScore();
+
+      // Fetch user information
+      const userInfo = await getUserInfo();
+  
+      if (!userInfo) {
+        console.error('Error fetching user information');
+        return;
+      }
       
       const response = await fetch('https://checkend.onrender.com/api/applyrisk', {
         method: 'POST',
@@ -81,7 +113,8 @@ const AppliedChecklistsPage: React.FC = () => {
           ...ApplyRisk,
           score: totalScore,
           location: ApplyRisk.location, 
-          participants: ApplyRisk.participants, 
+          participants: ApplyRisk.participants,
+          userName: userInfo.name,
         }),
       });
   
