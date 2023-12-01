@@ -46,7 +46,12 @@ const AppliedChecklistsPage: React.FC = () => {
     for (const [, subjectQuestions] of Object.entries(groupedQuestions)) {
       subjectQuestions.forEach((question) => {
         if (selectedAnswers[question.id]) {
-          totalScore += question.value;
+           if (selectedAnswers[question.id] === 'Sim') {
+              totalScore += question.value;
+            } else if (selectedAnswers[question.id] === 'Não') {
+              totalScore -= question.value;
+            }
+            // Do nothing for 'NA'
         }
       });
     }
