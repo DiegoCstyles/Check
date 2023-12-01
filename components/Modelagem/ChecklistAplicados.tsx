@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { RiskItem, AppliedChecklist } from './models';
+import Modal from './Modal'; // Import the modal component
 
 interface Question {
   id: number;
@@ -21,6 +22,10 @@ const AppliedChecklistsPage: React.FC = () => {
   const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: string }>({});
   const [clickedButtons, setClickedButtons] = useState<ClickedButtonsState>({});
   const [searchInput, setSearchInput] = useState<string>('');
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => { setModalOpen(true); }; 
+  const closeModal = () => { setModalOpen(false); };
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
     id: 0,
@@ -75,6 +80,8 @@ const AppliedChecklistsPage: React.FC = () => {
       });
   
       if (response.ok) {
+         setSelectedRiskId(null);
+         openModal();
          resetApplyRisk(); // Reset input fields after successful addition
       } else {
         // Handle errors
@@ -187,7 +194,8 @@ const AppliedChecklistsPage: React.FC = () => {
           )}
         </ul> 
       </div>
-      
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Aplicado com sucesso!</h2></Modal>
      {/* Checklist Questions */}
       <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
