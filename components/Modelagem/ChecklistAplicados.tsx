@@ -204,7 +204,7 @@ const AppliedChecklistsPage: React.FC = () => {
                     <div>
                       <button 
                         className={`answer-button bg-green-400 hover:bg-black ${
-                          selectedAnswers[question.id] === 'Sim' ? 'positive bg-black' : 'bg-green-400'
+                          selectedAnswers[question.id] === 'Sim' ? 'positive bg-black' : ''
                         } p-1 ml-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'Sim')}
                       >
@@ -212,7 +212,7 @@ const AppliedChecklistsPage: React.FC = () => {
                       </button>
                       <button
                         className={`answer-button  bg-red-500 hover:bg-black ${
-                          selectedAnswers[question.id] === 'Não' ? 'negative bg-black' : ' bg-red-500'
+                          selectedAnswers[question.id] === 'Não' ? 'negative bg-black' : ''
                         } p-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'Não')}
                       >
@@ -220,7 +220,7 @@ const AppliedChecklistsPage: React.FC = () => {
                       </button>
                       <button
                         className={`answer-button bg-yellow-500 hover:bg-black ${
-                          selectedAnswers[question.id] === 'NA' ? 'negative bg-black' : 'bg-yellow-500'
+                          selectedAnswers[question.id] === 'NA' ? 'negative bg-black' : ''
                         } p-1`}
                         onClick={() => handleAnswerButtonClick(question.id, 'NA')}
                       >
