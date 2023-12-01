@@ -63,18 +63,27 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
       <h2 className='border-b p-1.5 text-xs text-black uppercase font-semibold bg-yellow-500'>Status</h2>
       
       <div className='mb-4'>
-        <label htmlFor='filter'>Tipo:</label>
-        <select
-          id='filter'
-          className='ml-2 bg-black p-2 my-2 border-b-4'
-          value={selectedFilter}
-          onChange={(e) => setSelectedFilter(e.target.value)}
-        >
-          {filterOptions.map(option => ( <option key={option} value={option}> {option} </option> ))}
-        </select>
+        <div>
+           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Tipo</label>
+           <select
+             id='filter'
+             className=' bg-black p-2 my-2 border-b-4'
+             value={selectedFilter}
+             onChange={(e) => setSelectedFilter(e.target.value)}
+           >
+             {filterOptions.map(option => ( <option key={option} value={option}> {option} </option> ))}
+           </select>
+        </div>
+        <div>
+           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Data</label>
+           <input
+            className='bg-white text-black border-b-4 border-slate-400 p-2'
+            type="date" 
+           />
+        </div>
       </div>
       
-      <div className='w-full flex justify-center items-center'>
+      <div className='w-full flex justify-center items-center bg-black'>
         <div className='p-4' style={{ width: chartWidth, height: chartHeight }}>
           {chartData ? ( // Check if chartData is not null
             <>
