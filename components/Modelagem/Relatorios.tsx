@@ -5,7 +5,7 @@ interface ChartData {
   labels: string[];
   datasets: {
     label: string;
-    data: number[];
+    data: string[];
     borderWidth: number;
     backgroundColor: string;
   }[];
@@ -53,7 +53,7 @@ const AppliedChecklistsChart = () => {
             labels: usersInfo.name,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
-              data: [12, 2, 5],
+              data: usersInfo.name,
               borderWidth: 1,
               backgroundColor: 'rgb(103 232 149)',
             }],
