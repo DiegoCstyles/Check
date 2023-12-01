@@ -331,11 +331,9 @@ useEffect(() => {
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
               <p className="h-full text-white text-xs bg-black text-justify p-3">
                 <ul className="text-black font-semibold h-60 bg-white/90 border-t-4 p-2">
-                  {scenario  && (
-                    {scenario.split(/•|-/).map((item, index) => (
-                      <li key={index}>{item.trim()}</li>
-                    ))}
-                  )}
+                  {scenario && scenario.split(/•|-/).map((item, index) => (
+                    <li key={index}>{item.trim()}</li>
+                  ))}
                 </ul>
                 <div className='flex flex-row w-full'>
                   <select
