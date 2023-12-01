@@ -116,7 +116,7 @@ const AppliedChecklistsPage: React.FC = () => {
           score: totalScore,
           location: ApplyRisk.location, 
           participants: ApplyRisk.participants,
-          userName: userInfo.name,
+          userName: userInfo.id,
         }),
       });
   
