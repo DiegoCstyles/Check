@@ -19,6 +19,8 @@ export interface AppliedChecklist {
   id: number;
   dateapplied: string;
   score: number;
+  location: string;
+  participants: string;
   risk_id: number;
 }
 
