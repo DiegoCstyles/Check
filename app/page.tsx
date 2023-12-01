@@ -23,7 +23,8 @@ export default function Home() {
 
       if (response.ok) {
         const { token } = await response.json();
-        // Store the token in a secure way (e.g., using a state management library)
+        // Store the token in localStorage
+        localStorage.setItem('authToken', token);
         // Redirect to a protected route
         router.push('/modelagem');
       } else {
