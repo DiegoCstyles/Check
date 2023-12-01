@@ -1,9 +1,27 @@
 "use client";
 import React, { useEffect, useState } from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
 
+interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    borderWidth: number;
+    backgroundColor: string;
+  }[];
+}
+
 const AppliedChecklistsChart = () => {
 
-  const [chartDataUserRanking, setChartDataUserRanking] = useState({});
+  const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
+    labels: [],
+    datasets: [{
+      label: 'Ranking de usuarios aplicadores',
+      data: [],
+      borderWidth: 1,
+      backgroundColor: 'rgb(103 232 149)',
+    }],
+  });
 
   useEffect(() => {
     const getUsers = async () => {
