@@ -163,13 +163,13 @@ const RiskManagementForm: React.FC = () => {
             <div>
               <label className='bg-black border-b-4 p-2'>Chance</label>
                 <select
-                  className='bg-white/10 border-b-4 p-2'
+                  className='bg-white/10 p-2'
                   value={newRisk.likelihood}
                   onChange={(e) => handleNewRiskChange('likelihood', e.target.value)}
                 >
-                  <option className='bg-black border-b-4' value="Pequena">Pequena</option>
-                  <option className='bg-black border-b-4' value="Media">Media</option>
-                  <option className='bg-black border-b-4' value="Alta">Alta</option>
+                  <option className='bg-black' value="Pequena">Pequena</option>
+                  <option className='bg-black' value="Media">Media</option>
+                  <option className='bg-black' value="Alta">Alta</option>
                 </select>
               
             </div>
@@ -177,13 +177,13 @@ const RiskManagementForm: React.FC = () => {
             <div>
               <label className='bg-black border-b-4 p-2'>Impacto</label>
                 <select
-                  className='bg-white/10 border-b-4 p-2'
+                  className='bg-white/10 p-2'
                   value={newRisk.impact}
                   onChange={(e) => handleNewRiskChange('impact', e.target.value)}
                 >
-                  <option className='bg-black border-b-4' value="Pequeno">Pequeno</option>
-                  <option className='bg-black border-b-4' value="Medio">Medio</option>
-                  <option className='bg-black border-b-4' value="Alto">Alto</option>
+                  <option className='bg-black' value="Pequeno">Pequeno</option>
+                  <option className='bg-black' value="Medio">Medio</option>
+                  <option className='bg-black' value="Alto">Alto</option>
                 </select>
             </div>
   
