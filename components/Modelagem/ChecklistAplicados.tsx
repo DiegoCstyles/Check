@@ -31,6 +31,7 @@ const AppliedChecklistsPage: React.FC = () => {
 
   const getUserInfo = async () => {
     try {
+      console.log('Authentication Token:', `Bearer ${token}`);
       const response = await fetch('https://checkend.onrender.com/api/getuserinfo', {
         method: 'GET',
         headers: {
