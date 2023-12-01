@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
 
 interface ChartData {
-  labels: string;
+  labels: string[];
   datasets: {
     label: string;
     data: number[];
