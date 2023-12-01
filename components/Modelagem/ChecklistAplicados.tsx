@@ -9,13 +9,17 @@ interface Question {
   value: number;
 }
 
+interface ClickedButtonsState {
+  [questionId: number]: boolean;
+}
+
 const AppliedChecklistsPage: React.FC = () => {
   const [RiskItems, setRiskItems] = useState<RiskItem[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: string }>({});
-  const [clickedButtons, setClickedButtons] = useState({});
+  const [clickedButtons, setClickedButtons] = useState<ClickedButtonsState>({});
   const [searchInput, setSearchInput] = useState<string>('');
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
