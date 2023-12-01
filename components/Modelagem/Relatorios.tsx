@@ -22,18 +22,27 @@ const AppliedChecklistsChart = () => {
     }
   };
 
-  // Fetch user information
-  const usersInfo = await getUsers();
+  (async () => {
+    try {
+      const usersInfo = await getUsers();
+  
+      const chartDataUserRanking = {
+        labels: usersInfo.name,
+        datasets: [{
+          label: 'Ranking de usuarios aplicadores',
+          data: [12],
+          borderWidth: 1,
+          backgroundColor: 'rgb(103 232 149)',
+        }],
+      };
+  
+      // Rest of your code that uses chartDataUserRanking
+  
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  })();
 
-  const chartDataUserRanking = {
-    labels: usersInfo.name,
-    datasets: [{
-      label: 'Ranking de usuarios aplicadores',
-      data: [12],
-      borderWidth: 1,
-      backgroundColor: 'rgb(103 232 149)', // Adjust the color
-    }],
-  };
 
   return (
     <div className='w-full h-screen border bg-slate-500/30'>
