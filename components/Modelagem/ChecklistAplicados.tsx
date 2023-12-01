@@ -40,6 +40,7 @@ const AppliedChecklistsPage: React.FC = () => {
   
       if (response.ok) {
         const data = await response.json();
+        console.log('data: ', data);
         return data; // Assuming the response contains user information, adjust accordingly
       } else {
         console.error('Error fetching user information');
