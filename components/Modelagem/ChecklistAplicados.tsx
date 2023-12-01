@@ -31,6 +31,8 @@ const AppliedChecklistsPage: React.FC = () => {
     id: 0,
     dateapplied: '',
     score: 0,
+    location: '',
+    participants: '',
     risk_id: selectedRiskId !== null ? selectedRiskId : 0,
   });
 
@@ -39,6 +41,8 @@ const AppliedChecklistsPage: React.FC = () => {
       id: 0,
       dateapplied: '',
       score: 0,
+      location: 0,
+      participants: 0,
       risk_id: 0,
     });
   };  
@@ -76,6 +80,8 @@ const AppliedChecklistsPage: React.FC = () => {
         body: JSON.stringify({
           ...ApplyRisk,
           score: totalScore,
+          location: ApplyRisk.location, 
+          participants: ApplyRisk.participants, 
         }),
       });
   
@@ -206,7 +212,10 @@ const AppliedChecklistsPage: React.FC = () => {
                   <input
                     className='bg-white/10 border-b-4 m-2 ml-2 p-1'
                     type="text"
+                    value={ApplyRisk.location}
+                    onChange={(e) => setApplyRisk({ ...ApplyRisk, location: e.target.value })}
                   />
+              
             </label>
             <label>
                   Participantes
@@ -214,6 +223,8 @@ const AppliedChecklistsPage: React.FC = () => {
                     className='bg-white/10 border-b-4 m-2 ml-2 p-1'
                     type="text"
                   />
+                  value={ApplyRisk.participants}
+                  onChange={(e) => setApplyRisk({ ...ApplyRisk, participants: e.target.value })}
             </label>
           </div>
           <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
