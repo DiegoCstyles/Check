@@ -365,13 +365,13 @@ useEffect(() => {
               <ul className='text-slate-400 mb-1 p-5'>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
                   <li className='text-center mr-2 w-32 px-2 py-1 '>Titulo</li>
-                  <li className='text-center mr-2 w-32 px-2 py-1 '>Descrição</li>
+                  <li className='text-center mr-2 w-32 px-2 py-1 '>Status</li>
                 </div>
                 {lastRiskItems.map((risk) => (
                   <li key={risk.id}>
                     <div className='flex justify-center text-center'>
                       <p className='text-center mr-2 w-32 px-2 py-1 text-xs bg-black/10'> {risk.title} </p>
-                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0 bg-black/10'> {risk.description} </p>
+                      <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0 bg-black/10'> {risk.planapproval} </p>
                     </div>
                   </li>
                 ))}
