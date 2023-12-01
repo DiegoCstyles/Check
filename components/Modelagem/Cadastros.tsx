@@ -148,12 +148,12 @@ const RiskManagementForm: React.FC = () => {
       <div className=' w-full text-xs text-center '>
         <div className=''>
           <h2 className='p-1.5 text-xs text-white border-b-4 uppercase'>Cadastro</h2>
-          <div className='justify-center flex p-2 border-y bg-slate-500/30'>
+          <div className='justify-evenly flex p-2 border-y bg-slate-500/30'>
             
             <div>
-              <label className='bg-black border-b-4 p-1'>Titulo</label>
+              <label className='bg-black border-b-4 p-2'>Titulo</label>
               <input
-                className='bg-white/10 border-b-4 p-1'
+                className='bg-white/10 border-b-4 p-2'
                 type="text"
                 value={newRisk.title}
                 onChange={(e) => handleNewRiskChange('title', e.target.value)}
@@ -161,9 +161,9 @@ const RiskManagementForm: React.FC = () => {
             </div>
             
             <div>
-              <label className='bg-black border-b-4 p-1'>Chance</label>
+              <label className='bg-black border-b-4 p-2'>Chance</label>
                 <select
-                  className='bg-white/10 border-b-4 p-1'
+                  className='bg-white/10 border-b-4 p-2'
                   value={newRisk.likelihood}
                   onChange={(e) => handleNewRiskChange('likelihood', e.target.value)}
                 >
@@ -175,9 +175,9 @@ const RiskManagementForm: React.FC = () => {
             </div>
             
             <div>
-              <label className='bg-black border-b-4 p-1'>Impacto</label>
+              <label className='bg-black border-b-4 p-2'>Impacto</label>
                 <select
-                  className='bg-white/10 border-b-4 p-1'
+                  className='bg-white/10 border-b-4 p-2'
                   value={newRisk.impact}
                   onChange={(e) => handleNewRiskChange('impact', e.target.value)}
                 >
@@ -188,9 +188,9 @@ const RiskManagementForm: React.FC = () => {
             </div>
   
             <div>
-              <label className='bg-black border-b-4 p-1'>data</label>
+              <label className='bg-black border-b-4 p-2'>data</label>
                 <input
-                  className='bg-white text-black border-b-4 border-slate-400 p-1'
+                  className='bg-white text-black border-b-4 border-slate-400 p-2'
                   type="date" 
                   value={newRisk.date}
                   onChange={(e) => handleNewRiskChange('date', e.target.value)}
