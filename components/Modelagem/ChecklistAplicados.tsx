@@ -137,7 +137,7 @@ const AppliedChecklistsPage: React.FC = () => {
         <h1 className='border-b-4 p-1 uppercase bg-yellow-500 text-black text-xs font-semibold border-t border-x'>Checklists</h1>
         <input
           type='text'
-          placeholder='Procurar...'
+          placeholder='Procurar... 🔎'
           value={searchInput}
           onChange={handleSearchInputChange}
           className='w-full border text-black p-1.5 bg-white'
