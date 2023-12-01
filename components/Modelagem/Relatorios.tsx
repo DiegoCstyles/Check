@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
+import React, { useEffect, useState } from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
 
 const AppliedChecklistsChart = () => {
 
