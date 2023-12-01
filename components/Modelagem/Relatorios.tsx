@@ -22,6 +22,8 @@ const AppliedChecklistsChart = () => {
     }
   };
 
+  let chartDataUserRanking; 
+
   (async () => {
     try {
       const usersInfo = await getUsers();
