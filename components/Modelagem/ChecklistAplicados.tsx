@@ -14,7 +14,7 @@ const AppliedChecklistsPage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedRiskId, setSelectedRiskId] = useState<number | null>(null);
   const [selectedRiskValue, setSelectedRiskValue] = useState<string | null>(null);
-  const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: boolean }>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [questionId: number]: string }>({});
   const [searchInput, setSearchInput] = useState<string>('');
 
   const [ApplyRisk, setApplyRisk] = useState<AppliedChecklist>({
@@ -111,16 +111,15 @@ const AppliedChecklistsPage: React.FC = () => {
     });
   };
 
-  // Handler for the 'Sim' button click
-  const handleSimButtonClick = (questionId: number) => {
-    setSelectedAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [questionId]: true,
-    }));
-  };
-
    const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(event.target.value);
+  };
+
+  const handleAnswerButtonClick = (questionId: number, answer: string) => {
+    setSelectedAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [questionId]: answer,
+    }));
   };
 
   // Group questions by subject
@@ -204,12 +203,29 @@ const AppliedChecklistsPage: React.FC = () => {
                     <li className='p-1'>{question.question}</li>
                     <div>
                       <button 
-                        className="answer-button hover:bg-black positive border bg-green-400 p-1 ml-1"
-                        onClick={() => handleSimButtonClick(question.id)}>
+                        className={`answer-button hover:bg-black ${
+                          selectedAnswers[question.id] === 'Sim' ? 'positive bg-green-400' : ''
+                        } p-1 ml-1`}
+                        onClick={() => handleAnswerButtonClick(question.id, 'Sim')}
+                      >
                         Sim
                       </button>
-                      <button className="answer-button hover:bg-black negative border bg-red-500 p-1">Não</button>
-                      <button className="answer-button hover:bg-black negative border bg-yellow-500 p-1">NA</button>
+                      <button
+                        className={`answer-button hover:bg-black ${
+                          selectedAnswers[question.id] === 'Não' ? 'negative bg-red-500' : ''
+                        } p-1`}
+                        onClick={() => handleAnswerButtonClick(question.id, 'Não')}
+                      >
+                        Não
+                      </button>
+                      <button
+                        className={`answer-button hover:bg-black ${
+                          selectedAnswers[question.id] === 'NA' ? 'negative bg-yellow-500' : ''
+                        } p-1`}
+                        onClick={() => handleAnswerButtonClick(question.id, 'NA')}
+                      >
+                        NA
+                      </button>
                     </div>
                   </div>
                 </div>
