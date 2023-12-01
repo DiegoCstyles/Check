@@ -291,7 +291,7 @@ const RiskManagementForm: React.FC = () => {
             </div>
             
             <div>
-              <button className='border m-1 mt-7 p-2 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black' onClick={addRiskToBackend}>Adicionar Risco</button>
+              <button className='border m-1 mt-7 p-2 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black' onClick={addRiskToBackend}>Adicionar Risco ➕</button>
             </div>
           </div>  
           <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Adicionado com sucesso!</h2></Modal>
