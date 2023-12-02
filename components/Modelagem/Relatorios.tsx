@@ -112,7 +112,10 @@ const AppliedChecklistsChart = () => {
     }
   };
 
-  const resultCounts = AppliedChecklists.reduce((counts, checklist) => {
+  
+
+  useEffect(() => {
+    const resultCounts = AppliedChecklists.reduce((counts, checklist) => {
     const resultValue = checklist.results.toLowerCase(); // Convert to lowercase for case-insensitive comparison
   
       if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
@@ -132,8 +135,7 @@ const AppliedChecklistsChart = () => {
   console.log('countSemResultados: ', countSemResultados);
   console.log('countParcial: ', countParcial);
   console.log('countEfetivo: ', countEfetivo);
-
-  useEffect(() => {
+    
     const fetchRiskItemApproved = async () => {
       try {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
