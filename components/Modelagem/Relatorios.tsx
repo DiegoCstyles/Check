@@ -115,27 +115,6 @@ const AppliedChecklistsChart = () => {
   
 
   useEffect(() => {
-    const resultCounts = AppliedChecklists.reduce((counts, checklist) => {
-    const resultValue = checklist.results.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-  
-      if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
-        counts[resultValue as keyof ResultCounts] = (counts[resultValue as keyof ResultCounts] || 0) + 1;
-      }
-    
-      return counts;
-    }, {} as ResultCounts);
-  
-  // Access counts for each result
-  const countNaoAvaliado = resultCounts["não avaliado"] || 0;
-  const countSemResultados = resultCounts["sem resultados"] || 0;
-  const countParcial = resultCounts["parcial"] || 0;
-  const countEfetivo = resultCounts["efetivo"] || 0;
-
-  console.log('countNaoAvaliado: ', countNaoAvaliado);
-  console.log('countSemResultados: ', countSemResultados);
-  console.log('countParcial: ', countParcial);
-  console.log('countEfetivo: ', countEfetivo);
-    
     const fetchRiskItemApproved = async () => {
       try {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
@@ -221,6 +200,26 @@ const AppliedChecklistsChart = () => {
               backgroundColor: 'rgb(103, 232, 149)',
             }],
           });
+
+           // Update counts for each result
+          const resultCounts = checklists.reduce((counts, checklist) => {
+            const resultValue = checklist.results.toLowerCase();
+            if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
+              counts[resultValue as keyof ResultCounts] = (counts[resultValue as keyof ResultCounts] || 0) + 1;
+            }
+            return counts;
+          }, {} as ResultCounts);
+
+           // Access counts for each result
+          const countNaoAvaliado = resultCounts["não avaliado"] || 0;
+          const countSemResultados = resultCounts["sem resultados"] || 0;
+          const countParcial = resultCounts["parcial"] || 0;
+          const countEfetivo = resultCounts["efetivo"] || 0;
+        
+          console.log('countNaoAvaliado: ', countNaoAvaliado);
+          console.log('countSemResultados: ', countSemResultados);
+          console.log('countParcial: ', countParcial);
+          console.log('countEfetivo: ', countEfetivo);
 
            setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
