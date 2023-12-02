@@ -26,7 +26,7 @@ const AppliedChecklistsChart = () => {
       label: 'Ranking de usuarios aplicadores',
       data: [],
       borderWidth: 1,
-      backgroundColor: 'rgb(103 232 149)',
+      backgroundColor: 'rgb(103, 232, 149)',
     }],
   });
 
