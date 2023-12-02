@@ -51,12 +51,7 @@ const AppliedChecklistsChart = () => {
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
 
-  const counts: ResultCounts = {
-    "não avaliado": 0,
-    "sem resultados": 0,
-    "parcial": 0,
-    "efetivo": 0,
-  };
+  const counts = {} as ResultCounts;
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
