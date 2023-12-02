@@ -128,6 +128,11 @@ const AppliedChecklistsChart = () => {
   const countParcial = resultCounts["parcial"] || 0;
   const countEfetivo = resultCounts["efetivo"] || 0;
 
+  console.log('countNaoAvaliado: ', countNaoAvaliado);
+  console.log('countSemResultados: ', countSemResultados);
+  console.log('countParcial: ', countParcial);
+  console.log('countEfetivo: ', countEfetivo);
+
   useEffect(() => {
     const fetchRiskItemApproved = async () => {
       try {
