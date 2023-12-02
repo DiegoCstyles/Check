@@ -239,8 +239,8 @@ const AppliedChecklistsChart = () => {
           <li key={resultAppliedChecklists.id} style={{ listStyleType: 'none' }}>
             <div className='flex flex-row w-full justify-between text-xs text-center p-0.5'>
               
-              <label className='w-2/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-2'>Avaliação do checklist</label>
-              <div className='w-3/12'>
+              <label className='w-2/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
+              <div className='w-2/12'>
                 <label className='bg-black border-b-4 p-2'>Participantes</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-2'
@@ -256,7 +256,7 @@ const AppliedChecklistsChart = () => {
                   value={resultAppliedChecklists.location}
                 />
               </div>
-              <div className='w-1/12'>
+              <div className='w-2/12'>
                 <label className='bg-black border-b-4 p-2'>Pontuação</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-2'
@@ -265,7 +265,7 @@ const AppliedChecklistsChart = () => {
                 />
               </div>
               
-              <div className='w-2/12'>
+              <div className='w-3/12'>
                 <label className='bg-black border-b-4 p-2'>Resultados da implementação</label>
                   <select
                     className='bg-white/10 p-2'
@@ -277,7 +277,7 @@ const AppliedChecklistsChart = () => {
                   </select>
                 
               </div>
-              <button className='w-2/12 border p-2 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black'>Submeter</button>
+              <button className='w-1/12 border p-1 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black'>Submeter</button>
             </div>
           </li>
         ))}
