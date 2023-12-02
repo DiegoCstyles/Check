@@ -224,7 +224,7 @@ const AppliedChecklistsChart = () => {
             />
            </div>
           <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
-         <Bar
+         <PolarArea
               data={chartDataUserRanking}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
