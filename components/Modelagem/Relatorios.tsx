@@ -79,7 +79,7 @@ const AppliedChecklistsChart = () => {
         
         const userNames = usersInfo.map((user) => user.name);
         
-        const checklists: AppliedChecklist = await getChecklists();
+        const checklists: AppliedChecklist[] | null = await getChecklists();
         console.log('checklists: ', checklists);
 
         if (usersInfo && checklists) {
