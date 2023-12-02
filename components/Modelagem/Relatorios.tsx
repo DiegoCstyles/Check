@@ -72,6 +72,18 @@ const AppliedChecklistsChart = () => {
     } catch (error) {
       console.error('Error:', error);
     }
+  }; 
+  
+  const handleSubmeter = async (checklistId: string, results: string) => {
+    try {
+      // Your existing code for submitting results
+      await addresultToBackend(checklistId, results);
+
+      // After successful submission, refetch data
+      fetchAppliedChecklists();
+    } catch (error) {
+      console.error('Error submitting results and fetching data:', error);
+    }
   };
 
   useEffect(() => {
@@ -330,7 +342,7 @@ const AppliedChecklistsChart = () => {
                 
               </div>
               <button className='w-1/12 border p-1 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black'  
-                onClick={() => addresultToBackend(resultAppliedChecklists.id.toString(), resultAppliedChecklists.results)}
+                onClick={() => handleSubmeter(resultAppliedChecklists.id.toString(), resultAppliedChecklists.results)}
               >
                 Submeter
               </button>
