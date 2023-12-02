@@ -51,7 +51,7 @@ const AppliedChecklistsChart = () => {
       }
     };
 
-    const getChecklists = async () => {
+    const getChecklists = async (): Promise<AppliedChecklist[]> => {
       try {
         const response = await fetch('https://checkend.onrender.com/api/getChecklists', {
           method: 'GET',
