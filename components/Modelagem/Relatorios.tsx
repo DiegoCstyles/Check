@@ -219,11 +219,11 @@ const AppliedChecklistsChart = () => {
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
         <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Reprovado</div>
+            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center mt-2'>Reprovado</div>
             <div className='h-5/6 bg-red-500/50 p-2'>Valores</div>
           </div>
           <div className='flex flex-col w-1/2 pl-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Aprovado</div>
+            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center mt-2'>Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-2'>
               {itemRisk.map((risk) => (
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
@@ -247,17 +247,17 @@ const AppliedChecklistsChart = () => {
                         />
                       </div>
                       <textarea 
-                        className='bg-black border-b-4 p-2 pb-8 w-full'
+                        className='bg-black border-b-4 p-2 pb-7 w-full'
                         value={'Descrição: ' + risk.description} 
                       /> 
                       <textarea 
-                        className='bg-black border-b-4 p-2 pb-8 w-full'
+                        className='bg-black border-b-4 p-2 pb-7 w-full'
                         value={'Plano de mitigação: ' + risk.plandescription} 
                       /> 
                       
                       <div className="flex flex-row">
                         <input
-                          className='w-1/4 text-center bg-yellow-500 border-b-4 p-1.5'
+                          className='w-1/4 text-center bg-yellow-500 text-black border-b-4 p-1.5'
                           type='text'
                           value={formatDate(risk.date)}
                         />
