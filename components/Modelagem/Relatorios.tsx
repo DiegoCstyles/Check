@@ -49,6 +49,27 @@ const AppliedChecklistsChart = () => {
     }],
   });
 
+  const addresultToBackend = async (checklistId: string, results: string) => {
+    try {
+      const response = await fetch(`https://checkend.onrender.com/api/updateChecklistResults/${checklistId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ results }),
+      });
+
+      if (response.ok) {
+        console.log('Results submitted successfully');
+        // You can add additional logic here if needed
+      } else {
+        console.error('Error submitting results');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   useEffect(() => {
     const fetchRiskItemApproved = async () => {
       try {
@@ -76,27 +97,6 @@ const AppliedChecklistsChart = () => {
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
-
-    const addresultToBackend = async (checklistId: string, results: string) => {
-    try {
-      const response = await fetch(`https://checkend.onrender.com/api/updateChecklistResults/${checklistId}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ results }),
-      });
-
-      if (response.ok) {
-        console.log('Results submitted successfully');
-        // You can add additional logic here if needed
-      } else {
-        console.error('Error submitting results');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
     
     const getUsers = async () => {
       try {
