@@ -19,24 +19,24 @@ interface User {
   name: string;
 }
 
-const [newRisk, setNewRisk] = useState<RiskItem>({
-  id: 0,
-  title: '',
-  description: '',
-  plandescription: '',
-  planFiles: '', 
-  planFilesName: '',
-  planapproval: 'solução em análise',
-  likelihood: 'Pequena',
-  impact: 'Pequeno',
-  date: 'DD/MM/AAAA',
-  responsiblechecklist: '',
-  responsibleplan: '',
-  completed: false,
-});
 
 const AppliedChecklistsChart = () => {
-  const [riskItems, setRiskItems] = useState<RiskItem[]>([]);
+  const [newRisk, setNewRisk] = useState<RiskItem>({
+    id: 0,
+    title: '',
+    description: '',
+    plandescription: '',
+    planFiles: '', 
+    planFilesName: '',
+    planapproval: 'solução em análise',
+    likelihood: 'Pequena',
+    impact: 'Pequeno',
+    date: 'DD/MM/AAAA',
+    responsiblechecklist: '',
+    responsibleplan: '',
+    completed: false,
+  });
+
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
