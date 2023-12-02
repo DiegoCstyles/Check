@@ -81,24 +81,24 @@ const AppliedChecklistsChart = () => {
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
         console.log('checklists: ', checklists);
-
-        if (usersInfo && checklists) {
-          const sums = userNames.map((userName) => {
+          
+         if (usersInfo && checklists) {
+          const counts = userNames.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
-              // Assuming checklist data has a structure like { User_id, ...otherProperties }
+              // Assuming checklist data has a structure like { user_id, ...otherProperties }
               const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
-              const sum = userChecklists.reduce((acc, checklist: AppliedChecklist) => acc + checklist.user_id, 0);
-              return sum;
+              const count = userChecklists.length;
+              return count;
             }
             return 0;
           });
-          
+            
           setChartDataUserRanking({
             labels: userNames,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
-              data: sums,
+              data: counts,
               borderWidth: 1,
               backgroundColor: 'rgb(103, 232, 149)',
             }],
