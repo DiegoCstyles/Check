@@ -21,7 +21,7 @@ interface User {
 
 
 const AppliedChecklistsChart = () => {
-  const [newRisk, setNewRisk] = useState<RiskItem>({
+  const [itemRisk, setitemRisk] = useState<RiskItem>({
     id: 0,
     title: '',
     description: '',
@@ -54,7 +54,7 @@ const AppliedChecklistsChart = () => {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
   
         if (response.ok) {
-          const data = await response.json(); setNewRisk(data); // Update the riskItems state with the fetched data
+          const data = await response.json(); setitemRisk(data); // Update the riskItems state with the fetched data
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
@@ -241,7 +241,7 @@ const AppliedChecklistsChart = () => {
           <div className='flex flex-col w-1/2 pr-1'>
             <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-2'>
-              {riskItems
+              {itemRisk
                 .map((risk) => (
                   <li key={risk.id}>
                     <div className='flex flex-col justify-between text-xs text-center p-4'>
