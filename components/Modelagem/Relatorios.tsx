@@ -89,7 +89,7 @@ const AppliedChecklistsChart = () => {
       await addresultToBackend(checklistId, results);
 
       // After successful submission, refetch data
-      fetchAppliedChecklists();
+      await fetchAppliedChecklists();
     } catch (error) {
       console.error('Error submitting results and fetching data:', error);
     }
