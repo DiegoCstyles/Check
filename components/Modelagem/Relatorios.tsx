@@ -193,8 +193,14 @@ const AppliedChecklistsChart = () => {
         </div>
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
         <div className='flex flex-row border-t-4 w-full h-80'>
-          <div className='w-1/2 bg-red-500/50 uppercase font-semibold p-2'>Reprovado</div>
-          <div className='w-1/2 bg-green-500/50 uppercase font-semibold p-2'>Aprovado</div>
+          <div className='flex flex-col w-1/2 p-2'>
+            <div className='h-1/5 bg-black uppercase font-semibold'>Reprovado</div>
+            <div className='h-4/5 bg-red-500/50'>Valores</div>
+          </div>
+          <div className='flex flex-col w-1/2 p-2'>
+            <div className='h-1/5 bg-black uppercase font-semibold'>Aprovado</div>
+            <div className='h-4/5 bg-green-500/50'>Valores</div>
+          </div>
         </div>
       </div>
     </div>
