@@ -293,8 +293,8 @@ const AppliedChecklistsChart = () => {
                     placeholder='selecionar...'
                     value={resultAppliedChecklists.results}
                     onChange={(event) => {
-                      setResultAppliedChecklists({
-                        ...resultAppliedChecklists,
+                      setAppliedChecklists({
+                        ...AppliedChecklists,
                         results: event.target.value,
                       });
                     }}
