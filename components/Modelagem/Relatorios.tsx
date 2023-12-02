@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
+import { AppliedChecklist } from './models';
 
 interface ChartData {
   labels: string[];
@@ -77,7 +78,7 @@ const AppliedChecklistsChart = () => {
         
         const userNames = usersInfo.map((user) => user.name);
         
-        const checklists = await getChecklists();
+        const checklists: AppliedChecklist = await getChecklists();
         console.log('checklists: ', checklists);
 
         if (usersInfo && checklists) {
