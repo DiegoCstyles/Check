@@ -240,7 +240,7 @@ const AppliedChecklistsChart = () => {
             <div className='flex flex-row w-full justify-between text-xs text-center p-0.5'>
               
               <label className='w-1/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
-              <div className='w-2/12'>
+              <div className='w-3/12'>
                 <label className='bg-black border-b-4 p-1'>Participantes</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-1'
@@ -256,7 +256,7 @@ const AppliedChecklistsChart = () => {
                   value={resultAppliedChecklists.location}
                 />
               </div>
-              <div className='w-2/12'>
+              <div className='w-3/12'>
                 <label className='bg-black border-b-4 p-1'>Pontuação</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-1'
@@ -265,7 +265,7 @@ const AppliedChecklistsChart = () => {
                 />
               </div>
               
-              <div className='w-4/12'>
+              <div className='w-fit'>
                 <label className='bg-black border-b-4 p-1'>Resultados da implementação</label>
                   <select
                     className='bg-white/10 p-1'
