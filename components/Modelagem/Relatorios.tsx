@@ -238,11 +238,44 @@ const AppliedChecklistsChart = () => {
          {AppliedChecklists.map((resultAppliedChecklists) => (
           <li key={resultAppliedChecklists.id} style={{ listStyleType: 'none' }}>
             <div className='flex flex-row justify-between text-xs text-center p-0.5'>
-              <input
-                className='w-full text-center bg-white/10 border-b-4 p-1.5'
-                type='text'
-                value={resultAppliedChecklists.participants}
-              />
+              <div>
+                <label className='bg-black border-b-4 p-2'>Participantes</label>
+                <input
+                  className='text-center bg-white/10 border-b-4 p-2'
+                  type='text'
+                  value={resultAppliedChecklists.participants}
+                />
+              </div>
+              <div>
+                <label className='bg-black border-b-4 p-2'>Local</label>
+                <input
+                  className='text-center bg-white/10 border-b-4 p-2'
+                  type='text'
+                  value={resultAppliedChecklists.location}
+                />
+              </div>
+              <div>
+                <label className='bg-black border-b-4 p-2'>Pontuação</label>
+                <input
+                  className='text-center bg-white/10 border-b-4 p-2'
+                  type='text'
+                  value={resultAppliedChecklists.score}
+                />
+              </div>
+              
+              <div>
+                <label className='bg-black border-b-4 p-2'>Resultados da implementação</label>
+                  <select
+                    className='bg-white/10 p-2'
+                    placeholder='selecionar...'
+                  >
+                    <option className='bg-black' value="Sem resultados">Sem resultados</option>
+                    <option className='bg-black' value="Parcial">Parcial</option>
+                    <option className='bg-black' value="Efetivo">Efetivo</option>
+                  </select>
+                
+              </div>
+              
             </div>
           </li>
         ))}
