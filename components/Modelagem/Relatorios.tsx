@@ -293,10 +293,16 @@ const AppliedChecklistsChart = () => {
                     placeholder='selecionar...'
                     value={resultAppliedChecklists.results}
                     onChange={(event) => {
-                      setAppliedChecklists({
-                        ...AppliedChecklists,
-                        results: event.target.value,
+                      const updatedChecklists = AppliedChecklists.map(checklist => {
+                        if (checklist.id === resultAppliedChecklists.id) {
+                          return {
+                            ...checklist,
+                            results: event.target.value,
+                          };
+                        }
+                        return checklist;
                       });
+                      setAppliedChecklists(updatedChecklists);
                     }}
                   >
                     <option className='bg-black' value="Sem resultados">Sem resultados</option>
