@@ -51,8 +51,6 @@ const AppliedChecklistsChart = () => {
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
 
-  const counts = {} as ResultCounts;
-
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
     datasets: [{
@@ -122,7 +120,7 @@ const AppliedChecklistsChart = () => {
       }
     
       return counts;
-    }, {});
+    }, {} as ResultCounts);
   
   // Access counts for each result
   const countNaoAvaliado = resultCounts["não avaliado"] || 0;
