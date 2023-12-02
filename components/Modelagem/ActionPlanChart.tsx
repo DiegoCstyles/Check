@@ -103,7 +103,7 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
                 maintainAspectRatio: false,
               }}
             />
-               <div className="text-white mt-2">
+               <div className="bg-white text-black uppercase font-semibold mt-2 flex flex-row text-xl p-4">
                 <p>Aprovado: {countplanApproval}</p>
                 <p>Reprovado: {chartData.datasets[0].data[1]}</p>
                 <p>Solução em análise: {chartData.datasets[0].data[2]}</p>
