@@ -265,7 +265,15 @@ const AppliedChecklistsChart = () => {
             <div className='flex flex-row w-full justify-between text-xs text-center p-0.5'>
               
               <label className='w-1/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
-              <div className='w-3/12 flex flex-col'>
+              <div className='w-2/12 flex flex-col'>
+                <label className='bg-black p-0.5'>Codigo de Risco</label>
+                <input
+                  className='text-center bg-white/10 border-b-4 p-0.5'
+                  type='text'
+                  value={resultAppliedChecklists.risk_id}
+                />
+              </div>
+              <div className='w-2/12 flex flex-col'>
                 <label className='bg-black p-0.5'>Participantes</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-0.5'
@@ -281,7 +289,7 @@ const AppliedChecklistsChart = () => {
                   value={resultAppliedChecklists.location}
                 />
               </div>
-              <div className='w-3/12 flex flex-col'>
+              <div className='w-2/12 flex flex-col'>
                 <label className='bg-black p-0.5'>Pontuação</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-0.5'
