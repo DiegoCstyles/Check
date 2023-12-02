@@ -20,6 +20,13 @@ interface User {
   name: string;
 }
 
+type ResultCounts = {
+  "não avaliado": number;
+  "sem resultados": number;
+  "parcial": number;
+  "efetivo": number;
+};
+
 function formatDate(dateString: string | number | Date) {
   // Parse the input date string
   const inputDate = new Date(dateString);
@@ -43,6 +50,8 @@ const AppliedChecklistsChart = () => {
 
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
+
+  const counts: ResultCounts = {};
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
