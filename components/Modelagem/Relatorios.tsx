@@ -234,10 +234,25 @@ const AppliedChecklistsChart = () => {
                         value={risk.title}
                       />
                       <textarea 
-                        className='bg-black border-b-4 p-2 pb-28 w-full'
-                        value={risk.description} 
+                        className='bg-black border-b-4 p-2 pb-12 w-full'
+                        value={'Descrição: ' + risk.description} 
                       /> 
-
+                      <textarea 
+                        className='bg-black border-b-4 p-2 pb-12 w-full'
+                        value={'Plano de mitigação: ' + risk.plandescription} 
+                      /> 
+                      <div className="flex flex-row">
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'Responsável pelo checklist: ' + risk.responsiblechecklist}
+                        />
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'Responsável pelo plano: ' + risk.responsibleplan}
+                        />
+                      </div>
                       <div className="flex flex-row">
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-2'
@@ -247,12 +262,12 @@ const AppliedChecklistsChart = () => {
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-2'
                           type='text'
-                          value={risk.impact}
+                          value={'impacto: ' + risk.impact}
                         />
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-2'
                           type='text'
-                          value={risk.likelihood}
+                          value={'chance: ' + risk.likelihood}
                         />
                         <a
                           href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
