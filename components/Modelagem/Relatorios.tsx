@@ -318,7 +318,7 @@ const AppliedChecklistsChart = () => {
                 
               </div>
               <button className='w-1/12 border p-1 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black'  
-                onClick={() => addresultToBackend(resultAppliedChecklists.id, resultAppliedChecklists.results)}
+                onClick={() => addresultToBackend(resultAppliedChecklists.id.toString(), resultAppliedChecklists.results)}
               >
                 Submeter
               </button>
