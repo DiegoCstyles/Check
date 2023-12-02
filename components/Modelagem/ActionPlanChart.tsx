@@ -103,10 +103,10 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
                 maintainAspectRatio: false,
               }}
             />
-            <div className="w-full bg-white text-black uppercase font-semibold mt-4 flex flex-row text-base p-4">
-               <p className="bg-green-400">Aprovado: {countplanApproval}</p>
-               <p className="bg-red-400">Reprovado: {chartData.datasets[0].data[1]}</p>
-               <p className="bg-yellow-400" >Solução em análise: {chartData.datasets[0].data[2]}</p>
+            <div className="w-full text-black uppercase font-semibold mt-4 flex flex-row text-base">
+               <p className="p-4 bg-green-400">Aprovado {countplanApproval}</p>
+               <p className="p-4 bg-red-400">Reprovado {chartData.datasets[0].data[1]}</p>
+               <p className="p-4 bg-yellow-400" >Solução em análise {chartData.datasets[0].data[2]}</p>
             </div>   
             </>
             
