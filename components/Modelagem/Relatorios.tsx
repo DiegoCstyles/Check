@@ -230,7 +230,7 @@ const AppliedChecklistsChart = () => {
             <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>❌ Reprovado</div>
             <div className='h-5/6 bg-red-500/50 p-1 m-1.5'>
               {itemRiskReproved.map((riskR) => (
-                  <li key={risk.id} style={{ listStyleType: 'none' }}>
+                  <li key={riskR.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-0.5'>
                       <input
                         className='w-full text-center bg-white/10 border-b-4 p-1.5'
