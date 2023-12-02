@@ -229,35 +229,34 @@ const AppliedChecklistsChart = () => {
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-1'>
                       <input
-                        className='w-full text-center bg-white/10 border-b-4 m-2 p-2'
+                        className='w-full text-center bg-white/10 border-b-4 p-2'
                         type='text'
                         value={risk.title}
                       />
-                      <input
-                        className='w-full pb-28 text-center bg-white/10 border-b-4 m-2 p-2'
-                        type='text'
-                        value={risk.description}
-                      />
+                      <textarea 
+                        className='bg-black border-b-4 p-2 pb-28 w-full'
+                        value={risk.description} 
+                      /> 
 
                       <div className="flex flex-row">
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
                           type='text'
                           value={formatDate(risk.date)}
                         />
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
                           type='text'
                           value={risk.impact}
                         />
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
                           type='text'
                           value={risk.likelihood}
                         />
                         <a
                           href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
                           target='_blank'
                           rel='noopener noreferrer'
                         >
