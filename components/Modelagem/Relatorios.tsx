@@ -71,7 +71,7 @@ const AppliedChecklistsChart = () => {
     };
 
     const fetchData = async () => {
-      try {
+      try { 
         const usersInfo: User[] = await getUsers();
         console.log('usersInfo: ', usersInfo);
         
@@ -101,6 +101,7 @@ const AppliedChecklistsChart = () => {
               backgroundColor: 'rgb(103, 232, 149)',
             }],
           });
+        }
       } catch (error) {
         console.error('Error:', error);
       }
