@@ -61,6 +61,7 @@ const AppliedChecklistsPage: React.FC = () => {
     participants: '',
     user_id: 0,
     risk_id: selectedRiskId !== null ? selectedRiskId : 0,
+    results: 'não avaliado',
   });
 
   const resetApplyRisk = () => {
@@ -72,6 +73,7 @@ const AppliedChecklistsPage: React.FC = () => {
       participants: '',
       user_id: 0,
       risk_id: 0,
+      results: 'não avaliado',
     });
   };  
 
