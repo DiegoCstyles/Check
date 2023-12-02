@@ -173,6 +173,7 @@ const AppliedChecklistsPage: React.FC = () => {
       participants: '',
       user_id: 0,
       risk_id: riskId !== null ? riskId : 0,
+      results: 'não avaliado',
     });
   };
 
