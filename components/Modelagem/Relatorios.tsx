@@ -19,6 +19,20 @@ interface User {
   name: string;
 }
 
+function formatDate(dateString: string | number | Date) {
+  // Parse the input date string
+  const inputDate = new Date(dateString);
+
+  // Check if the input date is valid
+  if (isNaN(inputDate.getTime())) { return ''; }
+
+  // Format the date as "DD/MM/YYYY"
+  const day = String(inputDate.getDate()).padStart(2, '0');
+  const month = String(inputDate.getMonth() + 1).padStart(2, '0');
+  const year = inputDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}
 
 const AppliedChecklistsChart = () => {
   const [itemRisk, setitemRisk] = useState<RiskItem>({
@@ -97,21 +111,6 @@ const AppliedChecklistsChart = () => {
         throw error; // Re-throw the error
       }
     };
-
-    function formatDate(dateString: string | number | Date) {
-      // Parse the input date string
-      const inputDate = new Date(dateString);
-    
-      // Check if the input date is valid
-      if (isNaN(inputDate.getTime())) { return ''; }
-    
-      // Format the date as "DD/MM/YYYY"
-      const day = String(inputDate.getDate()).padStart(2, '0');
-      const month = String(inputDate.getMonth() + 1).padStart(2, '0');
-      const year = inputDate.getFullYear();
-    
-      return `${day}/${month}/${year}`;
-    }
 
     const fetchData = async () => {
       try { 
