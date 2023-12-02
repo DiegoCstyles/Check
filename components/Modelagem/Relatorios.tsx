@@ -239,17 +239,17 @@ const AppliedChecklistsChart = () => {
           <li key={resultAppliedChecklists.id} style={{ listStyleType: 'none' }}>
             <div className='flex flex-row w-full justify-between text-xs text-center p-0.5'>
               
-              <label className='w-2/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
+              <label className='w-1/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
               <div className='w-2/12'>
-                <label className='bg-black border-b-4 p-2'>Participantes</label>
+                <label className='bg-black border-b-4 p-1'>Participantes</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-2'
+                  className='text-center bg-white/10 border-b-4 p-1'
                   type='text'
                   value={resultAppliedChecklists.participants}
                 />
               </div>
               <div className='w-2/12'>
-                <label className='bg-black border-b-4 p-2'>Local</label>
+                <label className='bg-black border-b-4 p-1'>Local</label>
                 <input
                   className='text-center bg-white/10 border-b-4 p-2'
                   type='text'
@@ -257,16 +257,16 @@ const AppliedChecklistsChart = () => {
                 />
               </div>
               <div className='w-2/12'>
-                <label className='bg-black border-b-4 p-2'>Pontuação</label>
+                <label className='bg-black border-b-4 p-1'>Pontuação</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-2'
+                  className='text-center bg-white/10 border-b-4 p-1'
                   type='text'
                   value={resultAppliedChecklists.score}
                 />
               </div>
               
-              <div className='w-3/12'>
-                <label className='bg-black border-b-4 p-2'>Resultados da implementação</label>
+              <div className='w-4/12'>
+                <label className='bg-black border-b-4 p-1'>Resultados da implementação</label>
                   <select
                     className='bg-white/10 p-2'
                     placeholder='selecionar...'
