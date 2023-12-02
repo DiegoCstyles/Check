@@ -73,6 +73,15 @@ const AppliedChecklistsChart = () => {
       console.error('Error:', error);
     }
   }; 
+
+  const fetchAppliedChecklists = async () => {
+      try {
+        const response = await fetch(`https://checkend.onrender.com/api/getAppliedChecklists`);
+        if (response.ok) {
+          const data = await response.json(); setAppliedChecklists(data); // Update the riskItems state with the fetched data
+        } else { console.error('Error fetching risk item from the database'); }
+      } catch (error) { console.error('Error:', error); }
+    };
   
   const handleSubmeter = async (checklistId: string, results: string) => {
     try {
@@ -105,15 +114,6 @@ const AppliedChecklistsChart = () => {
       } catch (error) { console.error('Error:', error); }
     };
 
-    const fetchAppliedChecklists = async () => {
-      try {
-        const response = await fetch(`https://checkend.onrender.com/api/getAppliedChecklists`);
-        if (response.ok) {
-          const data = await response.json(); setAppliedChecklists(data); // Update the riskItems state with the fetched data
-        } else { console.error('Error fetching risk item from the database'); }
-      } catch (error) { console.error('Error:', error); }
-    };
-    
     const getUsers = async () => {
       try {
         const response = await fetch('https://checkend.onrender.com/api/getUsers', {
