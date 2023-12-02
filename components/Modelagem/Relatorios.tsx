@@ -229,11 +229,11 @@ const AppliedChecklistsChart = () => {
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-0.5'>
                       <input
-                        className='w-full text-center bg-white/10 border-b-4 p-2'
+                        className='w-full text-center bg-white/10 border-b-4 p-1.5'
                         type='text'
                         value={risk.title}
                       />
-                      <p className='w-full text-center bg-white/10 border-b-4 p-1'>Responsável</p>
+                      <p className='w-full text-center bg-black uppercase font-semibold text-white p-1'>Responsável</p>
                       <div className="flex flex-row">
                         <input
                           className='w-1/2 text-center bg-white/10 border-b-4 p-1'
@@ -257,19 +257,19 @@ const AppliedChecklistsChart = () => {
                       
                       <div className="flex flex-row">
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
+                          className='w-1/4 text-center bg-yellow-500 border-b-4 p-1.5'
                           type='text'
                           value={formatDate(risk.date)}
                         />
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
                           type='text'
-                          value={'impacto: ' + risk.impact}
+                          value={'IMPACTO: ' + risk.impact}
                         />
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
                           type='text'
-                          value={'chance: ' + risk.likelihood}
+                          value={'CHANCE: ' + risk.likelihood}
                         />
                         <a
                           href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
