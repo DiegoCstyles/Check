@@ -53,6 +53,16 @@ const AppliedChecklistsChart = () => {
       backgroundColor: 'rgb(103, 232, 149)',
     }],
   });
+  
+  const [chartDataResults, setChartDataResults] = useState<ChartData>({
+    labels: [],
+    datasets: [{
+      label: 'Avaliações do mês',
+      data: [],
+      borderWidth: 1,
+      backgroundColor: 'rgb(153, 132, 249)',
+    }],
+  });
 
   const addresultToBackend = async (checklistId: string, results: string) => {
     try {
@@ -94,6 +104,22 @@ const AppliedChecklistsChart = () => {
       console.error('Error submitting results and fetching data:', error);
     }
   };
+
+  const resultCounts = AppliedChecklists.reduce((counts, checklist) => {
+    const resultValue = checklist.results.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+  
+      if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
+        counts[resultValue] = (counts[resultValue] || 0) + 1;
+      }
+    
+      return counts;
+    }, {});
+  
+  // Access counts for each result
+  const countNaoAvaliado = resultCounts["não avaliado"] || 0;
+  const countSemResultados = resultCounts["sem resultados"] || 0;
+  const countParcial = resultCounts["parcial"] || 0;
+  const countEfetivo = resultCounts["efetivo"] || 0;
 
   useEffect(() => {
     const fetchRiskItemApproved = async () => {
@@ -181,6 +207,16 @@ const AppliedChecklistsChart = () => {
               backgroundColor: 'rgb(103, 232, 149)',
             }],
           });
+
+           setChartDataResults({
+            labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
+            datasets: [{
+              label: 'Avaliações do mês',
+              data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
+              borderWidth: 1,
+              backgroundColor: 'rgb(103, 232, 149)',
+            }],
+          });
         }
       } catch (error) {
         console.error('Error:', error);
@@ -224,8 +260,8 @@ const AppliedChecklistsChart = () => {
             />
            </div>
           <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
-         <PolarArea
-              data={chartDataUserRanking}
+          <Bar
+              data={chartDataResults}
               options={{
                 indexAxis: 'x', // Set the axis to horizontal
                 responsive: true,
