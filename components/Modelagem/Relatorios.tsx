@@ -219,12 +219,12 @@ const AppliedChecklistsChart = () => {
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
         <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center mt-2'>Reprovado</div>
-            <div className='h-5/6 bg-red-500/50 p-2'>Valores</div>
+            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>Reprovado</div>
+            <div className='h-5/6 bg-red-500/50 p-1'>Valores</div>
           </div>
           <div className='flex flex-col w-1/2 pl-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center mt-2'>Aprovado</div>
-            <div className='h-5/6 bg-green-500/50 p-2'>
+            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>Aprovado</div>
+            <div className='h-5/6 bg-green-500/50 p-1'>
               {itemRisk.map((risk) => (
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-0.5'>
@@ -236,12 +236,12 @@ const AppliedChecklistsChart = () => {
                       <p className='w-full text-center bg-black uppercase font-semibold text-white p-1'>Responsável</p>
                       <div className="flex flex-row">
                         <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
                           type='text'
                           value={'Checklist: ' + risk.responsiblechecklist}
                         />
                         <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
                           type='text'
                           value={'Plano: ' + risk.responsibleplan}
                         />
@@ -257,7 +257,7 @@ const AppliedChecklistsChart = () => {
                       
                       <div className="flex flex-row">
                         <input
-                          className='w-1/4 text-center bg-yellow-500 text-black border-b-4 p-1.5'
+                          className='w-1/4 text-center bg-yellow-500 text-black border-b-4 p-1.5 uppercase font-semibold'
                           type='text'
                           value={formatDate(risk.date)}
                         />
