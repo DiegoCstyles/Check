@@ -35,7 +35,8 @@ function formatDate(dateString: string | number | Date) {
 }
 
 const AppliedChecklistsChart = () => {
-  const [itemRisk, setitemRisk] = useState<RiskItem[]>([]);
+  const [itemRiskApproved, setitemRiskApproved] = useState<RiskItem[]>([]);
+  const [itemRiskReproved, setitemRiskReproved] = useState<RiskItem[]>([]);
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
@@ -48,14 +49,20 @@ const AppliedChecklistsChart = () => {
   });
 
   useEffect(() => {
-    const fetchRiskItems = async () => {
+    const fetchRiskItemApproved = async () => {
       try {
-        console.log('cheguei');
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
-        console.log('response:', response);
         if (response.ok) {
-          const data = await response.json(); setitemRisk(data); // Update the riskItems state with the fetched data
-          console.log('data: ', data);
+          const data = await response.json(); setitemRiskApproved(data); // Update the riskItems state with the fetched data
+        } else { console.error('Error fetching risk item from the database'); }
+      } catch (error) { console.error('Error:', error); }
+    };
+
+    const fetchRiskItemReproved = async () => {
+      try {
+        const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastReproval`);
+        if (response.ok) {
+          const data = await response.json(); setitemRiskReproved(data); // Update the riskItems state with the fetched data
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
@@ -134,7 +141,8 @@ const AppliedChecklistsChart = () => {
     };
 
     fetchData();
-    fetchRiskItems();
+    fetchRiskItemApproved();
+    fetchRiskItemReproved();
   }, []); 
 
 
@@ -220,64 +228,128 @@ const AppliedChecklistsChart = () => {
         <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
             <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>❌ Reprovado</div>
-            <div className='h-5/6 bg-red-500/50 p-1 m-1.5'>Valores</div>
-          </div>
-          <div className='flex flex-col w-1/2 pl-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>✔ Aprovado</div>
-            <div className='h-5/6 bg-green-500/50 p-1 m-1.5'>
-              {itemRisk.map((risk) => (
+            <div className='h-5/6 bg-red-500/50 p-1 m-1.5'>
+              {itemRiskReproved.map((riskR) => (
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-0.5'>
                       <input
                         className='w-full text-center bg-white/10 border-b-4 p-1.5'
                         type='text'
-                        value={risk.title}
+                        value={riskR.title}
                       />
                       <p className='w-full text-center bg-black uppercase font-semibold text-white p-1'>Responsável</p>
                       <div className="flex flex-row">
                         <input
                           className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
                           type='text'
-                          value={'Checklist: ' + risk.responsiblechecklist}
+                          value={'Checklist: ' + riskR.responsiblechecklist}
                         />
                         <input
                           className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
                           type='text'
-                          value={'Plano: ' + risk.responsibleplan}
+                          value={'Plano: ' + riskR.responsibleplan}
                         />
                       </div>
                       <div className="flex flex-row w-full">
-                        <p className='w-1/5 h-full text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Descrição</p>
+                        <p className='w-1/5 text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Descrição</p>
                         <textarea 
                           className='bg-black border-b-4 p-2 pb-6 w-4/5'
-                          value={risk.description} 
+                          value={riskR.description} 
                         /> 
                       </div>
                       <div className="flex flex-row w-full">
-                        <p className='w-1/5 h-full text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Plano de mitigação</p>
+                        <p className='w-1/5 text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Plano de mitigação</p>
                         <textarea 
                           className='bg-black border-b-4 p-2 pb-7 w-4/5'
-                          value={risk.plandescription} 
+                          value={riskR.plandescription} 
                         /> 
                       </div>
                       <div className="flex flex-row">
                         <input
                           className='w-1/4 text-center bg-yellow-500 text-black border-b-4 p-1 uppercase font-semibold'
                           type='text'
-                          value={formatDate(risk.date)}
+                          value={formatDate(riskR.date)}
                         />
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-1'
                           type='text'
-                          value={'IMPACTO: ' + risk.impact}
+                          value={'IMPACTO: ' + riskR.impact}
                         />
                         <input
                           className='w-1/4 text-center bg-white/10 border-b-4 p-1'
                           type='text'
-                          value={'CHANCE: ' + risk.likelihood}
+                          value={'CHANCE: ' + riskR.likelihood}
                         />
                         <a
-                          href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
+                          href={`https://checkend.onrender.com/api/downloadPlanFile/${riskR.id}`}
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          Plano
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+            </div>
+          </div>
+          <div className='flex flex-col w-1/2 pl-1'>
+            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>✔ Aprovado</div>
+            <div className='h-5/6 bg-green-500/50 p-1 m-1.5'>
+              {itemRiskApproved.map((riskA) => (
+                  <li key={riskA.id} style={{ listStyleType: 'none' }}>
+                    <div className='flex flex-col justify-between text-xs text-center p-0.5'>
+                      <input
+                        className='w-full text-center bg-white/10 border-b-4 p-1.5'
+                        type='text'
+                        value={riskA.title}
+                      />
+                      <p className='w-full text-center bg-black uppercase font-semibold text-white p-1'>Responsável</p>
+                      <div className="flex flex-row">
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
+                          type='text'
+                          value={'Checklist: ' + riskA.responsiblechecklist}
+                        />
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1 uppercase font-semibold'
+                          type='text'
+                          value={'Plano: ' + riskA.responsibleplan}
+                        />
+                      </div>
+                      <div className="flex flex-row w-full">
+                        <p className='w-1/5 text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Descrição</p>
+                        <textarea 
+                          className='bg-black border-b-4 p-2 pb-6 w-4/5'
+                          value={riskA.description} 
+                        /> 
+                      </div>
+                      <div className="flex flex-row w-full">
+                        <p className='w-1/5 text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Plano de mitigação</p>
+                        <textarea 
+                          className='bg-black border-b-4 p-2 pb-7 w-4/5'
+                          value={riskA.plandescription} 
+                        /> 
+                      </div>
+                      <div className="flex flex-row">
+                        <input
+                          className='w-1/4 text-center bg-yellow-500 text-black border-b-4 p-1 uppercase font-semibold'
+                          type='text'
+                          value={formatDate(riskA.date)}
+                        />
+                        <input
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'IMPACTO: ' + riskA.impact}
+                        />
+                        <input
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'CHANCE: ' + riskA.likelihood}
+                        />
+                        <a
+                          href={`https://checkend.onrender.com/api/downloadPlanFile/${riskA.id}`}
                           className='w-1/4 text-center bg-white/10 border-b-4 p-1 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
                           target='_blank'
                           rel='noopener noreferrer'
