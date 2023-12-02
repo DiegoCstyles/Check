@@ -59,6 +59,7 @@ const AppliedChecklistsPage: React.FC = () => {
     score: 0,
     location: '',
     participants: '',
+    user_id: 0,
     risk_id: selectedRiskId !== null ? selectedRiskId : 0,
   });
 
@@ -69,6 +70,7 @@ const AppliedChecklistsPage: React.FC = () => {
       score: 0,
       location: '',
       participants: '',
+      user_id: 0,
       risk_id: 0,
     });
   };  
@@ -167,6 +169,7 @@ const AppliedChecklistsPage: React.FC = () => {
       score: 10,
       location: '',
       participants: '',
+      user_id: 0,
       risk_id: riskId !== null ? riskId : 0,
     });
   };
