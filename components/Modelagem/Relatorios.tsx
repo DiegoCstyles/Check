@@ -86,8 +86,8 @@ const AppliedChecklistsChart = () => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
               // Assuming checklist data has a structure like { User_id, ...otherProperties }
-              const userChecklists = checklists.filter((checklist) => checklist.User_id === userId);
-              const sum = userChecklists.reduce((acc, checklist) => acc + checklist.User_id, 0);
+              const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.User_id === userId);
+              const sum = userChecklists.reduce((acc, checklist: AppliedChecklist) => acc + checklist.User_id, 0);
               return sum;
             }
             return 0;
