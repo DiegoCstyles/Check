@@ -48,10 +48,14 @@ const AppliedChecklistsChart = () => {
       try {
         const usersInfo = await getUsers();
         console.log('usersInfo: ', usersInfo);
-        console.log('usersInfo.name: ', usersInfo.name);
+        
+        const userNames = usersInfo.map((user) => user.name);
+
+        console.log('userNames: ', userNames);
+
         if (usersInfo) {
           setChartDataUserRanking({
-            labels: usersInfo.name,
+            labels: userNames,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
               data: [12, 5, 2],
