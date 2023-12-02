@@ -54,7 +54,7 @@ const AppliedChecklistsChart = () => {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
   
         if (response.ok) {
-          const data = await response.json(); setRiskItems(data); // Update the riskItems state with the fetched data
+          const data = await response.json(); setNewRisk(data); // Update the riskItems state with the fetched data
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
