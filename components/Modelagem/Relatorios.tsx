@@ -219,11 +219,11 @@ const AppliedChecklistsChart = () => {
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
         <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>Reprovado</div>
+            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>❌ Reprovado</div>
             <div className='h-5/6 bg-red-500/50 p-1 m-1.5'>Valores</div>
           </div>
           <div className='flex flex-col w-1/2 pl-1'>
-            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>Aprovado</div>
+            <div className='h-1/6 bg-black uppercase font-semibold p-1.5 flex justify-center mt-2'>✔ Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-1 m-1.5'>
               {itemRisk.map((risk) => (
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
@@ -247,14 +247,14 @@ const AppliedChecklistsChart = () => {
                         />
                       </div>
                       <div className="flex flex-row w-full">
-                        <p className='w-1/5 text-center items-center justify-center bg-white border-b-4 uppercase font-semibold text-black p-0.5'>Descrição</p>
+                        <p className='w-1/5 h-full text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Descrição</p>
                         <textarea 
                           className='bg-black border-b-4 p-2 pb-6 w-4/5'
                           value={risk.description} 
                         /> 
                       </div>
                       <div className="flex flex-row w-full">
-                        <p className='w-1/5 text-center items-center justify-center bg-white border-b-4 uppercase font-semibold text-black p-0.5'>Plano de mitigação</p>
+                        <p className='w-1/5 h-full text-center flex items-center justify-center bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-0.5'>Plano de mitigação</p>
                         <textarea 
                           className='bg-black border-b-4 p-2 pb-7 w-4/5'
                           value={risk.plandescription} 
