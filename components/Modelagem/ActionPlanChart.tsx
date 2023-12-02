@@ -75,7 +75,14 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
            </select>
         </div>
         <div>
-           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Data</label>
+           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>De</label>
+           <input
+            className='bg-black text-white border-b-4 p-2'
+            type="date" 
+           />
+        </div>
+         <div>
+           <label className='bg-white text-black uppercase font-semibold p-2' htmlFor='filter'>Até</label>
            <input
             className='bg-black text-white border-b-4 p-2'
             type="date" 
