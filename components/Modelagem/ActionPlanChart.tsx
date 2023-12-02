@@ -103,6 +103,11 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
                 maintainAspectRatio: false,
               }}
             />
+               <div className="text-white mt-2">
+                <p>Aprovado: {countplanApproval}</p>
+                <p>Reprovado: {chartData.datasets[0].data[1]}</p>
+                <p>Solução em análise: {chartData.datasets[0].data[2]}</p>
+              </div>
             </>
           ) : (
             <p>Loading chart data...</p> // You can display a loading message or handle it as you prefer
