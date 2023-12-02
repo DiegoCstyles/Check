@@ -302,7 +302,13 @@ const AppliedChecklistsChart = () => {
                         }
                         return checklist;
                       });
-                      setAppliedChecklists(updatedChecklists);
+                      setAppliedChecklists((prevChecklists) =>
+                        prevChecklists.map((checklist) =>
+                          checklist.id === resultAppliedChecklists.id
+                            ? { ...checklist, results: event.target.value }
+                            : checklist
+                        )
+                      );
                     }}
                   >
                     <option className='bg-black' value="Sem resultados">Sem resultados</option>
