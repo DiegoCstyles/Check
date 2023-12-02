@@ -35,22 +35,7 @@ function formatDate(dateString: string | number | Date) {
 }
 
 const AppliedChecklistsChart = () => {
-  const [itemRisk, setitemRisk] = useState<RiskItem>({
-    id: 0,
-    title: '',
-    description: '',
-    plandescription: '',
-    planFiles: '', 
-    planFilesName: '',
-    planapproval: 'solução em análise',
-    likelihood: 'Pequena',
-    impact: 'Pequeno',
-    date: 'DD/MM/AAAA',
-    responsiblechecklist: '',
-    responsibleplan: '',
-    completed: false,
-  });
-
+  const [itemRisk, setitemRisk] = useState<RiskItem[]>([]);
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
@@ -69,6 +54,7 @@ const AppliedChecklistsChart = () => {
   
         if (response.ok) {
           const data = await response.json(); setitemRisk(data); // Update the riskItems state with the fetched data
+          console.log('data: ', data);
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
@@ -240,7 +226,7 @@ const AppliedChecklistsChart = () => {
           <div className='flex flex-col w-1/2 pr-1'>
             <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-2'>
-              {Object.values(itemRisk).map((risk) => (
+              {itemRisk.map((risk) => (
                   <li key={risk.id}>
                     <div className='flex flex-col justify-between text-xs text-center p-4'>
                       <div className="flex flex-row">
