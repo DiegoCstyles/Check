@@ -5,7 +5,7 @@ interface ChartData {
   labels: string[];
   datasets: {
     label: string;
-    data: string[];
+    data: number[];
     borderWidth: number;
     backgroundColor: string;
   }[];
@@ -47,13 +47,14 @@ const AppliedChecklistsChart = () => {
     const fetchData = async () => {
       try {
         const usersInfo = await getUsers();
-
+        console.log('usersInfo: ', usersInfo);
+        console.log('usersInfo.name: ', usersInfo.name);
         if (usersInfo) {
           setChartDataUserRanking({
             labels: usersInfo.name,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
-              data: usersInfo.name,
+              data: [12, 5, 2],
               borderWidth: 1,
               backgroundColor: 'rgb(103 232 149)',
             }],
