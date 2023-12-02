@@ -18,7 +18,6 @@ interface User {
   name: string;
 }
 
-
 const AppliedChecklistsChart = () => {
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
@@ -40,10 +39,29 @@ const AppliedChecklistsChart = () => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log('data: ', data);
           return data; // Assuming the response contains user information, adjust accordingly
         } else {
           console.error('Error fetching user information');
+          return null;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        return null;
+      }
+    };
+
+    const getChecklists = async () => {
+      try {
+        const response = await fetch('https://checkend.onrender.com/api/getChecklists', {
+          method: 'GET',
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('checklists: ', data);
+          return data;
+        } else {
+          console.error('Error fetching checklists');
           return null;
         }
       } catch (error) {
@@ -58,20 +76,31 @@ const AppliedChecklistsChart = () => {
         console.log('usersInfo: ', usersInfo);
         
         const userNames = usersInfo.map((user) => user.name);
+        
+        const checklists = await getChecklists();
+        console.log('checklists: ', checklists);
 
-        console.log('userNames: ', userNames);
-
-        if (usersInfo) {
+        if (usersInfo && checklists) {
+          const sums = userNames.map((userName) => {
+            const userId = usersInfo.find((user) => user.name === userName)?.id;
+            if (userId) {
+              // Assuming checklist data has a structure like { User_id, ...otherProperties }
+              const userChecklists = checklists.filter((checklist) => checklist.User_id === userId);
+              const sum = userChecklists.reduce((acc, checklist) => acc + checklist.User_id, 0);
+              return sum;
+            }
+            return 0;
+          });
+          
           setChartDataUserRanking({
             labels: userNames,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
-              data: [12, 5, 2],
+              data: sums,
               borderWidth: 1,
               backgroundColor: 'rgb(103 232 149)',
             }],
           });
-        }
       } catch (error) {
         console.error('Error:', error);
       }
