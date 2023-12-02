@@ -226,46 +226,38 @@ const AppliedChecklistsChart = () => {
             <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-2'>
               {itemRisk.map((risk) => (
-                  <li key={risk.id}>
+                  <li key={risk.id} style={{ listStyleType: 'none' }}>
                     <div className='flex flex-col justify-between text-xs text-center p-4'>
+                      <input
+                        className='w-full text-center bg-white/10 border-b-4 m-2 p-2'
+                        type='text'
+                        value={risk.title}
+                      />
+                      <input
+                        className='w-full h-32 text-center bg-white/10 border-b-4 m-2 p-2'
+                        type='text'
+                        value={risk.description}
+                      />
+
                       <div className="flex flex-row">
                         <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
-                          type='text'
-                          value={risk.title}
-                        />
-                        <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
-                          type='text'
-                          value={risk.description}
-                        />
-                      </div>  
-                      <div className="flex flex-row">
-                        <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
                           type='text'
                           value={formatDate(risk.date)}
                         />
-                        <select
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
+                        <input
+                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
+                          type='text'
                           value={risk.impact}
-                        >
-                          <option className='bg-black border-b-4 m-2' value='Pequeno'>Pequeno</option>
-                          <option className='bg-black border-b-4 m-2' value='Medio'>Medio</option>
-                          <option className='bg-black border-b-4 m-2' value='Alto'>Alto</option>
-                        </select>
-                        <select
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2'
+                        />
+                        <input
+                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2'
+                          type='text'
                           value={risk.likelihood}
-                        >
-                          <option className='bg-black border-b-4 m-2' value='Pequena'> Pequena </option>
-                          <option className='bg-black border-b-4 m-2' value='Media'> Media </option>
-                          <option className='bg-black border-b-4 m-2' value='Alta'> Alta </option>
-                        </select>
-                        
+                        />
                         <a
                           href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                          className='w-1/2 text-center bg-white/10 border-b-4 m-2 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
+                          className='w-1/4 text-center bg-white/10 border-b-4 m-2 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
                           target='_blank'
                           rel='noopener noreferrer'
                         >
