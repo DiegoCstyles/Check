@@ -56,20 +56,21 @@ const AppliedChecklistsChart = () => {
         const response = await fetch('https://checkend.onrender.com/api/getChecklists', {
           method: 'GET',
         });
-
+    
         if (response.ok) {
           const data = await response.json();
           console.log('checklists: ', data);
           return data;
         } else {
           console.error('Error fetching checklists');
-          return null;
+          throw new Error('Error fetching checklists'); // Throw an exception on error
         }
       } catch (error) {
         console.error('Error:', error);
-        return null;
+        throw error; // Re-throw the error
       }
     };
+
 
     const fetchData = async () => {
       try { 
