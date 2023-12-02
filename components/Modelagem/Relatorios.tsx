@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react'; import { Bar, PolarArea, Bubble } from 'react-chartjs-2';
 import { AppliedChecklist, RiskItem } from './models';
+import Modal from './Modal'; 
 
 interface ChartData {
   labels: string[];
@@ -38,6 +39,7 @@ const AppliedChecklistsChart = () => {
   const [itemRiskApproved, setitemRiskApproved] = useState<RiskItem[]>([]);
   const [itemRiskReproved, setitemRiskReproved] = useState<RiskItem[]>([]);
   const [AppliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
@@ -60,8 +62,7 @@ const AppliedChecklistsChart = () => {
       });
 
       if (response.ok) {
-        console.log('Results submitted successfully');
-        // You can add additional logic here if needed
+        openModal();
       } else {
         console.error('Error submitting results');
       }
@@ -322,6 +323,7 @@ const AppliedChecklistsChart = () => {
               >
                 Submeter
               </button>
+              <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Avaliação concluida!</h2></Modal>
             </div>
           </li>
         ))}
