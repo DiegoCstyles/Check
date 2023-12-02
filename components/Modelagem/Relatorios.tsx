@@ -240,35 +240,35 @@ const AppliedChecklistsChart = () => {
             <div className='flex flex-row w-full justify-between text-xs text-center p-0.5'>
               
               <label className='w-1/12 bg-white border-b-4 border-black/80 uppercase font-semibold text-black p-1'>Avaliação do checklist</label>
-              <div className='w-3/12'>
-                <label className='bg-black border-b-4 p-1'>Participantes</label>
+              <div className='w-3/12 flex flex-col'>
+                <label className='bg-black p-0.5'>Participantes</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-1'
+                  className='text-center bg-white/10 border-b-4 p-0.5'
                   type='text'
                   value={resultAppliedChecklists.participants}
                 />
               </div>
-              <div className='w-2/12'>
-                <label className='bg-black border-b-4 p-1'>Local</label>
+              <div className='w-2/12 flex flex-col'>
+                <label className='bg-black p-0.5'>Local</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-1'
+                  className='text-center bg-white/10 border-b-4 p-0.5'
                   type='text'
                   value={resultAppliedChecklists.location}
                 />
               </div>
-              <div className='w-3/12'>
-                <label className='bg-black border-b-4 p-1'>Pontuação</label>
+              <div className='w-3/12 flex flex-col'>
+                <label className='bg-black p-0.5'>Pontuação</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-1'
+                  className='text-center bg-white/10 border-b-4 p-0.5'
                   type='text'
                   value={resultAppliedChecklists.score}
                 />
               </div>
               
-              <div className='w-fit'>
-                <label className='bg-black border-b-4 p-1'>Resultados da implementação</label>
+              <div className='w-fit flex flex-col'>
+                <label className='bg-black p-0.5'>Resultados da implementação</label>
                   <select
-                    className='bg-white/10 p-1'
+                    className='bg-white/10 p-0.5'
                     placeholder='selecionar...'
                   >
                     <option className='bg-black' value="Sem resultados">Sem resultados</option>
