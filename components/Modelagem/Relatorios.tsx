@@ -11,6 +11,14 @@ interface ChartData {
   }[];
 }
 
+interface User {
+  id: number;
+  email: string;
+  password: string;
+  name: string;
+}
+
+
 const AppliedChecklistsChart = () => {
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
@@ -46,7 +54,7 @@ const AppliedChecklistsChart = () => {
 
     const fetchData = async () => {
       try {
-        const usersInfo = await getUsers();
+        const usersInfo: User[] = await getUsers();
         console.log('usersInfo: ', usersInfo);
         
         const userNames = usersInfo.map((user) => user.name);
