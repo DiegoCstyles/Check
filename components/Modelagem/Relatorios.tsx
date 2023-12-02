@@ -241,8 +241,7 @@ const AppliedChecklistsChart = () => {
           <div className='flex flex-col w-1/2 pr-1'>
             <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Aprovado</div>
             <div className='h-5/6 bg-green-500/50 p-2'>
-              {itemRisk
-                .map((risk) => (
+              {Object.values(itemRisk).map((risk) => (
                   <li key={risk.id}>
                     <div className='flex flex-col justify-between text-xs text-center p-4'>
                       <div className="flex flex-row">
