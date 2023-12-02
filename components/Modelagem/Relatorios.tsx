@@ -37,6 +37,7 @@ function formatDate(dateString: string | number | Date) {
 const AppliedChecklistsChart = () => {
   const [itemRiskApproved, setitemRiskApproved] = useState<RiskItem[]>([]);
   const [itemRiskReproved, setitemRiskReproved] = useState<RiskItem[]>([]);
+  const [AppliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
@@ -63,6 +64,15 @@ const AppliedChecklistsChart = () => {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastReproval`);
         if (response.ok) {
           const data = await response.json(); setitemRiskReproved(data); // Update the riskItems state with the fetched data
+        } else { console.error('Error fetching risk item from the database'); }
+      } catch (error) { console.error('Error:', error); }
+    };
+
+    const fetchAppliedChecklists = async () => {
+      try {
+        const response = await fetch(`https://checkend.onrender.com/api/getAppliedChecklists`);
+        if (response.ok) {
+          const data = await response.json(); setAppliedChecklists(data); // Update the riskItems state with the fetched data
         } else { console.error('Error fetching risk item from the database'); }
       } catch (error) { console.error('Error:', error); }
     };
@@ -143,6 +153,7 @@ const AppliedChecklistsChart = () => {
     fetchData();
     fetchRiskItemApproved();
     fetchRiskItemReproved();
+    fetchAppliedChecklists();
   }, []); 
 
 
@@ -224,6 +235,17 @@ const AppliedChecklistsChart = () => {
             />
            </div>
         </div>
+         {AppliedChecklists.map((resultAppliedChecklists) => (
+          <li key={resultAppliedChecklists.id} style={{ listStyleType: 'none' }}>
+            <div className='flex flex-row justify-between text-xs text-center p-0.5'>
+              <input
+                className='w-full text-center bg-white/10 border-b-4 p-1.5'
+                type='text'
+                value={resultAppliedChecklists.participants}
+              />
+            </div>
+          </li>
+        ))}
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
         <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
