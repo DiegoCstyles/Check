@@ -217,7 +217,7 @@ const AppliedChecklistsChart = () => {
            </div>
         </div>
         <div className='w-full bg-yellow-500 uppercase font-semibold text-black p-2'>Ultimos Checklists</div>
-        <div className='flex flex-row border-t-4 w-full h-80'>
+        <div className='flex flex-row border-t-4 w-full h-full'>
           <div className='flex flex-col w-1/2 pr-1'>
             <div className='h-1/6 bg-black uppercase font-semibold p-2 flex justify-center'>Reprovado</div>
             <div className='h-5/6 bg-red-500/50 p-2'>Valores</div>
@@ -227,51 +227,53 @@ const AppliedChecklistsChart = () => {
             <div className='h-5/6 bg-green-500/50 p-2'>
               {itemRisk.map((risk) => (
                   <li key={risk.id} style={{ listStyleType: 'none' }}>
-                    <div className='flex flex-col justify-between text-xs text-center p-1'>
+                    <div className='flex flex-col justify-between text-xs text-center p-0.5'>
                       <input
                         className='w-full text-center bg-white/10 border-b-4 p-2'
                         type='text'
                         value={risk.title}
                       />
+                      <p className='w-full text-center bg-white/10 border-b-4 p-1'>Responsável</p>
+                      <div className="flex flex-row">
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'Checklist: ' + risk.responsiblechecklist}
+                        />
+                        <input
+                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
+                          type='text'
+                          value={'Plano: ' + risk.responsibleplan}
+                        />
+                      </div>
                       <textarea 
-                        className='bg-black border-b-4 p-2 pb-12 w-full'
+                        className='bg-black border-b-4 p-2 pb-8 w-full'
                         value={'Descrição: ' + risk.description} 
                       /> 
                       <textarea 
-                        className='bg-black border-b-4 p-2 pb-12 w-full'
+                        className='bg-black border-b-4 p-2 pb-8 w-full'
                         value={'Plano de mitigação: ' + risk.plandescription} 
                       /> 
+                      
                       <div className="flex flex-row">
                         <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
-                          type='text'
-                          value={'Responsável pelo checklist: ' + risk.responsiblechecklist}
-                        />
-                        <input
-                          className='w-1/2 text-center bg-white/10 border-b-4 p-1'
-                          type='text'
-                          value={'Responsável pelo plano: ' + risk.responsibleplan}
-                        />
-                      </div>
-                      <div className="flex flex-row">
-                        <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
                           type='text'
                           value={formatDate(risk.date)}
                         />
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
                           type='text'
                           value={'impacto: ' + risk.impact}
                         />
                         <input
-                          className='w-1/4 text-center bg-white/10 border-b-4 p-2'
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1.5'
                           type='text'
                           value={'chance: ' + risk.likelihood}
                         />
                         <a
                           href={`https://checkend.onrender.com/api/downloadPlanFile/${risk.id}`}
-                          className='w-1/4 text-center bg-white/10 border-b-4 p-2 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
+                          className='w-1/4 text-center bg-white/10 border-b-4 p-1.5 uppercase hover:bg-white hover:border-black/80 hover:text-black'  
                           target='_blank'
                           rel='noopener noreferrer'
                         >
