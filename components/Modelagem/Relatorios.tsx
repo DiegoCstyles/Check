@@ -51,7 +51,12 @@ const AppliedChecklistsChart = () => {
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
 
-  const counts: ResultCounts = {};
+  const counts: ResultCounts = {
+    "não avaliado": 0,
+    "sem resultados": 0,
+    "parcial": 0,
+    "efetivo": 0,
+  };
 
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
@@ -118,7 +123,7 @@ const AppliedChecklistsChart = () => {
     const resultValue = checklist.results.toLowerCase(); // Convert to lowercase for case-insensitive comparison
   
       if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
-        counts[resultValue] = (counts[resultValue] || 0) + 1;
+        counts[resultValue as keyof ResultCounts] = (counts[resultValue as keyof ResultCounts] || 0) + 1;
       }
     
       return counts;
