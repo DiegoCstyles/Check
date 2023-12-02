@@ -251,7 +251,7 @@ const AppliedChecklistsChart = () => {
               <div className='w-2/12'>
                 <label className='bg-black border-b-4 p-1'>Local</label>
                 <input
-                  className='text-center bg-white/10 border-b-4 p-2'
+                  className='text-center bg-white/10 border-b-4 p-1'
                   type='text'
                   value={resultAppliedChecklists.location}
                 />
@@ -268,7 +268,7 @@ const AppliedChecklistsChart = () => {
               <div className='w-4/12'>
                 <label className='bg-black border-b-4 p-1'>Resultados da implementação</label>
                   <select
-                    className='bg-white/10 p-2'
+                    className='bg-white/10 p-1'
                     placeholder='selecionar...'
                   >
                     <option className='bg-black' value="Sem resultados">Sem resultados</option>
