@@ -121,6 +121,7 @@ const AppliedChecklistsPage: React.FC = () => {
           location: ApplyRisk.location, 
           participants: ApplyRisk.participants,
           user_id: userInfo.id,
+          results: 'não avaliado',
         }),
       });
   
