@@ -41,6 +41,9 @@ const AppliedChecklistsChart = () => {
   const [AppliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
+  const openModal = () => { setModalOpen(true); }; 
+  const closeModal = () => { setModalOpen(false); };
+
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
     datasets: [{
