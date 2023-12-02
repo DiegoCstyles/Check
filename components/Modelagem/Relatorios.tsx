@@ -77,7 +77,7 @@ const AppliedChecklistsChart = () => {
       } catch (error) { console.error('Error:', error); }
     };
 
-    const addresultAppliedChecklistsToBackend = async (checklistId, results) => {
+    const addresultAppliedChecklistsToBackend = async (checklistId: string, results: string) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/updateChecklistResults/${checklistId}`, {
         method: 'POST',
