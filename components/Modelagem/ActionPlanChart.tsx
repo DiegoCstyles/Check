@@ -110,16 +110,17 @@ const ActionPlanChart: React.FC<ActionPlanChartProps> = ({ actionData }) => {
                 maintainAspectRatio: false,
               }}
             />
-            <div className="w-full text-black uppercase font-semibold mt-4 flex flex-row text-base">
-               <p className="p-4 bg-green-400">Aprovado {countplanApproval}</p>
-               <p className="p-4 bg-red-400">Reprovado {chartData.datasets[0].data[1]}</p>
-               <p className="p-4 bg-yellow-400" >Solução em análise {chartData.datasets[0].data[2]}</p>
-            </div>   
+            
             </>
             
           ) : (
             <p>Loading chart data...</p> // You can display a loading message or handle it as you prefer
           )}
+         <div className="w-full text-black uppercase font-semibold flex flex-row text-base">
+               <p className="p-4 bg-green-400">Aprovado {countplanApproval}</p>
+               <p className="p-4 bg-red-400">Reprovado {chartData.datasets[0].data[1]}</p>
+               <p className="p-4 bg-yellow-400" >Solução em análise {chartData.datasets[0].data[2]}</p>
+            </div>   
         </div>
       </div>
     </div>
