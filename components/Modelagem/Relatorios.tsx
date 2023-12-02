@@ -77,7 +77,7 @@ const AppliedChecklistsChart = () => {
       } catch (error) { console.error('Error:', error); }
     };
 
-    const addresultAppliedChecklistsToBackend = async (checklistId: string, results: string) => {
+    const addresultToBackend = async (checklistId: string, results: string) => {
     try {
       const response = await fetch(`https://checkend.onrender.com/api/updateChecklistResults/${checklistId}`, {
         method: 'POST',
@@ -318,7 +318,7 @@ const AppliedChecklistsChart = () => {
                 
               </div>
               <button className='w-1/12 border p-1 border-b-4 bg-black hover:bg-white hover:border-black/80 hover:text-black'  
-                onClick={() => addresultAppliedChecklistsToBackend(resultAppliedChecklists.id, resultAppliedChecklists.results)}
+                onClick={() => addresultToBackend(resultAppliedChecklists.id, resultAppliedChecklists.results)}
               >
                 Submeter
               </button>
