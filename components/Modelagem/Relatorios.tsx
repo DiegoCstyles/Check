@@ -227,7 +227,7 @@ const AppliedChecklistsChart = () => {
               label: 'Avaliações do mês',
               data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
               borderWidth: 1,
-              backgroundColor: 'rgb(103, 232, 149)',
+              backgroundColor: 'rgb(153, 132, 249)',
             }],
           });
         }
@@ -276,7 +276,7 @@ const AppliedChecklistsChart = () => {
           <Bar
               data={chartDataResults}
               options={{
-                indexAxis: 'x', // Set the axis to horizontal
+                indexAxis: 'y', // Set the axis to horizontal
                 responsive: true,
                 color: 'white', 
                 scales: {
@@ -297,28 +297,7 @@ const AppliedChecklistsChart = () => {
             />
            </div>
           <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
-         <Bar
-              data={chartDataUserRanking}
-              options={{
-                indexAxis: 'x', // Set the axis to horizontal
-                responsive: true,
-                color: 'white', 
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                    ticks: {
-                      color: 'white', // Change tick label color to white
-                    },
-                  },
-                  y: {
-                    ticks: {
-                      color: 'white', // Change label color to white
-                    },
-                  },
-                },
-              }}
-              
-            />
+
            </div>
         </div>
          {AppliedChecklists.map((resultAppliedChecklists) => (
