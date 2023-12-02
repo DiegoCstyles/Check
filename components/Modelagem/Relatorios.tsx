@@ -50,6 +50,7 @@ const AppliedChecklistsChart = () => {
   useEffect(() => {
     const fetchRiskItems = async () => {
       try {
+        console.log('cheguei');
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
         console.log('response:', response);
         if (response.ok) {
@@ -133,6 +134,7 @@ const AppliedChecklistsChart = () => {
     };
 
     fetchData();
+    fetchRiskItems();
   }, []); 
 
 
