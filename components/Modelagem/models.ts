@@ -22,6 +22,7 @@ export interface AppliedChecklist {
   location: string;
   participants: string;
   risk_id: number;
+  user_id: number;
 }
 
 export interface ActionPlan {
