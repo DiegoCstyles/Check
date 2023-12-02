@@ -51,7 +51,7 @@ const AppliedChecklistsChart = () => {
     const fetchRiskItems = async () => {
       try {
         const response = await fetch(`https://checkend.onrender.com/api/riskItemsLastApproval`);
-  
+        console.log('response:', response);
         if (response.ok) {
           const data = await response.json(); setitemRisk(data); // Update the riskItems state with the fetched data
           console.log('data: ', data);
@@ -86,7 +86,6 @@ const AppliedChecklistsChart = () => {
     
         if (response.ok) {
           const data = await response.json();
-          console.log('checklists: ', data);
           return data;
         } else {
           console.error('Error fetching checklists');
@@ -101,12 +100,10 @@ const AppliedChecklistsChart = () => {
     const fetchData = async () => {
       try { 
         const usersInfo: User[] = await getUsers();
-        console.log('usersInfo: ', usersInfo);
         
         const userNames = usersInfo.map((user) => user.name);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
-        console.log('checklists: ', checklists);
           
          if (usersInfo && checklists) {
           const counts = userNames.map((userName) => {
