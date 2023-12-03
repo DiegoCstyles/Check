@@ -47,6 +47,7 @@ const AppliedChecklistsChart = () => {
   const [itemRiskReproved, setitemRiskReproved] = useState<RiskItem[]>([]);
   const [AppliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [userNames, setUserNames] = useState<string[]>([]);
 
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
@@ -175,7 +176,8 @@ const AppliedChecklistsChart = () => {
       try { 
         const usersInfo: User[] = await getUsers();
         
-        const userNames: string[] = usersInfo.map((user) => user.name);
+        const names: string[] = usersInfo.map((user) => user.name);
+        setUserNames(names);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
           
