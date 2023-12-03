@@ -182,7 +182,7 @@ const AppliedChecklistsChart = () => {
         const checklists: AppliedChecklist[] | null = await getChecklists();
           
          if (usersInfo && checklists) {
-          const counts = userNames.map((userName) => {
+          const counts = names.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
               // Assuming checklist data has a structure like { user_id, ...otherProperties }
@@ -194,7 +194,7 @@ const AppliedChecklistsChart = () => {
           });
             
           setChartDataUserRanking({
-            labels: userNames,
+            labels: names,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
               data: counts,
