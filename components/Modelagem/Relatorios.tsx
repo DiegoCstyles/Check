@@ -293,10 +293,10 @@ const AppliedChecklistsChart = () => {
            </div>
           <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
             <div className="text-black uppercase font-semibold flex flex-col text-base">
-               <p className="p-1.5 bg-purple-400 border-b-4">Não avaliado {chartDataResults.datasets[0].data[0]}</p>
-               <p className="p-1.5 bg-purple-400 border-b-4">Sem resultados {chartDataResults.datasets[0].data[1]}</p>
-               <p className="p-1.5 bg-purple-400 border-b-4">Parcial {chartDataResults.datasets[0].data[2]}</p>
-               <p className="p-1.5 bg-purple-400 border-b-4">Efetivo {chartDataResults.datasets[0].data[3]}</p>
+               <p className="p-0.5 bg-white border-b-4 border-black/80">Não avaliado {chartDataResults.datasets[0].data[0]}</p>
+               <p className="p-0.5 bg-white border-b-4 border-black/80">Sem resultados {chartDataResults.datasets[0].data[1]}</p>
+               <p className="p-0.5 bg-white border-b-4 border-black/80">Parcial {chartDataResults.datasets[0].data[2]}</p>
+               <p className="p-0.5 bg-white border-b-4 border-black/80">Efetivo {chartDataResults.datasets[0].data[3]}</p>
             </div> 
            </div>
         </div>
