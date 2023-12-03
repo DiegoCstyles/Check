@@ -102,7 +102,7 @@ const ActionPlanConfirmation = () => {
           )
           .map((risk) => (
           <li className='p-2 flex flex-col text-start border text-xs m-0.5 bg-green-500' key={risk.id}>
-            <span className='bg-black p-2 w-full'>
+            <span className='bg-black p-2 w-full flex flex-row'>
               <p className='w-1/2 text-start'>Responsável: {risk.responsibleplan}</p>
               <p className='w-1/2 text-end'>Risco: {risk.title}</p>
             </span>
