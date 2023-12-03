@@ -175,7 +175,7 @@ const AppliedChecklistsChart = () => {
       try { 
         const usersInfo: User[] = await getUsers();
         
-        const userNames = usersInfo.map((user) => user.name);
+        const userNames: string[] = usersInfo.map((user) => user.name);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
           
