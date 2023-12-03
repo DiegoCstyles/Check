@@ -215,11 +215,6 @@ const AppliedChecklistsChart = () => {
           const countSemResultados = resultCounts["sem resultados"] || 0;
           const countParcial = resultCounts["parcial"] || 0;
           const countEfetivo = resultCounts["efetivo"] || 0;
-        
-          console.log('countNaoAvaliado: ', countNaoAvaliado);
-          console.log('countSemResultados: ', countSemResultados);
-          console.log('countParcial: ', countParcial);
-          console.log('countEfetivo: ', countEfetivo);
 
            setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
@@ -297,7 +292,12 @@ const AppliedChecklistsChart = () => {
             />
            </div>
           <div className="chart-container bg-black/10 mt-2" style={{ width: '400px', height: '225px' }}>
-
+            <div className="text-black uppercase font-semibold flex flex-col text-base">
+               <p className="p-1.5 bg-white">Não avaliado {countNaoAvaliado}</p>
+               <p className="p-1.5 bg-white">Sem resultados {countSemResultados}</p>
+               <p className="p-1.5 bg-white">Parcial {countParcial}</p>
+               <p className="p-1.5 bg-white">Efetivo {countEfetivo}</p>
+            </div> 
            </div>
         </div>
          {AppliedChecklists.map((resultAppliedChecklists) => (
