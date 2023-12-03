@@ -271,7 +271,7 @@ const AppliedChecklistsChart = () => {
           </div>
           <div className="chart-container bg-black/10 mt-2 flex flex-row justify-between" style={{ width: '400px', height: '225px' }}>
             <div className="text-black uppercase text-sm">
-              <p key={index} className="p-1 bg-white border-b-4 border-black/80">Aplicadores</p>
+              <p className="p-1 bg-white border-b-4 border-black/80">Aplicadores</p>
               {chartDataUserRanking.datasets[0].data.map((value, index) => (
                 <p key={index} className="p-1 text-start bg-white border-b-4 border-black/80">
                   {userNames[index]} - {value}
