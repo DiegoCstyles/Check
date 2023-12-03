@@ -271,7 +271,7 @@ const AppliedChecklistsChart = () => {
           </div>
           <div className="chart-container bg-black/10 mt-2 flex flex-row justify-between" style={{ width: '400px', height: '225px' }}>
             <div className="text-black uppercase text-sm">
-              <p className="p-1 bg-white border-b-4 border-black/80">Aplicadores</p>
+              <p className="p-1 text-center bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Aplicadores</p>
               {chartDataUserRanking.datasets[0].data.map((value, index) => (
                 <p key={index} className="p-1 text-start bg-white border-b-4 border-black/80">
                   {userNames[index]} - {value}
@@ -279,7 +279,7 @@ const AppliedChecklistsChart = () => {
               ))}
             </div>
             <div className="text-black text-start uppercase flex flex-col text-sm">
-               <p className="p-1 bg-white border-b-4 border-black/80">Avaliações</p>
+               <p className="p-1 text-center bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Avaliações</p>
                <p className="p-1 bg-white border-b-4 border-black/80">Não avaliado {chartDataResults.datasets[0].data[0]}</p>
                <p className="p-1 bg-white border-b-4 border-black/80">Sem resultados {chartDataResults.datasets[0].data[1]}</p>
                <p className="p-1 bg-white border-b-4 border-black/80">Parcial {chartDataResults.datasets[0].data[2]}</p>
