@@ -267,9 +267,13 @@ const AppliedChecklistsChart = () => {
               
             />
           </div>
-          <div className="chart-container bg-black/10 mt-2 flex flex-row" style={{ width: '400px', height: '225px' }}>
+          <div className="chart-container bg-black/10 mt-2 flex flex-row justify-between" style={{ width: '400px', height: '225px' }}>
             <div className="text-black uppercase font-semibold text-sm">
-               <p className="p-0.5 bg-white border-b-4 border-black/80">ESTE {chartDataUserRanking.datasets[0].data[0]}</p>
+              {chartDataUserRanking.datasets[0].data.map((value, index) => (
+                <p key={index} className="p-0.5 bg-white border-b-4 border-black/80">
+                  {userNames[index]} - {value}
+                </p>
+              ))}
             </div>
             <div className="text-black uppercase font-semibold flex flex-col text-sm">
                <p className="p-0.5 bg-white border-b-4 border-black/80">Não avaliado {chartDataResults.datasets[0].data[0]}</p>
