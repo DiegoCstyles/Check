@@ -102,10 +102,14 @@ const ActionPlanConfirmation = () => {
           )
           .map((risk) => (
           <li className='p-2 flex flex-col text-start border text-xs m-0.5 bg-green-500' key={risk.id}>
-            <span className='bg-black p-2 w-full'>Responsável: {risk.responsibleplan}</span>
+            <span className='bg-black p-2 w-full'>
+              <p className='w-1/2 text-start'>Responsável: {risk.responsibleplan}</p>
+              <p className='w-1/2 text-end'>Risco: {risk.title}</p>
+            </span>
+            
             <span className='bg-slate-500/60 p-2 w-full'>Data: {risk.date}</span>
             <div className='w-full bg-black/30 p-2'>
-                <span className='w-1/3 mr-1'>ID: {risk.id}</span> 
+                <span className='w-1/3 mr-1'>Codigo: {risk.id}</span> 
                 <span className='w-2/3'>| Descrição: {risk.plandescription}</span>
             </div>
             <div className='flex flex-row w-full'>
