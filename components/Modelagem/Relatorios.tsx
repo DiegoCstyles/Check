@@ -222,24 +222,26 @@ const AppliedChecklistsChart = () => {
 
           const scorePercentage = (checklists.reduce((total, checklist) => total + checklist.score, 0) / (totalChecklists * 100)) * 100;
 
-           setChartDataResults({
+          setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
-            datasets: [{
-              label: 'Avaliações do mês',
-              data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
-              borderWidth: 1,
-              backgroundColor: 'rgb(153, 132, 249)',
-            }],
-             },
-             {
-              label: 'Score',
-              data: [scorePercentage],
-              type: 'line', // Set the chart type to line
-              fill: false, // Do not fill the area under the line
-              borderColor: 'rgb(255, 0, 0)', // Line color
-              lineTension: 0, // Set lineTension to 0 for straight lines
-            },
+            datasets: [
+              {
+                label: 'Avaliações do mês',
+                data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
+                borderWidth: 1,
+                backgroundColor: 'rgb(153, 132, 249)',
+              },
+              {
+                label: 'Score',
+                data: [scorePercentage],
+                type: 'line', // Set the chart type to line
+                fill: false, // Do not fill the area under the line
+                borderColor: 'rgb(255, 0, 0)', // Line color
+                lineTension: 0, // Set lineTension to 0 for straight lines
+              },
+            ],
           });
+
         }
       } catch (error) {
         console.error('Error:', error);
