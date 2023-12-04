@@ -359,7 +359,7 @@ useEffect(() => {
           </div>
         </div>
         
-          <div className='flex flex-row bg-black/10 border justify-between h-1/2'>
+          <div className='flex flex-row bg-black/10 border justify-between h-1/2 w-full'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-1/3' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 120px)' }}>
               <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Ultimos checklists Criados</h1>
               <ul className='text-slate-400 mb-1 p-5'>
