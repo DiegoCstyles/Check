@@ -60,6 +60,11 @@ const AppliedChecklistsChart = () => {
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
 
+  const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSelectedMonth = event.target.value;
+    setSelectedMonth(newSelectedMonth);
+  };
+
   const [chartDataUserRanking, setChartDataUserRanking] = useState<ChartData>({
     labels: [],
     datasets: [{
@@ -299,6 +304,16 @@ const AppliedChecklistsChart = () => {
             </div>
             <div className="text-white text-center flex flex-col text-sm">
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Filtros</p>
+              <select
+                value={selectedMonth}
+                onChange={handleMonthChange}
+                className="p-1 bg-white/10 border-b-4 border-black/80"
+              >
+                {/* Options for the dropdown, you may populate it dynamically based on your use case */}
+                <option value="2023-01">Janeiro 2023</option>
+                <option value="2023-02">Fevereiro 2023</option>
+                {/* ... add more options as needed */}
+              </select>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">{selectedMonth}</p>
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Pontuação</p>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">mínimo</p>
