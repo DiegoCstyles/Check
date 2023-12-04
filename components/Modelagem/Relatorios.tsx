@@ -230,7 +230,7 @@ const AppliedChecklistsChart = () => {
           });
 
            // Update counts for each result
-          const resultCounts = checklists.reduce((counts, checklist) => {
+          const resultCounts = filteredChecklists.reduce((counts, checklist) => {
             const resultValue = checklist.results.toLowerCase();
             if (resultValue === "não avaliado" || resultValue === "sem resultados" || resultValue === "parcial" || resultValue === "efetivo") {
               counts[resultValue as keyof ResultCounts] = (counts[resultValue as keyof ResultCounts] || 0) + 1;
