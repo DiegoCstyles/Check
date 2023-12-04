@@ -195,7 +195,7 @@ const AppliedChecklistsChart = () => {
               // Assuming checklist data has a structure like { user_id, ...otherProperties }
               const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
               const count = userChecklists.length;
-              return { count, scores };
+              return { count };
             }
             return { count: 0, scores: [] };
           });
