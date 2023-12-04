@@ -201,7 +201,8 @@ const AppliedChecklistsChart = () => {
           });
 
           const countsData = counts.map((item) => item.count);
-          const scoresData = counts.reduce((accumulator, item) => [...accumulator, ...item.scores], []) as number[];
+          const scoresData = counts.map((item) => item.scores || 0); // Use 0 if scores is undefined
+
 
           setChartDataUserRanking({
             labels: names,
