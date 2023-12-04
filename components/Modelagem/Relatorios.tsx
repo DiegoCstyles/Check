@@ -241,6 +241,7 @@ const AppliedChecklistsChart = () => {
                 borderWidth: 1,
                 backgroundColor: 'rgb(153, 132, 249)',
               },
+              {
                 label: 'Score',
                 data: [scorePercentage],
                 fill: false, // Do not fill the area under the line
