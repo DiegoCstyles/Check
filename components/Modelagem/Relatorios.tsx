@@ -177,24 +177,22 @@ const AppliedChecklistsChart = () => {
       try { 
         const usersInfo: User[] = await getUsers();
         
-        const UserNames: string[] = usersInfo.map((user) => user.name);
+        const names: string[] = usersInfo.map((user) => user.name);
+        setUserNames(names);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
-
-
+        
          if (usersInfo && checklists) {
-          const counts: number[] = UserNames.map((userName) => {
+          const counts = names.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
+              // Assuming checklist data has a structure like { user_id, ...otherProperties }
               const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
-              return userChecklists.length; // Return the count directly, not an object
+              const count = userChecklists.length;
+              return count;
             }
-            return 0; // Return 0 for users without checklists
+            return 0;
           });
-
-          const countsData = counts.map((item) => item.count);
-          const scoresData = counts.map((count) => count);
-
 
           setChartDataUserRanking({
             labels: UserNames,
@@ -221,7 +219,6 @@ const AppliedChecklistsChart = () => {
           const countParcial = resultCounts["parcial"] || 0;
           const countEfetivo = resultCounts["efetivo"] || 0;
 
-           
           setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
             datasets: [
