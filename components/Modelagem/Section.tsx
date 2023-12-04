@@ -377,7 +377,7 @@ useEffect(() => {
                 ))}
               </ul>
             </section>
-            <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30 w-2/4'>
+            <section className='text-center text-sm text-cyan-300 border-b-4 border-black/10 bg-slate-500/30 w-2/4'>
               <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Resumo de riscos anuais</h1>
               <canvas ref={canvasRef} id="lineGraph" width="400" height="200"></canvas>
             </section>
