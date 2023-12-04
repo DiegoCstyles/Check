@@ -251,26 +251,26 @@ const AppliedChecklistsPage: React.FC = () => {
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs border bg-black'>
           <div className='flex flex-row justify-around'>
-            <label>
+            <label className='bg-white text-white font-semibold border-b-4 p-1'>
                   Local de Inspeção
                   <input
-                    className='bg-white/10 border-b-4 m-2 ml-2 p-1'
+                    className='bg-white/10 border-b-4 p-1'
                     type="text"
                     value={ApplyRisk.location}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApplyRisk({ ...ApplyRisk, location: e.target.value })}
                   />
             </label>
-            <label>
+            <label className='bg-white text-white font-semibold border-b-4 p-1'>
                   Participantes
                   <input
-                    className='bg-white/10 border-b-4 m-2 ml-2 p-1'
+                    className='bg-white/10 border-b-4 p-1'
                     type="text"
                     value={ApplyRisk.participants}
                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApplyRisk({ ...ApplyRisk, participants: e.target.value })}
                   />
             </label>
           </div>
-          <h2 className='border-b p-1.5 text-sm text-white'>Assunto</h2>
+          <h2 className='border-b p-1.5 text-sm text-white uppercase bg-black'>Assunto</h2>
            {Object.entries(groupedQuestions).map(([subject, subjectQuestions]) => (
             <div key={subject}>
               <h3 className='border-y p-1 text-xs text-white'>{subject}</h3>
