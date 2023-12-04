@@ -180,17 +180,16 @@ const AppliedChecklistsChart = () => {
         const UserNames: string[] = usersInfo.map((user) => user.name);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
-          
+
+
          if (usersInfo && checklists) {
-          const counts = UserNames.map((userName) => {
+          const counts: number[] = UserNames.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
-              // Assuming checklist data has a structure like { user_id, ...otherProperties }
               const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
-              const count = userChecklists.length;
-              return { count };
+              return userChecklists.length; // Return the count directly, not an object
             }
-            return { count: 0 };
+            return 0; // Return 0 for users without checklists
           });
 
           const countsData = counts.map((item) => item.count);
