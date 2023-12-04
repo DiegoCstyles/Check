@@ -63,20 +63,23 @@ const AppliedChecklistsChart = () => {
   });
   
   const [chartDataResults, setChartDataResults] = useState<ChartData>({
-    labels: [],
-    datasets: [{
+  labels: [],
+  datasets: [
+    {
       label: 'Avaliações do mês',
       data: [],
       borderWidth: 1,
       backgroundColor: 'rgb(153, 132, 249)',
-    }],
+    },
     {
       label: 'Pontuação',
       data: [],
       borderWidth: 1,
       backgroundColor: 'rgb(255, 0, 0)',
     },
-  });
+  ],
+});
+
 
   const addresultToBackend = async (checklistId: string, results: string) => {
     try {
