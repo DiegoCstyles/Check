@@ -238,7 +238,7 @@ const AppliedChecklistsChart = () => {
               fill: false, // Do not fill the area under the line
               borderColor: 'rgb(255, 0, 0)', // Line color
               lineTension: 0, // Set lineTension to 0 for straight lines
-            }]
+            }
           });
         }
       } catch (error) {
