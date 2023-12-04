@@ -192,6 +192,8 @@ const AppliedChecklistsChart = () => {
             }
             return 0;
           });
+
+          const totalChecklists = checklists.length;
             
           setChartDataUserRanking({
             labels: names,
@@ -200,7 +202,7 @@ const AppliedChecklistsChart = () => {
               data: counts,
               borderWidth: 1,
               backgroundColor: 'rgb(103, 232, 149)',
-            }],
+            }], 
           });
 
            // Update counts for each result
@@ -218,6 +220,8 @@ const AppliedChecklistsChart = () => {
           const countParcial = resultCounts["parcial"] || 0;
           const countEfetivo = resultCounts["efetivo"] || 0;
 
+          const scorePercentage = (checklists.reduce((total, checklist) => total + checklist.score, 0) / (totalChecklists * 100)) * 100;
+
            setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
             datasets: [{
@@ -225,6 +229,14 @@ const AppliedChecklistsChart = () => {
               data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
               borderWidth: 1,
               backgroundColor: 'rgb(153, 132, 249)',
+            }],
+             {
+              label: 'Score',
+              data: [scorePercentage],
+              type: 'line', // Set the chart type to line
+              fill: false, // Do not fill the area under the line
+              borderColor: 'rgb(255, 0, 0)', // Line color
+              lineTension: 0, // Set lineTension to 0 for straight lines
             }],
           });
         }
@@ -280,10 +292,10 @@ const AppliedChecklistsChart = () => {
             </div>
             <div className="text-black text-start uppercase flex flex-col text-sm">
                <p className="p-1 text-center bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Filtros</p>
-               <p className="p-1 bg-white border-b-4 border-black/80">Mes {chartDataResults.datasets[0].data[0]}</p>
+               <p className="p-1 bg-white border-b-4 border-black/80">Mes</p>
                <p className="p-1 text-center bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Pontuação</p>
-               <p className="p-1 bg-white border-b-4 border-black/80">Mininmo</p>
-               <p className="p-1 bg-white border-b-4 border-black/80">Maximo</p>
+               <p className="p-1 bg-white border-b-4 border-black/80">Mínimo</p>
+               <p className="p-1 bg-white border-b-4 border-black/80">Máximo</p>
             </div> 
             <div className="text-black text-start uppercase flex flex-col text-sm">
                <p className="p-1 text-center bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Avaliações</p>
