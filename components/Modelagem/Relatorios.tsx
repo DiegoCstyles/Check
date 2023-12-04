@@ -195,7 +195,7 @@ const AppliedChecklistsChart = () => {
           (checklist: AppliedChecklist) =>
             getMonthYearFromDate(checklist.dateapplied) === selectedMonth
         );
-
+        console.log('filteredChecklists', filteredChecklists);
         
          if (usersInfo && checklists) {
           const counts = names.map((userName) => {
@@ -298,7 +298,7 @@ const AppliedChecklistsChart = () => {
             </div>
             <div className="text-white text-center flex flex-col text-sm">
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Filtros</p>
-               <p className="p-1 bg-white/10 border-b-4 border-black/80">Mes</p>
+               <p className="p-1 bg-white/10 border-b-4 border-black/80">{selectedMonth}</p>
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Pontuação</p>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">mínimo</p>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">máximo</p>
