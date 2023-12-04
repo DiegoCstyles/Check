@@ -233,6 +233,7 @@ const AppliedChecklistsChart = () => {
                 backgroundColor: 'rgb(153, 132, 249)',
               },
               {
+                type: 'line' as const,
                 label: 'Score',
                 data: [scorePercentage],
                 fill: false, // Do not fill the area under the line
