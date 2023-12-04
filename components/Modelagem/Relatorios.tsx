@@ -239,7 +239,7 @@ const AppliedChecklistsChart = () => {
                 data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
                 borderWidth: 1,
                 backgroundColor: 'rgb(153, 132, 249)',
-              }, as ChartData,
+              },
               {
                 type: 'line' as const,
                 label: 'Score',
@@ -247,7 +247,7 @@ const AppliedChecklistsChart = () => {
                 fill: false, // Do not fill the area under the line
                 borderColor: 'rgb(255, 0, 0)', // Line color
                 lineTension: 0, // Set lineTension to 0 for straight lines
-              }, as LineChartDataset,
+              },
             ],
           });
 
