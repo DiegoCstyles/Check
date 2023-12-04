@@ -195,8 +195,6 @@ const AppliedChecklistsChart = () => {
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
 
-        const selectedMonth = '2023-12'; 
-
         const filteredChecklists = checklists.filter(
           (checklist: AppliedChecklist) =>
             getMonthYearFromDate(checklist.dateapplied) === selectedMonth
