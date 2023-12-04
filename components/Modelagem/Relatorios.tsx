@@ -27,6 +27,13 @@ type ResultCounts = {
   "efetivo": number;
 };
 
+function getMonthYearFromDate(dateString: string) {
+  const date = new Date(dateString);
+  const month = date.getMonth() + 1; // Months are 0-based, so we add 1
+  const year = date.getFullYear();
+  return `${year}-${month.toString().padStart(2, '0')}`;
+}
+
 function formatDate(dateString: string | number | Date) {
   // Parse the input date string
   const inputDate = new Date(dateString);
@@ -181,13 +188,20 @@ const AppliedChecklistsChart = () => {
         setUserNames(names);
         
         const checklists: AppliedChecklist[] | null = await getChecklists();
+
+        const selectedMonth = '2023-12'; 
+
+        const filteredChecklists = checklists.filter(
+          (checklist: AppliedChecklist) =>
+            getMonthYearFromDate(checklist.dateapplied) === selectedMonth
+        );
+
         
          if (usersInfo && checklists) {
           const counts = names.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
-              // Assuming checklist data has a structure like { user_id, ...otherProperties }
-              const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
+              const userChecklists = filteredChecklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
               const count = userChecklists.length;
               return count;
             }
