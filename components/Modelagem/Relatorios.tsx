@@ -14,6 +14,7 @@ interface ChartData {
 }
 
 interface LineChartDataset {
+
   label: string;
   data: number[];
   fill: boolean;
@@ -235,6 +236,7 @@ const AppliedChecklistsChart = () => {
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
             datasets: [
               {
+                type: 'bar' as const,
                 label: 'Avaliações do mês',
                 data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
                 borderWidth: 1,
