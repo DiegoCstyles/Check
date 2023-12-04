@@ -195,7 +195,7 @@ const AppliedChecklistsChart = () => {
           });
 
           setChartDataUserRanking({
-            labels: UserNames,
+            labels: names,
             datasets: [{
               label: 'Ranking de usuarios aplicadores',
               data: counts,
