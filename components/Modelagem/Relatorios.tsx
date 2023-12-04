@@ -70,6 +70,12 @@ const AppliedChecklistsChart = () => {
       borderWidth: 1,
       backgroundColor: 'rgb(153, 132, 249)',
     }],
+    {
+      label: 'Pontuação',
+      data: [],
+      borderWidth: 1,
+      backgroundColor: 'rgb(255, 0, 0)',
+    },
   });
 
   const addresultToBackend = async (checklistId: string, results: string) => {
@@ -186,10 +192,13 @@ const AppliedChecklistsChart = () => {
               // Assuming checklist data has a structure like { user_id, ...otherProperties }
               const userChecklists = checklists.filter((checklist: AppliedChecklist) => checklist.user_id === userId);
               const count = userChecklists.length;
-              return count;
+              return { count, scores };
             }
-            return 0;
+            return { count: 0, scores: [] };
           });
+
+          const countsData = counts.map((item) => item.count);
+          const scoresData = counts.reduce((accumulator, item) => [...accumulator, ...item.scores], []);
             
           setChartDataUserRanking({
             labels: names,
@@ -225,6 +234,12 @@ const AppliedChecklistsChart = () => {
                 data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
                 borderWidth: 1,
                 backgroundColor: 'rgb(153, 132, 249)',
+              },
+              {
+                label: 'Pontuação',
+                data: scoresData,
+                borderWidth: 1,
+                backgroundColor: 'rgb(255, 0, 0)',
               },
             ],
           });
