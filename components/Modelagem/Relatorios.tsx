@@ -55,6 +55,7 @@ const AppliedChecklistsChart = () => {
   const [AppliedChecklists, setAppliedChecklists] = useState<AppliedChecklist[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [userNames, setUserNames] = useState<string[]>([]);
+  const [selectedMonth, setSelectedMonth] = useState<string>('');
 
   const openModal = () => { setModalOpen(true); }; 
   const closeModal = () => { setModalOpen(false); };
@@ -255,7 +256,7 @@ const AppliedChecklistsChart = () => {
     fetchRiskItemApproved();
     fetchRiskItemReproved();
     fetchAppliedChecklists();
-  }, []); 
+  }, [selectedMonth]); 
 
 
   return (
