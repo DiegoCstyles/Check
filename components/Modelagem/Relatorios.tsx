@@ -190,11 +190,11 @@ const AppliedChecklistsChart = () => {
               const count = userChecklists.length;
               return { count };
             }
-            return { count: 0, scores: [] };
+            return { count: 0 };
           });
 
           const countsData = counts.map((item) => item.count);
-          const scoresData = counts.map((item) => item.scores || 0); // Use 0 if scores is undefined
+          const scoresData = counts.map((count) => count);
 
 
           setChartDataUserRanking({
