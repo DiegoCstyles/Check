@@ -236,14 +236,11 @@ const AppliedChecklistsChart = () => {
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
             datasets: [
               {
-                type: 'bar' as const,
                 label: 'Avaliações do mês',
                 data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
                 borderWidth: 1,
                 backgroundColor: 'rgb(153, 132, 249)',
               },
-              {
-                type: 'line' as const,
                 label: 'Score',
                 data: [scorePercentage],
                 fill: false, // Do not fill the area under the line
