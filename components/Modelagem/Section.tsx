@@ -330,7 +330,7 @@ useEffect(() => {
           <div className='w-2/3 bg-black/10 border'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30  p-1.5 uppercase'>Assistente</section>
               <p className="h-full text-white text-xs bg-black text-justify p-3">
-                <ul className=" text-black font-semibold h-60 bg-white/90 border-t-4 p-2" style={{ overflowY: 'auto', maxHeight: 'calc(25vh - 120px)' }}>
+                <ul className=" text-black font-semibold h-60 bg-white/90 border-t-4 p-2" style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 120px)' }}>
                   {scenario && scenario.split(/•|-/).map((item, index) => (
                     <li key={index}>{item.trim()}</li>
                   ))}
