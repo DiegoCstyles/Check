@@ -204,6 +204,11 @@ const AppliedChecklistsChart = () => {
         console.log('filteredChecklists', filteredChecklists);
         
          if (usersInfo && checklists) {
+          const filteredChecklists = checklists.filter(
+            (checklist: AppliedChecklist) =>
+              getMonthYearFromDate(checklist.dateapplied) === selectedMonth
+          );
+           
           const counts = names.map((userName) => {
             const userId = usersInfo.find((user) => user.name === userName)?.id;
             if (userId) {
