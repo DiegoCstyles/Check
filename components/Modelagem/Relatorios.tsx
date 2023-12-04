@@ -282,7 +282,7 @@ const AppliedChecklistsChart = () => {
                 </p>
               ))}
             </div>
-            <div className="text-black text-center flex flex-col text-sm">
+            <div className="text-white text-center flex flex-col text-sm">
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Filtros</p>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">Mes</p>
                <p className="p-1 bg-yellow-500 uppercase font-semibold text-black border-b-4 border-black/80">Pontuação</p>
