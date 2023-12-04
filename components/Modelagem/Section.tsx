@@ -362,13 +362,13 @@ useEffect(() => {
           <div className='flex flex-row bg-black/10 border justify-between h-1/2'>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>
               <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Ultimos checklists Criados</h1>
-              <ul className='text-slate-400 mb-1 p-5'>
+              <ul className='text-slate-400 mb-1 p-5' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 120px)' }}>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
                   <li className='text-center mr-2 w-32 px-2 py-1 '>Titulo</li>
                   <li className='text-center mr-2 w-32 px-2 py-1 '>Status</li>
                 </div>
                 {lastRiskItems.map((risk) => (
-                  <li key={risk.id}>
+                  <li  key={risk.id}>
                     <div className='flex justify-center text-center'>
                       <p className='text-center mr-2 w-32 px-2 py-1 text-xs bg-black/10'> {risk.title} </p>
                       <p className='text-center mr-2 w-32 px-2 py-1 text-xs 0 bg-black/10'> {risk.planapproval} </p>
@@ -383,7 +383,7 @@ useEffect(() => {
             </section>
             <section className='text-center text-sm text-cyan-300 border-b-4 bg-slate-500/30'>
               <h1 className='text-center p-1.5 text-xs text-black uppercase font-semibold text-black bg-yellow-500'>Historico de checklists</h1>
-              <ul className='text-slate-400 mb-1 p-5'>
+              <ul className='text-slate-400 mb-1 p-5' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 120px)' }}>
                 <div className='flex border-b-2 justify-center text-xs text-white'>
                   <li className='text-center mr-2 w-32 px-2 py-1'>Titulo</li>
                   <li className='text-center mr-2 w-32 px-2 py-1'>Impacto</li>
