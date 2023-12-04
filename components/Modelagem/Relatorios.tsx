@@ -202,7 +202,7 @@ const AppliedChecklistsChart = () => {
 
           const countsData = counts.map((item) => item.count);
           const scoresData = counts.reduce((accumulator, item) => [...accumulator, ...item.scores], []);
-            
+
           setChartDataUserRanking({
             labels: names,
             datasets: [{
