@@ -13,15 +13,6 @@ interface ChartData {
   }[];
 }
 
-interface LineChartDataset {
-
-  label: string;
-  data: number[];
-  fill: boolean;
-  borderColor: string;
-  lineTension: number;
-}
-
 interface User {
   id: number;
   email: string;
@@ -122,8 +113,6 @@ const AppliedChecklistsChart = () => {
     }
   };
 
-  
-
   useEffect(() => {
     const fetchRiskItemApproved = async () => {
       try {
@@ -201,8 +190,6 @@ const AppliedChecklistsChart = () => {
             }
             return 0;
           });
-
-          const totalChecklists = checklists.length;
             
           setChartDataUserRanking({
             labels: names,
@@ -229,8 +216,6 @@ const AppliedChecklistsChart = () => {
           const countParcial = resultCounts["parcial"] || 0;
           const countEfetivo = resultCounts["efetivo"] || 0;
 
-          const scorePercentage = (checklists.reduce((total, checklist) => total + checklist.score, 0) / (totalChecklists * 100)) * 100
-
            
           setChartDataResults({
             labels: ['Nao Avaliado', 'Sem Resultados', 'Parcial', 'Efetivo'],
@@ -240,13 +225,6 @@ const AppliedChecklistsChart = () => {
                 data: [countNaoAvaliado, countSemResultados, countParcial, countEfetivo],
                 borderWidth: 1,
                 backgroundColor: 'rgb(153, 132, 249)',
-              },
-              {
-                label: 'Score',
-                data: [scorePercentage],
-                fill: false, // Do not fill the area under the line
-                borderColor: 'rgb(255, 0, 0)', // Line color
-                lineTension: 0, // Set lineTension to 0 for straight lines
               },
             ],
           });
