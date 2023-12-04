@@ -313,8 +313,18 @@ const AppliedChecklistsChart = () => {
                 className="p-1 bg-white/10 border-b-4 border-black/80"
               >
                 {/* Options for the dropdown, you may populate it dynamically based on your use case */}
-                <option value="2023-01">Janeiro 2023</option>
-                <option value="2023-02">Fevereiro 2023</option>
+                <option value="2023-01">Janeiro</option>
+                <option value="2023-02">Fevereiro</option>
+                <option value="2023-03">Fevereiro</option>
+                <option value="2023-04">Fevereiro</option>
+                <option value="2023-05">Fevereiro</option>
+                <option value="2023-06">Fevereiro</option>
+                <option value="2023-07">Fevereiro</option>
+                <option value="2023-08">Fevereiro </option>
+                <option value="2023-09">Fevereiro </option>
+                <option value="2023-10">Fevereiro</option>
+                <option value="2023-11">Fevereiro </option>
+                <option value="2023-12">Dezembro</option>
                 {/* ... add more options as needed */}
               </select>
                <p className="p-1 bg-white/10 border-b-4 border-black/80">{selectedMonth}</p>
