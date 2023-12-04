@@ -230,6 +230,7 @@ const AppliedChecklistsChart = () => {
               borderWidth: 1,
               backgroundColor: 'rgb(153, 132, 249)',
             }],
+             },
              {
               label: 'Score',
               data: [scorePercentage],
