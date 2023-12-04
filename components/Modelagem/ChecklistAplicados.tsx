@@ -247,10 +247,11 @@ const AppliedChecklistsPage: React.FC = () => {
 
       <Modal isOpen={isModalOpen} onClose={closeModal}><h2 className="text-sm text-blue bg-white/5">Aplicado com sucesso!</h2></Modal>
      {/* Checklist Questions */}
-      <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none' }}>
+      <div className="checklist-questions border justify-center p-5 w-2/3" style={{ display: selectedRiskId ? 'block' : 'none', overflowY: 'auto', maxHeight: 'calc(100vh - 120px)' }}>
         <h2 className='text-xs font-semibold p-1 border-b-4 uppercase bg-yellow-500 text-black border-t border-x'>Inspeção de segurança do trabalho</h2>
         <ol className='text-xs border bg-black'>
-          <div className='flex flex-row justify-around'>
+          <div className='flex flex-row'>
+            
             <label className='bg-white text-black font-semibold border-b-4 p-0.5'>Local de Inspeção</label>
             <input
               className='bg-white/10 border-b-4 p-0.5'
